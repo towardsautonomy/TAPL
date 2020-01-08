@@ -31,17 +31,17 @@ target_include_directories(kpts_detect_match PUBLIC ./include)
 target_link_libraries (kpts_detect_match ${OpenCV_LIBRARIES} "-lstdc++fs")
 
 # compute fundamental matrix
-add_executable (compute_f_matrix.cpp src/matching2D.cpp src/cvEngine.cpp examples/compute_f_matrix.cpp)
-target_include_directories(compute_f_matrix.cpp PUBLIC ./include)
-target_link_libraries (compute_f_matrix.cpp ${OpenCV_LIBRARIES})
-#target_link_libraries (compute_f_matrix.cpp ${OpenCV_LIBRARIES} ${PCL_LIBRARIES})
+add_executable (compute_f_matrix src/matching2D.cpp src/cvEngine.cpp examples/compute_f_matrix.cpp)
+target_include_directories(compute_f_matrix PUBLIC ./include)
+target_link_libraries (compute_f_matrix ${OpenCV_LIBRARIES})
+#target_link_libraries (compute_f_matrix ${OpenCV_LIBRARIES} ${PCL_LIBRARIES})
 
 # compute essential matrix
-add_executable (compute_e_matrix.cpp src/matching2D.cpp src/cvEngine.cpp examples/compute_e_matrix.cpp)
-target_include_directories(compute_e_matrix.cpp PUBLIC ./include)
-target_link_libraries (compute_e_matrix.cpp ${OpenCV_LIBRARIES})
+add_executable (compute_e_matrix src/matching2D.cpp src/cvEngine.cpp examples/compute_e_matrix.cpp)
+target_include_directories(compute_e_matrix PUBLIC ./include)
+target_link_libraries (compute_e_matrix ${OpenCV_LIBRARIES})
 
 # compute pose
-add_executable (compute_pose.cpp src/matching2D.cpp src/cvEngine.cpp src/render.cpp examples/compute_pose.cpp)
-target_include_directories(compute_pose.cpp PUBLIC ./include)
-target_link_libraries (compute_pose.cpp ${OpenCV_LIBRARIES} ${PCL_LIBRARIES} "-lstdc++fs")
+add_executable (compute_pose src/matching2D.cpp src/cvEngine.cpp src/render.cpp examples/compute_pose.cpp)
+target_include_directories(compute_pose PUBLIC ./include)
+target_link_libraries (compute_pose ${OpenCV_LIBRARIES} ${PCL_LIBRARIES} "-lstdc++fs")

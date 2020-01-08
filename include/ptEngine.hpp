@@ -14,8 +14,8 @@
 #include <pcl/segmentation/extract_clusters.h>
 #include <pcl/common/transforms.h>
 
-#define degreesToRadians(angleDegrees) ((angleDegrees) * M_PI / 180.0)
-#define radiansToDegrees(angleRadians) ((angleRadians) * 180.0 / M_PI)
+inline float degreesToRadians(float angleDegrees) { return ((angleDegrees) * M_PI / 180.0); }
+inline float radiansToDegrees(float angleRadians) { return ((angleRadians) * 180.0 / M_PI); }
 
 namespace tapl {
     namespace pte {
@@ -204,6 +204,6 @@ namespace tapl {
             point.z = xyz_w.at<float>(2, 0);
         }
     };
-}
+};
 
 #endif /* PT_ENGINE_H */

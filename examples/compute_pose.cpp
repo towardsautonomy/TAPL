@@ -26,6 +26,7 @@
 #include <Eigen/Core>
 #include <Eigen/LU>
 #include <Eigen/Geometry>
+#include <opencv2/core/eigen.hpp>
 
 #include "dataStructures.hpp"
 #include "matching2D.hpp"
@@ -33,6 +34,10 @@
 #include "cvEngine.hpp"
 #include "ptEngine.hpp"
 #include "render.hpp"
+#include "visualization.hpp"
+
+inline double deg2rad(double deg) { return deg * M_PI / 180.0; }
+inline double rad2deg(double rad) { return rad * 180.0 / M_PI; }
 
 using namespace std;
 
@@ -84,104 +89,85 @@ int main(int argc, const char *argv[])
         if((nImages != -1) && (imgIndex >= nImages)) break;
     } 
 
+    // add reference pose at the origin
+    Eigen::Affine3f pose = Eigen::Affine3f::Identity();
+    // rotate from world to camera coordinate
+    double Rx, Ry, Rz;
+    Rx = deg2rad(-90);
+    Ry = deg2rad(0);
+    Rz = deg2rad(-90);
+    Eigen::Matrix4f complete_pose = Eigen::Matrix4f::Identity();
+    Eigen::Matrix3f R = (Eigen::AngleAxis<float>(Rz, Eigen::Vector3f::UnitZ()) *
+                        Eigen::AngleAxis<float>(Ry, Eigen::Vector3f::UnitY()) *
+                        Eigen::AngleAxis<float>(Rx, Eigen::Vector3f::UnitX()))
+                            .toRotationMatrix();
+    Eigen::Matrix<float, 3, 1> t(0.0, 0.0, 0.0);
+    complete_pose.block(0, 0, 3, 3) = R;
+    complete_pose.block(0, 3, 3, 1) = t;
+    pose = complete_pose.matrix();
+
+    // prepare a viewer
+    tapl::viz::Visualizer * visualizer = new tapl::viz::Visualizer();
+    visualizer->renderPose(0.5, pose, "ref");
+
     if(tapl::cve::getPose(dataBuffer, camera_matrix) == 0) {
-        // prepare a viewer
-        pcl::visualization::PCLVisualizer::Ptr viewer (new pcl::visualization::PCLVisualizer ("3D Viewer"));
-        viewer->setBackgroundColor (255, 255, 255);
-        viewer->addCoordinateSystem (0.5); // origin
-        viewer->initCameraParameters ();
-        
-        CameraAngle setAngle = TopDown;
-        int distance = 50;
-        switch(setAngle)
-        {
-            case XY : viewer->setCameraPosition(-distance, -distance, distance, 1, 1, 0); break;
-            case TopDown : viewer->setCameraPosition(0, 0, distance, 1, 0, 1); break;
-            case Side : viewer->setCameraPosition(0, -distance, 0, 0, 0, 1); break;
-            case FPS : viewer->setCameraPosition(-10, 0, 0, 0, 0, 1);
-        }
-        
+
         cv::Mat R_total = cv::Mat::eye(3, 3, CV_32FC1);
         cv::Mat t_total = cv::Mat::zeros(3, 1, CV_32FC1);
         cv::Mat camera_pose = cv::Mat::eye(4, 4, CV_32FC1);
         pcl::PointXYZ prev_point = pcl::PointXYZ(0.0,0.0,0.0);
         /* Loop over all the images */
         for (size_t imgIndex = 1; imgIndex < dataBuffer.getSize(); imgIndex++) {
-            cv::Mat R = dataBuffer.get_ptr(imgIndex)->pose.R;
-            cv::Mat t = dataBuffer.get_ptr(imgIndex)->pose.t;
+            // transformation matrix
+            Eigen::Matrix4f P = Eigen::Matrix4f::Identity();
+            // rotation
+            cv2eigen(dataBuffer.get_ptr(imgIndex)->pose.R, R);
+            P.block(0, 0, 3, 3) = R;
+            // translation
+            cv2eigen(dataBuffer.get_ptr(imgIndex)->pose.t, t);
+            P.block(0, 3, 3, 1) = t;
+            
+            // compute pose from the camera origin
+            // complete transformation matrix
+            complete_pose = complete_pose * P;
+            pose = complete_pose.matrix();
+            visualizer->renderPose(0.5, pose, "pose_" + std::to_string(imgIndex));
+
             cv::Mat euler = dataBuffer.get_ptr(imgIndex)->pose.euler;
 
-            cout << "R: " << endl;
-            cout << R << endl;
-            cout << "t:" << endl;
-            cout << t << endl;
-            cout << "[roll,pitch,yaw]: [" << euler.at<float>(0,0) << "," << euler.at<float>(0,1) << "," << euler.at<float>(0,2) << "]" << std::endl;
-
-            // add the second camera pose 
-            Eigen::Matrix4f eig_mat;
-            Eigen::Affine3f cam_pose;
-
-            R.convertTo(R, CV_32F);
-            t.convertTo(t, CV_32F);
-
-            cv::Mat transformation = cv::Mat::eye(4, 4, CV_32FC1);
-            transformation(cv::Rect(0, 0, 3, 3)) = R * 1.0;
-            transformation.col(3).rowRange(0, 3) = t * 1.0;
-            camera_pose = camera_pose * transformation;
-            cout << "pose: " << camera_pose.at<double>(0, 3) << "," << camera_pose.at<double>(1, 3) << "," <<  camera_pose.at<double>(2, 3) << endl;
-
+            // create point cloud from triangulated points
             cv::Mat point3d_homo = dataBuffer.get_ptr(imgIndex)->triangulated_pts;
-            
-            // create point cloud
-            pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud (new pcl::PointCloud<pcl::PointXYZRGB>);
+            pcl::PointCloud<pcl::PointXYZ>::Ptr cloud (new pcl::PointCloud<pcl::PointXYZ>);
             cloud->points.resize (point3d_homo.cols);
 
             for(int i = 0; i < point3d_homo.cols; i++) {
-                pcl::PointXYZRGB &point = cloud->points[i];
+                pcl::PointXYZ &point = cloud->points[i];
                 cv::Mat p3d;
                 cv::Mat _p3h = point3d_homo.col(i);
                 convertPointsFromHomogeneous(_p3h.t(), p3d);
                 point.x = p3d.at<double>(0);
                 point.y = p3d.at<double>(1);
                 point.z = p3d.at<double>(2);
-                point.r = 0;
-                point.g = 0;
-                point.b = 255;
-                tapl::pte::world2CamCoordinate<pcl::PointXYZRGB>(point);
             }
 
-            for(int i = 0; i < 4; i++) 
-            for(int j = 0; j < 4; j++) 
-                cam_pose(i,j) = camera_pose.at<float>(i,j);
-
-            // pcl::transformPointCloud (*cloud, *cloud, cam_pose);
-            // // renderPointCloud(viewer, cloud, "cloud_"+std::to_string(imgIndex));
-            // viewer->addPointCloud(cloud,"cloud_"+std::to_string(imgIndex));
-            // viewer->setPointCloudRenderingProperties (pcl::visualization::PCL_VISUALIZER_POINT_SIZE,
-            //                                             0.5,
-            //                                             "cloud_"+std::to_string(imgIndex));
-            pcl::PointXYZ cam_pose_pt = pcl::PointXYZ(cam_pose(0, 3), cam_pose(1, 3), cam_pose(2, 3));
-            tapl::pte::world2CamCoordinate<pcl::PointXYZ>(cam_pose_pt);
-            viewer->addSphere (cam_pose_pt, 0.2, "sphere_"+std::to_string(imgIndex));
-            viewer->addLine(prev_point, cam_pose_pt, "line_"+std::to_string(imgIndex));
+            pcl::transformPointCloud (*cloud, *cloud, pose);
+            visualizer->renderPointCloud(cloud, 1.0, 1.0, 0.0, 0.0, "cloud_"+std::to_string(imgIndex));
+            pcl::PointXYZ cam_pose_pt = pcl::PointXYZ(pose(0, 3), pose(1, 3), pose(2, 3));
+            visualizer->renderSphere(cam_pose_pt, 0.2, 1.0, 0.0, 0.0, "sphere_"+std::to_string(imgIndex));
+            visualizer->renderLine(prev_point, cam_pose_pt, 0.0, 0.0, 1.0, "line_"+std::to_string(imgIndex));
             prev_point = cam_pose_pt;
 
-            // cam_pose should be Affine3f, Affine3d cannot be used
-            // viewer->addCoordinateSystem(0.5, cam_pose, "pt_"+std::to_string(imgIndex)); //TODO: Rotate this coordinate system into camera coordinate
-
+            // display image
             string windowName = "Camera Frame";
             cv::namedWindow(windowName, 7);
             cv::imshow(windowName, dataBuffer.get_ptr(imgIndex)->cameraImg);
-            // cout << "Press key to continue to next image" << endl;
             cv::waitKey(1); 
 
-            viewer->spinOnce(500);
+            visualizer->renderScene(500);
             // std::this_thread::sleep_for(std::chrono::milliseconds(500));
         }
 
-        while (!viewer->wasStopped ()) {
-            viewer->spin();
-        }
+        visualizer->renderSceneAndHold();
     }
 
     return 0;

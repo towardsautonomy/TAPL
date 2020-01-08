@@ -247,8 +247,8 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/compute_f_matrix.cpp.dir/DependInfo.cmake"
   "CMakeFiles/kpts_detect_match.dir/DependInfo.cmake"
-  "CMakeFiles/compute_pose.cpp.dir/DependInfo.cmake"
-  "CMakeFiles/compute_e_matrix.cpp.dir/DependInfo.cmake"
+  "CMakeFiles/compute_f_matrix.dir/DependInfo.cmake"
+  "CMakeFiles/compute_pose.dir/DependInfo.cmake"
+  "CMakeFiles/compute_e_matrix.dir/DependInfo.cmake"
   )
