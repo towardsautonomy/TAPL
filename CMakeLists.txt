@@ -34,14 +34,13 @@ target_link_libraries (kpts_detect_match ${OpenCV_LIBRARIES} "-lstdc++fs")
 add_executable (compute_f_matrix src/matching2D.cpp src/cvEngine.cpp examples/compute_f_matrix.cpp)
 target_include_directories(compute_f_matrix PUBLIC ./include)
 target_link_libraries (compute_f_matrix ${OpenCV_LIBRARIES})
-#target_link_libraries (compute_f_matrix ${OpenCV_LIBRARIES} ${PCL_LIBRARIES})
 
 # compute essential matrix
 add_executable (compute_e_matrix src/matching2D.cpp src/cvEngine.cpp examples/compute_e_matrix.cpp)
 target_include_directories(compute_e_matrix PUBLIC ./include)
 target_link_libraries (compute_e_matrix ${OpenCV_LIBRARIES})
 
-# compute pose
-add_executable (compute_pose src/matching2D.cpp src/cvEngine.cpp src/render.cpp examples/compute_pose.cpp)
-target_include_directories(compute_pose PUBLIC ./include)
-target_link_libraries (compute_pose ${OpenCV_LIBRARIES} ${PCL_LIBRARIES} "-lstdc++fs")
+# monocular visual odometry
+add_executable (monoVO src/matching2D.cpp src/cvEngine.cpp examples/monoVO.cpp)
+target_include_directories(monoVO PUBLIC ./include)
+target_link_libraries (monoVO ${OpenCV_LIBRARIES} ${PCL_LIBRARIES} "-lstdc++fs")

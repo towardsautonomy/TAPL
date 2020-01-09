@@ -124,6 +124,19 @@ kpts_detect_match/fast:
 .PHONY : kpts_detect_match/fast
 
 #=============================================================================
+# Target rules for targets named compute_e_matrix
+
+# Build rule for target.
+compute_e_matrix: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 compute_e_matrix
+.PHONY : compute_e_matrix
+
+# fast build rule for target.
+compute_e_matrix/fast:
+	$(MAKE) -f CMakeFiles/compute_e_matrix.dir/build.make CMakeFiles/compute_e_matrix.dir/build
+.PHONY : compute_e_matrix/fast
+
+#=============================================================================
 # Target rules for targets named compute_f_matrix
 
 # Build rule for target.
@@ -137,30 +150,17 @@ compute_f_matrix/fast:
 .PHONY : compute_f_matrix/fast
 
 #=============================================================================
-# Target rules for targets named compute_pose
+# Target rules for targets named monoVO
 
 # Build rule for target.
-compute_pose: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 compute_pose
-.PHONY : compute_pose
+monoVO: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 monoVO
+.PHONY : monoVO
 
 # fast build rule for target.
-compute_pose/fast:
-	$(MAKE) -f CMakeFiles/compute_pose.dir/build.make CMakeFiles/compute_pose.dir/build
-.PHONY : compute_pose/fast
-
-#=============================================================================
-# Target rules for targets named compute_e_matrix
-
-# Build rule for target.
-compute_e_matrix: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 compute_e_matrix
-.PHONY : compute_e_matrix
-
-# fast build rule for target.
-compute_e_matrix/fast:
-	$(MAKE) -f CMakeFiles/compute_e_matrix.dir/build.make CMakeFiles/compute_e_matrix.dir/build
-.PHONY : compute_e_matrix/fast
+monoVO/fast:
+	$(MAKE) -f CMakeFiles/monoVO.dir/build.make CMakeFiles/monoVO.dir/build
+.PHONY : monoVO/fast
 
 examples/compute_e_matrix.o: examples/compute_e_matrix.cpp.o
 
@@ -216,33 +216,6 @@ examples/compute_f_matrix.cpp.s:
 	$(MAKE) -f CMakeFiles/compute_f_matrix.dir/build.make CMakeFiles/compute_f_matrix.dir/examples/compute_f_matrix.cpp.s
 .PHONY : examples/compute_f_matrix.cpp.s
 
-examples/compute_pose.o: examples/compute_pose.cpp.o
-
-.PHONY : examples/compute_pose.o
-
-# target to build an object file
-examples/compute_pose.cpp.o:
-	$(MAKE) -f CMakeFiles/compute_pose.dir/build.make CMakeFiles/compute_pose.dir/examples/compute_pose.cpp.o
-.PHONY : examples/compute_pose.cpp.o
-
-examples/compute_pose.i: examples/compute_pose.cpp.i
-
-.PHONY : examples/compute_pose.i
-
-# target to preprocess a source file
-examples/compute_pose.cpp.i:
-	$(MAKE) -f CMakeFiles/compute_pose.dir/build.make CMakeFiles/compute_pose.dir/examples/compute_pose.cpp.i
-.PHONY : examples/compute_pose.cpp.i
-
-examples/compute_pose.s: examples/compute_pose.cpp.s
-
-.PHONY : examples/compute_pose.s
-
-# target to generate assembly for a file
-examples/compute_pose.cpp.s:
-	$(MAKE) -f CMakeFiles/compute_pose.dir/build.make CMakeFiles/compute_pose.dir/examples/compute_pose.cpp.s
-.PHONY : examples/compute_pose.cpp.s
-
 examples/feature_tracking.o: examples/feature_tracking.cpp.o
 
 .PHONY : examples/feature_tracking.o
@@ -270,6 +243,33 @@ examples/feature_tracking.cpp.s:
 	$(MAKE) -f CMakeFiles/kpts_detect_match.dir/build.make CMakeFiles/kpts_detect_match.dir/examples/feature_tracking.cpp.s
 .PHONY : examples/feature_tracking.cpp.s
 
+examples/monoVO.o: examples/monoVO.cpp.o
+
+.PHONY : examples/monoVO.o
+
+# target to build an object file
+examples/monoVO.cpp.o:
+	$(MAKE) -f CMakeFiles/monoVO.dir/build.make CMakeFiles/monoVO.dir/examples/monoVO.cpp.o
+.PHONY : examples/monoVO.cpp.o
+
+examples/monoVO.i: examples/monoVO.cpp.i
+
+.PHONY : examples/monoVO.i
+
+# target to preprocess a source file
+examples/monoVO.cpp.i:
+	$(MAKE) -f CMakeFiles/monoVO.dir/build.make CMakeFiles/monoVO.dir/examples/monoVO.cpp.i
+.PHONY : examples/monoVO.cpp.i
+
+examples/monoVO.s: examples/monoVO.cpp.s
+
+.PHONY : examples/monoVO.s
+
+# target to generate assembly for a file
+examples/monoVO.cpp.s:
+	$(MAKE) -f CMakeFiles/monoVO.dir/build.make CMakeFiles/monoVO.dir/examples/monoVO.cpp.s
+.PHONY : examples/monoVO.cpp.s
+
 src/cvEngine.o: src/cvEngine.cpp.o
 
 .PHONY : src/cvEngine.o
@@ -277,9 +277,9 @@ src/cvEngine.o: src/cvEngine.cpp.o
 # target to build an object file
 src/cvEngine.cpp.o:
 	$(MAKE) -f CMakeFiles/kpts_detect_match.dir/build.make CMakeFiles/kpts_detect_match.dir/src/cvEngine.cpp.o
-	$(MAKE) -f CMakeFiles/compute_f_matrix.dir/build.make CMakeFiles/compute_f_matrix.dir/src/cvEngine.cpp.o
-	$(MAKE) -f CMakeFiles/compute_pose.dir/build.make CMakeFiles/compute_pose.dir/src/cvEngine.cpp.o
 	$(MAKE) -f CMakeFiles/compute_e_matrix.dir/build.make CMakeFiles/compute_e_matrix.dir/src/cvEngine.cpp.o
+	$(MAKE) -f CMakeFiles/compute_f_matrix.dir/build.make CMakeFiles/compute_f_matrix.dir/src/cvEngine.cpp.o
+	$(MAKE) -f CMakeFiles/monoVO.dir/build.make CMakeFiles/monoVO.dir/src/cvEngine.cpp.o
 .PHONY : src/cvEngine.cpp.o
 
 src/cvEngine.i: src/cvEngine.cpp.i
@@ -289,9 +289,9 @@ src/cvEngine.i: src/cvEngine.cpp.i
 # target to preprocess a source file
 src/cvEngine.cpp.i:
 	$(MAKE) -f CMakeFiles/kpts_detect_match.dir/build.make CMakeFiles/kpts_detect_match.dir/src/cvEngine.cpp.i
-	$(MAKE) -f CMakeFiles/compute_f_matrix.dir/build.make CMakeFiles/compute_f_matrix.dir/src/cvEngine.cpp.i
-	$(MAKE) -f CMakeFiles/compute_pose.dir/build.make CMakeFiles/compute_pose.dir/src/cvEngine.cpp.i
 	$(MAKE) -f CMakeFiles/compute_e_matrix.dir/build.make CMakeFiles/compute_e_matrix.dir/src/cvEngine.cpp.i
+	$(MAKE) -f CMakeFiles/compute_f_matrix.dir/build.make CMakeFiles/compute_f_matrix.dir/src/cvEngine.cpp.i
+	$(MAKE) -f CMakeFiles/monoVO.dir/build.make CMakeFiles/monoVO.dir/src/cvEngine.cpp.i
 .PHONY : src/cvEngine.cpp.i
 
 src/cvEngine.s: src/cvEngine.cpp.s
@@ -301,9 +301,9 @@ src/cvEngine.s: src/cvEngine.cpp.s
 # target to generate assembly for a file
 src/cvEngine.cpp.s:
 	$(MAKE) -f CMakeFiles/kpts_detect_match.dir/build.make CMakeFiles/kpts_detect_match.dir/src/cvEngine.cpp.s
-	$(MAKE) -f CMakeFiles/compute_f_matrix.dir/build.make CMakeFiles/compute_f_matrix.dir/src/cvEngine.cpp.s
-	$(MAKE) -f CMakeFiles/compute_pose.dir/build.make CMakeFiles/compute_pose.dir/src/cvEngine.cpp.s
 	$(MAKE) -f CMakeFiles/compute_e_matrix.dir/build.make CMakeFiles/compute_e_matrix.dir/src/cvEngine.cpp.s
+	$(MAKE) -f CMakeFiles/compute_f_matrix.dir/build.make CMakeFiles/compute_f_matrix.dir/src/cvEngine.cpp.s
+	$(MAKE) -f CMakeFiles/monoVO.dir/build.make CMakeFiles/monoVO.dir/src/cvEngine.cpp.s
 .PHONY : src/cvEngine.cpp.s
 
 src/matching2D.o: src/matching2D.cpp.o
@@ -313,9 +313,9 @@ src/matching2D.o: src/matching2D.cpp.o
 # target to build an object file
 src/matching2D.cpp.o:
 	$(MAKE) -f CMakeFiles/kpts_detect_match.dir/build.make CMakeFiles/kpts_detect_match.dir/src/matching2D.cpp.o
-	$(MAKE) -f CMakeFiles/compute_f_matrix.dir/build.make CMakeFiles/compute_f_matrix.dir/src/matching2D.cpp.o
-	$(MAKE) -f CMakeFiles/compute_pose.dir/build.make CMakeFiles/compute_pose.dir/src/matching2D.cpp.o
 	$(MAKE) -f CMakeFiles/compute_e_matrix.dir/build.make CMakeFiles/compute_e_matrix.dir/src/matching2D.cpp.o
+	$(MAKE) -f CMakeFiles/compute_f_matrix.dir/build.make CMakeFiles/compute_f_matrix.dir/src/matching2D.cpp.o
+	$(MAKE) -f CMakeFiles/monoVO.dir/build.make CMakeFiles/monoVO.dir/src/matching2D.cpp.o
 .PHONY : src/matching2D.cpp.o
 
 src/matching2D.i: src/matching2D.cpp.i
@@ -325,9 +325,9 @@ src/matching2D.i: src/matching2D.cpp.i
 # target to preprocess a source file
 src/matching2D.cpp.i:
 	$(MAKE) -f CMakeFiles/kpts_detect_match.dir/build.make CMakeFiles/kpts_detect_match.dir/src/matching2D.cpp.i
-	$(MAKE) -f CMakeFiles/compute_f_matrix.dir/build.make CMakeFiles/compute_f_matrix.dir/src/matching2D.cpp.i
-	$(MAKE) -f CMakeFiles/compute_pose.dir/build.make CMakeFiles/compute_pose.dir/src/matching2D.cpp.i
 	$(MAKE) -f CMakeFiles/compute_e_matrix.dir/build.make CMakeFiles/compute_e_matrix.dir/src/matching2D.cpp.i
+	$(MAKE) -f CMakeFiles/compute_f_matrix.dir/build.make CMakeFiles/compute_f_matrix.dir/src/matching2D.cpp.i
+	$(MAKE) -f CMakeFiles/monoVO.dir/build.make CMakeFiles/monoVO.dir/src/matching2D.cpp.i
 .PHONY : src/matching2D.cpp.i
 
 src/matching2D.s: src/matching2D.cpp.s
@@ -337,37 +337,10 @@ src/matching2D.s: src/matching2D.cpp.s
 # target to generate assembly for a file
 src/matching2D.cpp.s:
 	$(MAKE) -f CMakeFiles/kpts_detect_match.dir/build.make CMakeFiles/kpts_detect_match.dir/src/matching2D.cpp.s
-	$(MAKE) -f CMakeFiles/compute_f_matrix.dir/build.make CMakeFiles/compute_f_matrix.dir/src/matching2D.cpp.s
-	$(MAKE) -f CMakeFiles/compute_pose.dir/build.make CMakeFiles/compute_pose.dir/src/matching2D.cpp.s
 	$(MAKE) -f CMakeFiles/compute_e_matrix.dir/build.make CMakeFiles/compute_e_matrix.dir/src/matching2D.cpp.s
+	$(MAKE) -f CMakeFiles/compute_f_matrix.dir/build.make CMakeFiles/compute_f_matrix.dir/src/matching2D.cpp.s
+	$(MAKE) -f CMakeFiles/monoVO.dir/build.make CMakeFiles/monoVO.dir/src/matching2D.cpp.s
 .PHONY : src/matching2D.cpp.s
-
-src/render.o: src/render.cpp.o
-
-.PHONY : src/render.o
-
-# target to build an object file
-src/render.cpp.o:
-	$(MAKE) -f CMakeFiles/compute_pose.dir/build.make CMakeFiles/compute_pose.dir/src/render.cpp.o
-.PHONY : src/render.cpp.o
-
-src/render.i: src/render.cpp.i
-
-.PHONY : src/render.i
-
-# target to preprocess a source file
-src/render.cpp.i:
-	$(MAKE) -f CMakeFiles/compute_pose.dir/build.make CMakeFiles/compute_pose.dir/src/render.cpp.i
-.PHONY : src/render.cpp.i
-
-src/render.s: src/render.cpp.s
-
-.PHONY : src/render.s
-
-# target to generate assembly for a file
-src/render.cpp.s:
-	$(MAKE) -f CMakeFiles/compute_pose.dir/build.make CMakeFiles/compute_pose.dir/src/render.cpp.s
-.PHONY : src/render.cpp.s
 
 # Help Target
 help:
@@ -377,31 +350,28 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... kpts_detect_match"
-	@echo "... compute_f_matrix"
-	@echo "... compute_pose"
 	@echo "... rebuild_cache"
 	@echo "... compute_e_matrix"
+	@echo "... compute_f_matrix"
+	@echo "... monoVO"
 	@echo "... examples/compute_e_matrix.o"
 	@echo "... examples/compute_e_matrix.i"
 	@echo "... examples/compute_e_matrix.s"
 	@echo "... examples/compute_f_matrix.o"
 	@echo "... examples/compute_f_matrix.i"
 	@echo "... examples/compute_f_matrix.s"
-	@echo "... examples/compute_pose.o"
-	@echo "... examples/compute_pose.i"
-	@echo "... examples/compute_pose.s"
 	@echo "... examples/feature_tracking.o"
 	@echo "... examples/feature_tracking.i"
 	@echo "... examples/feature_tracking.s"
+	@echo "... examples/monoVO.o"
+	@echo "... examples/monoVO.i"
+	@echo "... examples/monoVO.s"
 	@echo "... src/cvEngine.o"
 	@echo "... src/cvEngine.i"
 	@echo "... src/cvEngine.s"
 	@echo "... src/matching2D.o"
 	@echo "... src/matching2D.i"
 	@echo "... src/matching2D.s"
-	@echo "... src/render.o"
-	@echo "... src/render.i"
-	@echo "... src/render.s"
 .PHONY : help
 
 

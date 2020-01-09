@@ -71,8 +71,8 @@ int tapl::cve::detectAndMatchKpts(RingBuffer<tapl::DataFrame> &dataBuffer, bool 
             string matcherType = "MAT_BF";         // MAT_BF, MAT_FLANN
             string descriptorType = "DES_BINARY";  // DES_BINARY, DES_HOG
             string selectorType = "SEL_KNN";       // SEL_NN, SEL_KNN
-            matchDescriptors(dataBuffer.get_ptr(imgIndex - 1)->keypoints, dataBuffer.get_ptr(imgIndex)->keypoints,
-                             dataBuffer.get_ptr(imgIndex - 1)->descriptors, dataBuffer.get_ptr(imgIndex)->descriptors,
+            matchDescriptors(dataBuffer.get_ptr(imgIndex)->keypoints, dataBuffer.get_ptr(imgIndex - 1)->keypoints,
+                             dataBuffer.get_ptr(imgIndex)->descriptors, dataBuffer.get_ptr(imgIndex - 1)->descriptors,
                              matches, descriptorType, matcherType, selectorType);
 
             // store matches in current data frame
@@ -99,8 +99,8 @@ int tapl::cve::getFundamentalMatrix(RingBuffer<tapl::DataFrame> &dataBuffer) {
             std::vector<cv::Point2f> matched_points1;
             std::vector<cv::Point2f> matched_points2;
             for (auto matches: dataBuffer.get_ptr(imgIndex)->kptMatches) {
-                matched_points1.push_back(dataBuffer.get_ptr(imgIndex - 1)->keypoints[matches.queryIdx].pt);
-                matched_points2.push_back(dataBuffer.get_ptr(imgIndex)->keypoints[matches.trainIdx].pt);
+                matched_points1.push_back(dataBuffer.get_ptr(imgIndex)->keypoints[matches.queryIdx].pt);
+                matched_points2.push_back(dataBuffer.get_ptr(imgIndex - 1)->keypoints[matches.trainIdx].pt);
             }
             cv::Mat F = cv::findFundamentalMat(matched_points1, matched_points2, cv::FM_RANSAC, 3, 0.99);
             // store the fundamental matrix in current data frame
@@ -126,19 +126,11 @@ int tapl::cve::getEssentialMatrix(RingBuffer<tapl::DataFrame> &dataBuffer, cv::M
             std::vector<cv::Point2f> matched_points1;
             std::vector<cv::Point2f> matched_points2;
             for (auto matches: dataBuffer.get_ptr(imgIndex)->kptMatches) {
-                matched_points1.push_back(dataBuffer.get_ptr(imgIndex - 1)->keypoints[matches.queryIdx].pt);
-                matched_points2.push_back(dataBuffer.get_ptr(imgIndex)->keypoints[matches.trainIdx].pt);
+                matched_points1.push_back(dataBuffer.get_ptr(imgIndex)->keypoints[matches.queryIdx].pt);
+                matched_points2.push_back(dataBuffer.get_ptr(imgIndex - 1)->keypoints[matches.trainIdx].pt);
             }
 
             cv::Mat essential_matrix = cv::findEssentialMat(matched_points1, matched_points2, camera_matrix, cv::RANSAC, 0.99, 2.0);
-
-            cv::Mat R, t;
-            cv::recoverPose(essential_matrix, matched_points1, matched_points2, camera_matrix, R, t);
-
-            cout << "R: " << endl;
-            cout << R << endl;
-            cout << "t:" << endl;
-            cout << t << endl;
 
             /* Compute Essential Matrix */
             // cv::Mat essential_matrix = camera_matrix.t() * dataBuffer.get_ptr(imgIndex)->F * camera_matrix;
@@ -180,43 +172,43 @@ int tapl::cve::getPose(RingBuffer<tapl::DataFrame> &dataBuffer, cv::Mat &camera_
         /* Loop over all the images */
         for (size_t imgIndex = 1; imgIndex < dataBuffer.getSize(); imgIndex++) {
             // store matched keypoints as type Point2f
-            std::vector<cv::Point2f> matched_points1;
-            std::vector<cv::Point2f> matched_points2;
+            std::vector<cv::Point2f> currMatch;
+            std::vector<cv::Point2f> prevMatch;
             for (auto matches: dataBuffer.get_ptr(imgIndex)->kptMatches) {
-                matched_points1.push_back(dataBuffer.get_ptr(imgIndex - 1)->keypoints[matches.queryIdx].pt);
-                matched_points2.push_back(dataBuffer.get_ptr(imgIndex)->keypoints[matches.trainIdx].pt);
+                currMatch.push_back(dataBuffer.get_ptr(imgIndex)->keypoints[matches.queryIdx].pt);
+                prevMatch.push_back(dataBuffer.get_ptr(imgIndex - 1)->keypoints[matches.trainIdx].pt);
             }
 
             cv::Mat mask;
-            cv::Mat essential_matrix = cv::findEssentialMat(matched_points1, matched_points2, camera_matrix, cv::RANSAC, 0.99, 2.0, mask);
+            cv::Mat essential_matrix = cv::findEssentialMat(currMatch, prevMatch, camera_matrix, cv::RANSAC, 0.99, 2.0, mask);
 
             cv::Mat R, t;
             cv::Mat triangulated_points;
-            cv::recoverPose(essential_matrix, matched_points1, matched_points2, camera_matrix, R, t, 50, mask);
-            //cv::recoverPose(essential_matrix, matched_points1, matched_points2, camera_matrix, R, t, 50, mask, triangulated_points);
+            cv::recoverPose(essential_matrix, currMatch, prevMatch, camera_matrix, R, t, 50, mask);
 
             std::vector<cv::Point2d> triangulation_points1, triangulation_points2;
             for(int i = 0; i < mask.rows; i++) {
                 if(mask.at<unsigned char>(i)){
                 triangulation_points1.push_back 
-                            (cv::Point2d((double)matched_points1[i].x,(double)matched_points1[i].y));
+                            (cv::Point2d((double)currMatch[i].x,(double)currMatch[i].y));
                 triangulation_points2.push_back 
-                            (cv::Point2d((double)matched_points2[i].x,(double)matched_points2[i].y));
+                            (cv::Point2d((double)prevMatch[i].x,(double)prevMatch[i].y));
                 }
             }
-            cv::Mat P0 = cv::Mat::eye(3, 4, CV_64FC1);
             cv::Mat P1 = cv::Mat::eye(3, 4, CV_64FC1);
+            cv::Mat P2 = cv::Mat::eye(3, 4, CV_64FC1);
+            cv::Mat Rinv = R.inv();
             R.copyTo(P1.rowRange(0,3).colRange(0,3));
             t.copyTo(P1.rowRange(0,3).col(3));
             cv::Mat point3d_homo;
             if((triangulation_points1.size() > 0) && (triangulation_points2.size() > 0)) {
-                cv::triangulatePoints(camera_matrix * P0, camera_matrix * P1, 
+                cv::triangulatePoints(camera_matrix * P2, camera_matrix * P1, 
                                         triangulation_points1, triangulation_points2,
                                         triangulated_points);
             }
 
             /* Populate the Pose */
-            dataBuffer.get_ptr(imgIndex)->pose.R = R;
+            dataBuffer.get_ptr(imgIndex)->pose.R = Rinv;
             dataBuffer.get_ptr(imgIndex)->pose.t = t;
 
             /* convert rodrigues to euler angle */

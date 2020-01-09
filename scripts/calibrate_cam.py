@@ -69,7 +69,7 @@ if __name__ == '__main__':
     # print(dist)
     
     # # # Dump the Camera Model and Distortion Matrix into a yaml file
-    fname = "camera_model.yaml"
+    fname = "../data/calib/camera_model.yaml"
     # cam_model = cv2.FileStorage(fname, cv2.FILE_STORAGE_WRITE)
     # cam_model.write("camera_matrix", mtx)
     # cam_model.write("dist_coeff", dist)
