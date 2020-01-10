@@ -21,7 +21,7 @@ Goal of this library is to provide an easy and quick way of implementing several
 
 #### Euclidean Clustering within a point-cloud using kd-tree for storing points.  
 
- - C++ implementation of kd-tree and euclidean clustering in *src/ptEngine.cpp*  
+ - C++ implementation of RANSAC for ground segmentation, kd-tree and euclidean clustering in *src/ptEngine.cpp*  
 
 ![](media/lidar_objects_front_side.gif)
 
