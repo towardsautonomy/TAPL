@@ -1,0 +1,114 @@
+\hypertarget{classtapl_1_1pte_1_1Line}{}\section{tapl\+:\+:pte\+:\+:Line$<$ PointT $>$ Class Template Reference}
+\label{classtapl_1_1pte_1_1Line}\index{tapl\+::pte\+::\+Line$<$ Point\+T $>$@{tapl\+::pte\+::\+Line$<$ Point\+T $>$}}
+
+
+{\ttfamily \#include $<$pt\+Engine.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classtapl_1_1pte_1_1Line_a3484fb0de3bc1bcf2bb22b4943330979}{Line} ()
+\item 
+\hyperlink{classtapl_1_1pte_1_1Line_a3ef1f4fbb2ae11c564176fffc4befe74}{$\sim$\+Line} ()
+\item 
+std\+::vector$<$ float $>$ \hyperlink{classtapl_1_1pte_1_1Line_aa1de142cfa7dd5b26093a99df05d9f8c}{fit\+S\+VD} (std\+::vector$<$ float $>$ \&x, std\+::vector$<$ float $>$ \&y)
+\item 
+std\+::vector$<$ float $>$ \hyperlink{classtapl_1_1pte_1_1Line_a705b09b731117dae2d47d91a423ff828}{fit\+LS} (std\+::vector$<$ float $>$ \&x, std\+::vector$<$ float $>$ \&y)
+\item 
+float \hyperlink{classtapl_1_1pte_1_1Line_a97f6d7505cead12ac6f82d84ca0bf92a}{dist\+To\+Point} (std\+::vector$<$ float $>$ line\+\_\+coeffs, PointT point)
+\item 
+std\+::unordered\+\_\+set$<$ int $>$ \hyperlink{classtapl_1_1pte_1_1Line_a50a79f0b345fd3b9fb830a035ccf8e1d}{Ransac} (typename pcl\+::\+Point\+Cloud$<$ PointT $>$\+::Ptr cloud, int max\+Iterations, float distance\+Tol)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename PointT$>$\\*
+class tapl\+::pte\+::\+Line$<$ Point\+T $>$}
+
+
+
+Definition at line 33 of file pt\+Engine.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{tapl\+::pte\+::\+Line@{tapl\+::pte\+::\+Line}!Line@{Line}}
+\index{Line@{Line}!tapl\+::pte\+::\+Line@{tapl\+::pte\+::\+Line}}
+\subsubsection[{\texorpdfstring{Line()}{Line()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename PointT $>$ {\bf tapl\+::pte\+::\+Line}$<$ PointT $>$\+::{\bf Line} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classtapl_1_1pte_1_1Line_a3484fb0de3bc1bcf2bb22b4943330979}{}\label{classtapl_1_1pte_1_1Line_a3484fb0de3bc1bcf2bb22b4943330979}
+
+
+Definition at line 8 of file pt\+Engine.\+cpp.
+
+\index{tapl\+::pte\+::\+Line@{tapl\+::pte\+::\+Line}!````~Line@{$\sim$\+Line}}
+\index{````~Line@{$\sim$\+Line}!tapl\+::pte\+::\+Line@{tapl\+::pte\+::\+Line}}
+\subsubsection[{\texorpdfstring{$\sim$\+Line()}{~Line()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename PointT $>$ {\bf tapl\+::pte\+::\+Line}$<$ PointT $>$\+::$\sim${\bf Line} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classtapl_1_1pte_1_1Line_a3ef1f4fbb2ae11c564176fffc4befe74}{}\label{classtapl_1_1pte_1_1Line_a3ef1f4fbb2ae11c564176fffc4befe74}
+
+
+Definition at line 12 of file pt\+Engine.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{tapl\+::pte\+::\+Line@{tapl\+::pte\+::\+Line}!dist\+To\+Point@{dist\+To\+Point}}
+\index{dist\+To\+Point@{dist\+To\+Point}!tapl\+::pte\+::\+Line@{tapl\+::pte\+::\+Line}}
+\subsubsection[{\texorpdfstring{dist\+To\+Point(std\+::vector$<$ float $>$ line\+\_\+coeffs, Point\+T point)}{distToPoint(std::vector< float > line_coeffs, PointT point)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename PointT $>$ float {\bf tapl\+::pte\+::\+Line}$<$ PointT $>$\+::dist\+To\+Point (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ float $>$}]{line\+\_\+coeffs, }
+\item[{PointT}]{point}
+\end{DoxyParamCaption}
+)}\hypertarget{classtapl_1_1pte_1_1Line_a97f6d7505cead12ac6f82d84ca0bf92a}{}\label{classtapl_1_1pte_1_1Line_a97f6d7505cead12ac6f82d84ca0bf92a}
+
+
+Definition at line 93 of file pt\+Engine.\+cpp.
+
+\index{tapl\+::pte\+::\+Line@{tapl\+::pte\+::\+Line}!fit\+LS@{fit\+LS}}
+\index{fit\+LS@{fit\+LS}!tapl\+::pte\+::\+Line@{tapl\+::pte\+::\+Line}}
+\subsubsection[{\texorpdfstring{fit\+L\+S(std\+::vector$<$ float $>$ \&x, std\+::vector$<$ float $>$ \&y)}{fitLS(std::vector< float > &x, std::vector< float > &y)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename PointT $>$ std\+::vector$<$ float $>$ {\bf tapl\+::pte\+::\+Line}$<$ PointT $>$\+::fit\+LS (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ float $>$ \&}]{x, }
+\item[{std\+::vector$<$ float $>$ \&}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{classtapl_1_1pte_1_1Line_a705b09b731117dae2d47d91a423ff828}{}\label{classtapl_1_1pte_1_1Line_a705b09b731117dae2d47d91a423ff828}
+
+
+Definition at line 49 of file pt\+Engine.\+cpp.
+
+\index{tapl\+::pte\+::\+Line@{tapl\+::pte\+::\+Line}!fit\+S\+VD@{fit\+S\+VD}}
+\index{fit\+S\+VD@{fit\+S\+VD}!tapl\+::pte\+::\+Line@{tapl\+::pte\+::\+Line}}
+\subsubsection[{\texorpdfstring{fit\+S\+V\+D(std\+::vector$<$ float $>$ \&x, std\+::vector$<$ float $>$ \&y)}{fitSVD(std::vector< float > &x, std::vector< float > &y)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename PointT $>$ std\+::vector$<$ float $>$ {\bf tapl\+::pte\+::\+Line}$<$ PointT $>$\+::fit\+S\+VD (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ float $>$ \&}]{x, }
+\item[{std\+::vector$<$ float $>$ \&}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{classtapl_1_1pte_1_1Line_aa1de142cfa7dd5b26093a99df05d9f8c}{}\label{classtapl_1_1pte_1_1Line_aa1de142cfa7dd5b26093a99df05d9f8c}
+
+
+Definition at line 15 of file pt\+Engine.\+cpp.
+
+\index{tapl\+::pte\+::\+Line@{tapl\+::pte\+::\+Line}!Ransac@{Ransac}}
+\index{Ransac@{Ransac}!tapl\+::pte\+::\+Line@{tapl\+::pte\+::\+Line}}
+\subsubsection[{\texorpdfstring{Ransac(typename pcl\+::\+Point\+Cloud$<$ Point\+T $>$\+::\+Ptr cloud, int max\+Iterations, float distance\+Tol)}{Ransac(typename pcl::PointCloud< PointT >::Ptr cloud, int maxIterations, float distanceTol)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename PointT $>$ std\+::unordered\+\_\+set$<$ int $>$ {\bf tapl\+::pte\+::\+Line}$<$ PointT $>$\+::Ransac (
+\begin{DoxyParamCaption}
+\item[{typename pcl\+::\+Point\+Cloud$<$ PointT $>$\+::Ptr}]{cloud, }
+\item[{int}]{max\+Iterations, }
+\item[{float}]{distance\+Tol}
+\end{DoxyParamCaption}
+)}\hypertarget{classtapl_1_1pte_1_1Line_a50a79f0b345fd3b9fb830a035ccf8e1d}{}\label{classtapl_1_1pte_1_1Line_a50a79f0b345fd3b9fb830a035ccf8e1d}
+
+
+Definition at line 102 of file pt\+Engine.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+tapl/\hyperlink{ptEngine_8hpp}{pt\+Engine.\+hpp}\item 
+tapl/\hyperlink{ptEngine_8cpp}{pt\+Engine.\+cpp}\end{DoxyCompactItemize}

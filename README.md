@@ -1,11 +1,8 @@
 # Towards Autonomy Perception Library (TAPL)
 
-Goal of this library is to provide an easy and quick way of implementing several well known algorithms like Visual Odometry, Visual SLAM, RANSAC, PnP, Bundle Adjustment etc.
+Goal of this library is to provide an easy and quick way of implementing perception pipelines. 
 
-## Prerequisites  
-
- - OpenCV >= 4.1
- - PCL >= 1.2
+![](media/tapl_architecture.png)
 
 ## Examples of Perception Task  
 
@@ -35,15 +32,39 @@ Goal of this library is to provide an easy and quick way of implementing several
 
  - C++ implementation of RANSAC for line and plane fitting using both SVD and least-square methods are provided in *cve/ptEngine.cpp* which can be simply used as an API.  
 
-<p float="left">
+<!-- <p float="left">
   <img src="media/line_fitting.png" width="200" height="200" />
   <img src="media/plane_fitting.png" width="400" height="200"/> 
-</p>
+</p> -->
 
-TODO Notes:
-
- - one header file 'tapl.h' at the parent location which includes everythin under 'include/'. This should be the only file that needs to be included by any other code.  
- - modify the data structure *DataFrame* to use new *structs* *CameraFrame*. Another struct *StereoCamFrame*  uses two instances of it for left and right camera frames. 
- - For each data, use a boolean flag to specify if it exists.  
- - Use a struct constructor to initialize the struct and set false flags.  
+Line Fitting using RANSAC     |  Plane Fitting using RANSAC
+:----------------------------:|:-------------------------:
+![ ](media/line_fitting.png)  |  ![ ](media/plane_fitting.png)
   
+## Prerequisites  
+
+ - CMake >= 3.5
+ - OpenCV >= 4.1
+ - PCL >= 1.2
+
+ ## Installation Instructions  
+
+ - Build and install the library as follows.  
+ 
+   ```
+   mkdir build  
+   cd build
+   cmake ..
+   make
+   sudo make install
+   ```
+
+ - Build the examples as follows.  
+
+   ```
+   cd examples
+   mkdir build
+   cd build
+   cmake ..
+   make
+   ```

@@ -1,0 +1,206 @@
+\hypertarget{structtapl_1_1pte_1_1KdTree}{}\section{tapl\+:\+:pte\+:\+:Kd\+Tree Struct Reference}
+\label{structtapl_1_1pte_1_1KdTree}\index{tapl\+::pte\+::\+Kd\+Tree@{tapl\+::pte\+::\+Kd\+Tree}}
+
+
+{\ttfamily \#include $<$pt\+Engine.\+hpp$>$}
+
+
+
+Collaboration diagram for tapl\+:\+:pte\+:\+:Kd\+Tree\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{structtapl_1_1pte_1_1KdTree__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structtapl_1_1pte_1_1KdTree_a2b25b4997076cce12e0c3b38ed8217fe}{Kd\+Tree} ()
+\item 
+void \hyperlink{structtapl_1_1pte_1_1KdTree_acaf4969659031fa301d1b7e46d6b3b77}{insert} (std\+::vector$<$ float $>$ point, int id)
+\item 
+std\+::vector$<$ int $>$ \hyperlink{structtapl_1_1pte_1_1KdTree_a99b69a039013a6bbc2be7041190168b1}{search} (std\+::vector$<$ float $>$ target, float dist\+Tolerance)
+\item 
+float \hyperlink{structtapl_1_1pte_1_1KdTree_a58fd56f5fcbc48ec95e975cc02471d1b}{dist} (std\+::vector$<$ float $>$ point\+\_\+a, std\+::vector$<$ float $>$ point\+\_\+b)
+\item 
+void \hyperlink{structtapl_1_1pte_1_1KdTree_a388598d62bc5f21a5f5b802a8feecc74}{insert\+Helper} (\hyperlink{structtapl_1_1pte_1_1Node}{Node} $\ast$$\ast$node, unsigned depth, std\+::vector$<$ float $>$ point, int id)
+\item 
+void \hyperlink{structtapl_1_1pte_1_1KdTree_a8add21f54b1f0ee01746582073e9fac5}{search\+Helper} (\hyperlink{structtapl_1_1pte_1_1Node}{Node} $\ast$node, std\+::vector$<$ float $>$ target, float dist\+Tolerance, int depth, std\+::vector$<$ int $>$ \&ids)
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structtapl_1_1pte_1_1Node}{Node} $\ast$ \hyperlink{structtapl_1_1pte_1_1KdTree_a5dd05133b3a9429ae973eda1806c05e7}{root}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 89 of file pt\+Engine.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{tapl\+::pte\+::\+Kd\+Tree@{tapl\+::pte\+::\+Kd\+Tree}!Kd\+Tree@{Kd\+Tree}}
+\index{Kd\+Tree@{Kd\+Tree}!tapl\+::pte\+::\+Kd\+Tree@{tapl\+::pte\+::\+Kd\+Tree}}
+\subsubsection[{\texorpdfstring{Kd\+Tree()}{KdTree()}}]{\setlength{\rightskip}{0pt plus 5cm}tapl\+::pte\+::\+Kd\+Tree\+::\+Kd\+Tree (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{structtapl_1_1pte_1_1KdTree_a2b25b4997076cce12e0c3b38ed8217fe}{}\label{structtapl_1_1pte_1_1KdTree_a2b25b4997076cce12e0c3b38ed8217fe}
+
+
+Definition at line 94 of file pt\+Engine.\+hpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{tapl\+::pte\+::\+Kd\+Tree@{tapl\+::pte\+::\+Kd\+Tree}!dist@{dist}}
+\index{dist@{dist}!tapl\+::pte\+::\+Kd\+Tree@{tapl\+::pte\+::\+Kd\+Tree}}
+\subsubsection[{\texorpdfstring{dist(std\+::vector$<$ float $>$ point\+\_\+a, std\+::vector$<$ float $>$ point\+\_\+b)}{dist(std::vector< float > point_a, std::vector< float > point_b)}}]{\setlength{\rightskip}{0pt plus 5cm}float tapl\+::pte\+::\+Kd\+Tree\+::dist (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ float $>$}]{point\+\_\+a, }
+\item[{std\+::vector$<$ float $>$}]{point\+\_\+b}
+\end{DoxyParamCaption}
+)}\hypertarget{structtapl_1_1pte_1_1KdTree_a58fd56f5fcbc48ec95e975cc02471d1b}{}\label{structtapl_1_1pte_1_1KdTree_a58fd56f5fcbc48ec95e975cc02471d1b}
+
+
+Definition at line 367 of file pt\+Engine.\+cpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structtapl_1_1pte_1_1KdTree_a58fd56f5fcbc48ec95e975cc02471d1b_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{tapl\+::pte\+::\+Kd\+Tree@{tapl\+::pte\+::\+Kd\+Tree}!insert@{insert}}
+\index{insert@{insert}!tapl\+::pte\+::\+Kd\+Tree@{tapl\+::pte\+::\+Kd\+Tree}}
+\subsubsection[{\texorpdfstring{insert(std\+::vector$<$ float $>$ point, int id)}{insert(std::vector< float > point, int id)}}]{\setlength{\rightskip}{0pt plus 5cm}void tapl\+::pte\+::\+Kd\+Tree\+::insert (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ float $>$}]{point, }
+\item[{int}]{id}
+\end{DoxyParamCaption}
+)}\hypertarget{structtapl_1_1pte_1_1KdTree_acaf4969659031fa301d1b7e46d6b3b77}{}\label{structtapl_1_1pte_1_1KdTree_acaf4969659031fa301d1b7e46d6b3b77}
+
+
+Definition at line 359 of file pt\+Engine.\+cpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{structtapl_1_1pte_1_1KdTree_acaf4969659031fa301d1b7e46d6b3b77_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{tapl\+::pte\+::\+Kd\+Tree@{tapl\+::pte\+::\+Kd\+Tree}!insert\+Helper@{insert\+Helper}}
+\index{insert\+Helper@{insert\+Helper}!tapl\+::pte\+::\+Kd\+Tree@{tapl\+::pte\+::\+Kd\+Tree}}
+\subsubsection[{\texorpdfstring{insert\+Helper(\+Node $\ast$$\ast$node, unsigned depth, std\+::vector$<$ float $>$ point, int id)}{insertHelper(Node **node, unsigned depth, std::vector< float > point, int id)}}]{\setlength{\rightskip}{0pt plus 5cm}void tapl\+::pte\+::\+Kd\+Tree\+::insert\+Helper (
+\begin{DoxyParamCaption}
+\item[{{\bf Node} $\ast$$\ast$}]{node, }
+\item[{unsigned}]{depth, }
+\item[{std\+::vector$<$ float $>$}]{point, }
+\item[{int}]{id}
+\end{DoxyParamCaption}
+)}\hypertarget{structtapl_1_1pte_1_1KdTree_a388598d62bc5f21a5f5b802a8feecc74}{}\label{structtapl_1_1pte_1_1KdTree_a388598d62bc5f21a5f5b802a8feecc74}
+
+
+Definition at line 338 of file pt\+Engine.\+cpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{structtapl_1_1pte_1_1KdTree_a388598d62bc5f21a5f5b802a8feecc74_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{tapl\+::pte\+::\+Kd\+Tree@{tapl\+::pte\+::\+Kd\+Tree}!search@{search}}
+\index{search@{search}!tapl\+::pte\+::\+Kd\+Tree@{tapl\+::pte\+::\+Kd\+Tree}}
+\subsubsection[{\texorpdfstring{search(std\+::vector$<$ float $>$ target, float dist\+Tolerance)}{search(std::vector< float > target, float distTolerance)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ int $>$ tapl\+::pte\+::\+Kd\+Tree\+::search (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ float $>$}]{target, }
+\item[{float}]{dist\+Tolerance}
+\end{DoxyParamCaption}
+)}\hypertarget{structtapl_1_1pte_1_1KdTree_a99b69a039013a6bbc2be7041190168b1}{}\label{structtapl_1_1pte_1_1KdTree_a99b69a039013a6bbc2be7041190168b1}
+
+
+Definition at line 394 of file pt\+Engine.\+cpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structtapl_1_1pte_1_1KdTree_a99b69a039013a6bbc2be7041190168b1_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{tapl\+::pte\+::\+Kd\+Tree@{tapl\+::pte\+::\+Kd\+Tree}!search\+Helper@{search\+Helper}}
+\index{search\+Helper@{search\+Helper}!tapl\+::pte\+::\+Kd\+Tree@{tapl\+::pte\+::\+Kd\+Tree}}
+\subsubsection[{\texorpdfstring{search\+Helper(\+Node $\ast$node, std\+::vector$<$ float $>$ target, float dist\+Tolerance, int depth, std\+::vector$<$ int $>$ \&ids)}{searchHelper(Node *node, std::vector< float > target, float distTolerance, int depth, std::vector< int > &ids)}}]{\setlength{\rightskip}{0pt plus 5cm}void tapl\+::pte\+::\+Kd\+Tree\+::search\+Helper (
+\begin{DoxyParamCaption}
+\item[{{\bf Node} $\ast$}]{node, }
+\item[{std\+::vector$<$ float $>$}]{target, }
+\item[{float}]{dist\+Tolerance, }
+\item[{int}]{depth, }
+\item[{std\+::vector$<$ int $>$ \&}]{ids}
+\end{DoxyParamCaption}
+)}\hypertarget{structtapl_1_1pte_1_1KdTree_a8add21f54b1f0ee01746582073e9fac5}{}\label{structtapl_1_1pte_1_1KdTree_a8add21f54b1f0ee01746582073e9fac5}
+
+
+Definition at line 378 of file pt\+Engine.\+cpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{structtapl_1_1pte_1_1KdTree_a8add21f54b1f0ee01746582073e9fac5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{structtapl_1_1pte_1_1KdTree_a8add21f54b1f0ee01746582073e9fac5_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Field Documentation}
+\index{tapl\+::pte\+::\+Kd\+Tree@{tapl\+::pte\+::\+Kd\+Tree}!root@{root}}
+\index{root@{root}!tapl\+::pte\+::\+Kd\+Tree@{tapl\+::pte\+::\+Kd\+Tree}}
+\subsubsection[{\texorpdfstring{root}{root}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Node}$\ast$ tapl\+::pte\+::\+Kd\+Tree\+::root}\hypertarget{structtapl_1_1pte_1_1KdTree_a5dd05133b3a9429ae973eda1806c05e7}{}\label{structtapl_1_1pte_1_1KdTree_a5dd05133b3a9429ae973eda1806c05e7}
+
+
+Definition at line 91 of file pt\+Engine.\+hpp.
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+tapl/\hyperlink{ptEngine_8hpp}{pt\+Engine.\+hpp}\item 
+tapl/\hyperlink{ptEngine_8cpp}{pt\+Engine.\+cpp}\end{DoxyCompactItemize}

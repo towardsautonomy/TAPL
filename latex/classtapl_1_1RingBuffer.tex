@@ -1,0 +1,126 @@
+\hypertarget{classtapl_1_1RingBuffer}{}\section{tapl\+:\+:Ring\+Buffer$<$ T $>$ Class Template Reference}
+\label{classtapl_1_1RingBuffer}\index{tapl\+::\+Ring\+Buffer$<$ T $>$@{tapl\+::\+Ring\+Buffer$<$ T $>$}}
+
+
+Ring Buffer.  
+
+
+
+
+{\ttfamily \#include $<$ring\+Buffer.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classtapl_1_1RingBuffer_ad164e0fc13d245411c356ad687dc504a}{Ring\+Buffer} (uint16\+\_\+t max\+\_\+size)
+\item 
+\hyperlink{classtapl_1_1RingBuffer_a8e9cc0e12555c499b95a9a6e7943a4d7}{$\sim$\+Ring\+Buffer} ()
+\item 
+uint16\+\_\+t \hyperlink{classtapl_1_1RingBuffer_a5dfe06176646eeacfb89c464b15815ff}{get\+Size} ()
+\item 
+void \hyperlink{classtapl_1_1RingBuffer_aa2ab87a6e5b95daf4b9f59e35c24396d}{push} (T const data)
+\item 
+T \hyperlink{classtapl_1_1RingBuffer_aad957e002e355729e1ef044538ccf110}{pop} ()
+\item 
+T \hyperlink{classtapl_1_1RingBuffer_a86bd7fbf2c52259184c4e84feaae78d3}{get} (uint16\+\_\+t index)
+\item 
+T $\ast$ \hyperlink{classtapl_1_1RingBuffer_ae1c8614abf72c558c244c87b8ced7bf7}{get\+\_\+ptr} (uint16\+\_\+t index)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\\*
+class tapl\+::\+Ring\+Buffer$<$ T $>$}
+
+Ring Buffer. 
+
+Definition at line 19 of file ring\+Buffer.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{tapl\+::\+Ring\+Buffer@{tapl\+::\+Ring\+Buffer}!Ring\+Buffer@{Ring\+Buffer}}
+\index{Ring\+Buffer@{Ring\+Buffer}!tapl\+::\+Ring\+Buffer@{tapl\+::\+Ring\+Buffer}}
+\subsubsection[{\texorpdfstring{Ring\+Buffer(uint16\+\_\+t max\+\_\+size)}{RingBuffer(uint16_t max_size)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf tapl\+::\+Ring\+Buffer}$<$ T $>$\+::{\bf Ring\+Buffer} (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t}]{max\+\_\+size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classtapl_1_1RingBuffer_ad164e0fc13d245411c356ad687dc504a}{}\label{classtapl_1_1RingBuffer_ad164e0fc13d245411c356ad687dc504a}
+
+
+Definition at line 34 of file ring\+Buffer.\+hpp.
+
+\index{tapl\+::\+Ring\+Buffer@{tapl\+::\+Ring\+Buffer}!````~Ring\+Buffer@{$\sim$\+Ring\+Buffer}}
+\index{````~Ring\+Buffer@{$\sim$\+Ring\+Buffer}!tapl\+::\+Ring\+Buffer@{tapl\+::\+Ring\+Buffer}}
+\subsubsection[{\texorpdfstring{$\sim$\+Ring\+Buffer()}{~RingBuffer()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf tapl\+::\+Ring\+Buffer}$<$ T $>$\+::$\sim${\bf Ring\+Buffer} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classtapl_1_1RingBuffer_a8e9cc0e12555c499b95a9a6e7943a4d7}{}\label{classtapl_1_1RingBuffer_a8e9cc0e12555c499b95a9a6e7943a4d7}
+
+
+Definition at line 51 of file ring\+Buffer.\+hpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{tapl\+::\+Ring\+Buffer@{tapl\+::\+Ring\+Buffer}!get@{get}}
+\index{get@{get}!tapl\+::\+Ring\+Buffer@{tapl\+::\+Ring\+Buffer}}
+\subsubsection[{\texorpdfstring{get(uint16\+\_\+t index)}{get(uint16_t index)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T {\bf tapl\+::\+Ring\+Buffer}$<$ T $>$\+::get (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classtapl_1_1RingBuffer_a86bd7fbf2c52259184c4e84feaae78d3}{}\label{classtapl_1_1RingBuffer_a86bd7fbf2c52259184c4e84feaae78d3}
+
+
+Definition at line 96 of file ring\+Buffer.\+hpp.
+
+\index{tapl\+::\+Ring\+Buffer@{tapl\+::\+Ring\+Buffer}!get\+\_\+ptr@{get\+\_\+ptr}}
+\index{get\+\_\+ptr@{get\+\_\+ptr}!tapl\+::\+Ring\+Buffer@{tapl\+::\+Ring\+Buffer}}
+\subsubsection[{\texorpdfstring{get\+\_\+ptr(uint16\+\_\+t index)}{get_ptr(uint16_t index)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T$\ast$ {\bf tapl\+::\+Ring\+Buffer}$<$ T $>$\+::get\+\_\+ptr (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classtapl_1_1RingBuffer_ae1c8614abf72c558c244c87b8ced7bf7}{}\label{classtapl_1_1RingBuffer_ae1c8614abf72c558c244c87b8ced7bf7}
+
+
+Definition at line 116 of file ring\+Buffer.\+hpp.
+
+\index{tapl\+::\+Ring\+Buffer@{tapl\+::\+Ring\+Buffer}!get\+Size@{get\+Size}}
+\index{get\+Size@{get\+Size}!tapl\+::\+Ring\+Buffer@{tapl\+::\+Ring\+Buffer}}
+\subsubsection[{\texorpdfstring{get\+Size()}{getSize()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ uint16\+\_\+t {\bf tapl\+::\+Ring\+Buffer}$<$ T $>$\+::get\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classtapl_1_1RingBuffer_a5dfe06176646eeacfb89c464b15815ff}{}\label{classtapl_1_1RingBuffer_a5dfe06176646eeacfb89c464b15815ff}
+
+
+Definition at line 54 of file ring\+Buffer.\+hpp.
+
+\index{tapl\+::\+Ring\+Buffer@{tapl\+::\+Ring\+Buffer}!pop@{pop}}
+\index{pop@{pop}!tapl\+::\+Ring\+Buffer@{tapl\+::\+Ring\+Buffer}}
+\subsubsection[{\texorpdfstring{pop()}{pop()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T {\bf tapl\+::\+Ring\+Buffer}$<$ T $>$\+::pop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classtapl_1_1RingBuffer_aad957e002e355729e1ef044538ccf110}{}\label{classtapl_1_1RingBuffer_aad957e002e355729e1ef044538ccf110}
+
+
+Definition at line 78 of file ring\+Buffer.\+hpp.
+
+\index{tapl\+::\+Ring\+Buffer@{tapl\+::\+Ring\+Buffer}!push@{push}}
+\index{push@{push}!tapl\+::\+Ring\+Buffer@{tapl\+::\+Ring\+Buffer}}
+\subsubsection[{\texorpdfstring{push(\+T const data)}{push(T const data)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf tapl\+::\+Ring\+Buffer}$<$ T $>$\+::push (
+\begin{DoxyParamCaption}
+\item[{T const}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classtapl_1_1RingBuffer_aa2ab87a6e5b95daf4b9f59e35c24396d}{}\label{classtapl_1_1RingBuffer_aa2ab87a6e5b95daf4b9f59e35c24396d}
+
+
+Definition at line 59 of file ring\+Buffer.\+hpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+tapl/\hyperlink{ringBuffer_8hpp}{ring\+Buffer.\+hpp}\end{DoxyCompactItemize}

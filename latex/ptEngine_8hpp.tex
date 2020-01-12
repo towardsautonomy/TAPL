@@ -1,0 +1,108 @@
+\hypertarget{ptEngine_8hpp}{}\section{tapl/pt\+Engine.hpp File Reference}
+\label{ptEngine_8hpp}\index{tapl/pt\+Engine.\+hpp@{tapl/pt\+Engine.\+hpp}}
+
+
+This file provides A\+P\+Is for all point related functions. This includes point-\/cloud processing, point transformations, 
+
+
+{\ttfamily \#include $<$unordered\+\_\+set$>$}\\*
+{\ttfamily \#include $<$chrono$>$}\\*
+{\ttfamily \#include $<$pcl/io/pcd\+\_\+io.\+h$>$}\\*
+{\ttfamily \#include $<$pcl/common/common.\+h$>$}\\*
+{\ttfamily \#include $<$pcl/filters/extract\+\_\+indices.\+h$>$}\\*
+{\ttfamily \#include $<$pcl/filters/voxel\+\_\+grid.\+h$>$}\\*
+{\ttfamily \#include $<$pcl/filters/crop\+\_\+box.\+h$>$}\\*
+{\ttfamily \#include $<$pcl/kdtree/kdtree.\+h$>$}\\*
+{\ttfamily \#include $<$pcl/segmentation/sac\+\_\+segmentation.\+h$>$}\\*
+{\ttfamily \#include $<$pcl/segmentation/extract\+\_\+clusters.\+h$>$}\\*
+{\ttfamily \#include $<$pcl/common/transforms.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}tapl\+Types.\+hpp\char`\"{}}\\*
+Include dependency graph for pt\+Engine.\+hpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ptEngine_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{ptEngine_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classtapl_1_1pte_1_1Line}{tapl\+::pte\+::\+Line$<$ Point\+T $>$}
+\item 
+class \hyperlink{classtapl_1_1pte_1_1Plane}{tapl\+::pte\+::\+Plane$<$ Point\+T $>$}
+\item 
+struct \hyperlink{structtapl_1_1pte_1_1Node}{tapl\+::pte\+::\+Node}
+\item 
+struct \hyperlink{structtapl_1_1pte_1_1KdTree}{tapl\+::pte\+::\+Kd\+Tree}
+\item 
+class \hyperlink{classtapl_1_1pte_1_1EuclideanCluster}{tapl\+::pte\+::\+Euclidean\+Cluster}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacetapl}{tapl}
+\item 
+ \hyperlink{namespacetapl_1_1pte}{tapl\+::pte}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{ptEngine_8hpp_af587759c004d4f86b1c5821066cca76a}{degrees\+To\+Radians} (float angle\+Degrees)
+\item 
+float \hyperlink{ptEngine_8hpp_a4ac6c9ad7b92e0e724726603b7714c88}{radians\+To\+Degrees} (float angle\+Radians)
+\item 
+cv\+::\+Mat \hyperlink{namespacetapl_1_1pte_a874efe99ea9c6366ae0c0329554ad200}{tapl\+::pte\+::world2\+Cam\+Rotation} ()
+\item 
+{\footnotesize template$<$typename PointT $>$ }\\void \hyperlink{namespacetapl_1_1pte_a928126360beb48c632ff331ca560a1b0}{tapl\+::pte\+::world2\+Cam\+Coordinate} (PointT \&point)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file provides A\+P\+Is for all point related functions. This includes point-\/cloud processing, point transformations,
+
+\begin{DoxyAuthor}{Author}
+Shubham Shrivastava 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\index{pt\+Engine.\+hpp@{pt\+Engine.\+hpp}!degrees\+To\+Radians@{degrees\+To\+Radians}}
+\index{degrees\+To\+Radians@{degrees\+To\+Radians}!pt\+Engine.\+hpp@{pt\+Engine.\+hpp}}
+\subsubsection[{\texorpdfstring{degrees\+To\+Radians(float angle\+Degrees)}{degreesToRadians(float angleDegrees)}}]{\setlength{\rightskip}{0pt plus 5cm}float degrees\+To\+Radians (
+\begin{DoxyParamCaption}
+\item[{float}]{angle\+Degrees}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{ptEngine_8hpp_af587759c004d4f86b1c5821066cca76a}{}\label{ptEngine_8hpp_af587759c004d4f86b1c5821066cca76a}
+
+
+Definition at line 27 of file pt\+Engine.\+hpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ptEngine_8hpp_af587759c004d4f86b1c5821066cca76a_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{pt\+Engine.\+hpp@{pt\+Engine.\+hpp}!radians\+To\+Degrees@{radians\+To\+Degrees}}
+\index{radians\+To\+Degrees@{radians\+To\+Degrees}!pt\+Engine.\+hpp@{pt\+Engine.\+hpp}}
+\subsubsection[{\texorpdfstring{radians\+To\+Degrees(float angle\+Radians)}{radiansToDegrees(float angleRadians)}}]{\setlength{\rightskip}{0pt plus 5cm}float radians\+To\+Degrees (
+\begin{DoxyParamCaption}
+\item[{float}]{angle\+Radians}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{ptEngine_8hpp_a4ac6c9ad7b92e0e724726603b7714c88}{}\label{ptEngine_8hpp_a4ac6c9ad7b92e0e724726603b7714c88}
+
+
+Definition at line 28 of file pt\+Engine.\+hpp.
+

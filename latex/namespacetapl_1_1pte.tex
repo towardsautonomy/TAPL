@@ -1,0 +1,90 @@
+\hypertarget{namespacetapl_1_1pte}{}\section{tapl\+:\+:pte Namespace Reference}
+\label{namespacetapl_1_1pte}\index{tapl\+::pte@{tapl\+::pte}}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classtapl_1_1pte_1_1EuclideanCluster}{Euclidean\+Cluster}
+\item 
+struct \hyperlink{structtapl_1_1pte_1_1KdTree}{Kd\+Tree}
+\item 
+class \hyperlink{classtapl_1_1pte_1_1Line}{Line}
+\item 
+struct \hyperlink{structtapl_1_1pte_1_1Node}{Node}
+\item 
+class \hyperlink{classtapl_1_1pte_1_1Plane}{Plane}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+cv\+::\+Mat \hyperlink{namespacetapl_1_1pte_a874efe99ea9c6366ae0c0329554ad200}{world2\+Cam\+Rotation} ()
+\item 
+{\footnotesize template$<$typename PointT $>$ }\\void \hyperlink{namespacetapl_1_1pte_a928126360beb48c632ff331ca560a1b0}{world2\+Cam\+Coordinate} (PointT \&point)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{tapl\+::pte@{tapl\+::pte}!world2\+Cam\+Coordinate@{world2\+Cam\+Coordinate}}
+\index{world2\+Cam\+Coordinate@{world2\+Cam\+Coordinate}!tapl\+::pte@{tapl\+::pte}}
+\subsubsection[{\texorpdfstring{world2\+Cam\+Coordinate(\+Point\+T \&point)}{world2CamCoordinate(PointT &point)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename PointT $>$ void tapl\+::pte\+::world2\+Cam\+Coordinate (
+\begin{DoxyParamCaption}
+\item[{PointT \&}]{point}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacetapl_1_1pte_a928126360beb48c632ff331ca560a1b0}{}\label{namespacetapl_1_1pte_a928126360beb48c632ff331ca560a1b0}
+affine transform on a point
+
+Apply affine transforms on point given in world coordinate
+
+Camera Coordinate System\+: X -\/$>$ To the right Y -\/$>$ Down Z -\/$>$ Forward -\/ Direction where the camera is pointing
+
+World Coordinate System\+: X -\/$>$ Forward -\/ Direction where the camera is pointing Y -\/$>$ To the left Z -\/$>$ Up 
+
+Definition at line 200 of file pt\+Engine.\+hpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacetapl_1_1pte_a928126360beb48c632ff331ca560a1b0_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{tapl\+::pte@{tapl\+::pte}!world2\+Cam\+Rotation@{world2\+Cam\+Rotation}}
+\index{world2\+Cam\+Rotation@{world2\+Cam\+Rotation}!tapl\+::pte@{tapl\+::pte}}
+\subsubsection[{\texorpdfstring{world2\+Cam\+Rotation()}{world2CamRotation()}}]{\setlength{\rightskip}{0pt plus 5cm}cv\+::\+Mat tapl\+::pte\+::world2\+Cam\+Rotation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacetapl_1_1pte_a874efe99ea9c6366ae0c0329554ad200}{}\label{namespacetapl_1_1pte_a874efe99ea9c6366ae0c0329554ad200}
+returns world to camera rotation matrix
+
+Camera Coordinate System\+: X -\/$>$ To the right Y -\/$>$ Down Z -\/$>$ Forward -\/ Direction where the camera is pointing
+
+World Coordinate System\+: X -\/$>$ Forward -\/ Direction where the camera is pointing Y -\/$>$ To the left Z -\/$>$ Up 
+
+Definition at line 149 of file pt\+Engine.\+hpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacetapl_1_1pte_a874efe99ea9c6366ae0c0329554ad200_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacetapl_1_1pte_a874efe99ea9c6366ae0c0329554ad200_icgraph}
+\end{center}
+\end{figure}
+
+

@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
 
 add_definitions(-std=c++17)
 
@@ -7,7 +7,7 @@ set(CMAKE_CXX_FLAGS, "${CXX_FLAGS}")
 add_definitions("-lstdc++fs")
 
 project(TAPL)
-include_directories(include)
+include_directories(${PROJECT_NAME})
 
 # Find OvenCV
 find_package(OpenCV 4.1 REQUIRED)
@@ -24,23 +24,62 @@ link_directories(${PCL_LIBRARY_DIRS})
 add_definitions(${PCL_DEFINITIONS})
 list(REMOVE_ITEM PCL_LIBRARIES "vtkproj4")
 
-## List Executables
-# feature tracking
-add_executable (kpts_detect_match src/matching2D.cpp src/cvEngine.cpp examples/feature_tracking.cpp )
-target_include_directories(kpts_detect_match PUBLIC ./include)
-target_link_libraries (kpts_detect_match ${OpenCV_LIBRARIES} "-lstdc++fs")
+##==============================================##
+##==============Build TAPL Library==============##
+##==============================================##
+## Add TAPL source and include files
+file(GLOB TAPL_src
+    "tapl/*.cpp"
+)
+file(GLOB TAPL_include
+    "*.hpp"
+    "include/*.hpp"
+)
 
-# compute fundamental matrix
-add_executable (compute_f_matrix src/matching2D.cpp src/cvEngine.cpp examples/compute_f_matrix.cpp)
-target_include_directories(compute_f_matrix PUBLIC ./include)
-target_link_libraries (compute_f_matrix ${OpenCV_LIBRARIES})
+# define project
+project(tapl VERSION 1.0.0 LANGUAGES CXX)
 
-# compute essential matrix
-add_executable (compute_e_matrix src/matching2D.cpp src/cvEngine.cpp examples/compute_e_matrix.cpp)
-target_include_directories(compute_e_matrix PUBLIC ./include)
-target_link_libraries (compute_e_matrix ${OpenCV_LIBRARIES})
+# set default build type
+set(DEFAULT_BUILD_TYPE "Release")
 
-# monocular visual odometry
-add_executable (monoVO src/matching2D.cpp src/cvEngine.cpp examples/monoVO.cpp)
-target_include_directories(monoVO PUBLIC ./include)
-target_link_libraries (monoVO ${OpenCV_LIBRARIES} ${PCL_LIBRARIES} "-lstdc++fs")
+if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
+  message(STATUS "Setting build type to '${DEFAULT_BUILD_TYPE}' as none was specified.")
+  set(CMAKE_BUILD_TYPE "${DEFAULT_BUILD_TYPE}" CACHE STRING "Choose the type of build." FORCE)
+  # Set the possible values of build type for cmake-gui
+  set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS "Debug" "Release" "MinSizeRel" "RelWithDebInfo")
+endif()
+
+include(GNUInstallDirs)
+
+# set source files
+set(SOURCE_FILES ${TAPL_src})
+
+# define library
+add_library(${PROJECT_NAME} SHARED ${TAPL_src})
+
+# include directories
+target_include_directories(${PROJECT_NAME} PUBLIC
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+    $<INSTALL_INTERFACE:include>
+    PRIVATE src)
+
+# define library properties
+set_target_properties(${PROJECT_NAME} PROPERTIES
+    VERSION ${PROJECT_VERSION}
+    SOVERSION 1)
+
+set_target_properties(${PROJECT_NAME} PROPERTIES PUBLIC_HEADER ${PROJECT_NAME}/${PROJECT_NAME}.hpp)
+configure_file(${PROJECT_NAME}.pc.in ${PROJECT_NAME}.pc @ONLY)
+
+# install the library
+install(TARGETS ${PROJECT_NAME} EXPORT taplConfig
+    ARCHIVE  DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    LIBRARY  DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    RUNTIME  DESTINATION ${CMAKE_INSTALL_BINDIR}
+    PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+install(DIRECTORY ${PROJECT_NAME} DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME})
+install(EXPORT taplConfig DESTINATION share/${PROJECT_NAME}/cmake)
+export(TARGETS ${PROJECT_NAME} FILE taplConfig.cmake)
+install(FILES ${CMAKE_BINARY_DIR}/${PROJECT_NAME}.pc
+    DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/pkgconfig)

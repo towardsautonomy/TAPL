@@ -1,0 +1,116 @@
+\hypertarget{classtapl_1_1pte_1_1Plane}{}\section{tapl\+:\+:pte\+:\+:Plane$<$ PointT $>$ Class Template Reference}
+\label{classtapl_1_1pte_1_1Plane}\index{tapl\+::pte\+::\+Plane$<$ Point\+T $>$@{tapl\+::pte\+::\+Plane$<$ Point\+T $>$}}
+
+
+{\ttfamily \#include $<$pt\+Engine.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classtapl_1_1pte_1_1Plane_afab4f82143c003d0311b04c7d412d40c}{Plane} ()
+\item 
+\hyperlink{classtapl_1_1pte_1_1Plane_a9227e27649697d2d54f21f2cd8e4d6dd}{$\sim$\+Plane} ()
+\item 
+std\+::vector$<$ float $>$ \hyperlink{classtapl_1_1pte_1_1Plane_a3e0c52b8169fd9edf4c5bbb816432348}{fit\+S\+VD} (std\+::vector$<$ float $>$ \&x, std\+::vector$<$ float $>$ \&y, std\+::vector$<$ float $>$ \&z)
+\item 
+std\+::vector$<$ float $>$ \hyperlink{classtapl_1_1pte_1_1Plane_a1f943f3b0304c91e86a75a11579dee95}{fit\+LS} (std\+::vector$<$ float $>$ \&x, std\+::vector$<$ float $>$ \&y, std\+::vector$<$ float $>$ \&z)
+\item 
+float \hyperlink{classtapl_1_1pte_1_1Plane_af3adadd3b24d6c6a5750186e1828b26f}{dist\+To\+Point} (std\+::vector$<$ float $>$ plane\+\_\+coeffs, PointT point)
+\item 
+std\+::unordered\+\_\+set$<$ int $>$ \hyperlink{classtapl_1_1pte_1_1Plane_ad56c96d9b115a8a482e851c8139feb97}{Ransac} (typename pcl\+::\+Point\+Cloud$<$ PointT $>$\+::Ptr cloud, int max\+Iterations, float distance\+To\+Plane)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename PointT$>$\\*
+class tapl\+::pte\+::\+Plane$<$ Point\+T $>$}
+
+
+
+Definition at line 55 of file pt\+Engine.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{tapl\+::pte\+::\+Plane@{tapl\+::pte\+::\+Plane}!Plane@{Plane}}
+\index{Plane@{Plane}!tapl\+::pte\+::\+Plane@{tapl\+::pte\+::\+Plane}}
+\subsubsection[{\texorpdfstring{Plane()}{Plane()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename PointT $>$ {\bf tapl\+::pte\+::\+Plane}$<$ PointT $>$\+::{\bf Plane} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classtapl_1_1pte_1_1Plane_afab4f82143c003d0311b04c7d412d40c}{}\label{classtapl_1_1pte_1_1Plane_afab4f82143c003d0311b04c7d412d40c}
+
+
+Definition at line 173 of file pt\+Engine.\+cpp.
+
+\index{tapl\+::pte\+::\+Plane@{tapl\+::pte\+::\+Plane}!````~Plane@{$\sim$\+Plane}}
+\index{````~Plane@{$\sim$\+Plane}!tapl\+::pte\+::\+Plane@{tapl\+::pte\+::\+Plane}}
+\subsubsection[{\texorpdfstring{$\sim$\+Plane()}{~Plane()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename PointT $>$ {\bf tapl\+::pte\+::\+Plane}$<$ PointT $>$\+::$\sim${\bf Plane} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classtapl_1_1pte_1_1Plane_a9227e27649697d2d54f21f2cd8e4d6dd}{}\label{classtapl_1_1pte_1_1Plane_a9227e27649697d2d54f21f2cd8e4d6dd}
+
+
+Definition at line 177 of file pt\+Engine.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{tapl\+::pte\+::\+Plane@{tapl\+::pte\+::\+Plane}!dist\+To\+Point@{dist\+To\+Point}}
+\index{dist\+To\+Point@{dist\+To\+Point}!tapl\+::pte\+::\+Plane@{tapl\+::pte\+::\+Plane}}
+\subsubsection[{\texorpdfstring{dist\+To\+Point(std\+::vector$<$ float $>$ plane\+\_\+coeffs, Point\+T point)}{distToPoint(std::vector< float > plane_coeffs, PointT point)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename PointT $>$ float {\bf tapl\+::pte\+::\+Plane}$<$ PointT $>$\+::dist\+To\+Point (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ float $>$}]{plane\+\_\+coeffs, }
+\item[{PointT}]{point}
+\end{DoxyParamCaption}
+)}\hypertarget{classtapl_1_1pte_1_1Plane_af3adadd3b24d6c6a5750186e1828b26f}{}\label{classtapl_1_1pte_1_1Plane_af3adadd3b24d6c6a5750186e1828b26f}
+
+
+Definition at line 261 of file pt\+Engine.\+cpp.
+
+\index{tapl\+::pte\+::\+Plane@{tapl\+::pte\+::\+Plane}!fit\+LS@{fit\+LS}}
+\index{fit\+LS@{fit\+LS}!tapl\+::pte\+::\+Plane@{tapl\+::pte\+::\+Plane}}
+\subsubsection[{\texorpdfstring{fit\+L\+S(std\+::vector$<$ float $>$ \&x, std\+::vector$<$ float $>$ \&y, std\+::vector$<$ float $>$ \&z)}{fitLS(std::vector< float > &x, std::vector< float > &y, std::vector< float > &z)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename PointT $>$ std\+::vector$<$ float $>$ {\bf tapl\+::pte\+::\+Plane}$<$ PointT $>$\+::fit\+LS (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ float $>$ \&}]{x, }
+\item[{std\+::vector$<$ float $>$ \&}]{y, }
+\item[{std\+::vector$<$ float $>$ \&}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{classtapl_1_1pte_1_1Plane_a1f943f3b0304c91e86a75a11579dee95}{}\label{classtapl_1_1pte_1_1Plane_a1f943f3b0304c91e86a75a11579dee95}
+
+
+Definition at line 215 of file pt\+Engine.\+cpp.
+
+\index{tapl\+::pte\+::\+Plane@{tapl\+::pte\+::\+Plane}!fit\+S\+VD@{fit\+S\+VD}}
+\index{fit\+S\+VD@{fit\+S\+VD}!tapl\+::pte\+::\+Plane@{tapl\+::pte\+::\+Plane}}
+\subsubsection[{\texorpdfstring{fit\+S\+V\+D(std\+::vector$<$ float $>$ \&x, std\+::vector$<$ float $>$ \&y, std\+::vector$<$ float $>$ \&z)}{fitSVD(std::vector< float > &x, std::vector< float > &y, std::vector< float > &z)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename PointT $>$ std\+::vector$<$ float $>$ {\bf tapl\+::pte\+::\+Plane}$<$ PointT $>$\+::fit\+S\+VD (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ float $>$ \&}]{x, }
+\item[{std\+::vector$<$ float $>$ \&}]{y, }
+\item[{std\+::vector$<$ float $>$ \&}]{z}
+\end{DoxyParamCaption}
+)}\hypertarget{classtapl_1_1pte_1_1Plane_a3e0c52b8169fd9edf4c5bbb816432348}{}\label{classtapl_1_1pte_1_1Plane_a3e0c52b8169fd9edf4c5bbb816432348}
+
+
+Definition at line 180 of file pt\+Engine.\+cpp.
+
+\index{tapl\+::pte\+::\+Plane@{tapl\+::pte\+::\+Plane}!Ransac@{Ransac}}
+\index{Ransac@{Ransac}!tapl\+::pte\+::\+Plane@{tapl\+::pte\+::\+Plane}}
+\subsubsection[{\texorpdfstring{Ransac(typename pcl\+::\+Point\+Cloud$<$ Point\+T $>$\+::\+Ptr cloud, int max\+Iterations, float distance\+To\+Plane)}{Ransac(typename pcl::PointCloud< PointT >::Ptr cloud, int maxIterations, float distanceToPlane)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename PointT $>$ std\+::unordered\+\_\+set$<$ int $>$ {\bf tapl\+::pte\+::\+Plane}$<$ PointT $>$\+::Ransac (
+\begin{DoxyParamCaption}
+\item[{typename pcl\+::\+Point\+Cloud$<$ PointT $>$\+::Ptr}]{cloud, }
+\item[{int}]{max\+Iterations, }
+\item[{float}]{distance\+To\+Plane}
+\end{DoxyParamCaption}
+)}\hypertarget{classtapl_1_1pte_1_1Plane_ad56c96d9b115a8a482e851c8139feb97}{}\label{classtapl_1_1pte_1_1Plane_ad56c96d9b115a8a482e851c8139feb97}
+
+
+Definition at line 270 of file pt\+Engine.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+tapl/\hyperlink{ptEngine_8hpp}{pt\+Engine.\+hpp}\item 
+tapl/\hyperlink{ptEngine_8cpp}{pt\+Engine.\+cpp}\end{DoxyCompactItemize}

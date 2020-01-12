@@ -1,0 +1,99 @@
+Goal of this library is to provide an easy and quick way of implementing perception pipelines.
+
+
+
+\subsection*{Examples of Perception Task}
+
+\paragraph*{Visual Odometry for a sequence of Monocular camera images}
+
+
+\begin{DoxyItemize}
+\item All the A\+PI has been provided in {\itshape src/cv\+Engine.\+cpp}. See usage in {\itshape examples/mono\+V\+O.\+cpp}
+\end{DoxyItemize}
+
+
+
+\paragraph*{Visual Odometry for a sequence of Stereo camera images}
+
+
+\begin{DoxyItemize}
+\item Under development
+\end{DoxyItemize}
+
+\paragraph*{Euclidean Clustering within a point-\/cloud using kd-\/tree for storing points.}
+
+
+\begin{DoxyItemize}
+\item C++ implementation of R\+A\+N\+S\+AC for ground segmentation, kd-\/tree and euclidean clustering in {\itshape src/pt\+Engine.\+cpp}
+\end{DoxyItemize}
+
+
+
+\paragraph*{Image Feature Detection and Tracking}
+
+
+\begin{DoxyItemize}
+\item C++ implementation in {\itshape src/cv\+Engine.\+cpp}
+\end{DoxyItemize}
+
+
+
+\paragraph*{R\+A\+N\+S\+AC for line and plane fitting}
+
+
+\begin{DoxyItemize}
+\item C++ implementation of R\+A\+N\+S\+AC for line and plane fitting using both S\+VD and least-\/square methods are provided in {\itshape cve/pt\+Engine.\+cpp} which can be simply used as an A\+PI.
+\end{DoxyItemize}
+
+\tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*2{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\PBS\centering {\bf Line Fitting using R\+A\+N\+S\+AC }&\PBS\centering {\bf Plane Fitting using R\+A\+N\+S\+AC  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\PBS\centering {\bf Line Fitting using R\+A\+N\+S\+AC }&\PBS\centering {\bf Plane Fitting using R\+A\+N\+S\+AC  }\\\cline{1-2}
+\endhead
+\PBS\centering  &\PBS\centering \\\cline{1-2}
+\end{longtabu}
+\subsection*{Prerequisites}
+
+
+\begin{DoxyItemize}
+\item C\+Make $>$= 3.\+5
+\item Open\+CV $>$= 4.\+1
+\item P\+CL $>$= 1.\+2
+\end{DoxyItemize}
+
+\subsection*{Installation Instructions}
+
+
+\begin{DoxyItemize}
+\item Build and install the library as follows.
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}
+1 mkdir build  
+2 cd build
+3 cmake ..
+4 make
+5 sudo make install
+\end{DoxyCode}
+
+
+
+\begin{DoxyItemize}
+\item Build the examples as follows.
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}
+1 cd examples
+2 mkdir build
+3 cd build
+4 cmake ..
+5 make
+\end{DoxyCode}
+ 
