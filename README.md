@@ -4,7 +4,7 @@ Goal of this library is to provide an easy and quick way of implementing percept
 
 ![](media/tapl_architecture.png)
 
-## [Get Started](#installation-instructions)
+## [**Find on GitHub**](https://github.com/towardsautonomy/TAPL)
 
 ## Examples of Perception Task  
 
