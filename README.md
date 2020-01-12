@@ -49,6 +49,12 @@ Line Fitting using RANSAC     |  Plane Fitting using RANSAC
 
  ## Installation Instructions  
 
+ - Download the library.  
+
+   ```
+   git clone https://github.com/towardsautonomy/TAPL.git
+   ```
+
  - Build and install the library as follows.  
  
    ```
