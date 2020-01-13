@@ -124,9 +124,10 @@ namespace tapl {
                 }
 
                 /** 
-                 * @brief Adds 3-DOF pose.
+                 * @brief Adds 6-DOF pose defined by a 4x4 transformation matrix.
                  * @param[in] scale the scale of the axes
-                 * @param[in] pose the pose to be rendered
+                 * @param[in] pose the pose to be rendered. 4x4 transformation matrix 
+                 *                  combines a 3x3 rotation matrix and a 3x1 translation matrix
                  * @param[in] id the coordinate system object id (default: pose)
                  */
                 void renderPose(double scale, const Eigen::Affine3f& pose, const std::string &id = "pose")
@@ -137,6 +138,7 @@ namespace tapl {
                 /** 
                  * @brief Render a point-cloud
                  * @param[in] cloud point-cloud to be rendered
+                 * @param[in] ptsize size of the point on visualizer to be rendered
                  * @param[in] r specifies red in rgb colorspace for the 
                  *              color of sphere in range of [0.0, 1.0]
                  * @param[in] g specifies green in rgb colorspace for the 
@@ -145,8 +147,8 @@ namespace tapl {
                  *              color of sphere in range of [0.0, 1.0]
                  * @param[in] id the point-cloud object id (default: pose)
                  */
-                // template <typename PointT>
-                void renderPointCloud(const pcl::PointCloud<pcl::PointXYZ>::Ptr& cloud, double ptsize=1.0, double r=1.0, double g=0.0, double b=0.0, const std::string &id = "cloud")
+                template <typename PointT>
+                void renderPointCloud(const typename pcl::PointCloud<PointT>::Ptr& cloud, double ptsize=1.0, double r=1.0, double g=0.0, double b=0.0, const std::string &id = "cloud")
                 {
                     viewer->addPointCloud(cloud, id);
                     viewer->setPointCloudRenderingProperties (pcl::visualization::PCL_VISUALIZER_POINT_SIZE,

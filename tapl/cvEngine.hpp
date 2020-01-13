@@ -49,9 +49,15 @@ namespace tapl {
          * @param[in] descSource descriptors in the source/query image
          * @param[in] descRef descriptors in the reference/train image
          * @param[out] matches descriptor match output
-         * @param[in] descriptorType descriptor types; options: DES_BINARY, DES_HOG
+         * @param[in] normType norm types; options: NORM_HAMMING, NORM_L2
+         *              NORM_HAMMING : Hamming Distance
+         *              L2_HAMMING  : L2 Distance
          * @param[in] matcherType types; options: MAT_BF, MAT_FLANN
+         *              MAT_BF      : Brute-Force Matching
+         *              MAT_FLANN   : FLANN based matching  
          * @param[in] selectorType types; options: SEL_NN, SEL_KNN
+         *              SEL_NN      : Nearest-Neighbor
+         *              SEL_KNN     : K-Nearest-Neighbor
          * 
          * @return tapl::SUCCESS if success
          * @return tapl::FAILURE if failure 
@@ -61,7 +67,7 @@ namespace tapl {
                                             cv::Mat &descSource, 
                                             cv::Mat &descRef,
                                             std::vector<cv::DMatch> &matches, 
-                                            std::string descriptorType = "DES_BINARY", 
+                                            std::string normType = "NORM_HAMMING", 
                                             std::string matcherType = "MAT_BF", 
                                             std::string selectorType = "SEL_KNN");
         /** 

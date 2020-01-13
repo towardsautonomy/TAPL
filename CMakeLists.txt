@@ -27,17 +27,18 @@ list(REMOVE_ITEM PCL_LIBRARIES "vtkproj4")
 ##==============================================##
 ##==============Build TAPL Library==============##
 ##==============================================##
+
+set(TAPL_VERSION, 0.1) 
 ## Add TAPL source and include files
 file(GLOB TAPL_src
     "tapl/*.cpp"
 )
 file(GLOB TAPL_include
-    "*.hpp"
-    "include/*.hpp"
+    "tapl/*.hpp"
 )
 
 # define project
-project(tapl VERSION 1.0.0 LANGUAGES CXX)
+project(tapl VERSION ${TAPL_VERSION} LANGUAGES CXX)
 
 # set default build type
 set(DEFAULT_BUILD_TYPE "Release")
@@ -62,24 +63,24 @@ target_include_directories(${PROJECT_NAME} PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
     $<INSTALL_INTERFACE:include>
-    PRIVATE src)
+    PRIVATE ${PROJECT_NAME})
 
 # define library properties
 set_target_properties(${PROJECT_NAME} PROPERTIES
     VERSION ${PROJECT_VERSION}
-    SOVERSION 1)
+    SOVERSION ${PROJECT_VERSION})
 
 set_target_properties(${PROJECT_NAME} PROPERTIES PUBLIC_HEADER ${PROJECT_NAME}/${PROJECT_NAME}.hpp)
 configure_file(${PROJECT_NAME}.pc.in ${PROJECT_NAME}.pc @ONLY)
 
 # install the library
-install(TARGETS ${PROJECT_NAME} EXPORT taplConfig
+install(TARGETS ${PROJECT_NAME} EXPORT ${PROJECT_NAME}Config
     ARCHIVE  DESTINATION ${CMAKE_INSTALL_LIBDIR}
     LIBRARY  DESTINATION ${CMAKE_INSTALL_LIBDIR}
     RUNTIME  DESTINATION ${CMAKE_INSTALL_BINDIR}
     PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 install(DIRECTORY ${PROJECT_NAME} DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME})
-install(EXPORT taplConfig DESTINATION share/${PROJECT_NAME}/cmake)
-export(TARGETS ${PROJECT_NAME} FILE taplConfig.cmake)
+install(EXPORT ${PROJECT_NAME}Config DESTINATION share/${PROJECT_NAME}/cmake)
+export(TARGETS ${PROJECT_NAME} FILE ${PROJECT_NAME}Config.cmake)
 install(FILES ${CMAKE_BINARY_DIR}/${PROJECT_NAME}.pc
     DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/pkgconfig)

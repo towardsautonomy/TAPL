@@ -202,7 +202,7 @@ tapl::ResultCode tapl::cve::matchDescriptors(std::vector<cv::KeyPoint> &kPtsSour
                                             cv::Mat &descSource, 
                                             cv::Mat &descRef,
                                             std::vector<cv::DMatch> &matches, 
-                                            std::string descriptorType, 
+                                            std::string normType, 
                                             std::string matcherType, 
                                             std::string selectorType    ) {
     // configure matcher
@@ -216,8 +216,8 @@ tapl::ResultCode tapl::cve::matchDescriptors(std::vector<cv::KeyPoint> &kPtsSour
 
     if (matcherType.compare("MAT_BF") == 0)
     {
-        int normType = descriptorType.compare("DES_BINARY") == 0 ? cv::NORM_HAMMING : cv::NORM_L2;
-        matcher = cv::BFMatcher::create(normType, crossCheck);
+        int norm = normType.compare("NORM_HAMMING") == 0 ? cv::NORM_HAMMING : cv::NORM_L2;
+        matcher = cv::BFMatcher::create(norm, crossCheck);
     }
     else if (matcherType.compare("MAT_FLANN") == 0)
     {
