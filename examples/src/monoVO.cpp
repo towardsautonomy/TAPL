@@ -38,8 +38,8 @@ using namespace std;
 int main(int argc, const char *argv[])
 {
     // paths
-    string calibPath = "../../data/calib/camera_model.yaml";
-    string dataPath = "../../data/living_room";
+    string calibPath = "../data/calib/camera_model.yaml";
+    string dataPath = "../data/living_room";
 
     // number of images
     int nImages = -1;   // last file index to load
@@ -168,7 +168,7 @@ int main(int argc, const char *argv[])
             }
 
             pcl::transformPointCloud (*cloud, *cloud, pose);
-            visualizer->renderPointCloud(cloud, 1.0, 1.0, 0.0, 0.0, "cloud_"+std::to_string(imgIndex));
+            visualizer->renderPointCloud<pcl::PointXYZ> (cloud, 1.0, 1.0, 0.0, 0.0, "cloud_"+std::to_string(imgIndex));
             pcl::PointXYZ cam_pose_pt = pcl::PointXYZ(pose(0, 3), pose(1, 3), pose(2, 3));
             visualizer->renderSphere(cam_pose_pt, 0.2, 1.0, 0.0, 0.0, "sphere_"+std::to_string(imgIndex));
             visualizer->renderLine(prev_point, cam_pose_pt, 0.0, 0.0, 1.0, "line_"+std::to_string(imgIndex));

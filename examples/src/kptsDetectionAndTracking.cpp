@@ -22,7 +22,7 @@ using namespace std;
 int main(int argc, const char *argv[])
 {
     // data location
-    string dataPath = "../../data/living_room";
+    string dataPath = "../data/living_room";
 
     // number of images
     int nImages = 10;   // last file index to load

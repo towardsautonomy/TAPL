@@ -15,7 +15,10 @@ namespace tapl {
          * @brief Enumerations for camera view angle
          */
         enum CameraAngle {
-            XY, TopDown, Side, FPS
+            XY,         /*!< Angled XY Camera Position*/
+            TopDown,    /*!< Top Down View */
+            Side,       /*!< Side View */
+            FPS         /*!< First Person View */
         };
 
         /** 
@@ -28,7 +31,7 @@ namespace tapl {
 
             public:
                 // constructor s
-                Visualizer(double r = 0.5, double g = 0.5, double b = 0.5, CameraAngle camAngle = TopDown, double distance = 20.0) :
+                Visualizer(float r = 0., float g = 0., float b = 0., CameraAngle camAngle = TopDown, float distance = 20.0) :
                     viewer(new pcl::visualization::PCLVisualizer ("3D Viewer")) {
                     // set up visualizer
                     viewer->setBackgroundColor (r, g, b);
@@ -54,7 +57,7 @@ namespace tapl {
                  * @param[in] id a unique id for this sphere
                  */
                 template <typename PointT>
-                void renderSphere(const PointT& pt, double radius, const std::string &id)
+                void renderSphere(const PointT& pt, float radius, const std::string &id)
                 {
                     viewer->addSphere (pt, radius, id);
                 }
@@ -73,7 +76,7 @@ namespace tapl {
                  * @param[in] id a unique id for this sphere
                  */
                 template <typename PointT>
-                void renderSphere(const PointT& pt, double radius, double r, double g, double b, const std::string &id)
+                void renderSphere(const PointT& pt, float radius, float r, float g, float b, const std::string &id)
                 {
                     viewer->addSphere (pt, radius, r, g, b, id);
                 }
@@ -105,7 +108,7 @@ namespace tapl {
                  * @param[in] id a unique id for this line
                  */
                 template <typename PointT>
-                void renderLine(const PointT &pt1, const PointT &pt2, double r, double g, double b, const std::string &id)
+                void renderLine(const PointT &pt1, const PointT &pt2, float r, float g, float b, const std::string &id)
                 {
                     viewer->addLine(pt1, pt2, r, g, b, id);
                 }
@@ -118,7 +121,7 @@ namespace tapl {
                  * @param[in] z z-coordinate
                  * @param[in] id the coordinate system object id (default: pose)
                  */
-                void renderPose(double scale, double x, double y, double z, const std::string &id = "pose")
+                void renderPose(float scale, float x, float y, float z, const std::string &id = "pose")
                 {
                     viewer->addCoordinateSystem(scale, x, y, z, id);
                 }
@@ -130,7 +133,7 @@ namespace tapl {
                  *                  combines a 3x3 rotation matrix and a 3x1 translation matrix
                  * @param[in] id the coordinate system object id (default: pose)
                  */
-                void renderPose(double scale, const Eigen::Affine3f& pose, const std::string &id = "pose")
+                void renderPose(float scale, const Eigen::Affine3f& pose, const std::string &id = "pose")
                 {
                     viewer->addCoordinateSystem(scale, pose, id);
                 }
@@ -145,10 +148,10 @@ namespace tapl {
                  *              color of sphere in range of [0.0, 1.0]
                  * @param[in] b specifies blue in rgb colorspace for the 
                  *              color of sphere in range of [0.0, 1.0]
-                 * @param[in] id the point-cloud object id (default: pose)
+                 * @param[in] id the point-cloud object id (default: cloud)
                  */
                 template <typename PointT>
-                void renderPointCloud(const typename pcl::PointCloud<PointT>::Ptr& cloud, double ptsize=1.0, double r=1.0, double g=0.0, double b=0.0, const std::string &id = "cloud")
+                void renderPointCloud(const typename pcl::PointCloud<PointT>::ConstPtr &cloud, float ptsize=1.0, float r=1.0, float g=0.0, float b=0.0, const std::string &id = "cloud")
                 {
                     viewer->addPointCloud(cloud, id);
                     viewer->setPointCloudRenderingProperties (pcl::visualization::PCL_VISUALIZER_POINT_SIZE,
@@ -157,6 +160,37 @@ namespace tapl {
                     viewer->setPointCloudRenderingProperties (pcl::visualization::PCL_VISUALIZER_COLOR,
                                                                 r, g, b,
                                                                 id);
+                }
+
+                /** 
+                 * @brief Render a 3d bounding-box
+                 * @param[in] box 3D Bounding-Box
+                 * @param[in] r specifies red in rgb colorspace for the 
+                 *              color of sphere in range of [0.0, 1.0]
+                 * @param[in] g specifies green in rgb colorspace for the 
+                 *              color of sphere in range of [0.0, 1.0]
+                 * @param[in] b specifies blue in rgb colorspace for the 
+                 *              color of sphere in range of [0.0, 1.0]
+                 * @param[in] opacity opacity of the bounding box in range of [0.0, 1.0]
+                 * @param[in] id the bounding-box object id (default: bbox)
+                 */
+                void renderBbox3d(const BBox3d& box, float r=1.0, float g=0.0, float b=0.0, float opacity=0.5, const std::string &id = "bbox")
+                {
+                    if(opacity > 1.0)
+                        opacity = 1.0;
+                    if(opacity < 0.0)
+                        opacity = 0.0;
+
+                    viewer->addCube(box.x_min, box.x_max, box.y_min, box.y_max, box.z_min, box.z_max, r, g, b, id);
+                    viewer->setShapeRenderingProperties(pcl::visualization::PCL_VISUALIZER_REPRESENTATION, pcl::visualization::PCL_VISUALIZER_REPRESENTATION_WIREFRAME, id);
+                    viewer->setShapeRenderingProperties(pcl::visualization::PCL_VISUALIZER_COLOR, r, g, b, id);
+                    viewer->setShapeRenderingProperties(pcl::visualization::PCL_VISUALIZER_OPACITY, opacity, id);
+
+                    std::string cubeFill = "fill_"+id;
+                    viewer->addCube(box.x_min, box.x_max, box.y_min, box.y_max, box.z_min, box.z_max, r, g, b, cubeFill);
+                    viewer->setShapeRenderingProperties(pcl::visualization::PCL_VISUALIZER_REPRESENTATION, pcl::visualization::PCL_VISUALIZER_REPRESENTATION_SURFACE, cubeFill);
+                    viewer->setShapeRenderingProperties(pcl::visualization::PCL_VISUALIZER_COLOR, r, g, b, cubeFill);
+                    viewer->setShapeRenderingProperties(pcl::visualization::PCL_VISUALIZER_OPACITY, opacity*0.3, cubeFill);
                 }
 
                 /** 
@@ -175,6 +209,15 @@ namespace tapl {
                 void renderSceneAndHold()
                 {
                     while (!viewer->wasStopped ()) viewer->spin();
+                }
+
+                /** 
+                 * @brief Clear the scene
+                 */
+                void clearScene()
+                {
+                    viewer->removeAllPointClouds();
+                    viewer->removeAllShapes();
                 }
         };
     };

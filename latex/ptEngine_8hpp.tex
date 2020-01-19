@@ -59,9 +59,19 @@ float \hyperlink{ptEngine_8hpp_af587759c004d4f86b1c5821066cca76a}{degrees\+To\+R
 float \hyperlink{ptEngine_8hpp_a4ac6c9ad7b92e0e724726603b7714c88}{radians\+To\+Degrees} (float angle\+Radians)
 \item 
 cv\+::\+Mat \hyperlink{namespacetapl_1_1pte_a874efe99ea9c6366ae0c0329554ad200}{tapl\+::pte\+::world2\+Cam\+Rotation} ()
-\item 
+\begin{DoxyCompactList}\small\item\em returns world to camera rotation matrix \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename PointT $>$ }\\void \hyperlink{namespacetapl_1_1pte_a928126360beb48c632ff331ca560a1b0}{tapl\+::pte\+::world2\+Cam\+Coordinate} (PointT \&point)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em affine transform on a point \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename PointT $>$ }\\void \hyperlink{namespacetapl_1_1pte_a48c0b0806659501276e0b33042e2fa5b}{tapl\+::pte\+::downsample\+Cloud} (typename pcl\+::\+Point\+Cloud$<$ PointT $>$\+::Ptr cloud, float resolution)
+\begin{DoxyCompactList}\small\item\em Downsample point-\/cloud. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename PointT $>$ }\\void \hyperlink{namespacetapl_1_1pte_adaa36d31de7cd145e875901dfa13a616}{tapl\+::pte\+::crop\+Cloud} (typename pcl\+::\+Point\+Cloud$<$ PointT $>$\+::Ptr cloud, float x\+\_\+min, float x\+\_\+max, float y\+\_\+min, float y\+\_\+max, float z\+\_\+min, float z\+\_\+max)
+\begin{DoxyCompactList}\small\item\em Crop point-\/cloud given a region of interest. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename PointT $>$ }\\\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{tapl\+::\+Result\+Code} \hyperlink{namespacetapl_1_1pte_aa4fc09affe62218081e85ed5818bf2ef}{tapl\+::pte\+::segment\+Plane} (typename pcl\+::\+Point\+Cloud$<$ PointT $>$\+::Ptr cloud, std\+::pair$<$ typename pcl\+::\+Point\+Cloud$<$ PointT $>$\+::Ptr, typename pcl\+::\+Point\+Cloud$<$ PointT $>$\+::Ptr $>$ \&seg\+Result, int max\+Iterations, float distance\+Threshold, bool use\+P\+CL=false)
+\begin{DoxyCompactList}\small\item\em This function segments a plane within a point-\/cloud. Points within the plane are inliers and other points are outliers. It populates two separate point-\/clouds corresponding to inliers and outliers. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename PointT $>$ }\\std\+::vector$<$ typename pcl\+::\+Point\+Cloud$<$ PointT $>$\+::Ptr $>$ \hyperlink{namespacetapl_1_1pte_a69e06eaa64248177550033adb709fb3d}{tapl\+::pte\+::euclidean\+Clustering} (typename pcl\+::\+Point\+Cloud$<$ PointT $>$\+::Ptr cloud, float cluster\+Tolerance, int min\+Num\+Points, int max\+Num\+Points, bool use\+P\+CL=false)
+\begin{DoxyCompactList}\small\item\em Perform euclidean clustering within a point-\/cloud. Returns a vector of cluster clouds. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename PointT $>$ }\\\hyperlink{structtapl_1_1BBox3d}{tapl\+::\+B\+Box3d} \hyperlink{namespacetapl_1_1pte_ac4b4a53485d62466140d43448496536b}{tapl\+::pte\+::get\+Bounding\+Box} (typename pcl\+::\+Point\+Cloud$<$ PointT $>$\+::Ptr cloud\+Cluster)
+\begin{DoxyCompactList}\small\item\em This function is used to obtain bounding-\/box for a cluster of points. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}

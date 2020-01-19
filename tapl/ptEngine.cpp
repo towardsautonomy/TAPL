@@ -441,5 +441,7 @@ namespace tapl {
 // explicit instantiation to avoid linker error
 template class tapl::pte::Line<pcl::PointXYZ>;
 template class tapl::pte::Line<pcl::PointXYZI>;
+template class tapl::pte::Line<pcl::PointXYZRGB>;
 template class tapl::pte::Plane<pcl::PointXYZ>;
 template class tapl::pte::Plane<pcl::PointXYZI>;
+template class tapl::pte::Plane<pcl::PointXYZRGB>;

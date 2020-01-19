@@ -1,3 +1,4 @@
+
 # Towards Autonomy Perception Library (TAPL)
 
 Goal of this library is to provide an easy and quick way of implementing perception pipelines. 
@@ -10,29 +11,56 @@ Goal of this library is to provide an easy and quick way of implementing percept
 
 #### Visual Odometry for a sequence of Monocular camera images  
 
- - All the API has been provided in *src/cvEngine.cpp*. See usage in *examples/monoVO.cpp* 
+This example is provided at ```examples/src/monoVO.cpp```. It uses a sequence of monocular images to perform visual odometry and build sparse point-cloud. This functionality is provided as an API and can be accessed using the function: ```tapl::cve::computeRelativePose()```.  
+
+**Pipeline**  
+
+  - Read images and push into a ring buffer.  
+  - If more than one image is available in the buffer then:  
+    - Perform keypoint detection and matching.  
+    - Compute essential matrix. 
+    - Compute relative pose (R, t)  
+    - Triangulate good keypoints for which a match is found.  
+  - Compute global pose from this relative pose.  
+
 
 ![](media/mono_vo.gif)
 
-#### Visual Odometry for a sequence of Stereo camera images  
+#### LiDAR Object Detection  
 
- - Under development  
+This example is provided at ```examples/src/lidarObjectDetection.cpp```. It reads in PCD point-cloud files, performs downsampling, ground-plane segmentation, and clustering, and then some post-processing filtering to get 3D Bounding-Box of objects.  
 
-#### Euclidean Clustering within a point-cloud using kd-tree for storing points.  
+**Pipeline**  
 
- - C++ implementation of RANSAC for ground segmentation, kd-tree and euclidean clustering in *src/ptEngine.cpp*  
+  - Load point-cloud data.  
+  - Downsample point-cloud (voxelization).  
+  - Crop the point-cloud based on a region of interest.  
+  - Segment out ground-plane using RANSAC.  
+    - For *n* iterations:  
+      - Choose 3 random points.  
+      - Fit a plane using least-squares.  
+      - Count number of inliers within a certain distance threshold between each point and plane.  
+    - Choose the plane that resulted in maximum number of inliers.  
+    - Implemented as part of ```class tapl::pte::Plane()```.  
+  - Perform Euclidian Clustering within the segmented point-cloud.  
+    - Store the point-cloud as a **KdTree**. Implemented as ```struct tapl::pte::KdTree```.  
+    - Perform euclidean clustering on the KdTree. Implemented as ```class tapl::pte::EuclideanCluster()```.  
+  - Filter and Extract the bounding-boxes.  
+  
+![](media/lidar_object_detection.gif)  
 
-![](media/lidar_objects_front_side.gif)
+![](media/clustering.gif)  
+
 
 #### Image Feature Detection and Tracking  
 
- - C++ implementation in *src/cvEngine.cpp*  
+This example is provided at ```examples/src/kptsDetectionAndTracking.cpp``` and this functionality is implemented as ```tapl::cve::detectAndMatchKpts()```.
 
 ![](media/matching_points.png)
 
 #### RANSAC for line and plane fitting  
 
- - C++ implementation of RANSAC for line and plane fitting using both SVD and least-square methods are provided in *cve/ptEngine.cpp* which can be simply used as an API.  
+ - C++ implementation of RANSAC for line and plane fitting using both SVD and least-square methods are provided as part of ```class tapl::pte::Line()``` and ```class tapl::pte::Plane()```.  
 
 <!-- <p float="left">
   <img src="media/line_fitting.png" width="200" height="200" />
@@ -47,7 +75,8 @@ Line Fitting using RANSAC     |  Plane Fitting using RANSAC
 
  - CMake >= 3.5
  - OpenCV >= 4.1
- - PCL >= 1.2
+ - PCL >= 1.2  
+ - Eigen >= 3.2
 
  ## Installation Instructions  
 

@@ -21,6 +21,18 @@ namespace tapl
     } ResultCode;
 
     /**
+     * @brief 3D Bounding-Box
+     */
+    struct BBox3d {
+        double x_min;                       /*!< min x-coordinate */
+        double x_max;                       /*!< max x-coordinate */
+        double y_min;                       /*!< min y-coordinate */
+        double y_max;                       /*!< max y-coordinate */
+        double z_min;                       /*!< min z-coordinate */
+        double z_max;                       /*!< max z-coordinate */
+    };
+
+    /**
      * @brief 6-DOF Camera Pose
      */
     struct Pose6dof {

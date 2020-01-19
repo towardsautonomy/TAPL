@@ -17,12 +17,200 @@ class \hyperlink{classtapl_1_1pte_1_1Plane}{Plane}
 \begin{DoxyCompactItemize}
 \item 
 cv\+::\+Mat \hyperlink{namespacetapl_1_1pte_a874efe99ea9c6366ae0c0329554ad200}{world2\+Cam\+Rotation} ()
-\item 
+\begin{DoxyCompactList}\small\item\em returns world to camera rotation matrix \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename PointT $>$ }\\void \hyperlink{namespacetapl_1_1pte_a928126360beb48c632ff331ca560a1b0}{world2\+Cam\+Coordinate} (PointT \&point)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em affine transform on a point \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename PointT $>$ }\\void \hyperlink{namespacetapl_1_1pte_a48c0b0806659501276e0b33042e2fa5b}{downsample\+Cloud} (typename pcl\+::\+Point\+Cloud$<$ PointT $>$\+::Ptr cloud, float resolution)
+\begin{DoxyCompactList}\small\item\em Downsample point-\/cloud. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename PointT $>$ }\\void \hyperlink{namespacetapl_1_1pte_adaa36d31de7cd145e875901dfa13a616}{crop\+Cloud} (typename pcl\+::\+Point\+Cloud$<$ PointT $>$\+::Ptr cloud, float x\+\_\+min, float x\+\_\+max, float y\+\_\+min, float y\+\_\+max, float z\+\_\+min, float z\+\_\+max)
+\begin{DoxyCompactList}\small\item\em Crop point-\/cloud given a region of interest. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename PointT $>$ }\\\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{tapl\+::\+Result\+Code} \hyperlink{namespacetapl_1_1pte_aa4fc09affe62218081e85ed5818bf2ef}{segment\+Plane} (typename pcl\+::\+Point\+Cloud$<$ PointT $>$\+::Ptr cloud, std\+::pair$<$ typename pcl\+::\+Point\+Cloud$<$ PointT $>$\+::Ptr, typename pcl\+::\+Point\+Cloud$<$ PointT $>$\+::Ptr $>$ \&seg\+Result, int max\+Iterations, float distance\+Threshold, bool use\+P\+CL=false)
+\begin{DoxyCompactList}\small\item\em This function segments a plane within a point-\/cloud. Points within the plane are inliers and other points are outliers. It populates two separate point-\/clouds corresponding to inliers and outliers. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename PointT $>$ }\\std\+::vector$<$ typename pcl\+::\+Point\+Cloud$<$ PointT $>$\+::Ptr $>$ \hyperlink{namespacetapl_1_1pte_a69e06eaa64248177550033adb709fb3d}{euclidean\+Clustering} (typename pcl\+::\+Point\+Cloud$<$ PointT $>$\+::Ptr cloud, float cluster\+Tolerance, int min\+Num\+Points, int max\+Num\+Points, bool use\+P\+CL=false)
+\begin{DoxyCompactList}\small\item\em Perform euclidean clustering within a point-\/cloud. Returns a vector of cluster clouds. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename PointT $>$ }\\\hyperlink{structtapl_1_1BBox3d}{tapl\+::\+B\+Box3d} \hyperlink{namespacetapl_1_1pte_ac4b4a53485d62466140d43448496536b}{get\+Bounding\+Box} (typename pcl\+::\+Point\+Cloud$<$ PointT $>$\+::Ptr cloud\+Cluster)
+\begin{DoxyCompactList}\small\item\em This function is used to obtain bounding-\/box for a cluster of points. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
+\index{tapl\+::pte@{tapl\+::pte}!crop\+Cloud@{crop\+Cloud}}
+\index{crop\+Cloud@{crop\+Cloud}!tapl\+::pte@{tapl\+::pte}}
+\subsubsection[{\texorpdfstring{crop\+Cloud(typename pcl\+::\+Point\+Cloud$<$ Point\+T $>$\+::\+Ptr cloud, float x\+\_\+min, float x\+\_\+max, float y\+\_\+min, float y\+\_\+max, float z\+\_\+min, float z\+\_\+max)}{cropCloud(typename pcl::PointCloud< PointT >::Ptr cloud, float x_min, float x_max, float y_min, float y_max, float z_min, float z_max)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename PointT $>$ void tapl\+::pte\+::crop\+Cloud (
+\begin{DoxyParamCaption}
+\item[{typename pcl\+::\+Point\+Cloud$<$ PointT $>$\+::Ptr}]{cloud, }
+\item[{float}]{x\+\_\+min, }
+\item[{float}]{x\+\_\+max, }
+\item[{float}]{y\+\_\+min, }
+\item[{float}]{y\+\_\+max, }
+\item[{float}]{z\+\_\+min, }
+\item[{float}]{z\+\_\+max}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacetapl_1_1pte_adaa36d31de7cd145e875901dfa13a616}{}\label{namespacetapl_1_1pte_adaa36d31de7cd145e875901dfa13a616}
+
+
+Crop point-\/cloud given a region of interest. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em cloud} & Point-\/\+Cloud \\
+\hline
+\mbox{\tt in}  & {\em x\+\_\+min} & minimum point x-\/coordinate \\
+\hline
+\mbox{\tt in}  & {\em x\+\_\+max} & maximum point x-\/coordinate \\
+\hline
+\mbox{\tt in}  & {\em y\+\_\+min} & minimum point y-\/coordinate \\
+\hline
+\mbox{\tt in}  & {\em y\+\_\+max} & maximum point y-\/coordinate \\
+\hline
+\mbox{\tt in}  & {\em z\+\_\+min} & minimum point z-\/coordinate \\
+\hline
+\mbox{\tt in}  & {\em z\+\_\+max} & maximum point z-\/coordinate \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 253 of file pt\+Engine.\+hpp.
+
+\index{tapl\+::pte@{tapl\+::pte}!downsample\+Cloud@{downsample\+Cloud}}
+\index{downsample\+Cloud@{downsample\+Cloud}!tapl\+::pte@{tapl\+::pte}}
+\subsubsection[{\texorpdfstring{downsample\+Cloud(typename pcl\+::\+Point\+Cloud$<$ Point\+T $>$\+::\+Ptr cloud, float resolution)}{downsampleCloud(typename pcl::PointCloud< PointT >::Ptr cloud, float resolution)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename PointT $>$ void tapl\+::pte\+::downsample\+Cloud (
+\begin{DoxyParamCaption}
+\item[{typename pcl\+::\+Point\+Cloud$<$ PointT $>$\+::Ptr}]{cloud, }
+\item[{float}]{resolution}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacetapl_1_1pte_a48c0b0806659501276e0b33042e2fa5b}{}\label{namespacetapl_1_1pte_a48c0b0806659501276e0b33042e2fa5b}
+
+
+Downsample point-\/cloud. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em cloud} & Point-\/\+Cloud \\
+\hline
+\mbox{\tt in}  & {\em resolution} & Target resolution for downsampling the cloud \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 232 of file pt\+Engine.\+hpp.
+
+\index{tapl\+::pte@{tapl\+::pte}!euclidean\+Clustering@{euclidean\+Clustering}}
+\index{euclidean\+Clustering@{euclidean\+Clustering}!tapl\+::pte@{tapl\+::pte}}
+\subsubsection[{\texorpdfstring{euclidean\+Clustering(typename pcl\+::\+Point\+Cloud$<$ Point\+T $>$\+::\+Ptr cloud, float cluster\+Tolerance, int min\+Num\+Points, int max\+Num\+Points, bool use\+P\+C\+L=false)}{euclideanClustering(typename pcl::PointCloud< PointT >::Ptr cloud, float clusterTolerance, int minNumPoints, int maxNumPoints, bool usePCL=false)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename PointT $>$ std\+::vector$<$typename pcl\+::\+Point\+Cloud$<$PointT$>$\+::Ptr$>$ tapl\+::pte\+::euclidean\+Clustering (
+\begin{DoxyParamCaption}
+\item[{typename pcl\+::\+Point\+Cloud$<$ PointT $>$\+::Ptr}]{cloud, }
+\item[{float}]{cluster\+Tolerance, }
+\item[{int}]{min\+Num\+Points, }
+\item[{int}]{max\+Num\+Points, }
+\item[{bool}]{use\+P\+CL = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacetapl_1_1pte_a69e06eaa64248177550033adb709fb3d}{}\label{namespacetapl_1_1pte_a69e06eaa64248177550033adb709fb3d}
+
+
+Perform euclidean clustering within a point-\/cloud. Returns a vector of cluster clouds. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em cloud} & point-\/cloud to segment \\
+\hline
+\mbox{\tt in}  & {\em cluster\+Tolerance} & distance tolerance for considering a point as part of the cluster. \\
+\hline
+\mbox{\tt in}  & {\em min\+Num\+Points} & minimum number of points in a neighborhood to be considered as a cluster \\
+\hline
+\mbox{\tt in}  & {\em max\+Num\+Points} & maximum number of points in a neighborhood to be considered as a cluster \\
+\hline
+\mbox{\tt in}  & {\em use\+P\+CL} & Whether to use P\+CL of T\+A\+PL\textquotesingle{}s implementation of R\+A\+N\+S\+AC\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of cluster point-\/clouds 
+\end{DoxyReturn}
+
+
+Definition at line 375 of file pt\+Engine.\+hpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacetapl_1_1pte_a69e06eaa64248177550033adb709fb3d_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{tapl\+::pte@{tapl\+::pte}!get\+Bounding\+Box@{get\+Bounding\+Box}}
+\index{get\+Bounding\+Box@{get\+Bounding\+Box}!tapl\+::pte@{tapl\+::pte}}
+\subsubsection[{\texorpdfstring{get\+Bounding\+Box(typename pcl\+::\+Point\+Cloud$<$ Point\+T $>$\+::\+Ptr cloud\+Cluster)}{getBoundingBox(typename pcl::PointCloud< PointT >::Ptr cloudCluster)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename PointT $>$ {\bf tapl\+::\+B\+Box3d} tapl\+::pte\+::get\+Bounding\+Box (
+\begin{DoxyParamCaption}
+\item[{typename pcl\+::\+Point\+Cloud$<$ PointT $>$\+::Ptr}]{cloud\+Cluster}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacetapl_1_1pte_ac4b4a53485d62466140d43448496536b}{}\label{namespacetapl_1_1pte_ac4b4a53485d62466140d43448496536b}
+
+
+This function is used to obtain bounding-\/box for a cluster of points. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em cloud\+Cluster} & a cluster of point-\/cloud\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+3D Bounding-\/\+Box 
+\end{DoxyReturn}
+
+
+Definition at line 464 of file pt\+Engine.\+hpp.
+
+\index{tapl\+::pte@{tapl\+::pte}!segment\+Plane@{segment\+Plane}}
+\index{segment\+Plane@{segment\+Plane}!tapl\+::pte@{tapl\+::pte}}
+\subsubsection[{\texorpdfstring{segment\+Plane(typename pcl\+::\+Point\+Cloud$<$ Point\+T $>$\+::\+Ptr cloud, std\+::pair$<$ typename pcl\+::\+Point\+Cloud$<$ Point\+T $>$\+::\+Ptr, typename pcl\+::\+Point\+Cloud$<$ Point\+T $>$\+::\+Ptr $>$ \&seg\+Result, int max\+Iterations, float distance\+Threshold, bool use\+P\+C\+L=false)}{segmentPlane(typename pcl::PointCloud< PointT >::Ptr cloud, std::pair< typename pcl::PointCloud< PointT >::Ptr, typename pcl::PointCloud< PointT >::Ptr > &segResult, int maxIterations, float distanceThreshold, bool usePCL=false)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename PointT $>$ {\bf tapl\+::\+Result\+Code} tapl\+::pte\+::segment\+Plane (
+\begin{DoxyParamCaption}
+\item[{typename pcl\+::\+Point\+Cloud$<$ PointT $>$\+::Ptr}]{cloud, }
+\item[{std\+::pair$<$ typename pcl\+::\+Point\+Cloud$<$ PointT $>$\+::Ptr, typename pcl\+::\+Point\+Cloud$<$ PointT $>$\+::Ptr $>$ \&}]{seg\+Result, }
+\item[{int}]{max\+Iterations, }
+\item[{float}]{distance\+Threshold, }
+\item[{bool}]{use\+P\+CL = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacetapl_1_1pte_aa4fc09affe62218081e85ed5818bf2ef}{}\label{namespacetapl_1_1pte_aa4fc09affe62218081e85ed5818bf2ef}
+
+
+This function segments a plane within a point-\/cloud. Points within the plane are inliers and other points are outliers. It populates two separate point-\/clouds corresponding to inliers and outliers. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em cloud} & point-\/cloud to segment \\
+\hline
+\mbox{\tt out}  & {\em seg\+Result} & segmentation result Inliers\+: seg\+Result.\+first Outliers\+: seg\+Result.\+second \\
+\hline
+\mbox{\tt in}  & {\em max\+Iteration} & Maximum number of iterations for plane fitting with R\+A\+N\+S\+AC \\
+\hline
+\mbox{\tt in}  & {\em distance\+Threshold} & Distance threshold between point and plane for classifying a point as an inlier. \\
+\hline
+\mbox{\tt in}  & {\em use\+P\+CL} & Whether to use P\+CL of T\+A\+PL\textquotesingle{}s implementation of R\+A\+N\+S\+AC\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ffafbdd78b1e8654e11461f37fea68c6195}{tapl\+::\+S\+U\+C\+C\+E\+SS} if success 
+
+\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ffaa6e243674a964518a62bdda7f20f6453}{tapl\+::\+F\+A\+I\+L\+U\+RE} if failure 
+\end{DoxyReturn}
+
+
+Definition at line 288 of file pt\+Engine.\+hpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacetapl_1_1pte_aa4fc09affe62218081e85ed5818bf2ef_cgraph}
+\end{center}
+\end{figure}
+
+
 \index{tapl\+::pte@{tapl\+::pte}!world2\+Cam\+Coordinate@{world2\+Cam\+Coordinate}}
 \index{world2\+Cam\+Coordinate@{world2\+Cam\+Coordinate}!tapl\+::pte@{tapl\+::pte}}
 \subsubsection[{\texorpdfstring{world2\+Cam\+Coordinate(\+Point\+T \&point)}{world2CamCoordinate(PointT &point)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename PointT $>$ void tapl\+::pte\+::world2\+Cam\+Coordinate (
@@ -30,15 +218,27 @@ cv\+::\+Mat \hyperlink{namespacetapl_1_1pte_a874efe99ea9c6366ae0c0329554ad200}{w
 \item[{PointT \&}]{point}
 \end{DoxyParamCaption}
 )}\hypertarget{namespacetapl_1_1pte_a928126360beb48c632ff331ca560a1b0}{}\label{namespacetapl_1_1pte_a928126360beb48c632ff331ca560a1b0}
-affine transform on a point
+
+
+affine transform on a point 
 
 Apply affine transforms on point given in world coordinate
 
 Camera Coordinate System\+: X -\/$>$ To the right Y -\/$>$ Down Z -\/$>$ Forward -\/ Direction where the camera is pointing
 
-World Coordinate System\+: X -\/$>$ Forward -\/ Direction where the camera is pointing Y -\/$>$ To the left Z -\/$>$ Up 
+World Coordinate System\+: X -\/$>$ Forward -\/ Direction where the camera is pointing Y -\/$>$ To the left Z -\/$>$ Up
 
-Definition at line 200 of file pt\+Engine.\+hpp.
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em point} & point in world coordinate\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+point in camera coordinate 
+\end{DoxyReturn}
+
+
+Definition at line 207 of file pt\+Engine.\+hpp.
 
 
 
@@ -58,13 +258,18 @@ Here is the call graph for this function\+:\nopagebreak
 {}
 \end{DoxyParamCaption}
 )}\hypertarget{namespacetapl_1_1pte_a874efe99ea9c6366ae0c0329554ad200}{}\label{namespacetapl_1_1pte_a874efe99ea9c6366ae0c0329554ad200}
-returns world to camera rotation matrix
+
+
+returns world to camera rotation matrix 
 
 Camera Coordinate System\+: X -\/$>$ To the right Y -\/$>$ Down Z -\/$>$ Forward -\/ Direction where the camera is pointing
 
-World Coordinate System\+: X -\/$>$ Forward -\/ Direction where the camera is pointing Y -\/$>$ To the left Z -\/$>$ Up 
+World Coordinate System\+: X -\/$>$ Forward -\/ Direction where the camera is pointing Y -\/$>$ To the left Z -\/$>$ Up \begin{DoxyReturn}{Returns}
+rotation matrix 
+\end{DoxyReturn}
 
-Definition at line 149 of file pt\+Engine.\+hpp.
+
+Definition at line 150 of file pt\+Engine.\+hpp.
 
 
 

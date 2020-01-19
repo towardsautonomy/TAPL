@@ -8,35 +8,62 @@ Goal of this library is to provide an easy and quick way of implementing percept
 
 \paragraph*{Visual Odometry for a sequence of Monocular camera images}
 
+This example is provided at {\ttfamily examples/src/mono\+V\+O.\+cpp}. It uses a sequence of monocular images to perform visual odometry and build sparse point-\/cloud. This functionality is provided as an A\+PI and can be accessed using the function\+: {\ttfamily \hyperlink{namespacetapl_1_1cve_ad8314ef8898d3a90c6d93a514bf75d20}{tapl\+::cve\+::compute\+Relative\+Pose()}}.
+
+{\bfseries Pipeline}
+
 
 \begin{DoxyItemize}
-\item All the A\+PI has been provided in {\itshape src/cv\+Engine.\+cpp}. See usage in {\itshape examples/mono\+V\+O.\+cpp}
+\item Read images and push into a ring buffer.
+\item If more than one image is available in the buffer then\+:
+\begin{DoxyItemize}
+\item Perform keypoint detection and matching.
+\item Compute essential matrix.
+\item Compute relative pose (R, t)
+\item Triangulate good keypoints for which a match is found.
+\end{DoxyItemize}
+\item Compute global pose from this relative pose.
 \end{DoxyItemize}
 
 
 
-\paragraph*{Visual Odometry for a sequence of Stereo camera images}
+\paragraph*{Li\+D\+AR Object Detection}
+
+This example is provided at {\ttfamily examples/src/lidar\+Object\+Detection.\+cpp}. It reads in P\+CD point-\/cloud files, performs downsampling, ground-\/plane segmentation, and clustering, and then some post-\/processing filtering to get 3D Bounding-\/\+Box of objects.
+
+{\bfseries Pipeline}
 
 
 \begin{DoxyItemize}
-\item Under development
-\end{DoxyItemize}
-
-\paragraph*{Euclidean Clustering within a point-\/cloud using kd-\/tree for storing points.}
-
-
+\item Load point-\/cloud data.
+\item Downsample point-\/cloud (voxelization).
+\item Crop the point-\/cloud based on a region of interest.
+\item Segment out ground-\/plane using R\+A\+N\+S\+AC.
 \begin{DoxyItemize}
-\item C++ implementation of R\+A\+N\+S\+AC for ground segmentation, kd-\/tree and euclidean clustering in {\itshape src/pt\+Engine.\+cpp}
+\item For {\itshape n} iterations\+:
+\begin{DoxyItemize}
+\item Choose 3 random points.
+\item Fit a plane using least-\/squares.
+\item Count number of inliers within a certain distance threshold between each point and plane.
 \end{DoxyItemize}
+\item Choose the plane that resulted in maximum number of inliers.
+\item Implemented as part of {\ttfamily class \hyperlink{classtapl_1_1pte_1_1Plane}{tapl\+::pte\+::\+Plane()}}.
+\end{DoxyItemize}
+\item Perform Euclidian Clustering within the segmented point-\/cloud.
+\begin{DoxyItemize}
+\item Store the point-\/cloud as a {\bfseries Kd\+Tree}. Implemented as {\ttfamily struct \hyperlink{structtapl_1_1pte_1_1KdTree}{tapl\+::pte\+::\+Kd\+Tree}}.
+\item Perform euclidean clustering on the Kd\+Tree. Implemented as {\ttfamily class \hyperlink{classtapl_1_1pte_1_1EuclideanCluster}{tapl\+::pte\+::\+Euclidean\+Cluster()}}.
+\end{DoxyItemize}
+\item Filter and Extract the bounding-\/boxes.
+\end{DoxyItemize}
+
+
 
 
 
 \paragraph*{Image Feature Detection and Tracking}
 
-
-\begin{DoxyItemize}
-\item C++ implementation in {\itshape src/cv\+Engine.\+cpp}
-\end{DoxyItemize}
+This example is provided at {\ttfamily examples/src/kpts\+Detection\+And\+Tracking.\+cpp} and this functionality is implemented as {\ttfamily \hyperlink{namespacetapl_1_1cve_a34cb000d47a121549e81900da9913299}{tapl\+::cve\+::detect\+And\+Match\+Kpts()}}.
 
 
 
@@ -44,7 +71,7 @@ Goal of this library is to provide an easy and quick way of implementing percept
 
 
 \begin{DoxyItemize}
-\item C++ implementation of R\+A\+N\+S\+AC for line and plane fitting using both S\+VD and least-\/square methods are provided in {\itshape cve/pt\+Engine.\+cpp} which can be simply used as an A\+PI.
+\item C++ implementation of R\+A\+N\+S\+AC for line and plane fitting using both S\+VD and least-\/square methods are provided as part of {\ttfamily class \hyperlink{classtapl_1_1pte_1_1Line}{tapl\+::pte\+::\+Line()}} and {\ttfamily class \hyperlink{classtapl_1_1pte_1_1Plane}{tapl\+::pte\+::\+Plane()}}.
 \end{DoxyItemize}
 
 \tabulinesep=1mm
@@ -66,6 +93,7 @@ Goal of this library is to provide an easy and quick way of implementing percept
 \item C\+Make $>$= 3.\+5
 \item Open\+CV $>$= 4.\+1
 \item P\+CL $>$= 1.\+2
+\item Eigen $>$= 3.\+2
 \end{DoxyItemize}
 
 \subsection*{Installation Instructions}
