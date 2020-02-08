@@ -110,3 +110,7 @@ Line Fitting using RANSAC     |  Plane Fitting using RANSAC
    cmake ..
    make
    ```
+
+## Contributions
+
+TAPL is a free open source platform. Any contribution to this platform is welcome and appreciated.
