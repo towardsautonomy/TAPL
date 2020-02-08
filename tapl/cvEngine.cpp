@@ -11,6 +11,7 @@
 #include <opencv2/features2d.hpp>
 #include <opencv2/xfeatures2d.hpp>
 #include <opencv2/xfeatures2d/nonfree.hpp>
+#include <opencv2/stitching.hpp>
 #include "opencv2/calib3d/calib3d.hpp"
 
 #include "cvEngine.hpp"
@@ -506,4 +507,31 @@ tapl::ResultCode tapl::cve::computeRelativePose(tapl::DataFrame &dframe1,
         // return failure
         return tapl::FAILURE;
     }
+}
+
+/*
+ * This function is used to stitch multiple images as a panaromic image.
+ */
+tapl::ResultCode tapl::cve::stitchPanaromic(const std::vector<cv::Mat> &imgs, 
+                                         cv::Mat &panoramic_img) {
+    // sanity check 
+    if(imgs.size() < 2) {
+        std::cout << "ERROR: Number of images must be 2 or more" << std::endl;
+        return tapl::FAILURE;
+    }
+
+    // create panaromic stitcher
+    bool divide_imgs = false;
+    cv::Stitcher::Mode mode = cv::Stitcher::PANORAMA;
+    cv::Ptr<cv::Stitcher> stitcher = cv::Stitcher::create(mode);
+    cv::Stitcher::Status status = stitcher->stitch(imgs, panoramic_img);
+
+    // check if successful
+    if (status != cv::Stitcher::OK) {
+        std::cout << "ERROR: could not stitch images" << std::endl;
+        return tapl::FAILURE;
+    }
+
+    // return success
+    return tapl::SUCCESS;
 }

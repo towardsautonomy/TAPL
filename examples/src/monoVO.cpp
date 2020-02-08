@@ -100,13 +100,14 @@ int main(int argc, const char *argv[])
     for (auto fname : fnames) {
         /* Load image into buffer */
         // load image from file and convert to grayscale
-        cv::Mat img, imgGray;
+        cv::Mat img, img_undistorted, img_gray;
         img = cv::imread(fname);
-        cv::cvtColor(img, imgGray, cv::COLOR_BGR2GRAY);
+        cv::undistort(img, img_undistorted, camera_matrix, dist_coeff);
+        cv::cvtColor(img_undistorted, img_gray, cv::COLOR_BGR2GRAY);
 
         // push image into data frame buffer
         tapl::DataFrame frame;
-        frame.cameraFrame.pushImage(imgGray);
+        frame.cameraFrame.pushImage(img_gray);
         dataBuffer.push(frame);
 
         cout << "----------------------------------------------------" << endl;
@@ -175,18 +176,19 @@ int main(int argc, const char *argv[])
             prev_point = cam_pose_pt;
 
             // display image
-            cv::Mat img;
-            if(dframe1.cameraFrame.getImage(img) != tapl::SUCCESS) {
+            cv::Mat img_disp;
+            if(dframe1.cameraFrame.getImage(img_disp) != tapl::SUCCESS) {
                 std::cout << "ERROR: could not retrieve image frame" << std::endl;
                 exit(EXIT_FAILURE);
             }
-            cv::imshow(windowName, img);
+            cv::imshow(windowName, img_disp);
             cv::waitKey(1); 
 
             visualizer->renderScene(10);
             // std::this_thread::sleep_for(std::chrono::milliseconds(500));
         }
         imgIndex++;
+        if((nImages != -1) && (imgIndex >= nImages)) break;
     }
 
     // render the scene and hold

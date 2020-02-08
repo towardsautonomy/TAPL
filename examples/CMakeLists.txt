@@ -34,8 +34,10 @@ set(DEP_LIBRARIES tapl ${OpenCV_LIBRARIES} ${PCL_LIBRARIES} "-lstdc++fs")
 add_executable (kptsDetectionAndTracking src/kptsDetectionAndTracking.cpp )
 add_executable (monoVO src/monoVO.cpp)
 add_executable (lidarObjectDetection src/lidarObjectDetection.cpp)
+add_executable (panoramaicStitching src/panoramaicStitching.cpp)
 
 # link library
 target_link_libraries(kptsDetectionAndTracking ${DEP_LIBRARIES})
 target_link_libraries(monoVO ${DEP_LIBRARIES})
 target_link_libraries(lidarObjectDetection ${DEP_LIBRARIES})
+target_link_libraries(panoramaicStitching ${DEP_LIBRARIES})

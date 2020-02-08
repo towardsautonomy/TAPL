@@ -7,12 +7,7 @@
 #include <limits>
 #include <filesystem>
 
-#include <opencv2/core.hpp>
-#include <opencv2/highgui/highgui.hpp>
-#include <opencv2/imgproc/imgproc.hpp>
-#include <opencv2/features2d.hpp>
-#include <opencv2/xfeatures2d.hpp>
-#include <opencv2/xfeatures2d/nonfree.hpp>
+#include <opencv2/opencv.hpp>
 
 #include "tapl.hpp"
 
@@ -21,15 +16,29 @@ using namespace std;
 /* MAIN PROGRAM */
 int main(int argc, const char *argv[])
 {
-    // data location
+    // paths
+    string calibPath = "../data/calib/camera_model.yaml";
     string dataPath = "../data/living_room";
 
     // number of images
-    int nImages = 10;   // last file index to load
+    int nImages = 50;   // last file index to load
 
     // misc
     int dataBufferSize = 2;       // no. of images which are held in memory (ring buffer) at the same time
     tapl::RingBuffer<tapl::DataFrame> dataBuffer(dataBufferSize);
+
+    // Read camera calibration
+    std::cout << "loading camera calibration..." << std::endl;
+    cv::FileStorage opencv_file(calibPath, cv::FileStorage::READ);
+    cv::Mat camera_matrix;
+    opencv_file["camera_matrix"] >> camera_matrix;
+    cv::Mat dist_coeff;
+    opencv_file["dist_coeff"] >> dist_coeff;
+    opencv_file.release();
+    std::cout << "Camera Matrix:" << std::endl;
+    std::cout << camera_matrix << std::endl;
+    std::cout << "Distortion Coefficients:" << std::endl;
+    std::cout << dist_coeff << std::endl;
 
     namespace fs = std::filesystem;
     std::vector<std::string> fnames;
@@ -42,13 +51,14 @@ int main(int argc, const char *argv[])
     for (auto fname : fnames) {
         /* Load image into buffer */
         // load image from file and convert to grayscale
-        cv::Mat img, imgGray;
+        cv::Mat img, img_undistorted, img_gray;
         img = cv::imread(fname);
-        cv::cvtColor(img, imgGray, cv::COLOR_BGR2GRAY);
+        cv::undistort(img, img_undistorted, camera_matrix, dist_coeff);
+        cv::cvtColor(img_undistorted, img_gray, cv::COLOR_BGR2GRAY);
 
         // push image into data frame buffer
         tapl::DataFrame frame;
-        frame.cameraFrame.pushImage(imgGray);
+        frame.cameraFrame.pushImage(img_gray);
         dataBuffer.push(frame);
 
         cout << "----------------------------------------------------" << endl;

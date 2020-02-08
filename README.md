@@ -51,6 +51,11 @@ This example is provided at ```examples/src/lidarObjectDetection.cpp```. It read
 
 ![](media/clustering.gif)  
 
+#### Panaromic Image Stitching
+
+This example is provided at ```examples/src/panoramicStitching.cpp``` and this functionality is implemented as ```tapl::cve::stitchPanaromic()```.  
+
+![](media/panoramic_stitching.png)
 
 #### Image Feature Detection and Tracking  
 

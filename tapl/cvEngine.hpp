@@ -121,6 +121,18 @@ namespace tapl {
         tapl::ResultCode computeRelativePose(tapl::DataFrame &dframe1, 
                                             tapl::DataFrame &dframe2, 
                                             cv::Mat &camera_matrix);
+
+        /** 
+         * @brief This function is used to stitch multiple images as a panaromic image.
+         *
+         * @param[in] imgs list of images
+         * @param[out] panoramic_img stitched panoramic image
+         * 
+         * @return tapl::SUCCESS if success
+         * @return tapl::FAILURE if failure 
+         */
+        tapl::ResultCode stitchPanaromic(const std::vector<cv::Mat> &imgs, 
+                                         cv::Mat &panoramic_img);
     } 
 } 
 
