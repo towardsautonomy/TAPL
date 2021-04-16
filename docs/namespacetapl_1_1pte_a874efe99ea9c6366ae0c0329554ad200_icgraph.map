@@ -1,0 +1,4 @@
+<map id="tapl::pte::world2CamRotation" name="tapl::pte::world2CamRotation">
+<area shape="rect" id="node1" title="returns world to camera rotation matrix" alt="" coords="283,5,496,32"/>
+<area shape="rect" id="node2" href="$namespacetapl_1_1pte.html#a928126360beb48c632ff331ca560a1b0" title="affine transform on a point" alt="" coords="5,5,235,32"/>
+</map>

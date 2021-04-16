@@ -1,150 +1,220 @@
 Goal of this library is to provide an easy and quick way of implementing perception pipelines.
 
+ 
+\begin{DoxyImageNoCaption}
+  \mbox{\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{tapl_architecture.png}}
+\end{DoxyImageNoCaption}
+  
+
+\doxysection*{\href{https://github.com/towardsautonomy/TAPL}{\texttt{ {\bfseries{Find on Git\+Hub}}}}}
+
+\doxysection*{Examples of Perception Task}
+
+\doxysubsubsection*{Visual Odometry for a sequence of Monocular camera images}
+
+This example is provided at {\ttfamily examples/src/mono\+V\+O.\+cpp}. It uses a sequence of monocular images to perform visual odometry and build sparse point-\/cloud. This functionality is provided as an A\+PI and can be accessed using the function\+: {\ttfamily \mbox{\hyperlink{namespacetapl_1_1cve_ad8314ef8898d3a90c6d93a514bf75d20}{tapl\+::cve\+::compute\+Relative\+Pose()}}}. ~\newline
 
 
-\subsection*{\href{https://github.com/towardsautonomy/TAPL}{\tt {\bfseries Find on Git\+Hub}}}
+{\bfseries{Pipeline}} ~\newline
 
-\subsection*{Examples of Perception Task}
-
-\paragraph*{Visual Odometry for a sequence of Monocular camera images}
-
-This example is provided at {\ttfamily examples/src/mono\+V\+O.\+cpp}. It uses a sequence of monocular images to perform visual odometry and build sparse point-\/cloud. This functionality is provided as an A\+PI and can be accessed using the function\+: {\ttfamily \hyperlink{namespacetapl_1_1cve_ad8314ef8898d3a90c6d93a514bf75d20}{tapl\+::cve\+::compute\+Relative\+Pose()}}.
-
-{\bfseries Pipeline}
 
 
 \begin{DoxyItemize}
-\item Read images and push into a ring buffer.
-\item If more than one image is available in the buffer then\+:
+\item Read images and push into a ring buffer. ~\newline
+
+\item If more than one image is available in the buffer then\+: ~\newline
+
 \begin{DoxyItemize}
-\item Perform keypoint detection and matching.
+\item Perform keypoint detection and matching. ~\newline
+
 \item Compute essential matrix.
-\item Compute relative pose (R, t)
-\item Triangulate good keypoints for which a match is found.
+\item Compute relative pose (R, t) ~\newline
+
+\item Triangulate good keypoints for which a match is found. ~\newline
+
 \end{DoxyItemize}
-\item Compute global pose from this relative pose.
+\item Compute global pose from this relative pose. ~\newline
+
 \end{DoxyItemize}
 
+ 
+\begin{DoxyImageNoCaption}
+  \mbox{\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{mono_vo.gif}}
+\end{DoxyImageNoCaption}
+  
+
+\doxysubsubsection*{Li\+D\+AR Object Detection}
+
+This example is provided at {\ttfamily examples/src/lidar\+Object\+Detection.\+cpp}. It reads in P\+CD point-\/cloud files, performs downsampling, ground-\/plane segmentation, and clustering, and then some post-\/processing filtering to get 3D Bounding-\/\+Box of objects. ~\newline
 
 
-\paragraph*{Li\+D\+AR Object Detection}
+{\bfseries{Pipeline}} ~\newline
 
-This example is provided at {\ttfamily examples/src/lidar\+Object\+Detection.\+cpp}. It reads in P\+CD point-\/cloud files, performs downsampling, ground-\/plane segmentation, and clustering, and then some post-\/processing filtering to get 3D Bounding-\/\+Box of objects.
-
-{\bfseries Pipeline}
 
 
 \begin{DoxyItemize}
-\item Load point-\/cloud data.
-\item Downsample point-\/cloud (voxelization).
-\item Crop the point-\/cloud based on a region of interest.
-\item Segment out ground-\/plane using R\+A\+N\+S\+AC.
-\begin{DoxyItemize}
-\item For {\itshape n} iterations\+:
-\begin{DoxyItemize}
-\item Choose 3 random points.
-\item Fit a plane using least-\/squares.
-\item Count number of inliers within a certain distance threshold between each point and plane.
-\end{DoxyItemize}
-\item Choose the plane that resulted in maximum number of inliers.
-\item Implemented as part of {\ttfamily class \hyperlink{classtapl_1_1pte_1_1Plane}{tapl\+::pte\+::\+Plane()}}.
-\end{DoxyItemize}
-\item Perform Euclidian Clustering within the segmented point-\/cloud.
-\begin{DoxyItemize}
-\item Store the point-\/cloud as a {\bfseries Kd\+Tree}. Implemented as {\ttfamily struct \hyperlink{structtapl_1_1pte_1_1KdTree}{tapl\+::pte\+::\+Kd\+Tree}}.
-\item Perform euclidean clustering on the Kd\+Tree. Implemented as {\ttfamily class \hyperlink{classtapl_1_1pte_1_1EuclideanCluster}{tapl\+::pte\+::\+Euclidean\+Cluster()}}.
-\end{DoxyItemize}
-\item Filter and Extract the bounding-\/boxes.
-\end{DoxyItemize}
+\item Load point-\/cloud data. ~\newline
 
+\item Downsample point-\/cloud (voxelization). ~\newline
 
+\item Crop the point-\/cloud based on a region of interest. ~\newline
 
-
-
-\paragraph*{Panaromic Image Stitching}
-
-This example is provided at {\ttfamily examples/src/panoramic\+Stitching.\+cpp} and this functionality is implemented as {\ttfamily \hyperlink{namespacetapl_1_1cve_aab4041f410589ff960febecf36b3ee2b}{tapl\+::cve\+::stitch\+Panaromic()}}.
-
-
-
-\paragraph*{Image Feature Detection and Tracking}
-
-This example is provided at {\ttfamily examples/src/kpts\+Detection\+And\+Tracking.\+cpp} and this functionality is implemented as {\ttfamily \hyperlink{namespacetapl_1_1cve_a34cb000d47a121549e81900da9913299}{tapl\+::cve\+::detect\+And\+Match\+Kpts()}}.
-
-
-
-\paragraph*{R\+A\+N\+S\+AC for line and plane fitting}
-
+\item Segment out ground-\/plane using R\+A\+N\+S\+AC. ~\newline
 
 \begin{DoxyItemize}
-\item C++ implementation of R\+A\+N\+S\+AC for line and plane fitting using both S\+VD and least-\/square methods are provided as part of {\ttfamily class \hyperlink{classtapl_1_1pte_1_1Line}{tapl\+::pte\+::\+Line()}} and {\ttfamily class \hyperlink{classtapl_1_1pte_1_1Plane}{tapl\+::pte\+::\+Plane()}}.
+\item For {\itshape n} iterations\+: ~\newline
+
+\begin{DoxyItemize}
+\item Choose 3 random points. ~\newline
+
+\item Fit a plane using least-\/squares. ~\newline
+
+\item Count number of inliers within a certain distance threshold between each point and plane. ~\newline
+
+\end{DoxyItemize}
+\item Choose the plane that resulted in maximum number of inliers. ~\newline
+
+\item Implemented as part of {\ttfamily class \mbox{\hyperlink{classtapl_1_1pte_1_1Plane}{tapl\+::pte\+::\+Plane()}}}. ~\newline
+
+\end{DoxyItemize}
+\item Perform Euclidian Clustering within the segmented point-\/cloud. ~\newline
+
+\begin{DoxyItemize}
+\item Store the point-\/cloud as a {\bfseries{Kd\+Tree}}. Implemented as {\ttfamily struct \mbox{\hyperlink{structtapl_1_1pte_1_1KdTree}{tapl\+::pte\+::\+Kd\+Tree}}}. ~\newline
+
+\item Perform euclidean clustering on the Kd\+Tree. Implemented as {\ttfamily class \mbox{\hyperlink{classtapl_1_1pte_1_1EuclideanCluster}{tapl\+::pte\+::\+Euclidean\+Cluster()}}}. ~\newline
+
+\end{DoxyItemize}
+\item Filter and Extract the bounding-\/boxes. ~\newline
+
+\end{DoxyItemize}
+
+ 
+\begin{DoxyImageNoCaption}
+  \mbox{\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{lidar_object_detection.gif}}
+\end{DoxyImageNoCaption}
+  
+
+~\newline
+
+
+ 
+\begin{DoxyImageNoCaption}
+  \mbox{\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{clustering.gif}}
+\end{DoxyImageNoCaption}
+  
+
+~\newline
+
+
+\doxysubsubsection*{Panaromic Image Stitching}
+
+This example is provided at {\ttfamily examples/src/panoramic\+Stitching.\+cpp} and this functionality is implemented as {\ttfamily \mbox{\hyperlink{namespacetapl_1_1cve_aab4041f410589ff960febecf36b3ee2b}{tapl\+::cve\+::stitch\+Panaromic()}}}. ~\newline
+
+
+ 
+\begin{DoxyImageNoCaption}
+  \mbox{\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{panoramic_stitching.png}}
+\end{DoxyImageNoCaption}
+  
+
+\doxysubsubsection*{Image Feature Detection and Tracking}
+
+This example is provided at {\ttfamily examples/src/kpts\+Detection\+And\+Tracking.\+cpp} and this functionality is implemented as {\ttfamily \mbox{\hyperlink{namespacetapl_1_1cve_a34cb000d47a121549e81900da9913299}{tapl\+::cve\+::detect\+And\+Match\+Kpts()}}}.
+
+ 
+\begin{DoxyImageNoCaption}
+  \mbox{\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{matching_points.png}}
+\end{DoxyImageNoCaption}
+  
+
+\doxysubsubsection*{R\+A\+N\+S\+AC for line and plane fitting}
+
+
+\begin{DoxyItemize}
+\item C++ implementation of R\+A\+N\+S\+AC for line and plane fitting using both S\+VD and least-\/square methods are provided as part of {\ttfamily class \mbox{\hyperlink{classtapl_1_1pte_1_1Line}{tapl\+::pte\+::\+Line()}}} and {\ttfamily class \mbox{\hyperlink{classtapl_1_1pte_1_1Plane}{tapl\+::pte\+::\+Plane()}}}. ~\newline
+
 \end{DoxyItemize}
 
 \tabulinesep=1mm
-\begin{longtabu} spread 0pt [c]{*2{|X[-1]}|}
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
 \hline
-\rowcolor{\tableheadbgcolor}\PBS\centering {\bf Line Fitting using R\+A\+N\+S\+AC }&\PBS\centering {\bf Plane Fitting using R\+A\+N\+S\+AC  }\\\cline{1-2}
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Line Fitting using R\+A\+N\+S\+AC }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Plane Fitting using R\+A\+N\+S\+AC  }\\\cline{1-2}
 \endfirsthead
 \hline
 \endfoot
 \hline
-\rowcolor{\tableheadbgcolor}\PBS\centering {\bf Line Fitting using R\+A\+N\+S\+AC }&\PBS\centering {\bf Plane Fitting using R\+A\+N\+S\+AC  }\\\cline{1-2}
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Line Fitting using R\+A\+N\+S\+AC }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Plane Fitting using R\+A\+N\+S\+AC  }\\\cline{1-2}
 \endhead
-\PBS\centering  &\PBS\centering \\\cline{1-2}
+\PBS\centering  
+\begin{DoxyImageNoCaption}
+  \mbox{\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{line_fitting.png}}
+\end{DoxyImageNoCaption}
+    &\PBS\centering  
+\begin{DoxyImageNoCaption}
+  \mbox{\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{plane_fitting.png}}
+\end{DoxyImageNoCaption}
+     \\\cline{1-2}
 \end{longtabu}
-\subsection*{Prerequisites}
+
+
+\doxysection*{Prerequisites}
 
 
 \begin{DoxyItemize}
 \item C\+Make $>$= 3.\+5
 \item Open\+CV $>$= 4.\+1
-\item P\+CL $>$= 1.\+2
+\item P\+CL $>$= 1.\+2 ~\newline
+
 \item Eigen $>$= 3.\+2
 \end{DoxyItemize}
 
-\subsection*{Installation Instructions}
+\doxysection*{Installation Instructions}
 
 
 \begin{DoxyItemize}
-\item Download the library.
+\item Download the library. ~\newline
+
 \end{DoxyItemize}
 
 
-\begin{DoxyCode}
-1 git clone https://github.com/towardsautonomy/TAPL.git
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git clone https://github.com/towardsautonomy/TAPL.git}
 \end{DoxyCode}
 
 
 
 \begin{DoxyItemize}
-\item Build and install the library as follows.
+\item Build and install the library as follows. ~\newline
+
 \end{DoxyItemize}
 
 
-\begin{DoxyCode}
-1 mkdir build  
-2 cd build
-3 cmake ..
-4 make
-5 sudo make install
+\begin{DoxyCode}{0}
+\DoxyCodeLine{mkdir build  }
+\DoxyCodeLine{cd build}
+\DoxyCodeLine{cmake ..}
+\DoxyCodeLine{make}
+\DoxyCodeLine{sudo make install}
 \end{DoxyCode}
 
 
 
 \begin{DoxyItemize}
-\item Build the examples as follows.
+\item Build the examples as follows. ~\newline
+
 \end{DoxyItemize}
 
 
-\begin{DoxyCode}
-1 cd examples
-2 mkdir build
-3 cd build
-4 cmake ..
-5 make
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cd examples}
+\DoxyCodeLine{mkdir build}
+\DoxyCodeLine{cd build}
+\DoxyCodeLine{cmake ..}
+\DoxyCodeLine{make}
 \end{DoxyCode}
 
 
-\subsection*{Contributions}
+\doxysection*{Contributions}
 
 T\+A\+PL is a free open source platform. Any contribution to this platform is welcome and appreciated. 

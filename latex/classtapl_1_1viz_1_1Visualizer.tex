@@ -1,5 +1,5 @@
-\hypertarget{classtapl_1_1viz_1_1Visualizer}{}\section{tapl\+:\+:viz\+:\+:Visualizer Class Reference}
-\label{classtapl_1_1viz_1_1Visualizer}\index{tapl\+::viz\+::\+Visualizer@{tapl\+::viz\+::\+Visualizer}}
+\hypertarget{classtapl_1_1viz_1_1Visualizer}{}\doxysection{tapl\+::viz\+::Visualizer Class Reference}
+\label{classtapl_1_1viz_1_1Visualizer}\index{tapl::viz::Visualizer@{tapl::viz::Visualizer}}
 
 
 Implementation of the visualizer class.  
@@ -9,81 +9,74 @@ Implementation of the visualizer class.
 
 {\ttfamily \#include $<$visualization.\+hpp$>$}
 
-\subsection*{Public Member Functions}
+\doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classtapl_1_1viz_1_1Visualizer_a56215eefb4712acf78a922485d844f50}{Visualizer} (float r=0., float g=0., float b=0., \hyperlink{namespacetapl_1_1viz_a99e496921984514dbc7bcef809f50150}{Camera\+Angle} cam\+Angle=\hyperlink{namespacetapl_1_1viz_a99e496921984514dbc7bcef809f50150a9aa35eea1fe8f4b45a0b02a8b5048cfa}{Top\+Down}, float distance=20.\+0)
+\mbox{\hyperlink{classtapl_1_1viz_1_1Visualizer_a56215eefb4712acf78a922485d844f50}{Visualizer}} (float r=0., float g=0., float b=0., \mbox{\hyperlink{namespacetapl_1_1viz_a99e496921984514dbc7bcef809f50150}{Camera\+Angle}} cam\+Angle=\mbox{\hyperlink{namespacetapl_1_1viz_a99e496921984514dbc7bcef809f50150a9aa35eea1fe8f4b45a0b02a8b5048cfa}{Top\+Down}}, float distance=20.\+0)
 \item 
-\hyperlink{classtapl_1_1viz_1_1Visualizer_a47473d1bffdf617379d718f1c2ed5930}{$\sim$\+Visualizer} ()
+\mbox{\hyperlink{classtapl_1_1viz_1_1Visualizer_a47473d1bffdf617379d718f1c2ed5930}{$\sim$\+Visualizer}} ()
 \item 
-{\footnotesize template$<$typename PointT $>$ }\\void \hyperlink{classtapl_1_1viz_1_1Visualizer_a1ffe49d8e3b2693b0c0a4ccd10edac9d}{render\+Sphere} (const PointT \&pt, float radius, const std\+::string \&id)
+{\footnotesize template$<$typename PointT $>$ }\\void \mbox{\hyperlink{classtapl_1_1viz_1_1Visualizer_a1ffe49d8e3b2693b0c0a4ccd10edac9d}{render\+Sphere}} (const PointT \&pt, float radius, const std\+::string \&id)
 \begin{DoxyCompactList}\small\item\em This function is used to render a sphere on the visualizer. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename PointT $>$ }\\void \hyperlink{classtapl_1_1viz_1_1Visualizer_acca33adaa4aeaeca6f393dee319b36b8}{render\+Sphere} (const PointT \&pt, float radius, float r, float g, float b, const std\+::string \&id)
+{\footnotesize template$<$typename PointT $>$ }\\void \mbox{\hyperlink{classtapl_1_1viz_1_1Visualizer_acca33adaa4aeaeca6f393dee319b36b8}{render\+Sphere}} (const PointT \&pt, float radius, float r, float g, float b, const std\+::string \&id)
 \begin{DoxyCompactList}\small\item\em This function is used to render a sphere on the visualizer. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename PointT $>$ }\\void \hyperlink{classtapl_1_1viz_1_1Visualizer_a44e1d90914fa8129f4e4a26b4ad67718}{render\+Line} (const PointT \&pt1, const PointT \&pt2, const std\+::string \&id)
+{\footnotesize template$<$typename PointT $>$ }\\void \mbox{\hyperlink{classtapl_1_1viz_1_1Visualizer_a44e1d90914fa8129f4e4a26b4ad67718}{render\+Line}} (const PointT \&pt1, const PointT \&pt2, const std\+::string \&id)
 \begin{DoxyCompactList}\small\item\em This function is used to render a line on the visualizer. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename PointT $>$ }\\void \hyperlink{classtapl_1_1viz_1_1Visualizer_a23442f9881a361b9ff0aff3b18f1eea0}{render\+Line} (const PointT \&pt1, const PointT \&pt2, float r, float g, float b, const std\+::string \&id)
+{\footnotesize template$<$typename PointT $>$ }\\void \mbox{\hyperlink{classtapl_1_1viz_1_1Visualizer_a23442f9881a361b9ff0aff3b18f1eea0}{render\+Line}} (const PointT \&pt1, const PointT \&pt2, float r, float g, float b, const std\+::string \&id)
 \begin{DoxyCompactList}\small\item\em This function is used to render a line on the visualizer. \end{DoxyCompactList}\item 
-void \hyperlink{classtapl_1_1viz_1_1Visualizer_a22497fa3f1d2738c1b0a3f963a7c43dd}{render\+Pose} (float scale, float x, float y, float z, const std\+::string \&id=\char`\"{}pose\char`\"{})
-\begin{DoxyCompactList}\small\item\em Adds 3-\/\+D\+OF pose. \end{DoxyCompactList}\item 
-void \hyperlink{classtapl_1_1viz_1_1Visualizer_ae24ff2fab8c5107d931cd175abd916ef}{render\+Pose} (float scale, const Eigen\+::\+Affine3f \&pose, const std\+::string \&id=\char`\"{}pose\char`\"{})
-\begin{DoxyCompactList}\small\item\em Adds 6-\/\+D\+OF pose defined by a 4x4 transformation matrix. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename PointT $>$ }\\void \hyperlink{classtapl_1_1viz_1_1Visualizer_a5c6a85b27b5042f09b0e7034ee73209c}{render\+Point\+Cloud} (const typename pcl\+::\+Point\+Cloud$<$ PointT $>$\+::Const\+Ptr \&cloud, float ptsize=1.\+0, float r=1.\+0, float g=0.\+0, float b=0.\+0, const std\+::string \&id=\char`\"{}cloud\char`\"{})
+void \mbox{\hyperlink{classtapl_1_1viz_1_1Visualizer_a22497fa3f1d2738c1b0a3f963a7c43dd}{render\+Pose}} (float scale, float x, float y, float z, const std\+::string \&id=\char`\"{}pose\char`\"{})
+\begin{DoxyCompactList}\small\item\em Adds 3-\/D\+OF pose. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtapl_1_1viz_1_1Visualizer_ae24ff2fab8c5107d931cd175abd916ef}{render\+Pose}} (float scale, const Eigen\+::\+Affine3f \&pose, const std\+::string \&id=\char`\"{}pose\char`\"{})
+\begin{DoxyCompactList}\small\item\em Adds 6-\/D\+OF pose defined by a 4x4 transformation matrix. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename PointT $>$ }\\void \mbox{\hyperlink{classtapl_1_1viz_1_1Visualizer_a5c6a85b27b5042f09b0e7034ee73209c}{render\+Point\+Cloud}} (const typename pcl\+::\+Point\+Cloud$<$ PointT $>$\+::Const\+Ptr \&cloud, float ptsize=1.\+0, float r=1.\+0, float g=0.\+0, float b=0.\+0, const std\+::string \&id=\char`\"{}cloud\char`\"{})
 \begin{DoxyCompactList}\small\item\em Render a point-\/cloud. \end{DoxyCompactList}\item 
-void \hyperlink{classtapl_1_1viz_1_1Visualizer_a3915205a2348669a0399b3f1a2e8551c}{render\+Bbox3d} (const \hyperlink{structtapl_1_1BBox3d}{B\+Box3d} \&box, float r=1.\+0, float g=0.\+0, float b=0.\+0, float opacity=0.\+5, const std\+::string \&id=\char`\"{}bbox\char`\"{})
+void \mbox{\hyperlink{classtapl_1_1viz_1_1Visualizer_a3915205a2348669a0399b3f1a2e8551c}{render\+Bbox3d}} (const \mbox{\hyperlink{structtapl_1_1BBox3d}{B\+Box3d}} \&box, float r=1.\+0, float g=0.\+0, float b=0.\+0, float opacity=0.\+5, const std\+::string \&id=\char`\"{}bbox\char`\"{})
 \begin{DoxyCompactList}\small\item\em Render a 3d bounding-\/box. \end{DoxyCompactList}\item 
-void \hyperlink{classtapl_1_1viz_1_1Visualizer_a8ec08b4e37523fb75731b58748224035}{render\+Scene} (int time=1)
+void \mbox{\hyperlink{classtapl_1_1viz_1_1Visualizer_a8ec08b4e37523fb75731b58748224035}{render\+Scene}} (int time=1)
 \begin{DoxyCompactList}\small\item\em Render the scene once. \end{DoxyCompactList}\item 
-void \hyperlink{classtapl_1_1viz_1_1Visualizer_aed14efd9e578a4b6013b9745e07acea1}{render\+Scene\+And\+Hold} ()
+void \mbox{\hyperlink{classtapl_1_1viz_1_1Visualizer_aed14efd9e578a4b6013b9745e07acea1}{render\+Scene\+And\+Hold}} ()
 \begin{DoxyCompactList}\small\item\em Render the scene and hold. \end{DoxyCompactList}\item 
-void \hyperlink{classtapl_1_1viz_1_1Visualizer_a912479d651c5a9bcd5a24b77025f10c0}{clear\+Scene} ()
+void \mbox{\hyperlink{classtapl_1_1viz_1_1Visualizer_a912479d651c5a9bcd5a24b77025f10c0}{clear\+Scene}} ()
 \begin{DoxyCompactList}\small\item\em Clear the scene. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
+\doxysubsection{Detailed Description}
 Implementation of the visualizer class. 
 
 Definition at line 27 of file visualization.\+hpp.
 
 
 
-\subsection{Constructor \& Destructor Documentation}
-\index{tapl\+::viz\+::\+Visualizer@{tapl\+::viz\+::\+Visualizer}!Visualizer@{Visualizer}}
-\index{Visualizer@{Visualizer}!tapl\+::viz\+::\+Visualizer@{tapl\+::viz\+::\+Visualizer}}
-\subsubsection[{\texorpdfstring{Visualizer(float r=0., float g=0., float b=0., Camera\+Angle cam\+Angle=\+Top\+Down, float distance=20.\+0)}{Visualizer(float r=0., float g=0., float b=0., CameraAngle camAngle=TopDown, float distance=20.0)}}]{\setlength{\rightskip}{0pt plus 5cm}tapl\+::viz\+::\+Visualizer\+::\+Visualizer (
-\begin{DoxyParamCaption}
-\item[{float}]{r = {\ttfamily 0.}, }
-\item[{float}]{g = {\ttfamily 0.}, }
-\item[{float}]{b = {\ttfamily 0.}, }
-\item[{{\bf Camera\+Angle}}]{cam\+Angle = {\ttfamily {\bf Top\+Down}}, }
-\item[{float}]{distance = {\ttfamily 20.0}}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classtapl_1_1viz_1_1Visualizer_a56215eefb4712acf78a922485d844f50}{}\label{classtapl_1_1viz_1_1Visualizer_a56215eefb4712acf78a922485d844f50}
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtapl_1_1viz_1_1Visualizer_a56215eefb4712acf78a922485d844f50}\label{classtapl_1_1viz_1_1Visualizer_a56215eefb4712acf78a922485d844f50}} 
+\index{tapl::viz::Visualizer@{tapl::viz::Visualizer}!Visualizer@{Visualizer}}
+\index{Visualizer@{Visualizer}!tapl::viz::Visualizer@{tapl::viz::Visualizer}}
+\doxysubsubsection{\texorpdfstring{Visualizer()}{Visualizer()}}
+{\footnotesize\ttfamily tapl\+::viz\+::\+Visualizer\+::\+Visualizer (\begin{DoxyParamCaption}\item[{float}]{r = {\ttfamily 0.},  }\item[{float}]{g = {\ttfamily 0.},  }\item[{float}]{b = {\ttfamily 0.},  }\item[{\mbox{\hyperlink{namespacetapl_1_1viz_a99e496921984514dbc7bcef809f50150}{Camera\+Angle}}}]{cam\+Angle = {\ttfamily \mbox{\hyperlink{namespacetapl_1_1viz_a99e496921984514dbc7bcef809f50150a9aa35eea1fe8f4b45a0b02a8b5048cfa}{Top\+Down}}},  }\item[{float}]{distance = {\ttfamily 20.0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
 
 
 Definition at line 34 of file visualization.\+hpp.
 
-\index{tapl\+::viz\+::\+Visualizer@{tapl\+::viz\+::\+Visualizer}!````~Visualizer@{$\sim$\+Visualizer}}
-\index{````~Visualizer@{$\sim$\+Visualizer}!tapl\+::viz\+::\+Visualizer@{tapl\+::viz\+::\+Visualizer}}
-\subsubsection[{\texorpdfstring{$\sim$\+Visualizer()}{~Visualizer()}}]{\setlength{\rightskip}{0pt plus 5cm}tapl\+::viz\+::\+Visualizer\+::$\sim$\+Visualizer (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classtapl_1_1viz_1_1Visualizer_a47473d1bffdf617379d718f1c2ed5930}{}\label{classtapl_1_1viz_1_1Visualizer_a47473d1bffdf617379d718f1c2ed5930}
+\mbox{\Hypertarget{classtapl_1_1viz_1_1Visualizer_a47473d1bffdf617379d718f1c2ed5930}\label{classtapl_1_1viz_1_1Visualizer_a47473d1bffdf617379d718f1c2ed5930}} 
+\index{tapl::viz::Visualizer@{tapl::viz::Visualizer}!````~Visualizer@{$\sim$Visualizer}}
+\index{````~Visualizer@{$\sim$Visualizer}!tapl::viz::Visualizer@{tapl::viz::Visualizer}}
+\doxysubsubsection{\texorpdfstring{$\sim$Visualizer()}{~Visualizer()}}
+{\footnotesize\ttfamily tapl\+::viz\+::\+Visualizer\+::$\sim$\+Visualizer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
 
 
 Definition at line 50 of file visualization.\+hpp.
 
 
 
-\subsection{Member Function Documentation}
-\index{tapl\+::viz\+::\+Visualizer@{tapl\+::viz\+::\+Visualizer}!clear\+Scene@{clear\+Scene}}
-\index{clear\+Scene@{clear\+Scene}!tapl\+::viz\+::\+Visualizer@{tapl\+::viz\+::\+Visualizer}}
-\subsubsection[{\texorpdfstring{clear\+Scene()}{clearScene()}}]{\setlength{\rightskip}{0pt plus 5cm}void tapl\+::viz\+::\+Visualizer\+::clear\+Scene (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classtapl_1_1viz_1_1Visualizer_a912479d651c5a9bcd5a24b77025f10c0}{}\label{classtapl_1_1viz_1_1Visualizer_a912479d651c5a9bcd5a24b77025f10c0}
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtapl_1_1viz_1_1Visualizer_a912479d651c5a9bcd5a24b77025f10c0}\label{classtapl_1_1viz_1_1Visualizer_a912479d651c5a9bcd5a24b77025f10c0}} 
+\index{tapl::viz::Visualizer@{tapl::viz::Visualizer}!clearScene@{clearScene}}
+\index{clearScene@{clearScene}!tapl::viz::Visualizer@{tapl::viz::Visualizer}}
+\doxysubsubsection{\texorpdfstring{clearScene()}{clearScene()}}
+{\footnotesize\ttfamily void tapl\+::viz\+::\+Visualizer\+::clear\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
 
 
 Clear the scene. 
@@ -92,222 +85,194 @@ Clear the scene.
 
 Definition at line 217 of file visualization.\+hpp.
 
-\index{tapl\+::viz\+::\+Visualizer@{tapl\+::viz\+::\+Visualizer}!render\+Bbox3d@{render\+Bbox3d}}
-\index{render\+Bbox3d@{render\+Bbox3d}!tapl\+::viz\+::\+Visualizer@{tapl\+::viz\+::\+Visualizer}}
-\subsubsection[{\texorpdfstring{render\+Bbox3d(const B\+Box3d \&box, float r=1.\+0, float g=0.\+0, float b=0.\+0, float opacity=0.\+5, const std\+::string \&id=""bbox"")}{renderBbox3d(const BBox3d &box, float r=1.0, float g=0.0, float b=0.0, float opacity=0.5, const std::string &id="bbox")}}]{\setlength{\rightskip}{0pt plus 5cm}void tapl\+::viz\+::\+Visualizer\+::render\+Bbox3d (
-\begin{DoxyParamCaption}
-\item[{const {\bf B\+Box3d} \&}]{box, }
-\item[{float}]{r = {\ttfamily 1.0}, }
-\item[{float}]{g = {\ttfamily 0.0}, }
-\item[{float}]{b = {\ttfamily 0.0}, }
-\item[{float}]{opacity = {\ttfamily 0.5}, }
-\item[{const std\+::string \&}]{id = {\ttfamily \char`\"{}bbox\char`\"{}}}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classtapl_1_1viz_1_1Visualizer_a3915205a2348669a0399b3f1a2e8551c}{}\label{classtapl_1_1viz_1_1Visualizer_a3915205a2348669a0399b3f1a2e8551c}
+\mbox{\Hypertarget{classtapl_1_1viz_1_1Visualizer_a3915205a2348669a0399b3f1a2e8551c}\label{classtapl_1_1viz_1_1Visualizer_a3915205a2348669a0399b3f1a2e8551c}} 
+\index{tapl::viz::Visualizer@{tapl::viz::Visualizer}!renderBbox3d@{renderBbox3d}}
+\index{renderBbox3d@{renderBbox3d}!tapl::viz::Visualizer@{tapl::viz::Visualizer}}
+\doxysubsubsection{\texorpdfstring{renderBbox3d()}{renderBbox3d()}}
+{\footnotesize\ttfamily void tapl\+::viz\+::\+Visualizer\+::render\+Bbox3d (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structtapl_1_1BBox3d}{B\+Box3d}} \&}]{box,  }\item[{float}]{r = {\ttfamily 1.0},  }\item[{float}]{g = {\ttfamily 0.0},  }\item[{float}]{b = {\ttfamily 0.0},  }\item[{float}]{opacity = {\ttfamily 0.5},  }\item[{const std\+::string \&}]{id = {\ttfamily \char`\"{}bbox\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
 
 
 Render a 3d bounding-\/box. 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em box} & 3D Bounding-\/\+Box \\
+\mbox{\texttt{ in}}  & {\em box} & 3D Bounding-\/\+Box \\
 \hline
-\mbox{\tt in}  & {\em r} & specifies red in rgb colorspace for the color of sphere in range of \mbox{[}0.\+0, 1.\+0\mbox{]} \\
+\mbox{\texttt{ in}}  & {\em r} & specifies red in rgb colorspace for the color of sphere in range of \mbox{[}0.\+0, 1.\+0\mbox{]} \\
 \hline
-\mbox{\tt in}  & {\em g} & specifies green in rgb colorspace for the color of sphere in range of \mbox{[}0.\+0, 1.\+0\mbox{]} \\
+\mbox{\texttt{ in}}  & {\em g} & specifies green in rgb colorspace for the color of sphere in range of \mbox{[}0.\+0, 1.\+0\mbox{]} \\
 \hline
-\mbox{\tt in}  & {\em b} & specifies blue in rgb colorspace for the color of sphere in range of \mbox{[}0.\+0, 1.\+0\mbox{]} \\
+\mbox{\texttt{ in}}  & {\em b} & specifies blue in rgb colorspace for the color of sphere in range of \mbox{[}0.\+0, 1.\+0\mbox{]} \\
 \hline
-\mbox{\tt in}  & {\em opacity} & opacity of the bounding box in range of \mbox{[}0.\+0, 1.\+0\mbox{]} \\
+\mbox{\texttt{ in}}  & {\em opacity} & opacity of the bounding box in range of \mbox{[}0.\+0, 1.\+0\mbox{]} \\
 \hline
-\mbox{\tt in}  & {\em id} & the bounding-\/box object id (default\+: bbox) \\
+\mbox{\texttt{ in}}  & {\em id} & the bounding-\/box object id (default\+: bbox) \\
 \hline
 \end{DoxyParams}
 
 
 Definition at line 177 of file visualization.\+hpp.
 
-\index{tapl\+::viz\+::\+Visualizer@{tapl\+::viz\+::\+Visualizer}!render\+Line@{render\+Line}}
-\index{render\+Line@{render\+Line}!tapl\+::viz\+::\+Visualizer@{tapl\+::viz\+::\+Visualizer}}
-\subsubsection[{\texorpdfstring{render\+Line(const Point\+T \&pt1, const Point\+T \&pt2, const std\+::string \&id)}{renderLine(const PointT &pt1, const PointT &pt2, const std::string &id)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename PointT $>$ void tapl\+::viz\+::\+Visualizer\+::render\+Line (
-\begin{DoxyParamCaption}
-\item[{const PointT \&}]{pt1, }
-\item[{const PointT \&}]{pt2, }
-\item[{const std\+::string \&}]{id}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classtapl_1_1viz_1_1Visualizer_a44e1d90914fa8129f4e4a26b4ad67718}{}\label{classtapl_1_1viz_1_1Visualizer_a44e1d90914fa8129f4e4a26b4ad67718}
+\mbox{\Hypertarget{classtapl_1_1viz_1_1Visualizer_a44e1d90914fa8129f4e4a26b4ad67718}\label{classtapl_1_1viz_1_1Visualizer_a44e1d90914fa8129f4e4a26b4ad67718}} 
+\index{tapl::viz::Visualizer@{tapl::viz::Visualizer}!renderLine@{renderLine}}
+\index{renderLine@{renderLine}!tapl::viz::Visualizer@{tapl::viz::Visualizer}}
+\doxysubsubsection{\texorpdfstring{renderLine()}{renderLine()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename PointT $>$ \\
+void tapl\+::viz\+::\+Visualizer\+::render\+Line (\begin{DoxyParamCaption}\item[{const PointT \&}]{pt1,  }\item[{const PointT \&}]{pt2,  }\item[{const std\+::string \&}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
 
 
 This function is used to render a line on the visualizer. 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em pt1} & start point of the line \\
+\mbox{\texttt{ in}}  & {\em pt1} & start point of the line \\
 \hline
-\mbox{\tt in}  & {\em pt2} & end point of the line \\
+\mbox{\texttt{ in}}  & {\em pt2} & end point of the line \\
 \hline
-\mbox{\tt in}  & {\em id} & a unique id for this line \\
+\mbox{\texttt{ in}}  & {\em id} & a unique id for this line \\
 \hline
 \end{DoxyParams}
 
 
 Definition at line 92 of file visualization.\+hpp.
 
-\index{tapl\+::viz\+::\+Visualizer@{tapl\+::viz\+::\+Visualizer}!render\+Line@{render\+Line}}
-\index{render\+Line@{render\+Line}!tapl\+::viz\+::\+Visualizer@{tapl\+::viz\+::\+Visualizer}}
-\subsubsection[{\texorpdfstring{render\+Line(const Point\+T \&pt1, const Point\+T \&pt2, float r, float g, float b, const std\+::string \&id)}{renderLine(const PointT &pt1, const PointT &pt2, float r, float g, float b, const std::string &id)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename PointT $>$ void tapl\+::viz\+::\+Visualizer\+::render\+Line (
-\begin{DoxyParamCaption}
-\item[{const PointT \&}]{pt1, }
-\item[{const PointT \&}]{pt2, }
-\item[{float}]{r, }
-\item[{float}]{g, }
-\item[{float}]{b, }
-\item[{const std\+::string \&}]{id}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classtapl_1_1viz_1_1Visualizer_a23442f9881a361b9ff0aff3b18f1eea0}{}\label{classtapl_1_1viz_1_1Visualizer_a23442f9881a361b9ff0aff3b18f1eea0}
+\mbox{\Hypertarget{classtapl_1_1viz_1_1Visualizer_a23442f9881a361b9ff0aff3b18f1eea0}\label{classtapl_1_1viz_1_1Visualizer_a23442f9881a361b9ff0aff3b18f1eea0}} 
+\index{tapl::viz::Visualizer@{tapl::viz::Visualizer}!renderLine@{renderLine}}
+\index{renderLine@{renderLine}!tapl::viz::Visualizer@{tapl::viz::Visualizer}}
+\doxysubsubsection{\texorpdfstring{renderLine()}{renderLine()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename PointT $>$ \\
+void tapl\+::viz\+::\+Visualizer\+::render\+Line (\begin{DoxyParamCaption}\item[{const PointT \&}]{pt1,  }\item[{const PointT \&}]{pt2,  }\item[{float}]{r,  }\item[{float}]{g,  }\item[{float}]{b,  }\item[{const std\+::string \&}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
 
 
 This function is used to render a line on the visualizer. 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em pt1} & start point of the line \\
+\mbox{\texttt{ in}}  & {\em pt1} & start point of the line \\
 \hline
-\mbox{\tt in}  & {\em pt2} & end point of the line \\
+\mbox{\texttt{ in}}  & {\em pt2} & end point of the line \\
 \hline
-\mbox{\tt in}  & {\em r} & specifies red in rgb colorspace for the color of sphere in range of \mbox{[}0.\+0, 1.\+0\mbox{]} \\
+\mbox{\texttt{ in}}  & {\em r} & specifies red in rgb colorspace for the color of sphere in range of \mbox{[}0.\+0, 1.\+0\mbox{]} \\
 \hline
-\mbox{\tt in}  & {\em g} & specifies green in rgb colorspace for the color of sphere in range of \mbox{[}0.\+0, 1.\+0\mbox{]} \\
+\mbox{\texttt{ in}}  & {\em g} & specifies green in rgb colorspace for the color of sphere in range of \mbox{[}0.\+0, 1.\+0\mbox{]} \\
 \hline
-\mbox{\tt in}  & {\em b} & specifies blue in rgb colorspace for the color of sphere in range of \mbox{[}0.\+0, 1.\+0\mbox{]} \\
+\mbox{\texttt{ in}}  & {\em b} & specifies blue in rgb colorspace for the color of sphere in range of \mbox{[}0.\+0, 1.\+0\mbox{]} \\
 \hline
-\mbox{\tt in}  & {\em id} & a unique id for this line \\
+\mbox{\texttt{ in}}  & {\em id} & a unique id for this line \\
 \hline
 \end{DoxyParams}
 
 
 Definition at line 111 of file visualization.\+hpp.
 
-\index{tapl\+::viz\+::\+Visualizer@{tapl\+::viz\+::\+Visualizer}!render\+Point\+Cloud@{render\+Point\+Cloud}}
-\index{render\+Point\+Cloud@{render\+Point\+Cloud}!tapl\+::viz\+::\+Visualizer@{tapl\+::viz\+::\+Visualizer}}
-\subsubsection[{\texorpdfstring{render\+Point\+Cloud(const typename pcl\+::\+Point\+Cloud$<$ Point\+T $>$\+::\+Const\+Ptr \&cloud, float ptsize=1.\+0, float r=1.\+0, float g=0.\+0, float b=0.\+0, const std\+::string \&id=""cloud"")}{renderPointCloud(const typename pcl::PointCloud< PointT >::ConstPtr &cloud, float ptsize=1.0, float r=1.0, float g=0.0, float b=0.0, const std::string &id="cloud")}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename PointT $>$ void tapl\+::viz\+::\+Visualizer\+::render\+Point\+Cloud (
-\begin{DoxyParamCaption}
-\item[{const typename pcl\+::\+Point\+Cloud$<$ PointT $>$\+::Const\+Ptr \&}]{cloud, }
-\item[{float}]{ptsize = {\ttfamily 1.0}, }
-\item[{float}]{r = {\ttfamily 1.0}, }
-\item[{float}]{g = {\ttfamily 0.0}, }
-\item[{float}]{b = {\ttfamily 0.0}, }
-\item[{const std\+::string \&}]{id = {\ttfamily \char`\"{}cloud\char`\"{}}}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classtapl_1_1viz_1_1Visualizer_a5c6a85b27b5042f09b0e7034ee73209c}{}\label{classtapl_1_1viz_1_1Visualizer_a5c6a85b27b5042f09b0e7034ee73209c}
+\mbox{\Hypertarget{classtapl_1_1viz_1_1Visualizer_a5c6a85b27b5042f09b0e7034ee73209c}\label{classtapl_1_1viz_1_1Visualizer_a5c6a85b27b5042f09b0e7034ee73209c}} 
+\index{tapl::viz::Visualizer@{tapl::viz::Visualizer}!renderPointCloud@{renderPointCloud}}
+\index{renderPointCloud@{renderPointCloud}!tapl::viz::Visualizer@{tapl::viz::Visualizer}}
+\doxysubsubsection{\texorpdfstring{renderPointCloud()}{renderPointCloud()}}
+{\footnotesize\ttfamily template$<$typename PointT $>$ \\
+void tapl\+::viz\+::\+Visualizer\+::render\+Point\+Cloud (\begin{DoxyParamCaption}\item[{const typename pcl\+::\+Point\+Cloud$<$ PointT $>$\+::Const\+Ptr \&}]{cloud,  }\item[{float}]{ptsize = {\ttfamily 1.0},  }\item[{float}]{r = {\ttfamily 1.0},  }\item[{float}]{g = {\ttfamily 0.0},  }\item[{float}]{b = {\ttfamily 0.0},  }\item[{const std\+::string \&}]{id = {\ttfamily \char`\"{}cloud\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
 
 
 Render a point-\/cloud. 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em cloud} & point-\/cloud to be rendered \\
+\mbox{\texttt{ in}}  & {\em cloud} & point-\/cloud to be rendered \\
 \hline
-\mbox{\tt in}  & {\em ptsize} & size of the point on visualizer to be rendered \\
+\mbox{\texttt{ in}}  & {\em ptsize} & size of the point on visualizer to be rendered \\
 \hline
-\mbox{\tt in}  & {\em r} & specifies red in rgb colorspace for the color of sphere in range of \mbox{[}0.\+0, 1.\+0\mbox{]} \\
+\mbox{\texttt{ in}}  & {\em r} & specifies red in rgb colorspace for the color of sphere in range of \mbox{[}0.\+0, 1.\+0\mbox{]} \\
 \hline
-\mbox{\tt in}  & {\em g} & specifies green in rgb colorspace for the color of sphere in range of \mbox{[}0.\+0, 1.\+0\mbox{]} \\
+\mbox{\texttt{ in}}  & {\em g} & specifies green in rgb colorspace for the color of sphere in range of \mbox{[}0.\+0, 1.\+0\mbox{]} \\
 \hline
-\mbox{\tt in}  & {\em b} & specifies blue in rgb colorspace for the color of sphere in range of \mbox{[}0.\+0, 1.\+0\mbox{]} \\
+\mbox{\texttt{ in}}  & {\em b} & specifies blue in rgb colorspace for the color of sphere in range of \mbox{[}0.\+0, 1.\+0\mbox{]} \\
 \hline
-\mbox{\tt in}  & {\em id} & the point-\/cloud object id (default\+: cloud) \\
+\mbox{\texttt{ in}}  & {\em id} & the point-\/cloud object id (default\+: cloud) \\
 \hline
 \end{DoxyParams}
 
 
 Definition at line 154 of file visualization.\+hpp.
 
-\index{tapl\+::viz\+::\+Visualizer@{tapl\+::viz\+::\+Visualizer}!render\+Pose@{render\+Pose}}
-\index{render\+Pose@{render\+Pose}!tapl\+::viz\+::\+Visualizer@{tapl\+::viz\+::\+Visualizer}}
-\subsubsection[{\texorpdfstring{render\+Pose(float scale, float x, float y, float z, const std\+::string \&id=""pose"")}{renderPose(float scale, float x, float y, float z, const std::string &id="pose")}}]{\setlength{\rightskip}{0pt plus 5cm}void tapl\+::viz\+::\+Visualizer\+::render\+Pose (
-\begin{DoxyParamCaption}
-\item[{float}]{scale, }
-\item[{float}]{x, }
-\item[{float}]{y, }
-\item[{float}]{z, }
-\item[{const std\+::string \&}]{id = {\ttfamily \char`\"{}pose\char`\"{}}}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classtapl_1_1viz_1_1Visualizer_a22497fa3f1d2738c1b0a3f963a7c43dd}{}\label{classtapl_1_1viz_1_1Visualizer_a22497fa3f1d2738c1b0a3f963a7c43dd}
+\mbox{\Hypertarget{classtapl_1_1viz_1_1Visualizer_ae24ff2fab8c5107d931cd175abd916ef}\label{classtapl_1_1viz_1_1Visualizer_ae24ff2fab8c5107d931cd175abd916ef}} 
+\index{tapl::viz::Visualizer@{tapl::viz::Visualizer}!renderPose@{renderPose}}
+\index{renderPose@{renderPose}!tapl::viz::Visualizer@{tapl::viz::Visualizer}}
+\doxysubsubsection{\texorpdfstring{renderPose()}{renderPose()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void tapl\+::viz\+::\+Visualizer\+::render\+Pose (\begin{DoxyParamCaption}\item[{float}]{scale,  }\item[{const Eigen\+::\+Affine3f \&}]{pose,  }\item[{const std\+::string \&}]{id = {\ttfamily \char`\"{}pose\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
-Adds 3-\/\+D\+OF pose. 
+
+Adds 6-\/D\+OF pose defined by a 4x4 transformation matrix. 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em scale} & the scale of the axes \\
+\mbox{\texttt{ in}}  & {\em scale} & the scale of the axes \\
 \hline
-\mbox{\tt in}  & {\em x} & x-\/coordinate \\
+\mbox{\texttt{ in}}  & {\em pose} & the pose to be rendered. 4x4 transformation matrix combines a 3x3 rotation matrix and a 3x1 translation matrix \\
 \hline
-\mbox{\tt in}  & {\em y} & y-\/coordinate \\
-\hline
-\mbox{\tt in}  & {\em z} & z-\/coordinate \\
-\hline
-\mbox{\tt in}  & {\em id} & the coordinate system object id (default\+: pose) \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 124 of file visualization.\+hpp.
-
-\index{tapl\+::viz\+::\+Visualizer@{tapl\+::viz\+::\+Visualizer}!render\+Pose@{render\+Pose}}
-\index{render\+Pose@{render\+Pose}!tapl\+::viz\+::\+Visualizer@{tapl\+::viz\+::\+Visualizer}}
-\subsubsection[{\texorpdfstring{render\+Pose(float scale, const Eigen\+::\+Affine3f \&pose, const std\+::string \&id=""pose"")}{renderPose(float scale, const Eigen::Affine3f &pose, const std::string &id="pose")}}]{\setlength{\rightskip}{0pt plus 5cm}void tapl\+::viz\+::\+Visualizer\+::render\+Pose (
-\begin{DoxyParamCaption}
-\item[{float}]{scale, }
-\item[{const Eigen\+::\+Affine3f \&}]{pose, }
-\item[{const std\+::string \&}]{id = {\ttfamily \char`\"{}pose\char`\"{}}}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classtapl_1_1viz_1_1Visualizer_ae24ff2fab8c5107d931cd175abd916ef}{}\label{classtapl_1_1viz_1_1Visualizer_ae24ff2fab8c5107d931cd175abd916ef}
-
-
-Adds 6-\/\+D\+OF pose defined by a 4x4 transformation matrix. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em scale} & the scale of the axes \\
-\hline
-\mbox{\tt in}  & {\em pose} & the pose to be rendered. 4x4 transformation matrix combines a 3x3 rotation matrix and a 3x1 translation matrix \\
-\hline
-\mbox{\tt in}  & {\em id} & the coordinate system object id (default\+: pose) \\
+\mbox{\texttt{ in}}  & {\em id} & the coordinate system object id (default\+: pose) \\
 \hline
 \end{DoxyParams}
 
 
 Definition at line 136 of file visualization.\+hpp.
 
-\index{tapl\+::viz\+::\+Visualizer@{tapl\+::viz\+::\+Visualizer}!render\+Scene@{render\+Scene}}
-\index{render\+Scene@{render\+Scene}!tapl\+::viz\+::\+Visualizer@{tapl\+::viz\+::\+Visualizer}}
-\subsubsection[{\texorpdfstring{render\+Scene(int time=1)}{renderScene(int time=1)}}]{\setlength{\rightskip}{0pt plus 5cm}void tapl\+::viz\+::\+Visualizer\+::render\+Scene (
-\begin{DoxyParamCaption}
-\item[{int}]{time = {\ttfamily 1}}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classtapl_1_1viz_1_1Visualizer_a8ec08b4e37523fb75731b58748224035}{}\label{classtapl_1_1viz_1_1Visualizer_a8ec08b4e37523fb75731b58748224035}
+\mbox{\Hypertarget{classtapl_1_1viz_1_1Visualizer_a22497fa3f1d2738c1b0a3f963a7c43dd}\label{classtapl_1_1viz_1_1Visualizer_a22497fa3f1d2738c1b0a3f963a7c43dd}} 
+\index{tapl::viz::Visualizer@{tapl::viz::Visualizer}!renderPose@{renderPose}}
+\index{renderPose@{renderPose}!tapl::viz::Visualizer@{tapl::viz::Visualizer}}
+\doxysubsubsection{\texorpdfstring{renderPose()}{renderPose()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void tapl\+::viz\+::\+Visualizer\+::render\+Pose (\begin{DoxyParamCaption}\item[{float}]{scale,  }\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z,  }\item[{const std\+::string \&}]{id = {\ttfamily \char`\"{}pose\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds 3-\/D\+OF pose. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em scale} & the scale of the axes \\
+\hline
+\mbox{\texttt{ in}}  & {\em x} & x-\/coordinate \\
+\hline
+\mbox{\texttt{ in}}  & {\em y} & y-\/coordinate \\
+\hline
+\mbox{\texttt{ in}}  & {\em z} & z-\/coordinate \\
+\hline
+\mbox{\texttt{ in}}  & {\em id} & the coordinate system object id (default\+: pose) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 124 of file visualization.\+hpp.
+
+\mbox{\Hypertarget{classtapl_1_1viz_1_1Visualizer_a8ec08b4e37523fb75731b58748224035}\label{classtapl_1_1viz_1_1Visualizer_a8ec08b4e37523fb75731b58748224035}} 
+\index{tapl::viz::Visualizer@{tapl::viz::Visualizer}!renderScene@{renderScene}}
+\index{renderScene@{renderScene}!tapl::viz::Visualizer@{tapl::viz::Visualizer}}
+\doxysubsubsection{\texorpdfstring{renderScene()}{renderScene()}}
+{\footnotesize\ttfamily void tapl\+::viz\+::\+Visualizer\+::render\+Scene (\begin{DoxyParamCaption}\item[{int}]{time = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
 
 
 Render the scene once. 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em time} & -\/ How long (in ms) should the visualization loop be allowed to run. \\
+\mbox{\texttt{ in}}  & {\em time} & -\/ How long (in ms) should the visualization loop be allowed to run. \\
 \hline
 \end{DoxyParams}
 
 
 Definition at line 201 of file visualization.\+hpp.
 
-\index{tapl\+::viz\+::\+Visualizer@{tapl\+::viz\+::\+Visualizer}!render\+Scene\+And\+Hold@{render\+Scene\+And\+Hold}}
-\index{render\+Scene\+And\+Hold@{render\+Scene\+And\+Hold}!tapl\+::viz\+::\+Visualizer@{tapl\+::viz\+::\+Visualizer}}
-\subsubsection[{\texorpdfstring{render\+Scene\+And\+Hold()}{renderSceneAndHold()}}]{\setlength{\rightskip}{0pt plus 5cm}void tapl\+::viz\+::\+Visualizer\+::render\+Scene\+And\+Hold (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classtapl_1_1viz_1_1Visualizer_aed14efd9e578a4b6013b9745e07acea1}{}\label{classtapl_1_1viz_1_1Visualizer_aed14efd9e578a4b6013b9745e07acea1}
+\mbox{\Hypertarget{classtapl_1_1viz_1_1Visualizer_aed14efd9e578a4b6013b9745e07acea1}\label{classtapl_1_1viz_1_1Visualizer_aed14efd9e578a4b6013b9745e07acea1}} 
+\index{tapl::viz::Visualizer@{tapl::viz::Visualizer}!renderSceneAndHold@{renderSceneAndHold}}
+\index{renderSceneAndHold@{renderSceneAndHold}!tapl::viz::Visualizer@{tapl::viz::Visualizer}}
+\doxysubsubsection{\texorpdfstring{renderSceneAndHold()}{renderSceneAndHold()}}
+{\footnotesize\ttfamily void tapl\+::viz\+::\+Visualizer\+::render\+Scene\+And\+Hold (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
 
 
 Render the scene and hold. 
@@ -316,61 +281,54 @@ Render the scene and hold.
 
 Definition at line 209 of file visualization.\+hpp.
 
-\index{tapl\+::viz\+::\+Visualizer@{tapl\+::viz\+::\+Visualizer}!render\+Sphere@{render\+Sphere}}
-\index{render\+Sphere@{render\+Sphere}!tapl\+::viz\+::\+Visualizer@{tapl\+::viz\+::\+Visualizer}}
-\subsubsection[{\texorpdfstring{render\+Sphere(const Point\+T \&pt, float radius, const std\+::string \&id)}{renderSphere(const PointT &pt, float radius, const std::string &id)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename PointT $>$ void tapl\+::viz\+::\+Visualizer\+::render\+Sphere (
-\begin{DoxyParamCaption}
-\item[{const PointT \&}]{pt, }
-\item[{float}]{radius, }
-\item[{const std\+::string \&}]{id}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classtapl_1_1viz_1_1Visualizer_a1ffe49d8e3b2693b0c0a4ccd10edac9d}{}\label{classtapl_1_1viz_1_1Visualizer_a1ffe49d8e3b2693b0c0a4ccd10edac9d}
+\mbox{\Hypertarget{classtapl_1_1viz_1_1Visualizer_a1ffe49d8e3b2693b0c0a4ccd10edac9d}\label{classtapl_1_1viz_1_1Visualizer_a1ffe49d8e3b2693b0c0a4ccd10edac9d}} 
+\index{tapl::viz::Visualizer@{tapl::viz::Visualizer}!renderSphere@{renderSphere}}
+\index{renderSphere@{renderSphere}!tapl::viz::Visualizer@{tapl::viz::Visualizer}}
+\doxysubsubsection{\texorpdfstring{renderSphere()}{renderSphere()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename PointT $>$ \\
+void tapl\+::viz\+::\+Visualizer\+::render\+Sphere (\begin{DoxyParamCaption}\item[{const PointT \&}]{pt,  }\item[{float}]{radius,  }\item[{const std\+::string \&}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
 
 
 This function is used to render a sphere on the visualizer. 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em pt} & center point of the sphere \\
+\mbox{\texttt{ in}}  & {\em pt} & center point of the sphere \\
 \hline
-\mbox{\tt in}  & {\em radius} & radius of the sphere \\
+\mbox{\texttt{ in}}  & {\em radius} & radius of the sphere \\
 \hline
-\mbox{\tt in}  & {\em id} & a unique id for this sphere \\
+\mbox{\texttt{ in}}  & {\em id} & a unique id for this sphere \\
 \hline
 \end{DoxyParams}
 
 
 Definition at line 60 of file visualization.\+hpp.
 
-\index{tapl\+::viz\+::\+Visualizer@{tapl\+::viz\+::\+Visualizer}!render\+Sphere@{render\+Sphere}}
-\index{render\+Sphere@{render\+Sphere}!tapl\+::viz\+::\+Visualizer@{tapl\+::viz\+::\+Visualizer}}
-\subsubsection[{\texorpdfstring{render\+Sphere(const Point\+T \&pt, float radius, float r, float g, float b, const std\+::string \&id)}{renderSphere(const PointT &pt, float radius, float r, float g, float b, const std::string &id)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename PointT $>$ void tapl\+::viz\+::\+Visualizer\+::render\+Sphere (
-\begin{DoxyParamCaption}
-\item[{const PointT \&}]{pt, }
-\item[{float}]{radius, }
-\item[{float}]{r, }
-\item[{float}]{g, }
-\item[{float}]{b, }
-\item[{const std\+::string \&}]{id}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classtapl_1_1viz_1_1Visualizer_acca33adaa4aeaeca6f393dee319b36b8}{}\label{classtapl_1_1viz_1_1Visualizer_acca33adaa4aeaeca6f393dee319b36b8}
+\mbox{\Hypertarget{classtapl_1_1viz_1_1Visualizer_acca33adaa4aeaeca6f393dee319b36b8}\label{classtapl_1_1viz_1_1Visualizer_acca33adaa4aeaeca6f393dee319b36b8}} 
+\index{tapl::viz::Visualizer@{tapl::viz::Visualizer}!renderSphere@{renderSphere}}
+\index{renderSphere@{renderSphere}!tapl::viz::Visualizer@{tapl::viz::Visualizer}}
+\doxysubsubsection{\texorpdfstring{renderSphere()}{renderSphere()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename PointT $>$ \\
+void tapl\+::viz\+::\+Visualizer\+::render\+Sphere (\begin{DoxyParamCaption}\item[{const PointT \&}]{pt,  }\item[{float}]{radius,  }\item[{float}]{r,  }\item[{float}]{g,  }\item[{float}]{b,  }\item[{const std\+::string \&}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
 
 
 This function is used to render a sphere on the visualizer. 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em pt} & center point of the sphere \\
+\mbox{\texttt{ in}}  & {\em pt} & center point of the sphere \\
 \hline
-\mbox{\tt in}  & {\em radius} & radius of the sphere \\
+\mbox{\texttt{ in}}  & {\em radius} & radius of the sphere \\
 \hline
-\mbox{\tt in}  & {\em r} & specifies red in rgb colorspace for the color of sphere in range of \mbox{[}0.\+0, 1.\+0\mbox{]} \\
+\mbox{\texttt{ in}}  & {\em r} & specifies red in rgb colorspace for the color of sphere in range of \mbox{[}0.\+0, 1.\+0\mbox{]} \\
 \hline
-\mbox{\tt in}  & {\em g} & specifies green in rgb colorspace for the color of sphere in range of \mbox{[}0.\+0, 1.\+0\mbox{]} \\
+\mbox{\texttt{ in}}  & {\em g} & specifies green in rgb colorspace for the color of sphere in range of \mbox{[}0.\+0, 1.\+0\mbox{]} \\
 \hline
-\mbox{\tt in}  & {\em b} & specifies blue in rgb colorspace for the color of sphere in range of \mbox{[}0.\+0, 1.\+0\mbox{]} \\
+\mbox{\texttt{ in}}  & {\em b} & specifies blue in rgb colorspace for the color of sphere in range of \mbox{[}0.\+0, 1.\+0\mbox{]} \\
 \hline
-\mbox{\tt in}  & {\em id} & a unique id for this sphere \\
+\mbox{\texttt{ in}}  & {\em id} & a unique id for this sphere \\
 \hline
 \end{DoxyParams}
 
@@ -381,4 +339,4 @@ Definition at line 79 of file visualization.\+hpp.
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-tapl/\hyperlink{visualization_8hpp}{visualization.\+hpp}\end{DoxyCompactItemize}
+tapl/\mbox{\hyperlink{visualization_8hpp}{visualization.\+hpp}}\end{DoxyCompactItemize}

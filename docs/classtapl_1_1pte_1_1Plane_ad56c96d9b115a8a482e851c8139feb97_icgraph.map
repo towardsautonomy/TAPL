@@ -1,0 +1,4 @@
+<map id="tapl::pte::Plane::Ransac" name="tapl::pte::Plane::Ransac">
+<area shape="rect" id="node1" title=" " alt="" coords="231,5,405,32"/>
+<area shape="rect" id="node2" href="$namespacetapl_1_1pte.html#aa4fc09affe62218081e85ed5818bf2ef" title="This function segments a plane within a point&#45;cloud. Points within the plane are inliers and other po..." alt="" coords="5,5,183,32"/>
+</map>
