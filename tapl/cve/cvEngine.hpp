@@ -8,6 +8,7 @@
 #define CV_ENGINE_H_
 
 #include "tapl/common/taplTypes.hpp"
+#include "sfm.hpp"
 
 namespace tapl {
     namespace cve {
@@ -119,8 +120,8 @@ namespace tapl {
          * @return tapl::FAILURE if failure 
          */
         tapl::ResultCode computeRelativePose(tapl::DataFrame &dframe1, 
-                                            tapl::DataFrame &dframe2, 
-                                            cv::Mat &camera_matrix);
+                                             tapl::DataFrame &dframe2, 
+                                             cv::Mat &camera_matrix);
 
         /** 
          * @brief This function is used to stitch multiple images as a panaromic image.

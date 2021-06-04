@@ -21,6 +21,15 @@ namespace tapl
     } ResultCode;
 
     /**
+     * @brief 3D Point
+     */
+    struct Point3d {
+        double x;                           /*!< x-coordinate */
+        double y;                           /*!< y-coordinate */
+        double z;                           /*!< z-coordinate */
+    };
+
+    /**
      * @brief 3D Bounding-Box
      */
     struct BBox3d {
