@@ -6,6 +6,7 @@ set(CXX_FLAGS "-Wall")
 set(CMAKE_CXX_FLAGS, "${CXX_FLAGS}")
 add_definitions("-lstdc++fs")
 
+project(TAPL_examples)
 # Find OvenCV
 find_package(OpenCV 4.1 REQUIRED)
 

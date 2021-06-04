@@ -9,10 +9,10 @@
 #define TAPL_H_
 
 /* Include all the header files */
-#include "tapl/taplTypes.hpp"
-#include "tapl/cvEngine.hpp"
-#include "tapl/ptEngine.hpp"
-#include "tapl/ringBuffer.hpp"
-#include "tapl/visualization.hpp"
+#include "tapl/common/taplTypes.hpp"
+#include "tapl/common/ringBuffer.hpp"
+#include "tapl/cve/cvEngine.hpp"
+#include "tapl/pte/ptEngine.hpp"
+#include "tapl/viz/visualization.hpp"
 
 #endif /* TAPL_H_ */

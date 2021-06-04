@@ -32,9 +32,17 @@ set(TAPL_VERSION, 0.1)
 ## Add TAPL source and include files
 file(GLOB TAPL_src
     "tapl/*.cpp"
+    "tapl/*/*.cpp"
 )
 file(GLOB TAPL_include
     "tapl/*.hpp"
+    "tapl/*/*.hpp"
+)
+include_directories(
+    "tapl/common"
+    "tapl/cve"
+    "tapl/pte"
+    "tapl/viz"
 )
 
 # define project
