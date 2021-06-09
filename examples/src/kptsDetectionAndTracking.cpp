@@ -28,17 +28,12 @@ int main(int argc, const char *argv[])
     tapl::RingBuffer<tapl::DataFrame> dataBuffer(dataBufferSize);
 
     // Read camera calibration
-    std::cout << "loading camera calibration..." << std::endl;
     cv::FileStorage opencv_file(calibPath, cv::FileStorage::READ);
     cv::Mat camera_matrix;
     opencv_file["camera_matrix"] >> camera_matrix;
     cv::Mat dist_coeff;
     opencv_file["dist_coeff"] >> dist_coeff;
     opencv_file.release();
-    std::cout << "Camera Matrix:" << std::endl;
-    std::cout << camera_matrix << std::endl;
-    std::cout << "Distortion Coefficients:" << std::endl;
-    std::cout << dist_coeff << std::endl;
 
     namespace fs = std::filesystem;
     std::vector<std::string> fnames;
@@ -61,8 +56,8 @@ int main(int argc, const char *argv[])
         frame.cameraFrame.pushImage(img_gray);
         dataBuffer.push(frame);
 
-        cout << "----------------------------------------------------" << endl;
-        cout << "Image [" << imgIndex << "] loaded into the ring buffer" << endl;
+        TLOG_INFO << "----------------------------------------------------";
+        TLOG_INFO << "Image [" << imgIndex << "] loaded into the ring buffer";
 
         // perform keypoints detection and matching if more than one image is loaded into the buffer
         if(dataBuffer.getSize() > 1) {
@@ -98,7 +93,7 @@ int main(int argc, const char *argv[])
                 string windowName = "Matching keypoints between two camera images";
                 cv::namedWindow(windowName, 7);
                 cv::imshow(windowName, matchImg);
-                cout << "Press key to continue to next image" << endl;
+                TLOG_INFO << "Press key to continue to next image";
                 cv::waitKey(0); // wait for key to be pressed
             }
         }

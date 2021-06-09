@@ -17,17 +17,12 @@ int main(int argc, const char *argv[])
     int nImages = -1;   // last file index to load
 
     // Read camera calibration
-    std::cout << "loading camera calibration..." << std::endl;
     cv::FileStorage opencv_file(calibPath, cv::FileStorage::READ);
     cv::Mat camera_matrix;
     opencv_file["camera_matrix"] >> camera_matrix;
     cv::Mat dist_coeff;
     opencv_file["dist_coeff"] >> dist_coeff;
     opencv_file.release();
-    std::cout << "Camera Matrix:" << std::endl;
-    std::cout << camera_matrix << std::endl;
-    std::cout << "Distortion Coefficients:" << std::endl;
-    std::cout << dist_coeff << std::endl;
 
     namespace fs = std::filesystem;
     std::vector<std::string> fnames;
@@ -51,13 +46,13 @@ int main(int argc, const char *argv[])
         imgIndex++;
         if((nImages != -1) && (imgIndex >= nImages)) break;
     }
-    cout << "[" << imgs.size() << "] Images loaded from file" << endl;
+    TLOG_INFO << "[" << imgs.size() << "] Images loaded from file";
 
     // perform panoramic stitching
     cv::Mat pano;
     tapl::ResultCode result = tapl::cve::stitchPanaromic(imgs, pano);
     if (result != tapl::SUCCESS) {
-        std::cout << "ERROR: Panoramic stitching failed.." << std::endl;
+        TLOG_INFO << "ERROR: Panoramic stitching failed..";
         exit(EXIT_FAILURE);
     }    
 

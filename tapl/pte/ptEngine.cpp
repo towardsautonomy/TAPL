@@ -161,8 +161,8 @@ namespace tapl {
 
 			// measure execution time
 			auto t_duration = std::chrono::duration_cast<std::chrono::milliseconds>(t_end - t_start);
-			std::cout << "Time taken by RANSAC: "
-				<< t_duration.count() << " milliseconds" << std::endl; 
+			TLOG_INFO << "Time taken by RANSAC: "
+				<< t_duration.count() << " milliseconds" ; 
 
 			// Return indicies of inliers from fitted line with most inliers
 			return inliersResult;
@@ -302,7 +302,7 @@ namespace tapl {
 
 				for(typename pcl::PointCloud<PointT>::iterator it = cloud->begin(); it != cloud->end(); ++it)
 				{
-					// std::cout << "dist = " << this->distToPoint(coeffs[i], *it) << std::endl;
+					// TLOG_INFO << "dist = " << this->distToPoint(coeffs[i], *it) ;
 					if(this->distToPoint(coeffs[i], *it) <= distanceToPlane)
 					{
 						n_inliers[i]++;

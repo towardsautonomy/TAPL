@@ -9,6 +9,7 @@
 
 #include <vector>
 #include <opencv2/core.hpp>
+#include "tapl/common/taplLog.hpp"
 
 namespace tapl
 {
@@ -93,7 +94,7 @@ namespace tapl
                 return SUCCESS;
             }
             else {
-                std::cout << "ERROR: Image does not exist" << std::endl;
+                TLOG_ERROR << "Image does not exist";
                 return FAILURE;
             }
         }
@@ -104,7 +105,7 @@ namespace tapl
                 return SUCCESS;
             }
             else {
-                std::cout << "ERROR: Keypoints have not been computed yet" << std::endl;
+                TLOG_ERROR << "Keypoints have not been computed yet";
                 return FAILURE;
             }
         }
@@ -115,7 +116,7 @@ namespace tapl
                 return SUCCESS;
             }
             else {
-                std::cout << "ERROR: Descriptors have not been computed yet" << std::endl;
+                TLOG_ERROR << "Descriptors have not been computed yet";
                 return FAILURE;
             }
         }
@@ -164,7 +165,7 @@ namespace tapl
                 return SUCCESS;
             }
             else {
-                std::cout << "ERROR: Keypoints matches have not been computed yet" << std::endl;
+                TLOG_ERROR << "Keypoints matches have not been computed yet";
                 return FAILURE;
             }
         }
@@ -175,7 +176,7 @@ namespace tapl
                 return SUCCESS;
             }
             else {
-                std::cout << "ERROR: Fundamental Matrix has not been computed yet" << std::endl;
+                TLOG_ERROR << "Fundamental Matrix has not been computed yet";
                 return FAILURE;
             }
         }
@@ -186,7 +187,7 @@ namespace tapl
                 return SUCCESS;
             }
             else {
-                std::cout << "ERROR: Essential Matrix has not been computed yet" << std::endl;
+                TLOG_ERROR << "Essential Matrix has not been computed yet";
                 return FAILURE;
             }
         }
@@ -197,7 +198,7 @@ namespace tapl
                 return SUCCESS;
             }
             else {
-                std::cout << "ERROR: Pose has not been computed yet" << std::endl;
+                TLOG_ERROR << "Pose has not been computed yet";
                 return FAILURE;
             }
         }
@@ -208,7 +209,7 @@ namespace tapl
                 return SUCCESS;
             }
             else {
-                std::cout << "ERROR: Triangulated points have not been computed yet" << std::endl;
+                TLOG_ERROR << "Triangulated points have not been computed yet";
                 return FAILURE;
             }
         }

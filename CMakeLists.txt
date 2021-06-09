@@ -28,7 +28,7 @@ list(REMOVE_ITEM PCL_LIBRARIES "vtkproj4")
 ##==============Build TAPL Library==============##
 ##==============================================##
 
-set(TAPL_VERSION, 0.1) 
+set(TAPL_VERSION 0.1) 
 ## Add TAPL source and include files
 file(GLOB TAPL_src
     "tapl/*.cpp"
@@ -61,7 +61,7 @@ endif()
 include(GNUInstallDirs)
 
 # define library
-add_library(${PROJECT_NAME} SHARED ${TAPL_src})
+add_library(${PROJECT_NAME} SHARED ${TAPL_src} ${TAPL_include})
 
 # include directories
 target_include_directories(${PROJECT_NAME} PUBLIC
@@ -71,9 +71,9 @@ target_include_directories(${PROJECT_NAME} PUBLIC
     PRIVATE ${PROJECT_NAME})
 
 # define library properties
-#set_target_properties(${PROJECT_NAME} PROPERTIES
-#    VERSION ${PROJECT_VERSION}
-#    SOVERSION ${PROJECT_VERSION})
+set_target_properties(${PROJECT_NAME} PROPERTIES
+    VERSION ${TAPL_VERSION}
+    SOVERSION ${TAPL_VERSION})
 
 set_target_properties(${PROJECT_NAME} PROPERTIES PUBLIC_HEADER ${PROJECT_NAME}/${PROJECT_NAME}.hpp)
 configure_file(${PROJECT_NAME}.pc.in ${PROJECT_NAME}.pc @ONLY)

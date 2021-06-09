@@ -7,6 +7,7 @@
 #ifndef SFM_H_
 #define SFM_H_
 
+#include "tapl/common/taplLog.hpp"
 #include "tapl/common/taplTypes.hpp"
 
 namespace tapl {

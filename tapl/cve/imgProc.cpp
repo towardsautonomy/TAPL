@@ -10,7 +10,7 @@
 #include <opencv2/features2d.hpp>
 #include <opencv2/xfeatures2d.hpp>
 
-#include "cvEngine.hpp"
+#include "imgProc.hpp"
 
 using namespace std;
 
@@ -125,7 +125,7 @@ tapl::ResultCode tapl::cve::detectKeypoints(cv::Mat &img,
     }
     else
     {
-        std::cout << "ERROR: This detector is not supported" << std::endl;
+        TLOG_ERROR << "This detector is not supported";
         return tapl::FAILURE;
     }
 
@@ -260,11 +260,11 @@ tapl::ResultCode tapl::cve::detectAndMatchKpts(tapl::DataFrame &dframe1, tapl::D
     // get images
     cv::Mat img1, img2;
     if(dframe1.cameraFrame.getImage(img1) == tapl::FAILURE) {
-        std::cout << "ERROR: could not retrieve image" << std::endl;
+        TLOG_ERROR << "could not retrieve image";
         return tapl::FAILURE;
     }
     if(dframe2.cameraFrame.getImage(img2) == tapl::FAILURE) {
-        std::cout << "ERROR: could not retrieve image" << std::endl;
+        TLOG_ERROR << "could not retrieve image";
         return tapl::FAILURE;
     }
     /* Detect Keypoints */
@@ -283,7 +283,7 @@ tapl::ResultCode tapl::cve::detectAndMatchKpts(tapl::DataFrame &dframe1, tapl::D
             dframe2.cameraFrame.pushDescriptors(descriptors2);
         }
         else {
-            std::cout << "ERROR: Could not perform descriptors extraction" << std::endl;
+            TLOG_ERROR << "Could not perform descriptors extraction";
             return tapl::FAILURE;
         }   
            
@@ -292,7 +292,7 @@ tapl::ResultCode tapl::cve::detectAndMatchKpts(tapl::DataFrame &dframe1, tapl::D
         dframe2.cameraFrame.pushKeypoints(keypoints2);
     }
     else {
-        std::cout << "ERROR: Could not perform keypoint detection" << std::endl;
+        TLOG_ERROR << "Could not perform keypoint detection";
         return tapl::FAILURE;
     }
 
@@ -303,7 +303,7 @@ tapl::ResultCode tapl::cve::detectAndMatchKpts(tapl::DataFrame &dframe1, tapl::D
         dframe1.pushKptsMatches(matches);
     }
     else {
-        std::cout << "ERROR: Could not perform descriptors matching" << std::endl;
+        TLOG_ERROR << "Could not perform descriptors matching";
         return tapl::FAILURE;
     }
 
@@ -326,7 +326,7 @@ tapl::ResultCode tapl::cve::computeFundamentalMatrix(tapl::DataFrame &dframe1, t
         // retrieve keypoints
         if((dframe1.cameraFrame.getKeypoints(kpts1) != tapl::SUCCESS) ||
             (dframe2.cameraFrame.getKeypoints(kpts2) != tapl::SUCCESS)   ) {
-                std::cout << "ERROR: could not retrieve keypoints" << std::endl;
+                TLOG_ERROR << "could not retrieve keypoints";
                 return tapl::FAILURE;
         }
 
@@ -343,7 +343,7 @@ tapl::ResultCode tapl::cve::computeFundamentalMatrix(tapl::DataFrame &dframe1, t
         }
     }
     else {
-        std::cout << "ERROR: could not perform keypoint detection and matching" << std::endl;
+        TLOG_ERROR << "could not perform keypoint detection and matching";
         return tapl::FAILURE;
     }
 
@@ -368,7 +368,7 @@ tapl::ResultCode tapl::cve::computeEssentialMatrix(tapl::DataFrame &dframe1,
         // retrieve keypoints
         if((dframe1.cameraFrame.getKeypoints(kpts1) != tapl::SUCCESS) ||
             (dframe2.cameraFrame.getKeypoints(kpts2) != tapl::SUCCESS)   ) {
-                std::cout << "ERROR: could not retrieve keypoints" << std::endl;
+                TLOG_ERROR << "could not retrieve keypoints";
                 return tapl::FAILURE;
         }
 
@@ -385,7 +385,7 @@ tapl::ResultCode tapl::cve::computeEssentialMatrix(tapl::DataFrame &dframe1,
         }
     }
     else {
-        std::cout << "ERROR: could not perform keypoint detection and matching" << std::endl;
+        TLOG_ERROR << "could not perform keypoint detection and matching";
         return tapl::FAILURE;
     }
 
@@ -426,7 +426,7 @@ tapl::ResultCode tapl::cve::computeRelativePose(tapl::DataFrame &dframe1,
         // retrieve keypoints
         if((dframe1.cameraFrame.getKeypoints(kpts1) != tapl::SUCCESS) ||
             (dframe2.cameraFrame.getKeypoints(kpts2) != tapl::SUCCESS)   ) {
-                std::cout << "ERROR: could not retrieve keypoints" << std::endl;
+                TLOG_ERROR << "could not retrieve keypoints";
                 return tapl::FAILURE;
         }
 
@@ -504,7 +504,7 @@ tapl::ResultCode tapl::cve::stitchPanaromic(const std::vector<cv::Mat> &imgs,
                                          cv::Mat &panoramic_img) {
     // sanity check 
     if(imgs.size() < 2) {
-        std::cout << "ERROR: Number of images must be 2 or more" << std::endl;
+        TLOG_ERROR << "Number of images must be 2 or more";
         return tapl::FAILURE;
     }
 
@@ -516,7 +516,7 @@ tapl::ResultCode tapl::cve::stitchPanaromic(const std::vector<cv::Mat> &imgs,
 
     // check if successful
     if (status != cv::Stitcher::OK) {
-        std::cout << "ERROR: could not stitch images" << std::endl;
+        TLOG_ERROR << "could not stitch images";
         return tapl::FAILURE;
     }
 

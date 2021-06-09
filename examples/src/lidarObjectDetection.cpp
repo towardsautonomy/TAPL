@@ -32,7 +32,7 @@ int main (int argc, char** argv) {
         pcl::PointCloud<pcl::PointXYZ>::Ptr cloud (new pcl::PointCloud<pcl::PointXYZ>);
 
         if (pcl::io::loadPCDFile<pcl::PointXYZ> (fname, *cloud) == -1) {
-            std::cerr << "Couldn't read file " << std::endl;
+            TLOG_ERROR << "Couldn't read file ";
             exit(EXIT_FAILURE);
         }
 
@@ -61,7 +61,7 @@ int main (int argc, char** argv) {
         const float distanceThreshold = downsample_res;
         if(tapl::pte::segmentPlane<pcl::PointXYZ> (cloud, segmentedCloud, maxIterations, distanceThreshold) 
                                                                                             != tapl::SUCCESS) {
-            std::cerr << "Could not perform segmentation" << std::endl;
+            TLOG_ERROR << "Could not perform segmentation";
             exit(EXIT_FAILURE);
         }
         auto groundPlane = segmentedCloud.first;

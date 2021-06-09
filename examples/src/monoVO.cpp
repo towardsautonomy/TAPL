@@ -44,17 +44,12 @@ int main(int argc, const char *argv[])
     tapl::RingBuffer<tapl::DataFrame> dataBuffer(dataBufferSize);
 
     // Read camera calibration
-    std::cout << "loading camera calibration..." << std::endl;
     cv::FileStorage opencv_file(calibPath, cv::FileStorage::READ);
     cv::Mat camera_matrix;
     opencv_file["camera_matrix"] >> camera_matrix;
     cv::Mat dist_coeff;
     opencv_file["dist_coeff"] >> dist_coeff;
     opencv_file.release();
-    std::cout << "Camera Matrix:" << std::endl;
-    std::cout << camera_matrix << std::endl;
-    std::cout << "Distortion Coefficients:" << std::endl;
-    std::cout << dist_coeff << std::endl;
 
     // add reference pose at the origin
     Eigen::Affine3f pose = Eigen::Affine3f::Identity();
@@ -105,8 +100,8 @@ int main(int argc, const char *argv[])
         frame.cameraFrame.pushImage(img_gray);
         dataBuffer.push(frame);
 
-        cout << "----------------------------------------------------" << endl;
-        cout << "Image [" << imgIndex << "] loaded into the ring buffer" << endl;
+        TLOG_INFO << "----------------------------------------------------";
+        TLOG_INFO << "Image [" << imgIndex << "] loaded into the ring buffer";
 
     
         // perform keypoints detection and matching if more than one image is loaded into the buffer
@@ -129,12 +124,12 @@ int main(int argc, const char *argv[])
                     P.block(0, 3, 3, 1) = t;
                 }
                 else {
-                    std::cout << "ERROR: could not retrieve relative pose" << std::endl;
+                    TLOG_INFO << "ERROR: could not retrieve relative pose";
                     exit(EXIT_FAILURE);
                 }
             }
             else {
-                std::cout << "ERROR: could not compute relative pose" << std::endl;
+                TLOG_INFO << "ERROR: could not compute relative pose";
                 exit(EXIT_FAILURE);
             }
             
@@ -147,7 +142,7 @@ int main(int argc, const char *argv[])
             // create point cloud from triangulated points
             cv::Mat point3d_homo;
             if(dframe1.getTriangulatedPoints(point3d_homo) != tapl::SUCCESS) {
-                std::cout << "ERROR: could not retrieve triangulated 3D points" << std::endl;
+                TLOG_INFO << "ERROR: could not retrieve triangulated 3D points";
                 exit(EXIT_FAILURE);
             }
             pcl::PointCloud<pcl::PointXYZ>::Ptr cloud (new pcl::PointCloud<pcl::PointXYZ>);
@@ -173,7 +168,7 @@ int main(int argc, const char *argv[])
             // display image
             cv::Mat img_disp;
             if(dframe1.cameraFrame.getImage(img_disp) != tapl::SUCCESS) {
-                std::cout << "ERROR: could not retrieve image frame" << std::endl;
+                TLOG_INFO << "ERROR: could not retrieve image frame";
                 exit(EXIT_FAILURE);
             }
             cv::imshow(windowName, img_disp);

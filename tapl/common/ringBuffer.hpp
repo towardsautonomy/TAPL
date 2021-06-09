@@ -9,6 +9,7 @@
 
 #include <iostream>
 #include <algorithm>
+#include "tapl/common/taplLog.hpp"
 
 namespace tapl
 {
@@ -79,7 +80,7 @@ namespace tapl
             // make sure atleast one data exists
             if(size == 0)
             {
-                std::cerr << "no data available to pop" << std::endl;
+                TLOG_ERROR << "no data available to pop";
                 return T();
             }
             else
@@ -97,7 +98,7 @@ namespace tapl
             // make sure that data requested at index exists
             if(index >= size)
             {
-                std::cerr << "index out of range" << std::endl;
+                TLOG_ERROR << "index out of range";
                 return T();
             }
             else
@@ -117,8 +118,8 @@ namespace tapl
             // make sure that data requested at index exists
             if(index >= size)
             {
-                std::cout << "index = " << index << "; size = " << size << std::endl;
-                std::cerr << "index out of range" << std::endl;
+                TLOG_INFO << "index = " << index << "; size = " << size;
+                TLOG_ERROR << "index out of range";
                 return (T *)NULL;
             }
             else
