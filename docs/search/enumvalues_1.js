@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['side_236',['Side',['../namespacetapl_1_1viz.html#a99e496921984514dbc7bcef809f50150aa268beeef2cb7c134c70cc8fc05b7045',1,'tapl::viz']]],
-  ['success_237',['SUCCESS',['../namespacetapl.html#a196ce1d5bf399fc26f03797e6a8d03ffafbdd78b1e8654e11461f37fea68c6195',1,'tapl']]]
+  ['error_5flog_5flevel_683',['ERROR_LOG_LEVEL',['../taplLog_8hpp.html#ac2fe55c989a2c0b34cf68f392982fd66a8f42ae2e0fcde2578f0ec74fecd9309b',1,'taplLog.hpp']]]
 ];

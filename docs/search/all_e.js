@@ -1,12 +1,10 @@
 var searchData=
 [
-  ['cve_88',['cve',['../namespacetapl_1_1cve.html',1,'tapl']]],
-  ['towards_20autonomy_20perception_20library_20_28tapl_29_89',['Towards Autonomy Perception Library (TAPL)',['../index.html',1,'']]],
-  ['pte_90',['pte',['../namespacetapl_1_1pte.html',1,'tapl']]],
-  ['t_91',['t',['../structtapl_1_1Pose6dof.html#aaac0151b90bd28d462e400e5b5dbefcb',1,'tapl::Pose6dof']]],
-  ['tapl_92',['tapl',['../namespacetapl.html',1,'']]],
-  ['tapl_2ehpp_93',['tapl.hpp',['../tapl_8hpp.html',1,'']]],
-  ['tapltypes_2ehpp_94',['taplTypes.hpp',['../taplTypes_8hpp.html',1,'']]],
-  ['topdown_95',['TopDown',['../namespacetapl_1_1viz.html#a99e496921984514dbc7bcef809f50150a9aa35eea1fe8f4b45a0b02a8b5048cfa',1,'tapl::viz']]],
-  ['viz_96',['viz',['../namespacetapl_1_1viz.html',1,'tapl']]]
+  ['nanyear_156',['nanyear',['../namespacedate.html#a162709b3c23232891d6932c93749f936',1,'date']]],
+  ['no_5foverflow_157',['no_overflow',['../structdate_1_1detail_1_1no__overflow.html',1,'date::detail']]],
+  ['node_158',['Node',['../structtapl_1_1pte_1_1Node.html',1,'tapl::pte::Node'],['../structtapl_1_1pte_1_1Node.html#afec8c3ce63e2269d7602de2f22dc11c6',1,'tapl::pte::Node::Node()']]],
+  ['noexcept_159',['NOEXCEPT',['../date_8h.html#a10a59554805ac7ce3905fd3540f98137',1,'date.h']]],
+  ['notice_5flog_5flevel_160',['NOTICE_LOG_LEVEL',['../taplLog_8hpp.html#ac2fe55c989a2c0b34cf68f392982fd66a7835b5fe06b6a5c536a12958efacee65',1,'taplLog.hpp']]],
+  ['nov_161',['nov',['../namespacedate_1_1literals.html#a17bd471dc722f11b3841218d1fd78ffd',1,'date::literals::nov()'],['../namespacedate_1_1literals.html#a17bd471dc722f11b3841218d1fd78ffd',1,'date::nov()']]],
+  ['november_162',['November',['../namespacedate.html#abfe49994d0d24461b25dac4b63ca836c',1,'date']]]
 ];

@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['cve_127',['cve',['../namespacetapl_1_1cve.html',1,'tapl']]],
-  ['pte_128',['pte',['../namespacetapl_1_1pte.html',1,'tapl']]],
-  ['tapl_129',['tapl',['../namespacetapl.html',1,'']]],
-  ['viz_130',['viz',['../namespacetapl_1_1viz.html',1,'tapl']]]
+  ['date_400',['date',['../namespacedate.html',1,'']]],
+  ['detail_401',['detail',['../namespacedate_1_1detail.html',1,'date']]],
+  ['literals_402',['literals',['../namespacedate_1_1literals.html',1,'date']]]
 ];

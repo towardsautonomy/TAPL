@@ -1,15 +1,11 @@
 var searchData=
 [
-  ['get_26',['get',['../classtapl_1_1RingBuffer.html#a86bd7fbf2c52259184c4e84feaae78d3',1,'tapl::RingBuffer']]],
-  ['get_5fptr_27',['get_ptr',['../classtapl_1_1RingBuffer.html#ae1c8614abf72c558c244c87b8ced7bf7',1,'tapl::RingBuffer']]],
-  ['getboundingbox_28',['getBoundingBox',['../namespacetapl_1_1pte.html#ac4b4a53485d62466140d43448496536b',1,'tapl::pte']]],
-  ['getdescriptors_29',['getDescriptors',['../structtapl_1_1CameraFrame.html#a2ecce3e76a8efdce3c799b404dcb790f',1,'tapl::CameraFrame']]],
-  ['getessentialmatrix_30',['getEssentialMatrix',['../structtapl_1_1DataFrame.html#a0f7f2252e9c335dfca944d64508b72b4',1,'tapl::DataFrame']]],
-  ['getfundamentalmatrix_31',['getFundamentalMatrix',['../structtapl_1_1DataFrame.html#a3e40c1a7fc883d041c1bc845ed7a3bb8',1,'tapl::DataFrame']]],
-  ['getimage_32',['getImage',['../structtapl_1_1CameraFrame.html#a173bf0e309ba2a499425bb4d881c3a8f',1,'tapl::CameraFrame']]],
-  ['getkeypoints_33',['getKeypoints',['../structtapl_1_1CameraFrame.html#aafb04677ac368c41616786d74cada301',1,'tapl::CameraFrame']]],
-  ['getkptsmatches_34',['getKptsMatches',['../structtapl_1_1DataFrame.html#ad6784247bd772557ed661a27c011e978',1,'tapl::DataFrame']]],
-  ['getpose_35',['getPose',['../structtapl_1_1DataFrame.html#af15fd3aeaaf932b2db3e18e81b0764f2',1,'tapl::DataFrame']]],
-  ['getsize_36',['getSize',['../classtapl_1_1RingBuffer.html#a5dfe06176646eeacfb89c464b15815ff',1,'tapl::RingBuffer']]],
-  ['gettriangulatedpoints_37',['getTriangulatedPoints',['../structtapl_1_1DataFrame.html#a77e09d7c142e062a4ed8fdbc11bba220',1,'tapl::DataFrame']]]
+  ['error_5flog_5flevel_56',['ERROR_LOG_LEVEL',['../taplLog_8hpp.html#ac2fe55c989a2c0b34cf68f392982fd66a8f42ae2e0fcde2578f0ec74fecd9309b',1,'taplLog.hpp']]],
+  ['euclideancluster_57',['EuclideanCluster',['../classtapl_1_1pte_1_1EuclideanCluster.html',1,'tapl::pte::EuclideanCluster'],['../classtapl_1_1pte_1_1EuclideanCluster.html#ae0cc79c58e5c58512b953c9252acfcb0',1,'tapl::pte::EuclideanCluster::EuclideanCluster()']]],
+  ['euclideanclustering_58',['euclideanClustering',['../namespacetapl_1_1pte.html#a69e06eaa64248177550033adb709fb3d',1,'tapl::pte']]],
+  ['euler_59',['euler',['../structtapl_1_1Pose6dof.html#afa5dd6803d0f682139676e27ff20b9d2',1,'tapl::Pose6dof']]],
+  ['exceptions_60',['exceptions',['../namespacedate.html#a9c6060496d3b5e21fe23e701d10b3935',1,'date']]],
+  ['extract_5fmonth_61',['extract_month',['../namespacedate_1_1detail.html#a7a6875dc60538c876852d3dc44ec914f',1,'date::detail']]],
+  ['extract_5fweekday_62',['extract_weekday',['../namespacedate_1_1detail.html#a7c3664e1fc8b97a029356a3ee3e40b32',1,'date::detail']]],
+  ['extractdescriptors_63',['extractDescriptors',['../namespacetapl_1_1cve.html#a02712316099758c2b4d0bb0e4e5dc219',1,'tapl::cve']]]
 ];

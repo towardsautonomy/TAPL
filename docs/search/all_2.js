@@ -1,10 +1,14 @@
 var searchData=
 [
-  ['dataframe_11',['DataFrame',['../structtapl_1_1DataFrame.html',1,'tapl::DataFrame'],['../structtapl_1_1DataFrame.html#a046dcfff07492b3753902bc3bd924e1d',1,'tapl::DataFrame::DataFrame()']]],
-  ['degreestoradians_12',['degreesToRadians',['../ptEngine_8hpp.html#af587759c004d4f86b1c5821066cca76a',1,'ptEngine.hpp']]],
-  ['detectandmatchkpts_13',['detectAndMatchKpts',['../namespacetapl_1_1cve.html#a34cb000d47a121549e81900da9913299',1,'tapl::cve']]],
-  ['detectkeypoints_14',['detectKeypoints',['../namespacetapl_1_1cve.html#ad74b56dc35c6a902870725543d5df419',1,'tapl::cve']]],
-  ['dist_15',['dist',['../structtapl_1_1pte_1_1KdTree.html#a58fd56f5fcbc48ec95e975cc02471d1b',1,'tapl::pte::KdTree']]],
-  ['disttopoint_16',['distToPoint',['../classtapl_1_1pte_1_1Line.html#a97f6d7505cead12ac6f82d84ca0bf92a',1,'tapl::pte::Line::distToPoint()'],['../classtapl_1_1pte_1_1Plane.html#af3adadd3b24d6c6a5750186e1828b26f',1,'tapl::pte::Plane::distToPoint()']]],
-  ['downsamplecloud_17',['downsampleCloud',['../namespacetapl_1_1pte.html#a48c0b0806659501276e0b33042e2fa5b',1,'tapl::pte']]]
+  ['bbox3d_7',['BBox3d',['../structtapl_1_1BBox3d.html',1,'tapl']]],
+  ['black_8',['BLACK',['../taplLog_8hpp.html#a7b3b25cba33b07c303f3060fe41887f6',1,'taplLog.hpp']]],
+  ['blue_9',['BLUE',['../taplLog_8hpp.html#a79d10e672abb49ad63eeaa8aaef57c38',1,'taplLog.hpp']]],
+  ['boldblack_10',['BOLDBLACK',['../taplLog_8hpp.html#aef2fe95894117165b29036718221979f',1,'taplLog.hpp']]],
+  ['boldblue_11',['BOLDBLUE',['../taplLog_8hpp.html#a11e77c19555cbd15bcc744ff36a18635',1,'taplLog.hpp']]],
+  ['boldcyan_12',['BOLDCYAN',['../taplLog_8hpp.html#ae87af5e6363eb1913b17f24dcb60a22d',1,'taplLog.hpp']]],
+  ['boldgreen_13',['BOLDGREEN',['../taplLog_8hpp.html#a4a6c893a1703c33ede7d702fe5f97c91',1,'taplLog.hpp']]],
+  ['boldmagenta_14',['BOLDMAGENTA',['../taplLog_8hpp.html#ac4723c5ee12cfca16e2172b57b99cb07',1,'taplLog.hpp']]],
+  ['boldred_15',['BOLDRED',['../taplLog_8hpp.html#ab912d02c7998c3d47d05f87be4e2c920',1,'taplLog.hpp']]],
+  ['boldwhite_16',['BOLDWHITE',['../taplLog_8hpp.html#aa4ef051614aa0bd503b0a18ee158c5d7',1,'taplLog.hpp']]],
+  ['boldyellow_17',['BOLDYELLOW',['../taplLog_8hpp.html#a8cec79108dfc3c61e8e32d390ec28b26',1,'taplLog.hpp']]]
 ];

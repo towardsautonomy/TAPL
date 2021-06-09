@@ -1,0 +1,719 @@
+\hypertarget{namespacedate_1_1detail}{}\doxysection{date\+::detail Namespace Reference}
+\label{namespacedate_1_1detail}\index{date::detail@{date::detail}}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structdate_1_1detail_1_1choose__trunc__type}{choose\+\_\+trunc\+\_\+type}}
+\item 
+class \mbox{\hyperlink{classdate_1_1detail_1_1decimal__format__seconds}{decimal\+\_\+format\+\_\+seconds}}
+\item 
+struct \mbox{\hyperlink{structdate_1_1detail_1_1no__overflow}{no\+\_\+overflow}}
+\item 
+struct \mbox{\hyperlink{structdate_1_1detail_1_1rld}{rld}}
+\item 
+struct \mbox{\hyperlink{structdate_1_1detail_1_1rs}{rs}}
+\item 
+struct \mbox{\hyperlink{structdate_1_1detail_1_1ru}{ru}}
+\item 
+class \mbox{\hyperlink{classdate_1_1detail_1_1save__istream}{save\+\_\+istream}}
+\item 
+class \mbox{\hyperlink{classdate_1_1detail_1_1save__ostream}{save\+\_\+ostream}}
+\item 
+struct \mbox{\hyperlink{structdate_1_1detail_1_1static__gcd}{static\+\_\+gcd}}
+\item 
+struct \mbox{\hyperlink{structdate_1_1detail_1_1static__gcd_3_010_00_010_01_4}{static\+\_\+gcd$<$ 0, 0 $>$}}
+\item 
+struct \mbox{\hyperlink{structdate_1_1detail_1_1static__gcd_3_01Xp_00_010_01_4}{static\+\_\+gcd$<$ Xp, 0 $>$}}
+\item 
+struct \mbox{\hyperlink{structdate_1_1detail_1_1static__pow10}{static\+\_\+pow10}}
+\item 
+struct \mbox{\hyperlink{structdate_1_1detail_1_1static__pow10_3_010_01_4}{static\+\_\+pow10$<$ 0 $>$}}
+\item 
+class \mbox{\hyperlink{classdate_1_1detail_1_1string__literal}{string\+\_\+literal}}
+\item 
+struct \mbox{\hyperlink{structdate_1_1detail_1_1undocumented}{undocumented}}
+\item 
+struct \mbox{\hyperlink{structdate_1_1detail_1_1unspecified__month__disambiguator}{unspecified\+\_\+month\+\_\+disambiguator}}
+\item 
+struct \mbox{\hyperlink{structdate_1_1detail_1_1width}{width}}
+\item 
+struct \mbox{\hyperlink{structdate_1_1detail_1_1width_3_01n_00_01d_00_01w_00_01false_01_4}{width$<$ n, d, w, false $>$}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename R1 , typename R2 $>$ }\\using \mbox{\hyperlink{namespacedate_1_1detail_a5a1b46d257af08a5c16db8dc20969d37}{ratio\+\_\+multiply}} = decltype(std\+::ratio\+\_\+multiply$<$ R1, R2 $>$\{\})
+\item 
+{\footnotesize template$<$typename R1 , typename R2 $>$ }\\using \mbox{\hyperlink{namespacedate_1_1detail_a53251b06745d1e2c854f690820a445e5}{ratio\+\_\+divide}} = decltype(std\+::ratio\+\_\+divide$<$ R1, R2 $>$\{\})
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T $>$ }\\\mbox{\hyperlink{date_8h_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} std\+::enable\+\_\+if$<$ !std\+::chrono\+::treat\+\_\+as\+\_\+floating\+\_\+point$<$ T $>$\+::value, T $>$\+::type \mbox{\hyperlink{namespacedate_1_1detail_a4f8cb9bfd750eb77b0df0379b1283855}{trunc}} (T t) \mbox{\hyperlink{date_8h_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+{\footnotesize template$<$class T $>$ }\\\mbox{\hyperlink{date_8h_a3893ed763f820a91f169a2e9777aa325}{C\+O\+N\+S\+T\+C\+D14}} std\+::enable\+\_\+if$<$ std\+::chrono\+::treat\+\_\+as\+\_\+floating\+\_\+point$<$ T $>$\+::value, T $>$\+::type \mbox{\hyperlink{namespacedate_1_1detail_a2b9554b90b252e4260e3b390ddc13b89}{trunc}} (T t) \mbox{\hyperlink{date_8h_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+{\footnotesize template$<$class To , class Rep , class Period $>$ }\\\mbox{\hyperlink{date_8h_a3893ed763f820a91f169a2e9777aa325}{C\+O\+N\+S\+T\+C\+D14}} std\+::enable\+\_\+if$<$ !std\+::chrono\+::treat\+\_\+as\+\_\+floating\+\_\+point$<$ typename To\+::rep $>$\+::value, To $>$\+::type \mbox{\hyperlink{namespacedate_1_1detail_aa24aa9922a5223ab90cfcfddece9acdf}{round\+\_\+i}} (const std\+::chrono\+::duration$<$ Rep, Period $>$ \&d)
+\item 
+{\footnotesize template$<$class To , class Rep , class Period $>$ }\\\mbox{\hyperlink{date_8h_a3893ed763f820a91f169a2e9777aa325}{C\+O\+N\+S\+T\+C\+D14}} std\+::enable\+\_\+if$<$ std\+::chrono\+::treat\+\_\+as\+\_\+floating\+\_\+point$<$ typename To\+::rep $>$\+::value, To $>$\+::type \mbox{\hyperlink{namespacedate_1_1detail_a33a3516b7697317bb5e2695b23599af3}{round\+\_\+i}} (const std\+::chrono\+::duration$<$ Rep, Period $>$ \&d)
+\item 
+{\footnotesize template$<$class To , class Clock , class From\+Duration $>$ }\\\mbox{\hyperlink{date_8h_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} std\+::chrono\+::time\+\_\+point$<$ Clock, To $>$ \mbox{\hyperlink{namespacedate_1_1detail_af954694297b33a86ef0665d7cee1d7e0}{round\+\_\+i}} (const std\+::chrono\+::time\+\_\+point$<$ Clock, From\+Duration $>$ \&tp)
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_1_1detail_a3f180a0d2e4825fbafd2b6d59e8c9985}{low\+\_\+level\+\_\+fmt}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const \mbox{\hyperlink{classdate_1_1day}{day}} \&d)
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_1_1detail_a864a52bf91445f9df313b256940a127a}{low\+\_\+level\+\_\+fmt}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const \mbox{\hyperlink{classdate_1_1month}{month}} \&m)
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_1_1detail_aac07b3773dd425acfbc063012e2f587d}{low\+\_\+level\+\_\+fmt}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const \mbox{\hyperlink{classdate_1_1year}{year}} \&y)
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_1_1detail_afea7f2af2e0d4cad2db9fc9a4f6c0098}{low\+\_\+level\+\_\+fmt}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const \mbox{\hyperlink{classdate_1_1weekday}{weekday}} \&wd)
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_1_1detail_a6aa5879c1a3753bf75bc803a71e67c32}{low\+\_\+level\+\_\+fmt}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const \mbox{\hyperlink{classdate_1_1weekday__indexed}{weekday\+\_\+indexed}} \&wdi)
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_1_1detail_a09da224ee5dacc33191710cb93b3f2a1}{low\+\_\+level\+\_\+fmt}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const \mbox{\hyperlink{classdate_1_1weekday__last}{weekday\+\_\+last}} \&wdl)
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_1_1detail_a413fb5a60204533e00e6028589cf7fef}{low\+\_\+level\+\_\+fmt}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const \mbox{\hyperlink{classdate_1_1year__month}{year\+\_\+month}} \&ym)
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_1_1detail_a2007c3c8fb3b144db3447fc804adccf8}{low\+\_\+level\+\_\+fmt}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const \mbox{\hyperlink{classdate_1_1month__day}{month\+\_\+day}} \&md)
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_1_1detail_a17fd322219f8218a32ed2980091e0d1f}{low\+\_\+level\+\_\+fmt}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const \mbox{\hyperlink{classdate_1_1month__day__last}{month\+\_\+day\+\_\+last}} \&mdl)
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_1_1detail_a73a98bc78cbcd7bea10935bf5b9b547c}{low\+\_\+level\+\_\+fmt}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const \mbox{\hyperlink{classdate_1_1month__weekday}{month\+\_\+weekday}} \&mwd)
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_1_1detail_a6dc0155f777046a0323c77f14d0b197a}{low\+\_\+level\+\_\+fmt}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const \mbox{\hyperlink{classdate_1_1month__weekday__last}{month\+\_\+weekday\+\_\+last}} \&mwdl)
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_1_1detail_a0ed346edc7c344477f93094dc778daac}{low\+\_\+level\+\_\+fmt}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const \mbox{\hyperlink{classdate_1_1year__month__day__last}{year\+\_\+month\+\_\+day\+\_\+last}} \&ymdl)
+\item 
+{\footnotesize template$<$class Rep , class Period $>$ }\\\mbox{\hyperlink{date_8h_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} std\+::enable\+\_\+if$<$ std\+::numeric\+\_\+limits$<$ Rep $>$\+::is\+\_\+signed, std\+::chrono\+::duration$<$ Rep, Period $>$ $>$\+::type \mbox{\hyperlink{namespacedate_1_1detail_a16721f884c348136e5fa12ff687140ef}{abs}} (std\+::chrono\+::duration$<$ Rep, Period $>$ d)
+\item 
+{\footnotesize template$<$class Rep , class Period $>$ }\\\mbox{\hyperlink{date_8h_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} std\+::enable\+\_\+if$<$ !std\+::numeric\+\_\+limits$<$ Rep $>$\+::is\+\_\+signed, std\+::chrono\+::duration$<$ Rep, Period $>$ $>$\+::type \mbox{\hyperlink{namespacedate_1_1detail_aa61b1967e725f0705ca780e858ef2970}{abs}} (std\+::chrono\+::duration$<$ Rep, Period $>$ d)
+\item 
+{\footnotesize template$<$class CharT , class Traits , class Duration $>$ }\\unsigned \mbox{\hyperlink{namespacedate_1_1detail_a7c3664e1fc8b97a029356a3ee3e40b32}{extract\+\_\+weekday}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const \mbox{\hyperlink{structdate_1_1fields}{fields}}$<$ Duration $>$ \&fds)
+\item 
+{\footnotesize template$<$class CharT , class Traits , class Duration $>$ }\\unsigned \mbox{\hyperlink{namespacedate_1_1detail_a7a6875dc60538c876852d3dc44ec914f}{extract\+\_\+month}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const \mbox{\hyperlink{structdate_1_1fields}{fields}}$<$ Duration $>$ \&fds)
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\bool \mbox{\hyperlink{namespacedate_1_1detail_aae0a6aa8d638275382c11e703a18d095}{read\+\_\+char}} (std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \&is, CharT fmt, std\+::ios\+::iostate \&err)
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\unsigned \mbox{\hyperlink{namespacedate_1_1detail_a0f5b8ce3fc13b73664f5df3df33dcfd4}{read\+\_\+unsigned}} (std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \&is, unsigned m=1, unsigned M=10)
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\int \mbox{\hyperlink{namespacedate_1_1detail_a5554c33cd3b8193a6ad0fbd684b0b486}{read\+\_\+signed}} (std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \&is, unsigned m=1, unsigned M=10)
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\long double \mbox{\hyperlink{namespacedate_1_1detail_acc406a54f9d73ab043bfc7c905185721}{read\+\_\+long\+\_\+double}} (std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \&is, unsigned m=1, unsigned M=10)
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\void \mbox{\hyperlink{namespacedate_1_1detail_a54db98d331e44d62c0466b03add3b06f}{read}} (std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \&)
+\item 
+{\footnotesize template$<$class CharT , class Traits , class ... Args$>$ }\\void \mbox{\hyperlink{namespacedate_1_1detail_a4c40cf530fca0385d6df1b7688a7f95d}{read}} (std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \&is, CharT a0, Args \&\&...args)
+\item 
+{\footnotesize template$<$class CharT , class Traits , class ... Args$>$ }\\void \mbox{\hyperlink{namespacedate_1_1detail_a04f33a32f05be39048493fff71c596e5}{read}} (std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \&is, \mbox{\hyperlink{structdate_1_1detail_1_1rs}{rs}} a0, Args \&\&...args)
+\item 
+{\footnotesize template$<$class CharT , class Traits , class ... Args$>$ }\\void \mbox{\hyperlink{namespacedate_1_1detail_aecb203889c8250f8a1f58dc59c7ad504}{read}} (std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \&is, \mbox{\hyperlink{structdate_1_1detail_1_1ru}{ru}} a0, Args \&\&...args)
+\item 
+{\footnotesize template$<$class CharT , class Traits , class ... Args$>$ }\\void \mbox{\hyperlink{namespacedate_1_1detail_a0bbcb0ddc6ed0d1529b78fc547b61bc2}{read}} (std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \&is, int a0, Args \&\&...args)
+\item 
+{\footnotesize template$<$class CharT , class Traits , class ... Args$>$ }\\void \mbox{\hyperlink{namespacedate_1_1detail_aa89ac456067c9bb381b2aa1cc131980a}{read}} (std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \&is, \mbox{\hyperlink{structdate_1_1detail_1_1rld}{rld}} a0, Args \&\&...args)
+\item 
+{\footnotesize template$<$class T , class CharT , class Traits $>$ }\\void \mbox{\hyperlink{namespacedate_1_1detail_a20047d6af2ec35dc791bc38e9bfc8ef5}{checked\+\_\+set}} (T \&value, T from, T not\+\_\+a\+\_\+value, std\+::basic\+\_\+ios$<$ CharT, Traits $>$ \&is)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{namespacedate_1_1detail_a53251b06745d1e2c854f690820a445e5}\label{namespacedate_1_1detail_a53251b06745d1e2c854f690820a445e5}} 
+\index{date::detail@{date::detail}!ratio\_divide@{ratio\_divide}}
+\index{ratio\_divide@{ratio\_divide}!date::detail@{date::detail}}
+\doxysubsubsection{\texorpdfstring{ratio\_divide}{ratio\_divide}}
+{\footnotesize\ttfamily template$<$typename R1 , typename R2 $>$ \\
+using \mbox{\hyperlink{namespacedate_1_1detail_a53251b06745d1e2c854f690820a445e5}{date\+::detail\+::ratio\+\_\+divide}} = typedef decltype(std\+::ratio\+\_\+divide$<$R1, R2$>$\{\})}
+
+
+
+Definition at line 167 of file date.\+h.
+
+\mbox{\Hypertarget{namespacedate_1_1detail_a5a1b46d257af08a5c16db8dc20969d37}\label{namespacedate_1_1detail_a5a1b46d257af08a5c16db8dc20969d37}} 
+\index{date::detail@{date::detail}!ratio\_multiply@{ratio\_multiply}}
+\index{ratio\_multiply@{ratio\_multiply}!date::detail@{date::detail}}
+\doxysubsubsection{\texorpdfstring{ratio\_multiply}{ratio\_multiply}}
+{\footnotesize\ttfamily template$<$typename R1 , typename R2 $>$ \\
+using \mbox{\hyperlink{namespacedate_1_1detail_a5a1b46d257af08a5c16db8dc20969d37}{date\+::detail\+::ratio\+\_\+multiply}} = typedef decltype(std\+::ratio\+\_\+multiply$<$R1, R2$>$\{\})}
+
+
+
+Definition at line 164 of file date.\+h.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacedate_1_1detail_a16721f884c348136e5fa12ff687140ef}\label{namespacedate_1_1detail_a16721f884c348136e5fa12ff687140ef}} 
+\index{date::detail@{date::detail}!abs@{abs}}
+\index{abs@{abs}!date::detail@{date::detail}}
+\doxysubsubsection{\texorpdfstring{abs()}{abs()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class Rep , class Period $>$ \\
+\mbox{\hyperlink{date_8h_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} std\+::enable\+\_\+if$<$ std\+::numeric\+\_\+limits$<$Rep$>$\+::is\+\_\+signed, std\+::chrono\+::duration$<$Rep, Period$>$ $>$\+::type date\+::detail\+::abs (\begin{DoxyParamCaption}\item[{std\+::chrono\+::duration$<$ Rep, Period $>$}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 4043 of file date.\+h.
+
+\mbox{\Hypertarget{namespacedate_1_1detail_aa61b1967e725f0705ca780e858ef2970}\label{namespacedate_1_1detail_aa61b1967e725f0705ca780e858ef2970}} 
+\index{date::detail@{date::detail}!abs@{abs}}
+\index{abs@{abs}!date::detail@{date::detail}}
+\doxysubsubsection{\texorpdfstring{abs()}{abs()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class Rep , class Period $>$ \\
+\mbox{\hyperlink{date_8h_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} std\+::enable\+\_\+if$<$ !std\+::numeric\+\_\+limits$<$Rep$>$\+::is\+\_\+signed, std\+::chrono\+::duration$<$Rep, Period$>$ $>$\+::type date\+::detail\+::abs (\begin{DoxyParamCaption}\item[{std\+::chrono\+::duration$<$ Rep, Period $>$}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 4056 of file date.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedate_1_1detail_aa61b1967e725f0705ca780e858ef2970_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedate_1_1detail_a20047d6af2ec35dc791bc38e9bfc8ef5}\label{namespacedate_1_1detail_a20047d6af2ec35dc791bc38e9bfc8ef5}} 
+\index{date::detail@{date::detail}!checked\_set@{checked\_set}}
+\index{checked\_set@{checked\_set}!date::detail@{date::detail}}
+\doxysubsubsection{\texorpdfstring{checked\_set()}{checked\_set()}}
+{\footnotesize\ttfamily template$<$class T , class CharT , class Traits $>$ \\
+void date\+::detail\+::checked\+\_\+set (\begin{DoxyParamCaption}\item[{T \&}]{value,  }\item[{T}]{from,  }\item[{T}]{not\+\_\+a\+\_\+value,  }\item[{std\+::basic\+\_\+ios$<$ CharT, Traits $>$ \&}]{is }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 6539 of file date.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedate_1_1detail_a20047d6af2ec35dc791bc38e9bfc8ef5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedate_1_1detail_a7a6875dc60538c876852d3dc44ec914f}\label{namespacedate_1_1detail_a7a6875dc60538c876852d3dc44ec914f}} 
+\index{date::detail@{date::detail}!extract\_month@{extract\_month}}
+\index{extract\_month@{extract\_month}!date::detail@{date::detail}}
+\doxysubsubsection{\texorpdfstring{extract\_month()}{extract\_month()}}
+{\footnotesize\ttfamily template$<$class CharT , class Traits , class Duration $>$ \\
+unsigned date\+::detail\+::extract\+\_\+month (\begin{DoxyParamCaption}\item[{std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&}]{os,  }\item[{const \mbox{\hyperlink{structdate_1_1fields}{fields}}$<$ Duration $>$ \&}]{fds }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4845 of file date.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedate_1_1detail_a7a6875dc60538c876852d3dc44ec914f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedate_1_1detail_a7c3664e1fc8b97a029356a3ee3e40b32}\label{namespacedate_1_1detail_a7c3664e1fc8b97a029356a3ee3e40b32}} 
+\index{date::detail@{date::detail}!extract\_weekday@{extract\_weekday}}
+\index{extract\_weekday@{extract\_weekday}!date::detail@{date::detail}}
+\doxysubsubsection{\texorpdfstring{extract\_weekday()}{extract\_weekday()}}
+{\footnotesize\ttfamily template$<$class CharT , class Traits , class Duration $>$ \\
+unsigned date\+::detail\+::extract\+\_\+weekday (\begin{DoxyParamCaption}\item[{std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&}]{os,  }\item[{const \mbox{\hyperlink{structdate_1_1fields}{fields}}$<$ Duration $>$ \&}]{fds }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4819 of file date.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedate_1_1detail_a7c3664e1fc8b97a029356a3ee3e40b32_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedate_1_1detail_a3f180a0d2e4825fbafd2b6d59e8c9985}\label{namespacedate_1_1detail_a3f180a0d2e4825fbafd2b6d59e8c9985}} 
+\index{date::detail@{date::detail}!low\_level\_fmt@{low\_level\_fmt}}
+\index{low\_level\_fmt@{low\_level\_fmt}!date::detail@{date::detail}}
+\doxysubsubsection{\texorpdfstring{low\_level\_fmt()}{low\_level\_fmt()}\hspace{0.1cm}{\footnotesize\ttfamily [1/12]}}
+{\footnotesize\ttfamily template$<$class CharT , class Traits $>$ \\
+std\+::basic\+\_\+ostream$<$CharT, Traits$>$\& date\+::detail\+::low\+\_\+level\+\_\+fmt (\begin{DoxyParamCaption}\item[{std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&}]{os,  }\item[{const \mbox{\hyperlink{classdate_1_1day}{day}} \&}]{d }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1514 of file date.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedate_1_1detail_a3f180a0d2e4825fbafd2b6d59e8c9985_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedate_1_1detail_a864a52bf91445f9df313b256940a127a}\label{namespacedate_1_1detail_a864a52bf91445f9df313b256940a127a}} 
+\index{date::detail@{date::detail}!low\_level\_fmt@{low\_level\_fmt}}
+\index{low\_level\_fmt@{low\_level\_fmt}!date::detail@{date::detail}}
+\doxysubsubsection{\texorpdfstring{low\_level\_fmt()}{low\_level\_fmt()}\hspace{0.1cm}{\footnotesize\ttfamily [2/12]}}
+{\footnotesize\ttfamily template$<$class CharT , class Traits $>$ \\
+std\+::basic\+\_\+ostream$<$CharT, Traits$>$\& date\+::detail\+::low\+\_\+level\+\_\+fmt (\begin{DoxyParamCaption}\item[{std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&}]{os,  }\item[{const \mbox{\hyperlink{classdate_1_1month}{month}} \&}]{m }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1654 of file date.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedate_1_1detail_a864a52bf91445f9df313b256940a127a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedate_1_1detail_a2007c3c8fb3b144db3447fc804adccf8}\label{namespacedate_1_1detail_a2007c3c8fb3b144db3447fc804adccf8}} 
+\index{date::detail@{date::detail}!low\_level\_fmt@{low\_level\_fmt}}
+\index{low\_level\_fmt@{low\_level\_fmt}!date::detail@{date::detail}}
+\doxysubsubsection{\texorpdfstring{low\_level\_fmt()}{low\_level\_fmt()}\hspace{0.1cm}{\footnotesize\ttfamily [3/12]}}
+{\footnotesize\ttfamily template$<$class CharT , class Traits $>$ \\
+std\+::basic\+\_\+ostream$<$CharT, Traits$>$\& date\+::detail\+::low\+\_\+level\+\_\+fmt (\begin{DoxyParamCaption}\item[{std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&}]{os,  }\item[{const \mbox{\hyperlink{classdate_1_1month__day}{month\+\_\+day}} \&}]{md }\end{DoxyParamCaption})}
+
+
+
+Definition at line 2443 of file date.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedate_1_1detail_a2007c3c8fb3b144db3447fc804adccf8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedate_1_1detail_a17fd322219f8218a32ed2980091e0d1f}\label{namespacedate_1_1detail_a17fd322219f8218a32ed2980091e0d1f}} 
+\index{date::detail@{date::detail}!low\_level\_fmt@{low\_level\_fmt}}
+\index{low\_level\_fmt@{low\_level\_fmt}!date::detail@{date::detail}}
+\doxysubsubsection{\texorpdfstring{low\_level\_fmt()}{low\_level\_fmt()}\hspace{0.1cm}{\footnotesize\ttfamily [4/12]}}
+{\footnotesize\ttfamily template$<$class CharT , class Traits $>$ \\
+std\+::basic\+\_\+ostream$<$CharT, Traits$>$\& date\+::detail\+::low\+\_\+level\+\_\+fmt (\begin{DoxyParamCaption}\item[{std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&}]{os,  }\item[{const \mbox{\hyperlink{classdate_1_1month__day__last}{month\+\_\+day\+\_\+last}} \&}]{mdl }\end{DoxyParamCaption})}
+
+
+
+Definition at line 2521 of file date.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedate_1_1detail_a17fd322219f8218a32ed2980091e0d1f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedate_1_1detail_a73a98bc78cbcd7bea10935bf5b9b547c}\label{namespacedate_1_1detail_a73a98bc78cbcd7bea10935bf5b9b547c}} 
+\index{date::detail@{date::detail}!low\_level\_fmt@{low\_level\_fmt}}
+\index{low\_level\_fmt@{low\_level\_fmt}!date::detail@{date::detail}}
+\doxysubsubsection{\texorpdfstring{low\_level\_fmt()}{low\_level\_fmt()}\hspace{0.1cm}{\footnotesize\ttfamily [5/12]}}
+{\footnotesize\ttfamily template$<$class CharT , class Traits $>$ \\
+std\+::basic\+\_\+ostream$<$CharT, Traits$>$\& date\+::detail\+::low\+\_\+level\+\_\+fmt (\begin{DoxyParamCaption}\item[{std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&}]{os,  }\item[{const \mbox{\hyperlink{classdate_1_1month__weekday}{month\+\_\+weekday}} \&}]{mwd }\end{DoxyParamCaption})}
+
+
+
+Definition at line 2588 of file date.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedate_1_1detail_a73a98bc78cbcd7bea10935bf5b9b547c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedate_1_1detail_a6dc0155f777046a0323c77f14d0b197a}\label{namespacedate_1_1detail_a6dc0155f777046a0323c77f14d0b197a}} 
+\index{date::detail@{date::detail}!low\_level\_fmt@{low\_level\_fmt}}
+\index{low\_level\_fmt@{low\_level\_fmt}!date::detail@{date::detail}}
+\doxysubsubsection{\texorpdfstring{low\_level\_fmt()}{low\_level\_fmt()}\hspace{0.1cm}{\footnotesize\ttfamily [6/12]}}
+{\footnotesize\ttfamily template$<$class CharT , class Traits $>$ \\
+std\+::basic\+\_\+ostream$<$CharT, Traits$>$\& date\+::detail\+::low\+\_\+level\+\_\+fmt (\begin{DoxyParamCaption}\item[{std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&}]{os,  }\item[{const \mbox{\hyperlink{classdate_1_1month__weekday__last}{month\+\_\+weekday\+\_\+last}} \&}]{mwdl }\end{DoxyParamCaption})}
+
+
+
+Definition at line 2656 of file date.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedate_1_1detail_a6dc0155f777046a0323c77f14d0b197a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedate_1_1detail_afea7f2af2e0d4cad2db9fc9a4f6c0098}\label{namespacedate_1_1detail_afea7f2af2e0d4cad2db9fc9a4f6c0098}} 
+\index{date::detail@{date::detail}!low\_level\_fmt@{low\_level\_fmt}}
+\index{low\_level\_fmt@{low\_level\_fmt}!date::detail@{date::detail}}
+\doxysubsubsection{\texorpdfstring{low\_level\_fmt()}{low\_level\_fmt()}\hspace{0.1cm}{\footnotesize\ttfamily [7/12]}}
+{\footnotesize\ttfamily template$<$class CharT , class Traits $>$ \\
+std\+::basic\+\_\+ostream$<$CharT, Traits$>$\& date\+::detail\+::low\+\_\+level\+\_\+fmt (\begin{DoxyParamCaption}\item[{std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&}]{os,  }\item[{const \mbox{\hyperlink{classdate_1_1weekday}{weekday}} \&}]{wd }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1943 of file date.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedate_1_1detail_afea7f2af2e0d4cad2db9fc9a4f6c0098_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedate_1_1detail_a6aa5879c1a3753bf75bc803a71e67c32}\label{namespacedate_1_1detail_a6aa5879c1a3753bf75bc803a71e67c32}} 
+\index{date::detail@{date::detail}!low\_level\_fmt@{low\_level\_fmt}}
+\index{low\_level\_fmt@{low\_level\_fmt}!date::detail@{date::detail}}
+\doxysubsubsection{\texorpdfstring{low\_level\_fmt()}{low\_level\_fmt()}\hspace{0.1cm}{\footnotesize\ttfamily [8/12]}}
+{\footnotesize\ttfamily template$<$class CharT , class Traits $>$ \\
+std\+::basic\+\_\+ostream$<$CharT, Traits$>$\& date\+::detail\+::low\+\_\+level\+\_\+fmt (\begin{DoxyParamCaption}\item[{std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&}]{os,  }\item[{const \mbox{\hyperlink{classdate_1_1weekday__indexed}{weekday\+\_\+indexed}} \&}]{wdi }\end{DoxyParamCaption})}
+
+
+
+Definition at line 2078 of file date.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedate_1_1detail_a6aa5879c1a3753bf75bc803a71e67c32_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedate_1_1detail_a09da224ee5dacc33191710cb93b3f2a1}\label{namespacedate_1_1detail_a09da224ee5dacc33191710cb93b3f2a1}} 
+\index{date::detail@{date::detail}!low\_level\_fmt@{low\_level\_fmt}}
+\index{low\_level\_fmt@{low\_level\_fmt}!date::detail@{date::detail}}
+\doxysubsubsection{\texorpdfstring{low\_level\_fmt()}{low\_level\_fmt()}\hspace{0.1cm}{\footnotesize\ttfamily [9/12]}}
+{\footnotesize\ttfamily template$<$class CharT , class Traits $>$ \\
+std\+::basic\+\_\+ostream$<$CharT, Traits$>$\& date\+::detail\+::low\+\_\+level\+\_\+fmt (\begin{DoxyParamCaption}\item[{std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&}]{os,  }\item[{const \mbox{\hyperlink{classdate_1_1weekday__last}{weekday\+\_\+last}} \&}]{wdl }\end{DoxyParamCaption})}
+
+
+
+Definition at line 2147 of file date.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedate_1_1detail_a09da224ee5dacc33191710cb93b3f2a1_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedate_1_1detail_aac07b3773dd425acfbc063012e2f587d}\label{namespacedate_1_1detail_aac07b3773dd425acfbc063012e2f587d}} 
+\index{date::detail@{date::detail}!low\_level\_fmt@{low\_level\_fmt}}
+\index{low\_level\_fmt@{low\_level\_fmt}!date::detail@{date::detail}}
+\doxysubsubsection{\texorpdfstring{low\_level\_fmt()}{low\_level\_fmt()}\hspace{0.1cm}{\footnotesize\ttfamily [10/12]}}
+{\footnotesize\ttfamily template$<$class CharT , class Traits $>$ \\
+std\+::basic\+\_\+ostream$<$CharT, Traits$>$\& date\+::detail\+::low\+\_\+level\+\_\+fmt (\begin{DoxyParamCaption}\item[{std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&}]{os,  }\item[{const \mbox{\hyperlink{classdate_1_1year}{year}} \&}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1794 of file date.\+h.
+
+\mbox{\Hypertarget{namespacedate_1_1detail_a413fb5a60204533e00e6028589cf7fef}\label{namespacedate_1_1detail_a413fb5a60204533e00e6028589cf7fef}} 
+\index{date::detail@{date::detail}!low\_level\_fmt@{low\_level\_fmt}}
+\index{low\_level\_fmt@{low\_level\_fmt}!date::detail@{date::detail}}
+\doxysubsubsection{\texorpdfstring{low\_level\_fmt()}{low\_level\_fmt()}\hspace{0.1cm}{\footnotesize\ttfamily [11/12]}}
+{\footnotesize\ttfamily template$<$class CharT , class Traits $>$ \\
+std\+::basic\+\_\+ostream$<$CharT, Traits$>$\& date\+::detail\+::low\+\_\+level\+\_\+fmt (\begin{DoxyParamCaption}\item[{std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&}]{os,  }\item[{const \mbox{\hyperlink{classdate_1_1year__month}{year\+\_\+month}} \&}]{ym }\end{DoxyParamCaption})}
+
+
+
+Definition at line 2342 of file date.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedate_1_1detail_a413fb5a60204533e00e6028589cf7fef_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedate_1_1detail_a0ed346edc7c344477f93094dc778daac}\label{namespacedate_1_1detail_a0ed346edc7c344477f93094dc778daac}} 
+\index{date::detail@{date::detail}!low\_level\_fmt@{low\_level\_fmt}}
+\index{low\_level\_fmt@{low\_level\_fmt}!date::detail@{date::detail}}
+\doxysubsubsection{\texorpdfstring{low\_level\_fmt()}{low\_level\_fmt()}\hspace{0.1cm}{\footnotesize\ttfamily [12/12]}}
+{\footnotesize\ttfamily template$<$class CharT , class Traits $>$ \\
+std\+::basic\+\_\+ostream$<$CharT, Traits$>$\& date\+::detail\+::low\+\_\+level\+\_\+fmt (\begin{DoxyParamCaption}\item[{std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&}]{os,  }\item[{const \mbox{\hyperlink{classdate_1_1year__month__day__last}{year\+\_\+month\+\_\+day\+\_\+last}} \&}]{ymdl }\end{DoxyParamCaption})}
+
+
+
+Definition at line 2827 of file date.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedate_1_1detail_a0ed346edc7c344477f93094dc778daac_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedate_1_1detail_a54db98d331e44d62c0466b03add3b06f}\label{namespacedate_1_1detail_a54db98d331e44d62c0466b03add3b06f}} 
+\index{date::detail@{date::detail}!read@{read}}
+\index{read@{read}!date::detail@{date::detail}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily template$<$class CharT , class Traits $>$ \\
+void date\+::detail\+::read (\begin{DoxyParamCaption}\item[{std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \&}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 6434 of file date.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedate_1_1detail_a54db98d331e44d62c0466b03add3b06f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedate_1_1detail_a4c40cf530fca0385d6df1b7688a7f95d}\label{namespacedate_1_1detail_a4c40cf530fca0385d6df1b7688a7f95d}} 
+\index{date::detail@{date::detail}!read@{read}}
+\index{read@{read}!date::detail@{date::detail}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily template$<$class CharT , class Traits , class ... Args$>$ \\
+void date\+::detail\+::read (\begin{DoxyParamCaption}\item[{std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \&}]{is,  }\item[{CharT}]{a0,  }\item[{Args \&\&...}]{args }\end{DoxyParamCaption})}
+
+
+
+Definition at line 6460 of file date.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{namespacedate_1_1detail_a4c40cf530fca0385d6df1b7688a7f95d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedate_1_1detail_a0bbcb0ddc6ed0d1529b78fc547b61bc2}\label{namespacedate_1_1detail_a0bbcb0ddc6ed0d1529b78fc547b61bc2}} 
+\index{date::detail@{date::detail}!read@{read}}
+\index{read@{read}!date::detail@{date::detail}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily template$<$class CharT , class Traits , class ... Args$>$ \\
+void date\+::detail\+::read (\begin{DoxyParamCaption}\item[{std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \&}]{is,  }\item[{int}]{a0,  }\item[{Args \&\&...}]{args }\end{DoxyParamCaption})}
+
+
+
+Definition at line 6505 of file date.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{namespacedate_1_1detail_a0bbcb0ddc6ed0d1529b78fc547b61bc2_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedate_1_1detail_aa89ac456067c9bb381b2aa1cc131980a}\label{namespacedate_1_1detail_aa89ac456067c9bb381b2aa1cc131980a}} 
+\index{date::detail@{date::detail}!read@{read}}
+\index{read@{read}!date::detail@{date::detail}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily template$<$class CharT , class Traits , class ... Args$>$ \\
+void date\+::detail\+::read (\begin{DoxyParamCaption}\item[{std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \&}]{is,  }\item[{\mbox{\hyperlink{structdate_1_1detail_1_1rld}{rld}}}]{a0,  }\item[{Args \&\&...}]{args }\end{DoxyParamCaption})}
+
+
+
+Definition at line 6527 of file date.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{namespacedate_1_1detail_aa89ac456067c9bb381b2aa1cc131980a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedate_1_1detail_aa89ac456067c9bb381b2aa1cc131980a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedate_1_1detail_a04f33a32f05be39048493fff71c596e5}\label{namespacedate_1_1detail_a04f33a32f05be39048493fff71c596e5}} 
+\index{date::detail@{date::detail}!read@{read}}
+\index{read@{read}!date::detail@{date::detail}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily template$<$class CharT , class Traits , class ... Args$>$ \\
+void date\+::detail\+::read (\begin{DoxyParamCaption}\item[{std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \&}]{is,  }\item[{\mbox{\hyperlink{structdate_1_1detail_1_1rs}{rs}}}]{a0,  }\item[{Args \&\&...}]{args }\end{DoxyParamCaption})}
+
+
+
+Definition at line 6483 of file date.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedate_1_1detail_a04f33a32f05be39048493fff71c596e5_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedate_1_1detail_aecb203889c8250f8a1f58dc59c7ad504}\label{namespacedate_1_1detail_aecb203889c8250f8a1f58dc59c7ad504}} 
+\index{date::detail@{date::detail}!read@{read}}
+\index{read@{read}!date::detail@{date::detail}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily template$<$class CharT , class Traits , class ... Args$>$ \\
+void date\+::detail\+::read (\begin{DoxyParamCaption}\item[{std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \&}]{is,  }\item[{\mbox{\hyperlink{structdate_1_1detail_1_1ru}{ru}}}]{a0,  }\item[{Args \&\&...}]{args }\end{DoxyParamCaption})}
+
+
+
+Definition at line 6494 of file date.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{namespacedate_1_1detail_aecb203889c8250f8a1f58dc59c7ad504_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedate_1_1detail_aae0a6aa8d638275382c11e703a18d095}\label{namespacedate_1_1detail_aae0a6aa8d638275382c11e703a18d095}} 
+\index{date::detail@{date::detail}!read\_char@{read\_char}}
+\index{read\_char@{read\_char}!date::detail@{date::detail}}
+\doxysubsubsection{\texorpdfstring{read\_char()}{read\_char()}}
+{\footnotesize\ttfamily template$<$class CharT , class Traits $>$ \\
+bool date\+::detail\+::read\+\_\+char (\begin{DoxyParamCaption}\item[{std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \&}]{is,  }\item[{CharT}]{fmt,  }\item[{std\+::ios\+::iostate \&}]{err }\end{DoxyParamCaption})}
+
+
+
+Definition at line 6295 of file date.\+h.
+
+\mbox{\Hypertarget{namespacedate_1_1detail_acc406a54f9d73ab043bfc7c905185721}\label{namespacedate_1_1detail_acc406a54f9d73ab043bfc7c905185721}} 
+\index{date::detail@{date::detail}!read\_long\_double@{read\_long\_double}}
+\index{read\_long\_double@{read\_long\_double}!date::detail@{date::detail}}
+\doxysubsubsection{\texorpdfstring{read\_long\_double()}{read\_long\_double()}}
+{\footnotesize\ttfamily template$<$class CharT , class Traits $>$ \\
+long double date\+::detail\+::read\+\_\+long\+\_\+double (\begin{DoxyParamCaption}\item[{std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \&}]{is,  }\item[{unsigned}]{m = {\ttfamily 1},  }\item[{unsigned}]{M = {\ttfamily 10} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 6361 of file date.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedate_1_1detail_acc406a54f9d73ab043bfc7c905185721_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedate_1_1detail_a5554c33cd3b8193a6ad0fbd684b0b486}\label{namespacedate_1_1detail_a5554c33cd3b8193a6ad0fbd684b0b486}} 
+\index{date::detail@{date::detail}!read\_signed@{read\_signed}}
+\index{read\_signed@{read\_signed}!date::detail@{date::detail}}
+\doxysubsubsection{\texorpdfstring{read\_signed()}{read\_signed()}}
+{\footnotesize\ttfamily template$<$class CharT , class Traits $>$ \\
+int date\+::detail\+::read\+\_\+signed (\begin{DoxyParamCaption}\item[{std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \&}]{is,  }\item[{unsigned}]{m = {\ttfamily 1},  }\item[{unsigned}]{M = {\ttfamily 10} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 6335 of file date.\+h.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{namespacedate_1_1detail_a5554c33cd3b8193a6ad0fbd684b0b486_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{namespacedate_1_1detail_a5554c33cd3b8193a6ad0fbd684b0b486_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedate_1_1detail_a0f5b8ce3fc13b73664f5df3df33dcfd4}\label{namespacedate_1_1detail_a0f5b8ce3fc13b73664f5df3df33dcfd4}} 
+\index{date::detail@{date::detail}!read\_unsigned@{read\_unsigned}}
+\index{read\_unsigned@{read\_unsigned}!date::detail@{date::detail}}
+\doxysubsubsection{\texorpdfstring{read\_unsigned()}{read\_unsigned()}}
+{\footnotesize\ttfamily template$<$class CharT , class Traits $>$ \\
+unsigned date\+::detail\+::read\+\_\+unsigned (\begin{DoxyParamCaption}\item[{std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \&}]{is,  }\item[{unsigned}]{m = {\ttfamily 1},  }\item[{unsigned}]{M = {\ttfamily 10} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 6310 of file date.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedate_1_1detail_a0f5b8ce3fc13b73664f5df3df33dcfd4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedate_1_1detail_aa24aa9922a5223ab90cfcfddece9acdf}\label{namespacedate_1_1detail_aa24aa9922a5223ab90cfcfddece9acdf}} 
+\index{date::detail@{date::detail}!round\_i@{round\_i}}
+\index{round\_i@{round\_i}!date::detail@{date::detail}}
+\doxysubsubsection{\texorpdfstring{round\_i()}{round\_i()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$class To , class Rep , class Period $>$ \\
+\mbox{\hyperlink{date_8h_a3893ed763f820a91f169a2e9777aa325}{C\+O\+N\+S\+T\+C\+D14}} std\+::enable\+\_\+if$<$ !std\+::chrono\+::treat\+\_\+as\+\_\+floating\+\_\+point$<$typename To\+::rep$>$\+::value, To$>$\+::type date\+::detail\+::round\+\_\+i (\begin{DoxyParamCaption}\item[{const std\+::chrono\+::duration$<$ Rep, Period $>$ \&}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1375 of file date.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedate_1_1detail_aa24aa9922a5223ab90cfcfddece9acdf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedate_1_1detail_a33a3516b7697317bb5e2695b23599af3}\label{namespacedate_1_1detail_a33a3516b7697317bb5e2695b23599af3}} 
+\index{date::detail@{date::detail}!round\_i@{round\_i}}
+\index{round\_i@{round\_i}!date::detail@{date::detail}}
+\doxysubsubsection{\texorpdfstring{round\_i()}{round\_i()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$class To , class Rep , class Period $>$ \\
+\mbox{\hyperlink{date_8h_a3893ed763f820a91f169a2e9777aa325}{C\+O\+N\+S\+T\+C\+D14}} std\+::enable\+\_\+if$<$ std\+::chrono\+::treat\+\_\+as\+\_\+floating\+\_\+point$<$typename To\+::rep$>$\+::value, To$>$\+::type date\+::detail\+::round\+\_\+i (\begin{DoxyParamCaption}\item[{const std\+::chrono\+::duration$<$ Rep, Period $>$ \&}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1388 of file date.\+h.
+
+\mbox{\Hypertarget{namespacedate_1_1detail_af954694297b33a86ef0665d7cee1d7e0}\label{namespacedate_1_1detail_af954694297b33a86ef0665d7cee1d7e0}} 
+\index{date::detail@{date::detail}!round\_i@{round\_i}}
+\index{round\_i@{round\_i}!date::detail@{date::detail}}
+\doxysubsubsection{\texorpdfstring{round\_i()}{round\_i()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$class To , class Clock , class From\+Duration $>$ \\
+\mbox{\hyperlink{date_8h_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} std\+::chrono\+::time\+\_\+point$<$Clock, To$>$ date\+::detail\+::round\+\_\+i (\begin{DoxyParamCaption}\item[{const std\+::chrono\+::time\+\_\+point$<$ Clock, From\+Duration $>$ \&}]{tp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1397 of file date.\+h.
+
+\mbox{\Hypertarget{namespacedate_1_1detail_a4f8cb9bfd750eb77b0df0379b1283855}\label{namespacedate_1_1detail_a4f8cb9bfd750eb77b0df0379b1283855}} 
+\index{date::detail@{date::detail}!trunc@{trunc}}
+\index{trunc@{trunc}!date::detail@{date::detail}}
+\doxysubsubsection{\texorpdfstring{trunc()}{trunc()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{date_8h_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} std\+::enable\+\_\+if$<$ !std\+::chrono\+::treat\+\_\+as\+\_\+floating\+\_\+point$<$T$>$\+::value, T$>$\+::type date\+::detail\+::trunc (\begin{DoxyParamCaption}\item[{T}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1113 of file date.\+h.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{namespacedate_1_1detail_a4f8cb9bfd750eb77b0df0379b1283855_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedate_1_1detail_a2b9554b90b252e4260e3b390ddc13b89}\label{namespacedate_1_1detail_a2b9554b90b252e4260e3b390ddc13b89}} 
+\index{date::detail@{date::detail}!trunc@{trunc}}
+\index{trunc@{trunc}!date::detail@{date::detail}}
+\doxysubsubsection{\texorpdfstring{trunc()}{trunc()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{date_8h_a3893ed763f820a91f169a2e9777aa325}{C\+O\+N\+S\+T\+C\+D14}} std\+::enable\+\_\+if$<$ std\+::chrono\+::treat\+\_\+as\+\_\+floating\+\_\+point$<$T$>$\+::value, T$>$\+::type date\+::detail\+::trunc (\begin{DoxyParamCaption}\item[{T}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1126 of file date.\+h.
+

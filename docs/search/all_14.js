@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['_7eline_111',['~Line',['../classtapl_1_1pte_1_1Line.html#a3ef1f4fbb2ae11c564176fffc4befe74',1,'tapl::pte::Line']]],
-  ['_7eplane_112',['~Plane',['../classtapl_1_1pte_1_1Plane.html#a9227e27649697d2d54f21f2cd8e4d6dd',1,'tapl::pte::Plane']]],
-  ['_7eringbuffer_113',['~RingBuffer',['../classtapl_1_1RingBuffer.html#a8e9cc0e12555c499b95a9a6e7943a4d7',1,'tapl::RingBuffer']]],
-  ['_7evisualizer_114',['~Visualizer',['../classtapl_1_1viz_1_1Visualizer.html#a47473d1bffdf617379d718f1c2ed5930',1,'tapl::viz::Visualizer']]]
+  ['undocumented_302',['undocumented',['../structdate_1_1detail_1_1undocumented.html',1,'date::detail::undocumented'],['../structdate_1_1detail_1_1undocumented.html#ac8435ba183f37a6ede05606695e6febd',1,'date::detail::undocumented::undocumented()']]],
+  ['unspecified_5fmonth_5fdisambiguator_303',['unspecified_month_disambiguator',['../structdate_1_1detail_1_1unspecified__month__disambiguator.html',1,'date::detail']]]
 ];

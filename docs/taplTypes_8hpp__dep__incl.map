@@ -1,9 +1,10 @@
 <map id="tapl/common/taplTypes.hpp" name="tapl/common/taplTypes.hpp">
-<area shape="rect" id="node1" title="This file provides type definitions used throughout this library." alt="" coords="82,5,285,32"/>
-<area shape="rect" id="node2" href="$cvEngine_8hpp.html" title="This file provides APIs for computer vision related functions." alt="" coords="23,155,189,181"/>
-<area shape="rect" id="node4" href="$tapl_8hpp.html" title="This is the main header file which exposes all the available APIs to users." alt="" coords="194,229,298,256"/>
-<area shape="rect" id="node5" href="$sfm_8hpp.html" title="This provides the implementation of structure&#45;from&#45;motion algorithm." alt="" coords="67,80,198,107"/>
-<area shape="rect" id="node6" href="$ptEngine_8hpp.html" title="This file provides APIs for all point related functions. This includes point&#45;cloud processing,..." alt="" coords="273,80,435,107"/>
-<area shape="rect" id="node3" href="$cvEngine_8cpp.html" title=" " alt="" coords="5,229,169,256"/>
-<area shape="rect" id="node7" href="$ptEngine_8cpp.html" title=" " alt="" coords="323,155,483,181"/>
+<area shape="rect" id="node1" title="This file provides type definitions used throughout this library." alt="" coords="44,5,247,32"/>
+<area shape="rect" id="node2" href="$imgProc_8hpp.html" title="This file provides APIs for computer vision related functions." alt="" coords="35,155,194,181"/>
+<area shape="rect" id="node4" href="$tapl_8hpp.html" title="This is the main header file which exposes all the available APIs to users." alt="" coords="249,304,353,331"/>
+<area shape="rect" id="node6" href="$sfm_8hpp.html" title="This provides the implementation of structure&#45;from&#45;motion algorithm." alt="" coords="132,80,263,107"/>
+<area shape="rect" id="node7" href="$ptEngine_8hpp.html" title="This file provides APIs for all point related functions. This includes point&#45;cloud processing,..." alt="" coords="287,80,449,107"/>
+<area shape="rect" id="node3" href="$cvEngine_8hpp.html" title="This file provides APIs for computer vision related functions." alt="" coords="219,229,384,256"/>
+<area shape="rect" id="node5" href="$imgProc_8cpp.html" title=" " alt="" coords="35,229,194,256"/>
+<area shape="rect" id="node8" href="$ptEngine_8cpp.html" title=" " alt="" coords="269,155,429,181"/>
 </map>

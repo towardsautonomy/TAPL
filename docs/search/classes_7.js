@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['plane_122',['Plane',['../classtapl_1_1pte_1_1Plane.html',1,'tapl::pte']]],
-  ['point3d_123',['Point3d',['../structtapl_1_1Point3d.html',1,'tapl']]],
-  ['pose6dof_124',['Pose6dof',['../structtapl_1_1Pose6dof.html',1,'tapl']]]
+  ['last_5fspec_358',['last_spec',['../structdate_1_1last__spec.html',1,'date']]],
+  ['line_359',['Line',['../classtapl_1_1pte_1_1Line.html',1,'tapl::pte']]],
+  ['local_5ft_360',['local_t',['../structdate_1_1local__t.html',1,'date']]],
+  ['log_361',['Log',['../classLog.html',1,'']]]
 ];

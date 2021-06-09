@@ -1,0 +1,387 @@
+\hypertarget{taplLog_8hpp}{}\doxysection{tapl/common/tapl\+Log.hpp File Reference}
+\label{taplLog_8hpp}\index{tapl/common/taplLog.hpp@{tapl/common/taplLog.hpp}}
+
+
+This file provides logging functions for T\+A\+PL.  
+
+
+{\ttfamily \#include \char`\"{}date.\+h\char`\"{}}\newline
+Include dependency graph for tapl\+Log.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{taplLog_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{taplLog_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classLog}{Log}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{taplLog_8hpp_ab702106cf3b3e96750b6845ded4e0299}{R\+E\+S\+ET}}~\char`\"{}\textbackslash{}033\mbox{[}0m\char`\"{}
+\item 
+\#define \mbox{\hyperlink{taplLog_8hpp_a7b3b25cba33b07c303f3060fe41887f6}{B\+L\+A\+CK}}~\char`\"{}\textbackslash{}033\mbox{[}30m\char`\"{}
+\item 
+\#define \mbox{\hyperlink{taplLog_8hpp_a8d23feea868a983c8c2b661e1e16972f}{R\+ED}}~\char`\"{}\textbackslash{}033\mbox{[}31m\char`\"{}
+\item 
+\#define \mbox{\hyperlink{taplLog_8hpp_acfbc006ea433ad708fdee3e82996e721}{G\+R\+E\+EN}}~\char`\"{}\textbackslash{}033\mbox{[}32m\char`\"{}
+\item 
+\#define \mbox{\hyperlink{taplLog_8hpp_abf681265909adf3d3e8116c93c0ba179}{Y\+E\+L\+L\+OW}}~\char`\"{}\textbackslash{}033\mbox{[}33m\char`\"{}
+\item 
+\#define \mbox{\hyperlink{taplLog_8hpp_a79d10e672abb49ad63eeaa8aaef57c38}{B\+L\+UE}}~\char`\"{}\textbackslash{}033\mbox{[}34m\char`\"{}
+\item 
+\#define \mbox{\hyperlink{taplLog_8hpp_a6f699060902f800f12aaae150f3a708e}{M\+A\+G\+E\+N\+TA}}~\char`\"{}\textbackslash{}033\mbox{[}35m\char`\"{}
+\item 
+\#define \mbox{\hyperlink{taplLog_8hpp_ad243f93c16bc4c1d3e0a13b84421d760}{C\+Y\+AN}}~\char`\"{}\textbackslash{}033\mbox{[}36m\char`\"{}
+\item 
+\#define \mbox{\hyperlink{taplLog_8hpp_a87b537f5fa5c109d3c05c13d6b18f382}{W\+H\+I\+TE}}~\char`\"{}\textbackslash{}033\mbox{[}37m\char`\"{}
+\item 
+\#define \mbox{\hyperlink{taplLog_8hpp_aef2fe95894117165b29036718221979f}{B\+O\+L\+D\+B\+L\+A\+CK}}~\char`\"{}\textbackslash{}033\mbox{[}1m\textbackslash{}033\mbox{[}30m\char`\"{}
+\item 
+\#define \mbox{\hyperlink{taplLog_8hpp_ab912d02c7998c3d47d05f87be4e2c920}{B\+O\+L\+D\+R\+ED}}~\char`\"{}\textbackslash{}033\mbox{[}1m\textbackslash{}033\mbox{[}31m\char`\"{}
+\item 
+\#define \mbox{\hyperlink{taplLog_8hpp_a4a6c893a1703c33ede7d702fe5f97c91}{B\+O\+L\+D\+G\+R\+E\+EN}}~\char`\"{}\textbackslash{}033\mbox{[}1m\textbackslash{}033\mbox{[}32m\char`\"{}
+\item 
+\#define \mbox{\hyperlink{taplLog_8hpp_a8cec79108dfc3c61e8e32d390ec28b26}{B\+O\+L\+D\+Y\+E\+L\+L\+OW}}~\char`\"{}\textbackslash{}033\mbox{[}1m\textbackslash{}033\mbox{[}33m\char`\"{}
+\item 
+\#define \mbox{\hyperlink{taplLog_8hpp_a11e77c19555cbd15bcc744ff36a18635}{B\+O\+L\+D\+B\+L\+UE}}~\char`\"{}\textbackslash{}033\mbox{[}1m\textbackslash{}033\mbox{[}34m\char`\"{}
+\item 
+\#define \mbox{\hyperlink{taplLog_8hpp_ac4723c5ee12cfca16e2172b57b99cb07}{B\+O\+L\+D\+M\+A\+G\+E\+N\+TA}}~\char`\"{}\textbackslash{}033\mbox{[}1m\textbackslash{}033\mbox{[}35m\char`\"{}
+\item 
+\#define \mbox{\hyperlink{taplLog_8hpp_ae87af5e6363eb1913b17f24dcb60a22d}{B\+O\+L\+D\+C\+Y\+AN}}~\char`\"{}\textbackslash{}033\mbox{[}1m\textbackslash{}033\mbox{[}36m\char`\"{}
+\item 
+\#define \mbox{\hyperlink{taplLog_8hpp_aa4ef051614aa0bd503b0a18ee158c5d7}{B\+O\+L\+D\+W\+H\+I\+TE}}~\char`\"{}\textbackslash{}033\mbox{[}1m\textbackslash{}033\mbox{[}37m\char`\"{}
+\item 
+\#define \mbox{\hyperlink{taplLog_8hpp_a5fccb4fc71e44089a1b1a77fc76c0b68}{\+\_\+\+\_\+\+F\+I\+L\+E\+N\+A\+M\+E\+\_\+\+\_\+}}~(strrchr(\+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+, \textquotesingle{}/\textquotesingle{}) ? strrchr(\+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+, \textquotesingle{}/\textquotesingle{}) + 1 \+: \+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{taplLog_8hpp_aeafb5991f9d2f572848f5305b87df1c4}{T\+L\+O\+G\+\_\+\+D\+E\+B\+UG}}~\mbox{\hyperlink{classLog}{Log}}(\mbox{\hyperlink{taplLog_8hpp_a5fccb4fc71e44089a1b1a77fc76c0b68}{\+\_\+\+\_\+\+F\+I\+L\+E\+N\+A\+M\+E\+\_\+\+\_\+}}, \+\_\+\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+\_\+, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+, \mbox{\hyperlink{taplLog_8hpp_ac2fe55c989a2c0b34cf68f392982fd66ae1c7f84e4b5ae425db5dfa58b8f6b56a}{D\+E\+B\+U\+G\+\_\+\+L\+O\+G\+\_\+\+L\+E\+V\+EL}})
+\item 
+\#define \mbox{\hyperlink{taplLog_8hpp_abc66b99cecd5f788572b97dc8f532410}{T\+L\+O\+G\+\_\+\+I\+N\+FO}}~\mbox{\hyperlink{classLog}{Log}}(\mbox{\hyperlink{taplLog_8hpp_a5fccb4fc71e44089a1b1a77fc76c0b68}{\+\_\+\+\_\+\+F\+I\+L\+E\+N\+A\+M\+E\+\_\+\+\_\+}}, \+\_\+\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+\_\+, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+, \mbox{\hyperlink{taplLog_8hpp_ac2fe55c989a2c0b34cf68f392982fd66ae0cb0a25aa030f68d07ac4f3dc6858a1}{I\+N\+F\+O\+\_\+\+L\+O\+G\+\_\+\+L\+E\+V\+EL}})
+\item 
+\#define \mbox{\hyperlink{taplLog_8hpp_ac9a5c99d6c1be49812fc82f003666584}{T\+L\+O\+G\+\_\+\+W\+A\+RN}}~\mbox{\hyperlink{classLog}{Log}}(\mbox{\hyperlink{taplLog_8hpp_a5fccb4fc71e44089a1b1a77fc76c0b68}{\+\_\+\+\_\+\+F\+I\+L\+E\+N\+A\+M\+E\+\_\+\+\_\+}}, \+\_\+\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+\_\+, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+, \mbox{\hyperlink{taplLog_8hpp_ac2fe55c989a2c0b34cf68f392982fd66ac93428743ee41e38878f522093722d66}{W\+A\+R\+N\+\_\+\+L\+O\+G\+\_\+\+L\+E\+V\+EL}})
+\item 
+\#define \mbox{\hyperlink{taplLog_8hpp_a5aa543a06dfaa08a11b1e6572cc042a6}{T\+L\+O\+G\+\_\+\+E\+R\+R\+OR}}~\mbox{\hyperlink{classLog}{Log}}(\mbox{\hyperlink{taplLog_8hpp_a5fccb4fc71e44089a1b1a77fc76c0b68}{\+\_\+\+\_\+\+F\+I\+L\+E\+N\+A\+M\+E\+\_\+\+\_\+}}, \+\_\+\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+\_\+, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+, \mbox{\hyperlink{taplLog_8hpp_ac2fe55c989a2c0b34cf68f392982fd66a8f42ae2e0fcde2578f0ec74fecd9309b}{E\+R\+R\+O\+R\+\_\+\+L\+O\+G\+\_\+\+L\+E\+V\+EL}})
+\item 
+\#define \mbox{\hyperlink{taplLog_8hpp_ad2583fdad1e776c07d18c92ac26d5da0}{T\+L\+O\+G\+\_\+\+N\+O\+T\+I\+CE}}~\mbox{\hyperlink{classLog}{Log}}(\mbox{\hyperlink{taplLog_8hpp_a5fccb4fc71e44089a1b1a77fc76c0b68}{\+\_\+\+\_\+\+F\+I\+L\+E\+N\+A\+M\+E\+\_\+\+\_\+}}, \+\_\+\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+\_\+, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+, \mbox{\hyperlink{taplLog_8hpp_ac2fe55c989a2c0b34cf68f392982fd66a7835b5fe06b6a5c536a12958efacee65}{N\+O\+T\+I\+C\+E\+\_\+\+L\+O\+G\+\_\+\+L\+E\+V\+EL}})
+\item 
+\#define \mbox{\hyperlink{taplLog_8hpp_a48eedbe6b4b6981df71de6b8128685c1}{T\+L\+O\+G\+\_\+\+F\+A\+T\+AL}}~\mbox{\hyperlink{classLog}{Log}}(\mbox{\hyperlink{taplLog_8hpp_a5fccb4fc71e44089a1b1a77fc76c0b68}{\+\_\+\+\_\+\+F\+I\+L\+E\+N\+A\+M\+E\+\_\+\+\_\+}}, \+\_\+\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+\_\+, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+, \mbox{\hyperlink{taplLog_8hpp_ac2fe55c989a2c0b34cf68f392982fd66a3ee5e95768a1df02f6f8dd63b7e9420a}{F\+A\+T\+A\+L\+\_\+\+L\+O\+G\+\_\+\+L\+E\+V\+EL}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{taplLog_8hpp_ac2fe55c989a2c0b34cf68f392982fd66}{Log\+Level\+Enum}} \{ \newline
+\mbox{\hyperlink{taplLog_8hpp_ac2fe55c989a2c0b34cf68f392982fd66ae1c7f84e4b5ae425db5dfa58b8f6b56a}{D\+E\+B\+U\+G\+\_\+\+L\+O\+G\+\_\+\+L\+E\+V\+EL}}, 
+\mbox{\hyperlink{taplLog_8hpp_ac2fe55c989a2c0b34cf68f392982fd66ae0cb0a25aa030f68d07ac4f3dc6858a1}{I\+N\+F\+O\+\_\+\+L\+O\+G\+\_\+\+L\+E\+V\+EL}}, 
+\mbox{\hyperlink{taplLog_8hpp_ac2fe55c989a2c0b34cf68f392982fd66ac93428743ee41e38878f522093722d66}{W\+A\+R\+N\+\_\+\+L\+O\+G\+\_\+\+L\+E\+V\+EL}}, 
+\mbox{\hyperlink{taplLog_8hpp_ac2fe55c989a2c0b34cf68f392982fd66a8f42ae2e0fcde2578f0ec74fecd9309b}{E\+R\+R\+O\+R\+\_\+\+L\+O\+G\+\_\+\+L\+E\+V\+EL}}, 
+\newline
+\mbox{\hyperlink{taplLog_8hpp_ac2fe55c989a2c0b34cf68f392982fd66a7835b5fe06b6a5c536a12958efacee65}{N\+O\+T\+I\+C\+E\+\_\+\+L\+O\+G\+\_\+\+L\+E\+V\+EL}}, 
+\mbox{\hyperlink{taplLog_8hpp_ac2fe55c989a2c0b34cf68f392982fd66a3ee5e95768a1df02f6f8dd63b7e9420a}{F\+A\+T\+A\+L\+\_\+\+L\+O\+G\+\_\+\+L\+E\+V\+EL}}
+ \}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classLog}{Log}} level enumerations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file provides logging functions for T\+A\+PL. 
+
+\begin{DoxyAuthor}{Author}
+Shubham Shrivastava 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{taplLog_8hpp_a5fccb4fc71e44089a1b1a77fc76c0b68}\label{taplLog_8hpp_a5fccb4fc71e44089a1b1a77fc76c0b68}} 
+\index{taplLog.hpp@{taplLog.hpp}!\_\_FILENAME\_\_@{\_\_FILENAME\_\_}}
+\index{\_\_FILENAME\_\_@{\_\_FILENAME\_\_}!taplLog.hpp@{taplLog.hpp}}
+\doxysubsubsection{\texorpdfstring{\_\_FILENAME\_\_}{\_\_FILENAME\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+F\+I\+L\+E\+N\+A\+M\+E\+\_\+\+\_\+~(strrchr(\+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+, \textquotesingle{}/\textquotesingle{}) ? strrchr(\+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+, \textquotesingle{}/\textquotesingle{}) + 1 \+: \+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+)}
+
+
+
+Definition at line 95 of file tapl\+Log.\+hpp.
+
+\mbox{\Hypertarget{taplLog_8hpp_a7b3b25cba33b07c303f3060fe41887f6}\label{taplLog_8hpp_a7b3b25cba33b07c303f3060fe41887f6}} 
+\index{taplLog.hpp@{taplLog.hpp}!BLACK@{BLACK}}
+\index{BLACK@{BLACK}!taplLog.hpp@{taplLog.hpp}}
+\doxysubsubsection{\texorpdfstring{BLACK}{BLACK}}
+{\footnotesize\ttfamily \#define B\+L\+A\+CK~\char`\"{}\textbackslash{}033\mbox{[}30m\char`\"{}}
+
+
+
+Definition at line 14 of file tapl\+Log.\+hpp.
+
+\mbox{\Hypertarget{taplLog_8hpp_a79d10e672abb49ad63eeaa8aaef57c38}\label{taplLog_8hpp_a79d10e672abb49ad63eeaa8aaef57c38}} 
+\index{taplLog.hpp@{taplLog.hpp}!BLUE@{BLUE}}
+\index{BLUE@{BLUE}!taplLog.hpp@{taplLog.hpp}}
+\doxysubsubsection{\texorpdfstring{BLUE}{BLUE}}
+{\footnotesize\ttfamily \#define B\+L\+UE~\char`\"{}\textbackslash{}033\mbox{[}34m\char`\"{}}
+
+
+
+Definition at line 18 of file tapl\+Log.\+hpp.
+
+\mbox{\Hypertarget{taplLog_8hpp_aef2fe95894117165b29036718221979f}\label{taplLog_8hpp_aef2fe95894117165b29036718221979f}} 
+\index{taplLog.hpp@{taplLog.hpp}!BOLDBLACK@{BOLDBLACK}}
+\index{BOLDBLACK@{BOLDBLACK}!taplLog.hpp@{taplLog.hpp}}
+\doxysubsubsection{\texorpdfstring{BOLDBLACK}{BOLDBLACK}}
+{\footnotesize\ttfamily \#define B\+O\+L\+D\+B\+L\+A\+CK~\char`\"{}\textbackslash{}033\mbox{[}1m\textbackslash{}033\mbox{[}30m\char`\"{}}
+
+
+
+Definition at line 22 of file tapl\+Log.\+hpp.
+
+\mbox{\Hypertarget{taplLog_8hpp_a11e77c19555cbd15bcc744ff36a18635}\label{taplLog_8hpp_a11e77c19555cbd15bcc744ff36a18635}} 
+\index{taplLog.hpp@{taplLog.hpp}!BOLDBLUE@{BOLDBLUE}}
+\index{BOLDBLUE@{BOLDBLUE}!taplLog.hpp@{taplLog.hpp}}
+\doxysubsubsection{\texorpdfstring{BOLDBLUE}{BOLDBLUE}}
+{\footnotesize\ttfamily \#define B\+O\+L\+D\+B\+L\+UE~\char`\"{}\textbackslash{}033\mbox{[}1m\textbackslash{}033\mbox{[}34m\char`\"{}}
+
+
+
+Definition at line 26 of file tapl\+Log.\+hpp.
+
+\mbox{\Hypertarget{taplLog_8hpp_ae87af5e6363eb1913b17f24dcb60a22d}\label{taplLog_8hpp_ae87af5e6363eb1913b17f24dcb60a22d}} 
+\index{taplLog.hpp@{taplLog.hpp}!BOLDCYAN@{BOLDCYAN}}
+\index{BOLDCYAN@{BOLDCYAN}!taplLog.hpp@{taplLog.hpp}}
+\doxysubsubsection{\texorpdfstring{BOLDCYAN}{BOLDCYAN}}
+{\footnotesize\ttfamily \#define B\+O\+L\+D\+C\+Y\+AN~\char`\"{}\textbackslash{}033\mbox{[}1m\textbackslash{}033\mbox{[}36m\char`\"{}}
+
+
+
+Definition at line 28 of file tapl\+Log.\+hpp.
+
+\mbox{\Hypertarget{taplLog_8hpp_a4a6c893a1703c33ede7d702fe5f97c91}\label{taplLog_8hpp_a4a6c893a1703c33ede7d702fe5f97c91}} 
+\index{taplLog.hpp@{taplLog.hpp}!BOLDGREEN@{BOLDGREEN}}
+\index{BOLDGREEN@{BOLDGREEN}!taplLog.hpp@{taplLog.hpp}}
+\doxysubsubsection{\texorpdfstring{BOLDGREEN}{BOLDGREEN}}
+{\footnotesize\ttfamily \#define B\+O\+L\+D\+G\+R\+E\+EN~\char`\"{}\textbackslash{}033\mbox{[}1m\textbackslash{}033\mbox{[}32m\char`\"{}}
+
+
+
+Definition at line 24 of file tapl\+Log.\+hpp.
+
+\mbox{\Hypertarget{taplLog_8hpp_ac4723c5ee12cfca16e2172b57b99cb07}\label{taplLog_8hpp_ac4723c5ee12cfca16e2172b57b99cb07}} 
+\index{taplLog.hpp@{taplLog.hpp}!BOLDMAGENTA@{BOLDMAGENTA}}
+\index{BOLDMAGENTA@{BOLDMAGENTA}!taplLog.hpp@{taplLog.hpp}}
+\doxysubsubsection{\texorpdfstring{BOLDMAGENTA}{BOLDMAGENTA}}
+{\footnotesize\ttfamily \#define B\+O\+L\+D\+M\+A\+G\+E\+N\+TA~\char`\"{}\textbackslash{}033\mbox{[}1m\textbackslash{}033\mbox{[}35m\char`\"{}}
+
+
+
+Definition at line 27 of file tapl\+Log.\+hpp.
+
+\mbox{\Hypertarget{taplLog_8hpp_ab912d02c7998c3d47d05f87be4e2c920}\label{taplLog_8hpp_ab912d02c7998c3d47d05f87be4e2c920}} 
+\index{taplLog.hpp@{taplLog.hpp}!BOLDRED@{BOLDRED}}
+\index{BOLDRED@{BOLDRED}!taplLog.hpp@{taplLog.hpp}}
+\doxysubsubsection{\texorpdfstring{BOLDRED}{BOLDRED}}
+{\footnotesize\ttfamily \#define B\+O\+L\+D\+R\+ED~\char`\"{}\textbackslash{}033\mbox{[}1m\textbackslash{}033\mbox{[}31m\char`\"{}}
+
+
+
+Definition at line 23 of file tapl\+Log.\+hpp.
+
+\mbox{\Hypertarget{taplLog_8hpp_aa4ef051614aa0bd503b0a18ee158c5d7}\label{taplLog_8hpp_aa4ef051614aa0bd503b0a18ee158c5d7}} 
+\index{taplLog.hpp@{taplLog.hpp}!BOLDWHITE@{BOLDWHITE}}
+\index{BOLDWHITE@{BOLDWHITE}!taplLog.hpp@{taplLog.hpp}}
+\doxysubsubsection{\texorpdfstring{BOLDWHITE}{BOLDWHITE}}
+{\footnotesize\ttfamily \#define B\+O\+L\+D\+W\+H\+I\+TE~\char`\"{}\textbackslash{}033\mbox{[}1m\textbackslash{}033\mbox{[}37m\char`\"{}}
+
+
+
+Definition at line 29 of file tapl\+Log.\+hpp.
+
+\mbox{\Hypertarget{taplLog_8hpp_a8cec79108dfc3c61e8e32d390ec28b26}\label{taplLog_8hpp_a8cec79108dfc3c61e8e32d390ec28b26}} 
+\index{taplLog.hpp@{taplLog.hpp}!BOLDYELLOW@{BOLDYELLOW}}
+\index{BOLDYELLOW@{BOLDYELLOW}!taplLog.hpp@{taplLog.hpp}}
+\doxysubsubsection{\texorpdfstring{BOLDYELLOW}{BOLDYELLOW}}
+{\footnotesize\ttfamily \#define B\+O\+L\+D\+Y\+E\+L\+L\+OW~\char`\"{}\textbackslash{}033\mbox{[}1m\textbackslash{}033\mbox{[}33m\char`\"{}}
+
+
+
+Definition at line 25 of file tapl\+Log.\+hpp.
+
+\mbox{\Hypertarget{taplLog_8hpp_ad243f93c16bc4c1d3e0a13b84421d760}\label{taplLog_8hpp_ad243f93c16bc4c1d3e0a13b84421d760}} 
+\index{taplLog.hpp@{taplLog.hpp}!CYAN@{CYAN}}
+\index{CYAN@{CYAN}!taplLog.hpp@{taplLog.hpp}}
+\doxysubsubsection{\texorpdfstring{CYAN}{CYAN}}
+{\footnotesize\ttfamily \#define C\+Y\+AN~\char`\"{}\textbackslash{}033\mbox{[}36m\char`\"{}}
+
+
+
+Definition at line 20 of file tapl\+Log.\+hpp.
+
+\mbox{\Hypertarget{taplLog_8hpp_acfbc006ea433ad708fdee3e82996e721}\label{taplLog_8hpp_acfbc006ea433ad708fdee3e82996e721}} 
+\index{taplLog.hpp@{taplLog.hpp}!GREEN@{GREEN}}
+\index{GREEN@{GREEN}!taplLog.hpp@{taplLog.hpp}}
+\doxysubsubsection{\texorpdfstring{GREEN}{GREEN}}
+{\footnotesize\ttfamily \#define G\+R\+E\+EN~\char`\"{}\textbackslash{}033\mbox{[}32m\char`\"{}}
+
+
+
+Definition at line 16 of file tapl\+Log.\+hpp.
+
+\mbox{\Hypertarget{taplLog_8hpp_a6f699060902f800f12aaae150f3a708e}\label{taplLog_8hpp_a6f699060902f800f12aaae150f3a708e}} 
+\index{taplLog.hpp@{taplLog.hpp}!MAGENTA@{MAGENTA}}
+\index{MAGENTA@{MAGENTA}!taplLog.hpp@{taplLog.hpp}}
+\doxysubsubsection{\texorpdfstring{MAGENTA}{MAGENTA}}
+{\footnotesize\ttfamily \#define M\+A\+G\+E\+N\+TA~\char`\"{}\textbackslash{}033\mbox{[}35m\char`\"{}}
+
+
+
+Definition at line 19 of file tapl\+Log.\+hpp.
+
+\mbox{\Hypertarget{taplLog_8hpp_a8d23feea868a983c8c2b661e1e16972f}\label{taplLog_8hpp_a8d23feea868a983c8c2b661e1e16972f}} 
+\index{taplLog.hpp@{taplLog.hpp}!RED@{RED}}
+\index{RED@{RED}!taplLog.hpp@{taplLog.hpp}}
+\doxysubsubsection{\texorpdfstring{RED}{RED}}
+{\footnotesize\ttfamily \#define R\+ED~\char`\"{}\textbackslash{}033\mbox{[}31m\char`\"{}}
+
+
+
+Definition at line 15 of file tapl\+Log.\+hpp.
+
+\mbox{\Hypertarget{taplLog_8hpp_ab702106cf3b3e96750b6845ded4e0299}\label{taplLog_8hpp_ab702106cf3b3e96750b6845ded4e0299}} 
+\index{taplLog.hpp@{taplLog.hpp}!RESET@{RESET}}
+\index{RESET@{RESET}!taplLog.hpp@{taplLog.hpp}}
+\doxysubsubsection{\texorpdfstring{RESET}{RESET}}
+{\footnotesize\ttfamily \#define R\+E\+S\+ET~\char`\"{}\textbackslash{}033\mbox{[}0m\char`\"{}}
+
+$<$ Color Codes 
+
+Definition at line 13 of file tapl\+Log.\+hpp.
+
+\mbox{\Hypertarget{taplLog_8hpp_aeafb5991f9d2f572848f5305b87df1c4}\label{taplLog_8hpp_aeafb5991f9d2f572848f5305b87df1c4}} 
+\index{taplLog.hpp@{taplLog.hpp}!TLOG\_DEBUG@{TLOG\_DEBUG}}
+\index{TLOG\_DEBUG@{TLOG\_DEBUG}!taplLog.hpp@{taplLog.hpp}}
+\doxysubsubsection{\texorpdfstring{TLOG\_DEBUG}{TLOG\_DEBUG}}
+{\footnotesize\ttfamily \#define T\+L\+O\+G\+\_\+\+D\+E\+B\+UG~\mbox{\hyperlink{classLog}{Log}}(\mbox{\hyperlink{taplLog_8hpp_a5fccb4fc71e44089a1b1a77fc76c0b68}{\+\_\+\+\_\+\+F\+I\+L\+E\+N\+A\+M\+E\+\_\+\+\_\+}}, \+\_\+\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+\_\+, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+, \mbox{\hyperlink{taplLog_8hpp_ac2fe55c989a2c0b34cf68f392982fd66ae1c7f84e4b5ae425db5dfa58b8f6b56a}{D\+E\+B\+U\+G\+\_\+\+L\+O\+G\+\_\+\+L\+E\+V\+EL}})}
+
+
+
+Definition at line 96 of file tapl\+Log.\+hpp.
+
+\mbox{\Hypertarget{taplLog_8hpp_a5aa543a06dfaa08a11b1e6572cc042a6}\label{taplLog_8hpp_a5aa543a06dfaa08a11b1e6572cc042a6}} 
+\index{taplLog.hpp@{taplLog.hpp}!TLOG\_ERROR@{TLOG\_ERROR}}
+\index{TLOG\_ERROR@{TLOG\_ERROR}!taplLog.hpp@{taplLog.hpp}}
+\doxysubsubsection{\texorpdfstring{TLOG\_ERROR}{TLOG\_ERROR}}
+{\footnotesize\ttfamily \#define T\+L\+O\+G\+\_\+\+E\+R\+R\+OR~\mbox{\hyperlink{classLog}{Log}}(\mbox{\hyperlink{taplLog_8hpp_a5fccb4fc71e44089a1b1a77fc76c0b68}{\+\_\+\+\_\+\+F\+I\+L\+E\+N\+A\+M\+E\+\_\+\+\_\+}}, \+\_\+\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+\_\+, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+, \mbox{\hyperlink{taplLog_8hpp_ac2fe55c989a2c0b34cf68f392982fd66a8f42ae2e0fcde2578f0ec74fecd9309b}{E\+R\+R\+O\+R\+\_\+\+L\+O\+G\+\_\+\+L\+E\+V\+EL}})}
+
+
+
+Definition at line 99 of file tapl\+Log.\+hpp.
+
+\mbox{\Hypertarget{taplLog_8hpp_a48eedbe6b4b6981df71de6b8128685c1}\label{taplLog_8hpp_a48eedbe6b4b6981df71de6b8128685c1}} 
+\index{taplLog.hpp@{taplLog.hpp}!TLOG\_FATAL@{TLOG\_FATAL}}
+\index{TLOG\_FATAL@{TLOG\_FATAL}!taplLog.hpp@{taplLog.hpp}}
+\doxysubsubsection{\texorpdfstring{TLOG\_FATAL}{TLOG\_FATAL}}
+{\footnotesize\ttfamily \#define T\+L\+O\+G\+\_\+\+F\+A\+T\+AL~\mbox{\hyperlink{classLog}{Log}}(\mbox{\hyperlink{taplLog_8hpp_a5fccb4fc71e44089a1b1a77fc76c0b68}{\+\_\+\+\_\+\+F\+I\+L\+E\+N\+A\+M\+E\+\_\+\+\_\+}}, \+\_\+\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+\_\+, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+, \mbox{\hyperlink{taplLog_8hpp_ac2fe55c989a2c0b34cf68f392982fd66a3ee5e95768a1df02f6f8dd63b7e9420a}{F\+A\+T\+A\+L\+\_\+\+L\+O\+G\+\_\+\+L\+E\+V\+EL}})}
+
+
+
+Definition at line 101 of file tapl\+Log.\+hpp.
+
+\mbox{\Hypertarget{taplLog_8hpp_abc66b99cecd5f788572b97dc8f532410}\label{taplLog_8hpp_abc66b99cecd5f788572b97dc8f532410}} 
+\index{taplLog.hpp@{taplLog.hpp}!TLOG\_INFO@{TLOG\_INFO}}
+\index{TLOG\_INFO@{TLOG\_INFO}!taplLog.hpp@{taplLog.hpp}}
+\doxysubsubsection{\texorpdfstring{TLOG\_INFO}{TLOG\_INFO}}
+{\footnotesize\ttfamily \#define T\+L\+O\+G\+\_\+\+I\+N\+FO~\mbox{\hyperlink{classLog}{Log}}(\mbox{\hyperlink{taplLog_8hpp_a5fccb4fc71e44089a1b1a77fc76c0b68}{\+\_\+\+\_\+\+F\+I\+L\+E\+N\+A\+M\+E\+\_\+\+\_\+}}, \+\_\+\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+\_\+, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+, \mbox{\hyperlink{taplLog_8hpp_ac2fe55c989a2c0b34cf68f392982fd66ae0cb0a25aa030f68d07ac4f3dc6858a1}{I\+N\+F\+O\+\_\+\+L\+O\+G\+\_\+\+L\+E\+V\+EL}})}
+
+
+
+Definition at line 97 of file tapl\+Log.\+hpp.
+
+\mbox{\Hypertarget{taplLog_8hpp_ad2583fdad1e776c07d18c92ac26d5da0}\label{taplLog_8hpp_ad2583fdad1e776c07d18c92ac26d5da0}} 
+\index{taplLog.hpp@{taplLog.hpp}!TLOG\_NOTICE@{TLOG\_NOTICE}}
+\index{TLOG\_NOTICE@{TLOG\_NOTICE}!taplLog.hpp@{taplLog.hpp}}
+\doxysubsubsection{\texorpdfstring{TLOG\_NOTICE}{TLOG\_NOTICE}}
+{\footnotesize\ttfamily \#define T\+L\+O\+G\+\_\+\+N\+O\+T\+I\+CE~\mbox{\hyperlink{classLog}{Log}}(\mbox{\hyperlink{taplLog_8hpp_a5fccb4fc71e44089a1b1a77fc76c0b68}{\+\_\+\+\_\+\+F\+I\+L\+E\+N\+A\+M\+E\+\_\+\+\_\+}}, \+\_\+\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+\_\+, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+, \mbox{\hyperlink{taplLog_8hpp_ac2fe55c989a2c0b34cf68f392982fd66a7835b5fe06b6a5c536a12958efacee65}{N\+O\+T\+I\+C\+E\+\_\+\+L\+O\+G\+\_\+\+L\+E\+V\+EL}})}
+
+
+
+Definition at line 100 of file tapl\+Log.\+hpp.
+
+\mbox{\Hypertarget{taplLog_8hpp_ac9a5c99d6c1be49812fc82f003666584}\label{taplLog_8hpp_ac9a5c99d6c1be49812fc82f003666584}} 
+\index{taplLog.hpp@{taplLog.hpp}!TLOG\_WARN@{TLOG\_WARN}}
+\index{TLOG\_WARN@{TLOG\_WARN}!taplLog.hpp@{taplLog.hpp}}
+\doxysubsubsection{\texorpdfstring{TLOG\_WARN}{TLOG\_WARN}}
+{\footnotesize\ttfamily \#define T\+L\+O\+G\+\_\+\+W\+A\+RN~\mbox{\hyperlink{classLog}{Log}}(\mbox{\hyperlink{taplLog_8hpp_a5fccb4fc71e44089a1b1a77fc76c0b68}{\+\_\+\+\_\+\+F\+I\+L\+E\+N\+A\+M\+E\+\_\+\+\_\+}}, \+\_\+\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+\_\+, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+, \mbox{\hyperlink{taplLog_8hpp_ac2fe55c989a2c0b34cf68f392982fd66ac93428743ee41e38878f522093722d66}{W\+A\+R\+N\+\_\+\+L\+O\+G\+\_\+\+L\+E\+V\+EL}})}
+
+
+
+Definition at line 98 of file tapl\+Log.\+hpp.
+
+\mbox{\Hypertarget{taplLog_8hpp_a87b537f5fa5c109d3c05c13d6b18f382}\label{taplLog_8hpp_a87b537f5fa5c109d3c05c13d6b18f382}} 
+\index{taplLog.hpp@{taplLog.hpp}!WHITE@{WHITE}}
+\index{WHITE@{WHITE}!taplLog.hpp@{taplLog.hpp}}
+\doxysubsubsection{\texorpdfstring{WHITE}{WHITE}}
+{\footnotesize\ttfamily \#define W\+H\+I\+TE~\char`\"{}\textbackslash{}033\mbox{[}37m\char`\"{}}
+
+
+
+Definition at line 21 of file tapl\+Log.\+hpp.
+
+\mbox{\Hypertarget{taplLog_8hpp_abf681265909adf3d3e8116c93c0ba179}\label{taplLog_8hpp_abf681265909adf3d3e8116c93c0ba179}} 
+\index{taplLog.hpp@{taplLog.hpp}!YELLOW@{YELLOW}}
+\index{YELLOW@{YELLOW}!taplLog.hpp@{taplLog.hpp}}
+\doxysubsubsection{\texorpdfstring{YELLOW}{YELLOW}}
+{\footnotesize\ttfamily \#define Y\+E\+L\+L\+OW~\char`\"{}\textbackslash{}033\mbox{[}33m\char`\"{}}
+
+
+
+Definition at line 17 of file tapl\+Log.\+hpp.
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{taplLog_8hpp_ac2fe55c989a2c0b34cf68f392982fd66}\label{taplLog_8hpp_ac2fe55c989a2c0b34cf68f392982fd66}} 
+\index{taplLog.hpp@{taplLog.hpp}!LogLevelEnum@{LogLevelEnum}}
+\index{LogLevelEnum@{LogLevelEnum}!taplLog.hpp@{taplLog.hpp}}
+\doxysubsubsection{\texorpdfstring{LogLevelEnum}{LogLevelEnum}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{taplLog_8hpp_ac2fe55c989a2c0b34cf68f392982fd66}{Log\+Level\+Enum}}}
+
+
+
+\mbox{\hyperlink{classLog}{Log}} level enumerations. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DEBUG\_LOG\_LEVEL@{DEBUG\_LOG\_LEVEL}!taplLog.hpp@{taplLog.hpp}}\index{taplLog.hpp@{taplLog.hpp}!DEBUG\_LOG\_LEVEL@{DEBUG\_LOG\_LEVEL}}}\mbox{\Hypertarget{taplLog_8hpp_ac2fe55c989a2c0b34cf68f392982fd66ae1c7f84e4b5ae425db5dfa58b8f6b56a}\label{taplLog_8hpp_ac2fe55c989a2c0b34cf68f392982fd66ae1c7f84e4b5ae425db5dfa58b8f6b56a}} 
+D\+E\+B\+U\+G\+\_\+\+L\+O\+G\+\_\+\+L\+E\+V\+EL&Debug \mbox{\hyperlink{classLog}{Log}} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INFO\_LOG\_LEVEL@{INFO\_LOG\_LEVEL}!taplLog.hpp@{taplLog.hpp}}\index{taplLog.hpp@{taplLog.hpp}!INFO\_LOG\_LEVEL@{INFO\_LOG\_LEVEL}}}\mbox{\Hypertarget{taplLog_8hpp_ac2fe55c989a2c0b34cf68f392982fd66ae0cb0a25aa030f68d07ac4f3dc6858a1}\label{taplLog_8hpp_ac2fe55c989a2c0b34cf68f392982fd66ae0cb0a25aa030f68d07ac4f3dc6858a1}} 
+I\+N\+F\+O\+\_\+\+L\+O\+G\+\_\+\+L\+E\+V\+EL&Info \mbox{\hyperlink{classLog}{Log}} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WARN\_LOG\_LEVEL@{WARN\_LOG\_LEVEL}!taplLog.hpp@{taplLog.hpp}}\index{taplLog.hpp@{taplLog.hpp}!WARN\_LOG\_LEVEL@{WARN\_LOG\_LEVEL}}}\mbox{\Hypertarget{taplLog_8hpp_ac2fe55c989a2c0b34cf68f392982fd66ac93428743ee41e38878f522093722d66}\label{taplLog_8hpp_ac2fe55c989a2c0b34cf68f392982fd66ac93428743ee41e38878f522093722d66}} 
+W\+A\+R\+N\+\_\+\+L\+O\+G\+\_\+\+L\+E\+V\+EL&Warning \mbox{\hyperlink{classLog}{Log}} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERROR\_LOG\_LEVEL@{ERROR\_LOG\_LEVEL}!taplLog.hpp@{taplLog.hpp}}\index{taplLog.hpp@{taplLog.hpp}!ERROR\_LOG\_LEVEL@{ERROR\_LOG\_LEVEL}}}\mbox{\Hypertarget{taplLog_8hpp_ac2fe55c989a2c0b34cf68f392982fd66a8f42ae2e0fcde2578f0ec74fecd9309b}\label{taplLog_8hpp_ac2fe55c989a2c0b34cf68f392982fd66a8f42ae2e0fcde2578f0ec74fecd9309b}} 
+E\+R\+R\+O\+R\+\_\+\+L\+O\+G\+\_\+\+L\+E\+V\+EL&Error \mbox{\hyperlink{classLog}{Log}} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NOTICE\_LOG\_LEVEL@{NOTICE\_LOG\_LEVEL}!taplLog.hpp@{taplLog.hpp}}\index{taplLog.hpp@{taplLog.hpp}!NOTICE\_LOG\_LEVEL@{NOTICE\_LOG\_LEVEL}}}\mbox{\Hypertarget{taplLog_8hpp_ac2fe55c989a2c0b34cf68f392982fd66a7835b5fe06b6a5c536a12958efacee65}\label{taplLog_8hpp_ac2fe55c989a2c0b34cf68f392982fd66a7835b5fe06b6a5c536a12958efacee65}} 
+N\+O\+T\+I\+C\+E\+\_\+\+L\+O\+G\+\_\+\+L\+E\+V\+EL&Notice \mbox{\hyperlink{classLog}{Log}} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FATAL\_LOG\_LEVEL@{FATAL\_LOG\_LEVEL}!taplLog.hpp@{taplLog.hpp}}\index{taplLog.hpp@{taplLog.hpp}!FATAL\_LOG\_LEVEL@{FATAL\_LOG\_LEVEL}}}\mbox{\Hypertarget{taplLog_8hpp_ac2fe55c989a2c0b34cf68f392982fd66a3ee5e95768a1df02f6f8dd63b7e9420a}\label{taplLog_8hpp_ac2fe55c989a2c0b34cf68f392982fd66a3ee5e95768a1df02f6f8dd63b7e9420a}} 
+F\+A\+T\+A\+L\+\_\+\+L\+O\+G\+\_\+\+L\+E\+V\+EL&Fatal \mbox{\hyperlink{classLog}{Log}} \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 34 of file tapl\+Log.\+hpp.
+

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['xy_239',['XY',['../namespacetapl_1_1viz.html#a99e496921984514dbc7bcef809f50150a361bb774c1715ed6be67552bd2aac36e',1,'tapl::viz']]]
+  ['info_5flog_5flevel_687',['INFO_LOG_LEVEL',['../taplLog_8hpp.html#ac2fe55c989a2c0b34cf68f392982fd66ae0cb0a25aa030f68d07ac4f3dc6858a1',1,'taplLog.hpp']]]
 ];

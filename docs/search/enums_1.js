@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['resultcode_233',['ResultCode',['../namespacetapl.html#a196ce1d5bf399fc26f03797e6a8d03ff',1,'tapl']]]
+  ['loglevelenum_680',['LogLevelEnum',['../taplLog_8hpp.html#ac2fe55c989a2c0b34cf68f392982fd66',1,'taplLog.hpp']]]
 ];
