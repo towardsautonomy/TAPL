@@ -1,9 +1,6 @@
 var searchData=
 [
-  ['jan_607',['jan',['../namespacedate_1_1literals.html#af74ed14fd96db48ccc311bba2cd6b5ed',1,'date::jan()'],['../namespacedate_1_1literals.html#af74ed14fd96db48ccc311bba2cd6b5ed',1,'date::literals::jan()']]],
-  ['january_608',['January',['../namespacedate.html#a681549e324f246a6d23bc1c97c696cda',1,'date']]],
-  ['jul_609',['jul',['../namespacedate_1_1literals.html#a41acc8d7266b5c213d11ee09e516d84a',1,'date::literals::jul()'],['../namespacedate_1_1literals.html#a41acc8d7266b5c213d11ee09e516d84a',1,'date::jul()']]],
-  ['july_610',['July',['../namespacedate.html#aa6a4b6623fc545ebd73de3c8b5e06d38',1,'date']]],
-  ['jun_611',['jun',['../namespacedate_1_1literals.html#a26b105ea66c9ec3936b0d855d066ccf6',1,'date::jun()'],['../namespacedate_1_1literals.html#a26b105ea66c9ec3936b0d855d066ccf6',1,'date::literals::jun()']]],
-  ['june_612',['June',['../namespacedate.html#af2b4a54e6bfed6c42f5d19d96042e1c2',1,'date']]]
+  ['x_265',['x',['../structtapl_1_1Point3d.html#a4e0b40773e595bea19456a6a86eaa2a3',1,'tapl::Point3d']]],
+  ['x_5fmax_266',['x_max',['../structtapl_1_1BBox3d.html#ae7fd61bfb33a3c5fbc7b531960d7e543',1,'tapl::BBox3d']]],
+  ['x_5fmin_267',['x_min',['../structtapl_1_1BBox3d.html#a7f28356e5e1f7503770b352c457d4aed',1,'tapl::BBox3d']]]
 ];

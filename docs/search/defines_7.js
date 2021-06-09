@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['only_5fc_5flocale_723',['ONLY_C_LOCALE',['../date_8h.html#ae455a92a107098eb0f1870875285faaf',1,'date.h']]]
+  ['white_311',['WHITE',['../taplLog_8hpp.html#a87b537f5fa5c109d3c05c13d6b18f382',1,'taplLog.hpp']]]
 ];

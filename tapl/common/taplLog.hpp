@@ -9,7 +9,7 @@
 #ifndef TAPL_LOG_H_
 #define TAPL_LOG_H_
 
-/**< Color Codes */
+/*! Color Codes */
 #define RESET       "\033[0m"
 #define BLACK       "\033[30m"             // Black 
 #define RED         "\033[31m"             // Red 
@@ -93,11 +93,18 @@ public:
 };
 
 #define __FILENAME__ (strrchr(__FILE__, '/') ? strrchr(__FILE__, '/') + 1 : __FILE__)
+
+/*! Debug Log */
 #define TLOG_DEBUG Log(__FILENAME__, __FUNCTION__, __LINE__, DEBUG_LOG_LEVEL)
+/*! Info Log */
 #define TLOG_INFO Log(__FILENAME__, __FUNCTION__, __LINE__, INFO_LOG_LEVEL)
+/*! Warning Log */
 #define TLOG_WARN Log(__FILENAME__, __FUNCTION__, __LINE__, WARN_LOG_LEVEL)
+/*! Error Log */
 #define TLOG_ERROR Log(__FILENAME__, __FUNCTION__, __LINE__, ERROR_LOG_LEVEL)
+/*! Notice Log */
 #define TLOG_NOTICE Log(__FILENAME__, __FUNCTION__, __LINE__, NOTICE_LOG_LEVEL)
+/*! Fatal Log */
 #define TLOG_FATAL Log(__FILENAME__, __FUNCTION__, __LINE__, FATAL_LOG_LEVEL)
 
 #endif /* TAPL_LOG_H_ */

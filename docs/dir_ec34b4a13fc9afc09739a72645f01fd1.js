@@ -1,6 +1,5 @@
 var dir_ec34b4a13fc9afc09739a72645f01fd1 =
 [
-    [ "date.h", "date_8h.html", "date_8h" ],
     [ "ringBuffer.hpp", "ringBuffer_8hpp.html", [
       [ "RingBuffer", "classtapl_1_1RingBuffer.html", "classtapl_1_1RingBuffer" ]
     ] ],

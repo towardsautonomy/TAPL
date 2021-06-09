@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['dec_591',['dec',['../namespacedate_1_1literals.html#a966275491d1bc7eebda3f0446e51ee0a',1,'date::dec()'],['../namespacedate_1_1literals.html#a966275491d1bc7eebda3f0446e51ee0a',1,'date::literals::dec()']]],
-  ['december_592',['December',['../namespacedate.html#a8bc259b9460788f549558c8e9c90ebd7',1,'date']]],
-  ['digits_593',['digits',['../structdate_1_1detail_1_1choose__trunc__type.html#a9f9a710c13a24da255120b935031171b',1,'date::detail::choose_trunc_type']]]
+  ['id_257',['id',['../structtapl_1_1pte_1_1Node.html#a4141ba3367563df6be438c4344042b09',1,'tapl::pte::Node']]]
 ];

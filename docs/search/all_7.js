@@ -1,16 +1,9 @@
 var searchData=
 [
-  ['get_81',['get',['../classtapl_1_1RingBuffer.html#a86bd7fbf2c52259184c4e84feaae78d3',1,'tapl::RingBuffer']]],
-  ['get_5fptr_82',['get_ptr',['../classtapl_1_1RingBuffer.html#ae1c8614abf72c558c244c87b8ced7bf7',1,'tapl::RingBuffer']]],
-  ['getboundingbox_83',['getBoundingBox',['../namespacetapl_1_1pte.html#ac4b4a53485d62466140d43448496536b',1,'tapl::pte']]],
-  ['getdescriptors_84',['getDescriptors',['../structtapl_1_1CameraFrame.html#a2ecce3e76a8efdce3c799b404dcb790f',1,'tapl::CameraFrame']]],
-  ['getessentialmatrix_85',['getEssentialMatrix',['../structtapl_1_1DataFrame.html#a0f7f2252e9c335dfca944d64508b72b4',1,'tapl::DataFrame']]],
-  ['getfundamentalmatrix_86',['getFundamentalMatrix',['../structtapl_1_1DataFrame.html#a3e40c1a7fc883d041c1bc845ed7a3bb8',1,'tapl::DataFrame']]],
-  ['getimage_87',['getImage',['../structtapl_1_1CameraFrame.html#a173bf0e309ba2a499425bb4d881c3a8f',1,'tapl::CameraFrame']]],
-  ['getkeypoints_88',['getKeypoints',['../structtapl_1_1CameraFrame.html#aafb04677ac368c41616786d74cada301',1,'tapl::CameraFrame']]],
-  ['getkptsmatches_89',['getKptsMatches',['../structtapl_1_1DataFrame.html#ad6784247bd772557ed661a27c011e978',1,'tapl::DataFrame']]],
-  ['getpose_90',['getPose',['../structtapl_1_1DataFrame.html#af15fd3aeaaf932b2db3e18e81b0764f2',1,'tapl::DataFrame']]],
-  ['getsize_91',['getSize',['../classtapl_1_1RingBuffer.html#a5dfe06176646eeacfb89c464b15815ff',1,'tapl::RingBuffer']]],
-  ['gettriangulatedpoints_92',['getTriangulatedPoints',['../structtapl_1_1DataFrame.html#a77e09d7c142e062a4ed8fdbc11bba220',1,'tapl::DataFrame']]],
-  ['green_93',['GREEN',['../taplLog_8hpp.html#acfbc006ea433ad708fdee3e82996e721',1,'taplLog.hpp']]]
+  ['id_53',['id',['../structtapl_1_1pte_1_1Node.html#a4141ba3367563df6be438c4344042b09',1,'tapl::pte::Node']]],
+  ['imgproc_2ecpp_54',['imgProc.cpp',['../imgProc_8cpp.html',1,'']]],
+  ['imgproc_2ehpp_55',['imgProc.hpp',['../imgProc_8hpp.html',1,'']]],
+  ['info_5flog_5flevel_56',['INFO_LOG_LEVEL',['../taplLog_8hpp.html#ac2fe55c989a2c0b34cf68f392982fd66ae0cb0a25aa030f68d07ac4f3dc6858a1',1,'taplLog.hpp']]],
+  ['insert_57',['insert',['../structtapl_1_1pte_1_1KdTree.html#acaf4969659031fa301d1b7e46d6b3b77',1,'tapl::pte::KdTree']]],
+  ['inserthelper_58',['insertHelper',['../structtapl_1_1pte_1_1KdTree.html#a388598d62bc5f21a5f5b802a8feecc74',1,'tapl::pte::KdTree']]]
 ];
