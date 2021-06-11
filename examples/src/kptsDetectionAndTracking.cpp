@@ -54,9 +54,10 @@ int main(int argc, const char *argv[])
         // push image into data frame buffer
         tapl::DataFrame frame;
         frame.cameraFrame.pushImage(img_gray);
+        frame.cameraFrame.pushIntrinsicMatrix(camera_matrix);
         dataBuffer.push(frame);
 
-        TLOG_INFO << "----------------------------------------------------";
+        TLOG_INFO << "----------------------------------------";
         TLOG_INFO << "Image [" << imgIndex << "] loaded into the ring buffer";
 
         // perform keypoints detection and matching if more than one image is loaded into the buffer

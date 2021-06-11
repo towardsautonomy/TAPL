@@ -25,32 +25,32 @@ namespace tapl
      * @brief 3D Point
      */
     struct Point3d {
-        double x;                           /*!< x-coordinate */
-        double y;                           /*!< y-coordinate */
-        double z;                           /*!< z-coordinate */
+        double x;                           /**< x-coordinate */
+        double y;                           /**< y-coordinate */
+        double z;                           /**< z-coordinate */
     };
 
     /**
      * @brief 3D Bounding-Box
      */
     struct BBox3d {
-        double x_min;                       /*!< min x-coordinate */
-        double x_max;                       /*!< max x-coordinate */
-        double y_min;                       /*!< min y-coordinate */
-        double y_max;                       /*!< max y-coordinate */
-        double z_min;                       /*!< min z-coordinate */
-        double z_max;                       /*!< max z-coordinate */
+        double x_min;                       /**< min x-coordinate */
+        double x_max;                       /**< max x-coordinate */
+        double y_min;                       /**< min y-coordinate */
+        double y_max;                       /**< max y-coordinate */
+        double z_min;                       /**< min z-coordinate */
+        double z_max;                       /**< max z-coordinate */
     };
 
     /**
      * @brief 6-DOF Camera Pose
      */
     struct Pose6dof {
-        cv::Mat R;                          /*!< 3x3 rotation matrix */
-        cv::Mat t;                          /*!< 1x3 translation vector */
-        cv::Mat P;                          /*!< 4x4 projection matrix which combines 
+        cv::Mat R;                          /**< 3x3 rotation matrix */
+        cv::Mat t;                          /**< 1x3 translation vector */
+        cv::Mat P;                          /**< 4x4 projection matrix which combines 
                                                 both rotation and translation matrix */
-        cv::Mat euler;                      /*!< roll, pitch, yaw in radians */
+        cv::Mat euler;                      /**< roll, pitch, yaw in radians */
 
          // cunstructor
         Pose6dof() {
@@ -66,12 +66,14 @@ namespace tapl
      */
     struct CameraFrame {
     private:
-        bool img_exists;                    /*!< flag to specify if image exists */
-        bool kpts_exists;                   /*!< flag to specify if keypoints have been computed */
-        bool desc_exists;                   /*!< flag to specify if keypoint descriptors have been computed */
-        cv::Mat img;                        /*!< camera image */
-        std::vector<cv::KeyPoint> keypoints;/*!< 2D keypoints within camera image */
-        cv::Mat descriptors;                /*!< keypoint descriptors */
+        bool img_exists;                    /**< flag to specify if image exists */
+        bool k_exists;                      /**< flag to specify if camera intrinsic matrix exists */
+        bool kpts_exists;                   /**< flag to specify if keypoints have been computed */
+        bool desc_exists;                   /**< flag to specify if keypoint descriptors have been computed */
+        cv::Mat img;                        /**< camera image */
+        cv::Mat K;                          /**< camera intrinsic matrix */
+        std::vector<cv::KeyPoint> keypoints;/**< 2D keypoints within camera image */
+        cv::Mat descriptors;                /**< keypoint descriptors */
 
     public:
         // cunstructor
@@ -80,15 +82,17 @@ namespace tapl
 
         /* setters */
         // push image into this frame
-        void pushImage(cv::Mat &img) { img_exists = true; this->img = img; }
+        void pushImage(const cv::Mat &img) { img_exists = true; this->img = img; }
+        // push camera intrinsic matrix into this frame
+        void pushIntrinsicMatrix(const cv::Mat &K) { k_exists = true; this->K = K; }
         // push keypoints into this frame
-        void pushKeypoints(std::vector<cv::KeyPoint> &keypoints) { kpts_exists = true; this->keypoints = keypoints; }
+        void pushKeypoints(const std::vector<cv::KeyPoint> &keypoints) { kpts_exists = true; this->keypoints = keypoints; }
         // push descriptors into this frame
-        void pushDescriptors(cv::Mat &descriptors) { desc_exists = true; this->descriptors = descriptors; }
+        void pushDescriptors(const cv::Mat &descriptors) { desc_exists = true; this->descriptors = descriptors; }
 
         /* getters */
         // get image
-        ResultCode getImage(cv::Mat &img) { 
+        ResultCode getImage(cv::Mat &img) const { 
             if(img_exists) {
                 img = this->img;
                 return SUCCESS;
@@ -98,8 +102,19 @@ namespace tapl
                 return FAILURE;
             }
         }
+        // get intrinsic matrix
+        ResultCode getIntrinsicMatrix(cv::Mat &K) const { 
+            if(k_exists) {
+                K = this->K;
+                return SUCCESS;
+            }
+            else {
+                TLOG_ERROR << "Intrinsic Matrix does not exist";
+                return FAILURE;
+            }
+        }
         // get keypoints
-        ResultCode getKeypoints(std::vector<cv::KeyPoint> &keypoints) { 
+        ResultCode getKeypoints(std::vector<cv::KeyPoint> &keypoints) const { 
             if(kpts_exists) {
                 keypoints = this->keypoints;
                 return SUCCESS;
@@ -110,7 +125,7 @@ namespace tapl
             }
         }
         // get descriptors
-        ResultCode getDescriptors(cv::Mat &descriptors) { 
+        ResultCode getDescriptors(cv::Mat &descriptors) const { 
             if(desc_exists) {
                 descriptors = this->descriptors;
                 return SUCCESS;
@@ -127,39 +142,44 @@ namespace tapl
      */
     struct DataFrame {
     private:
-        bool kpts_matches_exists;           /*!< flag to specify if keypoints matches have been computed */
-        bool f_exists;                      /*!< flag to specify if fundamental matrix has been computed */
-        bool e_exists;                      /*!< flag to specify if essential matrix has been computed */
-        bool pose_exists;                   /*!< flag to specify if camera relative pose has been computed */
-        bool triangulated_pts_exists;       /*!< flag to specify if triangulated 3D points has been computed */
-        std::vector<cv::DMatch> kptMatches; /*!< keypoint matches between previous frame and current/this frame */
-        cv::Mat F;                          /*!< fundamental matrix for keypoint correspondences between previous and current/this frame */
-        cv::Mat E;                          /*!< essential matrix for keypoint correspondences between previous and current/this frame */
-        Pose6dof pose;                      /*!< pose */
-        cv::Mat triangulatedPts;            /*!< triangulated 3D points corresponding to the tracked keypoints */
+        bool kpts_matches_exists;           /**< flag to specify if keypoints matches have been computed */
+        bool f_exists;                      /**< flag to specify if fundamental matrix has been computed */
+        bool e_exists;                      /**< flag to specify if essential matrix has been computed */
+        bool pose_exists;                   /**< flag to specify if camera relative pose has been computed */
+        bool triangulated_pts_exists;       /**< flag to specify if triangulated 3D points has been computed */
+        std::vector<cv::DMatch> kptMatches; /**< keypoint matches between previous frame and current/this frame */
+        cv::Mat F;                          /**< fundamental matrix for keypoint correspondences between previous and current/this frame */
+        cv::Mat E;                          /**< essential matrix for keypoint correspondences between previous and current/this frame */
+        Pose6dof pose;                      /**< pose */
+        cv::Mat triangulatedPts;            /**< triangulated 3D points corresponding to the tracked keypoints */
 
     public:
-        /*! cunstructor */
+        /**< cunstructor */
         DataFrame() :
-            kpts_matches_exists(false), f_exists(false), e_exists(false), pose_exists(false), triangulated_pts_exists(false) {}
+            kpts_matches_exists(false), 
+            f_exists(false), 
+            e_exists(false), 
+            pose_exists(false), 
+            triangulated_pts_exists(false) {}
 
-        CameraFrame cameraFrame;            /*!< Image frame */
+        CameraFrame cameraFrame;            /**< Image frame */
+        CameraFrame * otherCameraFrame;     /**< Other image frame used for computing F, E, etc. */
 
         /* setters */
         // push keypoints matches
-        void pushKptsMatches(std::vector<cv::DMatch> &kptMatches) { kpts_matches_exists = true; this->kptMatches = kptMatches; }
+        void pushKptsMatches(const std::vector<cv::DMatch> &kptMatches) { kpts_matches_exists = true; this->kptMatches = kptMatches; }
         // push fundamental matrix
-        void pushFundamentalMatrix(cv::Mat &F) { f_exists = true; this->F = F; }
+        void pushFundamentalMatrix(const cv::Mat &F) { f_exists = true; this->F = F; }
         // push essential matrix
-        void pushEssentialMatrix(cv::Mat &E) { e_exists = true; this->E = E; }
+        void pushEssentialMatrix(const cv::Mat &E) { e_exists = true; this->E = E; }
         // push pose
-        void pushPose(Pose6dof &pose) { pose_exists = true; this->pose = pose; }
+        void pushPose(const Pose6dof &pose) { pose_exists = true; this->pose = pose; }
         // push triangulated points
-        void pushTriangulatedPts(cv::Mat &pts) { triangulated_pts_exists = true; this->triangulatedPts = pts; }
+        void pushTriangulatedPts(const cv::Mat &pts) { triangulated_pts_exists = true; this->triangulatedPts = pts; }
 
         /* getters */
         // get keypoints matches
-        ResultCode getKptsMatches(std::vector<cv::DMatch> &kptMatches) {
+        ResultCode getKptsMatches(std::vector<cv::DMatch> &kptMatches) const {
             if(kpts_matches_exists) {
                 kptMatches = this->kptMatches;
                 return SUCCESS;
@@ -170,7 +190,7 @@ namespace tapl
             }
         }
         // get fundamental matrix
-        ResultCode getFundamentalMatrix(cv::Mat &F) {
+        ResultCode getFundamentalMatrix(cv::Mat &F) const {
             if(f_exists) {
                 F = this->F;
                 return SUCCESS;
@@ -181,7 +201,7 @@ namespace tapl
             }
         }
         // get essential matrix
-        ResultCode getEssentialMatrix(cv::Mat &E) {
+        ResultCode getEssentialMatrix(cv::Mat &E) const {
             if(e_exists) {
                 E = this->E;
                 return SUCCESS;
@@ -192,7 +212,7 @@ namespace tapl
             }
         }
         // get relative pose
-        ResultCode getPose(Pose6dof &pose) {
+        ResultCode getPose(Pose6dof &pose) const {
             if(pose_exists) {
                 pose = this->pose;
                 return SUCCESS;
@@ -203,7 +223,7 @@ namespace tapl
             }
         }
         // get triangulated points
-        ResultCode getTriangulatedPoints(cv::Mat &pts) {
+        ResultCode getTriangulatedPoints(cv::Mat &pts) const {
             if(triangulated_pts_exists) {
                 pts = this->triangulatedPts;
                 return SUCCESS;

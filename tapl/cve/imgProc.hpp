@@ -23,9 +23,9 @@ namespace tapl {
          * @return tapl::SUCCESS if success
          * @return tapl::FAILURE if failure 
          */
-        tapl::ResultCode detectKeypoints(cv::Mat &img, 
-                                            std::vector<cv::KeyPoint> &keypoints, 
-                                            std::string detectorType = "FAST");
+        tapl::ResultCode detectKeypoints( const cv::Mat &img, 
+                                          std::vector<cv::KeyPoint> &keypoints, 
+                                          std::string detectorType = "FAST" );
 
         /** 
          * @brief This function extracts keypoints descriptors in an image
@@ -38,10 +38,10 @@ namespace tapl {
          * @return tapl::SUCCESS if success
          * @return tapl::FAILURE if failure 
          */
-        tapl::ResultCode extractDescriptors(cv::Mat &img, 
-                                            std::vector<cv::KeyPoint> &keypoints, 
-                                            cv::Mat &descriptors, 
-                                            std::string descriptorType = "BRISK");
+        tapl::ResultCode extractDescriptors( const cv::Mat &img, 
+                                             std::vector<cv::KeyPoint> &keypoints, 
+                                             cv::Mat &descriptors, 
+                                             std::string descriptorType = "BRISK" );
 
         /** 
          * @brief This function performs keypoint descriptor matching
@@ -64,14 +64,14 @@ namespace tapl {
          * @return tapl::SUCCESS if success
          * @return tapl::FAILURE if failure 
          */
-        tapl::ResultCode matchDescriptors(std::vector<cv::KeyPoint> &kPtsSource, 
-                                            std::vector<cv::KeyPoint> &kPtsRef, 
-                                            cv::Mat &descSource, 
-                                            cv::Mat &descRef,
-                                            std::vector<cv::DMatch> &matches, 
-                                            std::string normType = "NORM_HAMMING", 
-                                            std::string matcherType = "MAT_BF", 
-                                            std::string selectorType = "SEL_KNN");
+        tapl::ResultCode matchDescriptors( std::vector<cv::KeyPoint> &kPtsSource, 
+                                           std::vector<cv::KeyPoint> &kPtsRef, 
+                                           cv::Mat &descSource, 
+                                           cv::Mat &descRef,
+                                           std::vector<cv::DMatch> &matches, 
+                                           std::string normType = "NORM_HAMMING", 
+                                           std::string matcherType = "MAT_BF", 
+                                           std::string selectorType = "SEL_KNN" );
         /** 
          * @brief This function detects keypoints in two image frames
          *          and perform keypoints matching.
@@ -82,7 +82,8 @@ namespace tapl {
          * @return tapl::SUCCESS if success
          * @return tapl::FAILURE if failure 
          */
-        tapl::ResultCode detectAndMatchKpts(tapl::DataFrame &dframe1, tapl::DataFrame &dframe2);
+        tapl::ResultCode detectAndMatchKpts( tapl::DataFrame &dframe1, 
+                                             tapl::DataFrame &dframe2 );
 
         /** 
          * @brief This function retrieves fundamental matrix between two images
@@ -94,7 +95,8 @@ namespace tapl {
          * @return tapl::SUCCESS if success
          * @return tapl::FAILURE if failure  
          */
-        tapl::ResultCode computeFundamentalMatrix(tapl::DataFrame &dframe1, tapl::DataFrame &dframe2);
+        tapl::ResultCode computeFundamentalMatrix( tapl::DataFrame &dframe1, 
+                                                   tapl::DataFrame &dframe2 );
 
         /** 
          * @brief This function retrieves essential matrix between two images
@@ -106,9 +108,8 @@ namespace tapl {
          * @return tapl::SUCCESS if success
          * @return tapl::FAILURE if failure 
          */
-        tapl::ResultCode computeEssentialMatrix(tapl::DataFrame &dframe1, 
-                                                tapl::DataFrame &dframe2, 
-                                                cv::Mat &camera_matrix);
+        tapl::ResultCode computeEssentialMatrix( tapl::DataFrame &dframe1, 
+                                                 tapl::DataFrame &dframe2 );
 
         /** 
          * @brief This function is used to compute the relative camera pose. Pose is computed
@@ -120,9 +121,8 @@ namespace tapl {
          * @return tapl::SUCCESS if success
          * @return tapl::FAILURE if failure 
          */
-        tapl::ResultCode computeRelativePose(tapl::DataFrame &dframe1, 
-                                             tapl::DataFrame &dframe2, 
-                                             cv::Mat &camera_matrix);
+        tapl::ResultCode computeRelativePose( tapl::DataFrame &dframe1, 
+                                              tapl::DataFrame &dframe2 );
 
         /** 
          * @brief This function is used to stitch multiple images as a panaromic image.
@@ -133,8 +133,8 @@ namespace tapl {
          * @return tapl::SUCCESS if success
          * @return tapl::FAILURE if failure 
          */
-        tapl::ResultCode stitchPanaromic(const std::vector<cv::Mat> &imgs, 
-                                         cv::Mat &panoramic_img);
+        tapl::ResultCode stitchPanaromic( const std::vector<cv::Mat> &imgs, 
+                                          cv::Mat &panoramic_img);
     } 
 } 
 

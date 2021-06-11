@@ -98,9 +98,10 @@ int main(int argc, const char *argv[])
         // push image into data frame buffer
         tapl::DataFrame frame;
         frame.cameraFrame.pushImage(img_gray);
+        frame.cameraFrame.pushIntrinsicMatrix(camera_matrix);
         dataBuffer.push(frame);
 
-        TLOG_INFO << "----------------------------------------------------";
+        TLOG_INFO << "----------------------------------------";
         TLOG_INFO << "Image [" << imgIndex << "] loaded into the ring buffer";
 
     
@@ -113,7 +114,7 @@ int main(int argc, const char *argv[])
             // transformation matrix
             Eigen::Matrix4f P = Eigen::Matrix4f::Identity();
             // get relative pose
-            if(tapl::cve::computeRelativePose(dframe1, dframe2, camera_matrix) == tapl::SUCCESS) {
+            if(tapl::cve::computeRelativePose(dframe1, dframe2) == tapl::SUCCESS) {
                 tapl::Pose6dof relative_pose;
                 if(dframe1.getPose(relative_pose) == tapl::SUCCESS) {
                     // rotation

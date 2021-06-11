@@ -15,14 +15,14 @@ namespace tapl {
         /** 
          * @brief This function performs structure-from-motion given a set of camera frames
          *
-         * @param[in] dframes images from which structure-from-motion is to be computed
+         * @param[in] frames image frames from which structure-from-motion is to be computed
          * @param[out] points point-cloud corresponding to keypoints in the first camera's coordinate frame
          * @param[out] poses poses of each camera frame
          * 
          * @return tapl::SUCCESS if success
          * @return tapl::FAILURE if failure 
          */
-        tapl::ResultCode sfm(std::vector<tapl::DataFrame> &dframes, 
+        tapl::ResultCode sfm(std::vector<tapl::CameraFrame> &frames, 
                              std::vector<tapl::Point3d> &points,
                              std::vector<tapl::Pose6dof> &poses);
 

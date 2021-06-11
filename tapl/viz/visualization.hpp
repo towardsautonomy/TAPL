@@ -15,10 +15,10 @@ namespace tapl {
          * @brief Enumerations for camera view angle
          */
         enum CameraAngle {
-            XY,         /*!< Angled XY Camera Position*/
-            TopDown,    /*!< Top Down View */
-            Side,       /*!< Side View */
-            FPS         /*!< First Person View */
+            XY,         /**< Angled XY Camera Position*/
+            TopDown,    /**< Top Down View */
+            Side,       /**< Side View */
+            FPS         /**< First Person View */
         };
 
         /** 

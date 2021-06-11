@@ -6,8 +6,7 @@ This file provides logging functions for T\+A\+PL.
 
 
 {\ttfamily \#include \char`\"{}date.\+h\char`\"{}}\newline
-Include dependency graph for tapl\+Log.\+hpp\+:
-\nopagebreak
+Include dependency graph for tapl\+Log.\+hpp\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -107,9 +106,9 @@ Shubham Shrivastava
 \doxysubsubsection{\texorpdfstring{\_\_FILENAME\_\_}{\_\_FILENAME\_\_}}
 {\footnotesize\ttfamily \#define \+\_\+\+\_\+\+F\+I\+L\+E\+N\+A\+M\+E\+\_\+\+\_\+~(strrchr(\+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+, \textquotesingle{}/\textquotesingle{}) ? strrchr(\+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+, \textquotesingle{}/\textquotesingle{}) + 1 \+: \+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+)}
 
+Debug \mbox{\hyperlink{classLog}{Log}} 
 
-
-Definition at line 95 of file tapl\+Log.\+hpp.
+Definition at line 101 of file tapl\+Log.\+hpp.
 
 \mbox{\Hypertarget{taplLog_8hpp_a7b3b25cba33b07c303f3060fe41887f6}\label{taplLog_8hpp_a7b3b25cba33b07c303f3060fe41887f6}} 
 \index{taplLog.hpp@{taplLog.hpp}!BLACK@{BLACK}}
@@ -257,7 +256,7 @@ Definition at line 15 of file tapl\+Log.\+hpp.
 \doxysubsubsection{\texorpdfstring{RESET}{RESET}}
 {\footnotesize\ttfamily \#define R\+E\+S\+ET~\char`\"{}\textbackslash{}033\mbox{[}0m\char`\"{}}
 
-Color Codes 
+$<$ Color Codes 
 
 Definition at line 13 of file tapl\+Log.\+hpp.
 
@@ -267,9 +266,9 @@ Definition at line 13 of file tapl\+Log.\+hpp.
 \doxysubsubsection{\texorpdfstring{TLOG\_DEBUG}{TLOG\_DEBUG}}
 {\footnotesize\ttfamily \#define T\+L\+O\+G\+\_\+\+D\+E\+B\+UG~\mbox{\hyperlink{classLog}{Log}}(\mbox{\hyperlink{taplLog_8hpp_a5fccb4fc71e44089a1b1a77fc76c0b68}{\+\_\+\+\_\+\+F\+I\+L\+E\+N\+A\+M\+E\+\_\+\+\_\+}}, \+\_\+\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+\_\+, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+, \mbox{\hyperlink{taplLog_8hpp_ac2fe55c989a2c0b34cf68f392982fd66ae1c7f84e4b5ae425db5dfa58b8f6b56a}{D\+E\+B\+U\+G\+\_\+\+L\+O\+G\+\_\+\+L\+E\+V\+EL}})}
 
-Debug \mbox{\hyperlink{classLog}{Log}} 
+Info \mbox{\hyperlink{classLog}{Log}} 
 
-Definition at line 98 of file tapl\+Log.\+hpp.
+Definition at line 104 of file tapl\+Log.\+hpp.
 
 \mbox{\Hypertarget{taplLog_8hpp_a5aa543a06dfaa08a11b1e6572cc042a6}\label{taplLog_8hpp_a5aa543a06dfaa08a11b1e6572cc042a6}} 
 \index{taplLog.hpp@{taplLog.hpp}!TLOG\_ERROR@{TLOG\_ERROR}}
@@ -277,9 +276,9 @@ Definition at line 98 of file tapl\+Log.\+hpp.
 \doxysubsubsection{\texorpdfstring{TLOG\_ERROR}{TLOG\_ERROR}}
 {\footnotesize\ttfamily \#define T\+L\+O\+G\+\_\+\+E\+R\+R\+OR~\mbox{\hyperlink{classLog}{Log}}(\mbox{\hyperlink{taplLog_8hpp_a5fccb4fc71e44089a1b1a77fc76c0b68}{\+\_\+\+\_\+\+F\+I\+L\+E\+N\+A\+M\+E\+\_\+\+\_\+}}, \+\_\+\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+\_\+, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+, \mbox{\hyperlink{taplLog_8hpp_ac2fe55c989a2c0b34cf68f392982fd66a8f42ae2e0fcde2578f0ec74fecd9309b}{E\+R\+R\+O\+R\+\_\+\+L\+O\+G\+\_\+\+L\+E\+V\+EL}})}
 
-Error \mbox{\hyperlink{classLog}{Log}} 
+Notice \mbox{\hyperlink{classLog}{Log}} 
 
-Definition at line 104 of file tapl\+Log.\+hpp.
+Definition at line 110 of file tapl\+Log.\+hpp.
 
 \mbox{\Hypertarget{taplLog_8hpp_a48eedbe6b4b6981df71de6b8128685c1}\label{taplLog_8hpp_a48eedbe6b4b6981df71de6b8128685c1}} 
 \index{taplLog.hpp@{taplLog.hpp}!TLOG\_FATAL@{TLOG\_FATAL}}
@@ -287,9 +286,9 @@ Definition at line 104 of file tapl\+Log.\+hpp.
 \doxysubsubsection{\texorpdfstring{TLOG\_FATAL}{TLOG\_FATAL}}
 {\footnotesize\ttfamily \#define T\+L\+O\+G\+\_\+\+F\+A\+T\+AL~\mbox{\hyperlink{classLog}{Log}}(\mbox{\hyperlink{taplLog_8hpp_a5fccb4fc71e44089a1b1a77fc76c0b68}{\+\_\+\+\_\+\+F\+I\+L\+E\+N\+A\+M\+E\+\_\+\+\_\+}}, \+\_\+\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+\_\+, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+, \mbox{\hyperlink{taplLog_8hpp_ac2fe55c989a2c0b34cf68f392982fd66a3ee5e95768a1df02f6f8dd63b7e9420a}{F\+A\+T\+A\+L\+\_\+\+L\+O\+G\+\_\+\+L\+E\+V\+EL}})}
 
-Fatal \mbox{\hyperlink{classLog}{Log}} 
 
-Definition at line 108 of file tapl\+Log.\+hpp.
+
+Definition at line 114 of file tapl\+Log.\+hpp.
 
 \mbox{\Hypertarget{taplLog_8hpp_abc66b99cecd5f788572b97dc8f532410}\label{taplLog_8hpp_abc66b99cecd5f788572b97dc8f532410}} 
 \index{taplLog.hpp@{taplLog.hpp}!TLOG\_INFO@{TLOG\_INFO}}
@@ -297,9 +296,9 @@ Definition at line 108 of file tapl\+Log.\+hpp.
 \doxysubsubsection{\texorpdfstring{TLOG\_INFO}{TLOG\_INFO}}
 {\footnotesize\ttfamily \#define T\+L\+O\+G\+\_\+\+I\+N\+FO~\mbox{\hyperlink{classLog}{Log}}(\mbox{\hyperlink{taplLog_8hpp_a5fccb4fc71e44089a1b1a77fc76c0b68}{\+\_\+\+\_\+\+F\+I\+L\+E\+N\+A\+M\+E\+\_\+\+\_\+}}, \+\_\+\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+\_\+, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+, \mbox{\hyperlink{taplLog_8hpp_ac2fe55c989a2c0b34cf68f392982fd66ae0cb0a25aa030f68d07ac4f3dc6858a1}{I\+N\+F\+O\+\_\+\+L\+O\+G\+\_\+\+L\+E\+V\+EL}})}
 
-Info \mbox{\hyperlink{classLog}{Log}} 
+Warning \mbox{\hyperlink{classLog}{Log}} 
 
-Definition at line 100 of file tapl\+Log.\+hpp.
+Definition at line 106 of file tapl\+Log.\+hpp.
 
 \mbox{\Hypertarget{taplLog_8hpp_ad2583fdad1e776c07d18c92ac26d5da0}\label{taplLog_8hpp_ad2583fdad1e776c07d18c92ac26d5da0}} 
 \index{taplLog.hpp@{taplLog.hpp}!TLOG\_NOTICE@{TLOG\_NOTICE}}
@@ -307,9 +306,9 @@ Definition at line 100 of file tapl\+Log.\+hpp.
 \doxysubsubsection{\texorpdfstring{TLOG\_NOTICE}{TLOG\_NOTICE}}
 {\footnotesize\ttfamily \#define T\+L\+O\+G\+\_\+\+N\+O\+T\+I\+CE~\mbox{\hyperlink{classLog}{Log}}(\mbox{\hyperlink{taplLog_8hpp_a5fccb4fc71e44089a1b1a77fc76c0b68}{\+\_\+\+\_\+\+F\+I\+L\+E\+N\+A\+M\+E\+\_\+\+\_\+}}, \+\_\+\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+\_\+, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+, \mbox{\hyperlink{taplLog_8hpp_ac2fe55c989a2c0b34cf68f392982fd66a7835b5fe06b6a5c536a12958efacee65}{N\+O\+T\+I\+C\+E\+\_\+\+L\+O\+G\+\_\+\+L\+E\+V\+EL}})}
 
-Notice \mbox{\hyperlink{classLog}{Log}} 
+Fatal \mbox{\hyperlink{classLog}{Log}} 
 
-Definition at line 106 of file tapl\+Log.\+hpp.
+Definition at line 112 of file tapl\+Log.\+hpp.
 
 \mbox{\Hypertarget{taplLog_8hpp_ac9a5c99d6c1be49812fc82f003666584}\label{taplLog_8hpp_ac9a5c99d6c1be49812fc82f003666584}} 
 \index{taplLog.hpp@{taplLog.hpp}!TLOG\_WARN@{TLOG\_WARN}}
@@ -317,9 +316,9 @@ Definition at line 106 of file tapl\+Log.\+hpp.
 \doxysubsubsection{\texorpdfstring{TLOG\_WARN}{TLOG\_WARN}}
 {\footnotesize\ttfamily \#define T\+L\+O\+G\+\_\+\+W\+A\+RN~\mbox{\hyperlink{classLog}{Log}}(\mbox{\hyperlink{taplLog_8hpp_a5fccb4fc71e44089a1b1a77fc76c0b68}{\+\_\+\+\_\+\+F\+I\+L\+E\+N\+A\+M\+E\+\_\+\+\_\+}}, \+\_\+\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+\_\+, \+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+, \mbox{\hyperlink{taplLog_8hpp_ac2fe55c989a2c0b34cf68f392982fd66ac93428743ee41e38878f522093722d66}{W\+A\+R\+N\+\_\+\+L\+O\+G\+\_\+\+L\+E\+V\+EL}})}
 
-Warning \mbox{\hyperlink{classLog}{Log}} 
+Error \mbox{\hyperlink{classLog}{Log}} 
 
-Definition at line 102 of file tapl\+Log.\+hpp.
+Definition at line 108 of file tapl\+Log.\+hpp.
 
 \mbox{\Hypertarget{taplLog_8hpp_a87b537f5fa5c109d3c05c13d6b18f382}\label{taplLog_8hpp_a87b537f5fa5c109d3c05c13d6b18f382}} 
 \index{taplLog.hpp@{taplLog.hpp}!WHITE@{WHITE}}

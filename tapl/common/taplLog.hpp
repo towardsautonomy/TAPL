@@ -9,7 +9,7 @@
 #ifndef TAPL_LOG_H_
 #define TAPL_LOG_H_
 
-/*! Color Codes */
+/**< Color Codes */
 #define RESET       "\033[0m"
 #define BLACK       "\033[30m"             // Black 
 #define RED         "\033[31m"             // Red 
@@ -52,22 +52,28 @@ public:
         std::string colorCode;
         switch(logLevel) {
         case DEBUG_LOG_LEVEL:
-            colorCode = BLUE;
+            colorCode = CYAN;
+            std::cout << colorCode << "[DEBUG]";
             break;
         case INFO_LOG_LEVEL:
-            colorCode = CYAN;
+            colorCode = GREEN;
+            std::cout << colorCode << "[INFO]";
             break;
         case WARN_LOG_LEVEL:
             colorCode = BOLDYELLOW;
+            std::cout << colorCode << "[WARN]";
             break;
         case ERROR_LOG_LEVEL:
             colorCode = BOLDRED;
+            std::cout << colorCode << "[ERROR]";
             break;
         case NOTICE_LOG_LEVEL:
             colorCode = BOLDYELLOW;
+            std::cout << colorCode << "[NOTICE]";
             break;
         case FATAL_LOG_LEVEL:
             colorCode = RED;
+            std::cout << colorCode << "[FATAL]";
             break;
         default:
             colorCode = "";
@@ -75,10 +81,10 @@ public:
 
         // get time string
         std::string datetimeStr = date::format("%F %T", std::chrono::system_clock::now());
-        std::cout << colorCode << "[" << datetimeStr << "]"           \
-                                  "[" << "file:" << fileName << "|" \
-                                      << "func:" << funcName << "|" \
-                                      << "line:" << lineNum << "] || ";
+        std::cout << "[" << datetimeStr << "]"           \
+                     "[" << "file:" << fileName << "|" \
+                         << "func:" << funcName << "|" \
+                         << "line:" << lineNum << "] || ";
     }
 
     template <class T>
@@ -94,17 +100,17 @@ public:
 
 #define __FILENAME__ (strrchr(__FILE__, '/') ? strrchr(__FILE__, '/') + 1 : __FILE__)
 
-/*! Debug Log */
+/**< Debug Log */
 #define TLOG_DEBUG Log(__FILENAME__, __FUNCTION__, __LINE__, DEBUG_LOG_LEVEL)
-/*! Info Log */
+/**< Info Log */
 #define TLOG_INFO Log(__FILENAME__, __FUNCTION__, __LINE__, INFO_LOG_LEVEL)
-/*! Warning Log */
+/**< Warning Log */
 #define TLOG_WARN Log(__FILENAME__, __FUNCTION__, __LINE__, WARN_LOG_LEVEL)
-/*! Error Log */
+/**< Error Log */
 #define TLOG_ERROR Log(__FILENAME__, __FUNCTION__, __LINE__, ERROR_LOG_LEVEL)
-/*! Notice Log */
+/**< Notice Log */
 #define TLOG_NOTICE Log(__FILENAME__, __FUNCTION__, __LINE__, NOTICE_LOG_LEVEL)
-/*! Fatal Log */
+/**< Fatal Log */
 #define TLOG_FATAL Log(__FILENAME__, __FUNCTION__, __LINE__, FATAL_LOG_LEVEL)
 
 #endif /* TAPL_LOG_H_ */
