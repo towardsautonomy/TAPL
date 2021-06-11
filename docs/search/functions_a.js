@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['operator_3c_3c_218',['operator&lt;&lt;',['../classLog.html#a4f563c9cd1c521941ffaa56974bb3f21',1,'Log']]]
+  ['operator_3c_3c_224',['operator&lt;&lt;',['../classLog.html#a4f563c9cd1c521941ffaa56974bb3f21',1,'Log']]]
 ];

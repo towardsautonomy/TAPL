@@ -11,11 +11,12 @@ represents the available sensor information at the same time instance
 
 
 
-Collaboration diagram for tapl\+::Data\+Frame\+:\nopagebreak
+Collaboration diagram for tapl\+::Data\+Frame\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=206pt]{structtapl_1_1DataFrame__coll__graph}
+\includegraphics[width=230pt]{structtapl_1_1DataFrame__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
@@ -23,37 +24,39 @@ Collaboration diagram for tapl\+::Data\+Frame\+:\nopagebreak
 \item 
 \mbox{\hyperlink{structtapl_1_1DataFrame_a046dcfff07492b3753902bc3bd924e1d}{Data\+Frame}} ()
 \item 
-void \mbox{\hyperlink{structtapl_1_1DataFrame_a1f6a23df2e1cc6341242fbf8a281205f}{push\+Kpts\+Matches}} (std\+::vector$<$ cv\+::\+D\+Match $>$ \&kpt\+Matches)
+void \mbox{\hyperlink{structtapl_1_1DataFrame_ab923cef38b00d4d67b5a480eb5e323e5}{push\+Kpts\+Matches}} (const std\+::vector$<$ cv\+::\+D\+Match $>$ \&kpt\+Matches)
 \item 
-void \mbox{\hyperlink{structtapl_1_1DataFrame_aed714bb88e138e661bc88a7d0f2087ef}{push\+Fundamental\+Matrix}} (cv\+::\+Mat \&F)
+void \mbox{\hyperlink{structtapl_1_1DataFrame_aea06402631517802fc36cd62f7b4ef52}{push\+Fundamental\+Matrix}} (const cv\+::\+Mat \&F)
 \item 
-void \mbox{\hyperlink{structtapl_1_1DataFrame_ad495a9b490f5f56e717251f28c595099}{push\+Essential\+Matrix}} (cv\+::\+Mat \&E)
+void \mbox{\hyperlink{structtapl_1_1DataFrame_a9bf64f105e1ddc2e22d9b5c452a348d0}{push\+Essential\+Matrix}} (const cv\+::\+Mat \&E)
 \item 
-void \mbox{\hyperlink{structtapl_1_1DataFrame_a58252333218ee415dc043c54e01e7365}{push\+Pose}} (\mbox{\hyperlink{structtapl_1_1Pose6dof}{Pose6dof}} \&pose)
+void \mbox{\hyperlink{structtapl_1_1DataFrame_ac040b5d4f9e337904920168b7e1242db}{push\+Pose}} (const \mbox{\hyperlink{structtapl_1_1Pose6dof}{Pose6dof}} \&pose)
 \item 
-void \mbox{\hyperlink{structtapl_1_1DataFrame_a6a48c0c169570f49e3a3f87e2f947445}{push\+Triangulated\+Pts}} (cv\+::\+Mat \&pts)
+void \mbox{\hyperlink{structtapl_1_1DataFrame_a234df0c976947072ebca8342b1c6b236}{push\+Triangulated\+Pts}} (const cv\+::\+Mat \&pts)
 \item 
-\mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{Result\+Code}} \mbox{\hyperlink{structtapl_1_1DataFrame_ad6784247bd772557ed661a27c011e978}{get\+Kpts\+Matches}} (std\+::vector$<$ cv\+::\+D\+Match $>$ \&kpt\+Matches)
+\mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{Result\+Code}} \mbox{\hyperlink{structtapl_1_1DataFrame_abc568884baeeed4ff0576eef6e725f1a}{get\+Kpts\+Matches}} (std\+::vector$<$ cv\+::\+D\+Match $>$ \&kpt\+Matches) const
 \item 
-\mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{Result\+Code}} \mbox{\hyperlink{structtapl_1_1DataFrame_a3e40c1a7fc883d041c1bc845ed7a3bb8}{get\+Fundamental\+Matrix}} (cv\+::\+Mat \&F)
+\mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{Result\+Code}} \mbox{\hyperlink{structtapl_1_1DataFrame_a1d4c42241dccf8430457bf134a465440}{get\+Fundamental\+Matrix}} (cv\+::\+Mat \&F) const
 \item 
-\mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{Result\+Code}} \mbox{\hyperlink{structtapl_1_1DataFrame_a0f7f2252e9c335dfca944d64508b72b4}{get\+Essential\+Matrix}} (cv\+::\+Mat \&E)
+\mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{Result\+Code}} \mbox{\hyperlink{structtapl_1_1DataFrame_a62068412eaaf6c57b69622ed4c8de390}{get\+Essential\+Matrix}} (cv\+::\+Mat \&E) const
 \item 
-\mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{Result\+Code}} \mbox{\hyperlink{structtapl_1_1DataFrame_af15fd3aeaaf932b2db3e18e81b0764f2}{get\+Pose}} (\mbox{\hyperlink{structtapl_1_1Pose6dof}{Pose6dof}} \&pose)
+\mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{Result\+Code}} \mbox{\hyperlink{structtapl_1_1DataFrame_a373a863b9d5ffb638bebaca02a1d8486}{get\+Pose}} (\mbox{\hyperlink{structtapl_1_1Pose6dof}{Pose6dof}} \&pose) const
 \item 
-\mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{Result\+Code}} \mbox{\hyperlink{structtapl_1_1DataFrame_a77e09d7c142e062a4ed8fdbc11bba220}{get\+Triangulated\+Points}} (cv\+::\+Mat \&pts)
+\mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{Result\+Code}} \mbox{\hyperlink{structtapl_1_1DataFrame_acdef86602755be2d9d09ea6515a0a1d4}{get\+Triangulated\+Points}} (cv\+::\+Mat \&pts) const
 \end{DoxyCompactItemize}
 \doxysubsection*{Data Fields}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{structtapl_1_1CameraFrame}{Camera\+Frame}} \mbox{\hyperlink{structtapl_1_1DataFrame_a6a9523806fd3280ddd54085669572288}{camera\+Frame}}
+\item 
+\mbox{\hyperlink{structtapl_1_1CameraFrame}{Camera\+Frame}} $\ast$ \mbox{\hyperlink{structtapl_1_1DataFrame_a0360d64d27a7251c58e2ab5d30b01b3d}{other\+Camera\+Frame}}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 represents the available sensor information at the same time instance 
 
-Definition at line 128 of file tapl\+Types.\+hpp.
+Definition at line 143 of file tapl\+Types.\+hpp.
 
 
 
@@ -66,151 +69,157 @@ Definition at line 128 of file tapl\+Types.\+hpp.
 
 $<$ cunstructor 
 
-Definition at line 143 of file tapl\+Types.\+hpp.
+Definition at line 158 of file tapl\+Types.\+hpp.
 
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{structtapl_1_1DataFrame_a0f7f2252e9c335dfca944d64508b72b4}\label{structtapl_1_1DataFrame_a0f7f2252e9c335dfca944d64508b72b4}} 
+\mbox{\Hypertarget{structtapl_1_1DataFrame_a62068412eaaf6c57b69622ed4c8de390}\label{structtapl_1_1DataFrame_a62068412eaaf6c57b69622ed4c8de390}} 
 \index{tapl::DataFrame@{tapl::DataFrame}!getEssentialMatrix@{getEssentialMatrix}}
 \index{getEssentialMatrix@{getEssentialMatrix}!tapl::DataFrame@{tapl::DataFrame}}
 \doxysubsubsection{\texorpdfstring{getEssentialMatrix()}{getEssentialMatrix()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{Result\+Code}} tapl\+::\+Data\+Frame\+::get\+Essential\+Matrix (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{E }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{Result\+Code}} tapl\+::\+Data\+Frame\+::get\+Essential\+Matrix (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{E }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Definition at line 184 of file tapl\+Types.\+hpp.
+Definition at line 204 of file tapl\+Types.\+hpp.
 
-\mbox{\Hypertarget{structtapl_1_1DataFrame_a3e40c1a7fc883d041c1bc845ed7a3bb8}\label{structtapl_1_1DataFrame_a3e40c1a7fc883d041c1bc845ed7a3bb8}} 
+\mbox{\Hypertarget{structtapl_1_1DataFrame_a1d4c42241dccf8430457bf134a465440}\label{structtapl_1_1DataFrame_a1d4c42241dccf8430457bf134a465440}} 
 \index{tapl::DataFrame@{tapl::DataFrame}!getFundamentalMatrix@{getFundamentalMatrix}}
 \index{getFundamentalMatrix@{getFundamentalMatrix}!tapl::DataFrame@{tapl::DataFrame}}
 \doxysubsubsection{\texorpdfstring{getFundamentalMatrix()}{getFundamentalMatrix()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{Result\+Code}} tapl\+::\+Data\+Frame\+::get\+Fundamental\+Matrix (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{F }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{Result\+Code}} tapl\+::\+Data\+Frame\+::get\+Fundamental\+Matrix (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Definition at line 173 of file tapl\+Types.\+hpp.
+Definition at line 193 of file tapl\+Types.\+hpp.
 
-\mbox{\Hypertarget{structtapl_1_1DataFrame_ad6784247bd772557ed661a27c011e978}\label{structtapl_1_1DataFrame_ad6784247bd772557ed661a27c011e978}} 
+\mbox{\Hypertarget{structtapl_1_1DataFrame_abc568884baeeed4ff0576eef6e725f1a}\label{structtapl_1_1DataFrame_abc568884baeeed4ff0576eef6e725f1a}} 
 \index{tapl::DataFrame@{tapl::DataFrame}!getKptsMatches@{getKptsMatches}}
 \index{getKptsMatches@{getKptsMatches}!tapl::DataFrame@{tapl::DataFrame}}
 \doxysubsubsection{\texorpdfstring{getKptsMatches()}{getKptsMatches()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{Result\+Code}} tapl\+::\+Data\+Frame\+::get\+Kpts\+Matches (\begin{DoxyParamCaption}\item[{std\+::vector$<$ cv\+::\+D\+Match $>$ \&}]{kpt\+Matches }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{Result\+Code}} tapl\+::\+Data\+Frame\+::get\+Kpts\+Matches (\begin{DoxyParamCaption}\item[{std\+::vector$<$ cv\+::\+D\+Match $>$ \&}]{kpt\+Matches }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Definition at line 162 of file tapl\+Types.\+hpp.
+Definition at line 182 of file tapl\+Types.\+hpp.
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{structtapl_1_1DataFrame_ad6784247bd772557ed661a27c011e978_icgraph}
+\includegraphics[width=350pt]{structtapl_1_1DataFrame_abc568884baeeed4ff0576eef6e725f1a_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{structtapl_1_1DataFrame_af15fd3aeaaf932b2db3e18e81b0764f2}\label{structtapl_1_1DataFrame_af15fd3aeaaf932b2db3e18e81b0764f2}} 
+\mbox{\Hypertarget{structtapl_1_1DataFrame_a373a863b9d5ffb638bebaca02a1d8486}\label{structtapl_1_1DataFrame_a373a863b9d5ffb638bebaca02a1d8486}} 
 \index{tapl::DataFrame@{tapl::DataFrame}!getPose@{getPose}}
 \index{getPose@{getPose}!tapl::DataFrame@{tapl::DataFrame}}
 \doxysubsubsection{\texorpdfstring{getPose()}{getPose()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{Result\+Code}} tapl\+::\+Data\+Frame\+::get\+Pose (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtapl_1_1Pose6dof}{Pose6dof}} \&}]{pose }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{Result\+Code}} tapl\+::\+Data\+Frame\+::get\+Pose (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtapl_1_1Pose6dof}{Pose6dof}} \&}]{pose }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Definition at line 195 of file tapl\+Types.\+hpp.
+Definition at line 215 of file tapl\+Types.\+hpp.
 
-\mbox{\Hypertarget{structtapl_1_1DataFrame_a77e09d7c142e062a4ed8fdbc11bba220}\label{structtapl_1_1DataFrame_a77e09d7c142e062a4ed8fdbc11bba220}} 
+\mbox{\Hypertarget{structtapl_1_1DataFrame_acdef86602755be2d9d09ea6515a0a1d4}\label{structtapl_1_1DataFrame_acdef86602755be2d9d09ea6515a0a1d4}} 
 \index{tapl::DataFrame@{tapl::DataFrame}!getTriangulatedPoints@{getTriangulatedPoints}}
 \index{getTriangulatedPoints@{getTriangulatedPoints}!tapl::DataFrame@{tapl::DataFrame}}
 \doxysubsubsection{\texorpdfstring{getTriangulatedPoints()}{getTriangulatedPoints()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{Result\+Code}} tapl\+::\+Data\+Frame\+::get\+Triangulated\+Points (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{pts }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{Result\+Code}} tapl\+::\+Data\+Frame\+::get\+Triangulated\+Points (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{pts }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Definition at line 206 of file tapl\+Types.\+hpp.
+Definition at line 226 of file tapl\+Types.\+hpp.
 
-\mbox{\Hypertarget{structtapl_1_1DataFrame_ad495a9b490f5f56e717251f28c595099}\label{structtapl_1_1DataFrame_ad495a9b490f5f56e717251f28c595099}} 
+\mbox{\Hypertarget{structtapl_1_1DataFrame_a9bf64f105e1ddc2e22d9b5c452a348d0}\label{structtapl_1_1DataFrame_a9bf64f105e1ddc2e22d9b5c452a348d0}} 
 \index{tapl::DataFrame@{tapl::DataFrame}!pushEssentialMatrix@{pushEssentialMatrix}}
 \index{pushEssentialMatrix@{pushEssentialMatrix}!tapl::DataFrame@{tapl::DataFrame}}
 \doxysubsubsection{\texorpdfstring{pushEssentialMatrix()}{pushEssentialMatrix()}}
-{\footnotesize\ttfamily void tapl\+::\+Data\+Frame\+::push\+Essential\+Matrix (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{E }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily void tapl\+::\+Data\+Frame\+::push\+Essential\+Matrix (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{E }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Definition at line 154 of file tapl\+Types.\+hpp.
+Definition at line 174 of file tapl\+Types.\+hpp.
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{structtapl_1_1DataFrame_ad495a9b490f5f56e717251f28c595099_icgraph}
+\includegraphics[width=350pt]{structtapl_1_1DataFrame_a9bf64f105e1ddc2e22d9b5c452a348d0_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{structtapl_1_1DataFrame_aed714bb88e138e661bc88a7d0f2087ef}\label{structtapl_1_1DataFrame_aed714bb88e138e661bc88a7d0f2087ef}} 
+\mbox{\Hypertarget{structtapl_1_1DataFrame_aea06402631517802fc36cd62f7b4ef52}\label{structtapl_1_1DataFrame_aea06402631517802fc36cd62f7b4ef52}} 
 \index{tapl::DataFrame@{tapl::DataFrame}!pushFundamentalMatrix@{pushFundamentalMatrix}}
 \index{pushFundamentalMatrix@{pushFundamentalMatrix}!tapl::DataFrame@{tapl::DataFrame}}
 \doxysubsubsection{\texorpdfstring{pushFundamentalMatrix()}{pushFundamentalMatrix()}}
-{\footnotesize\ttfamily void tapl\+::\+Data\+Frame\+::push\+Fundamental\+Matrix (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{F }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily void tapl\+::\+Data\+Frame\+::push\+Fundamental\+Matrix (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{F }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Definition at line 152 of file tapl\+Types.\+hpp.
+Definition at line 172 of file tapl\+Types.\+hpp.
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{structtapl_1_1DataFrame_aed714bb88e138e661bc88a7d0f2087ef_icgraph}
+\includegraphics[width=350pt]{structtapl_1_1DataFrame_aea06402631517802fc36cd62f7b4ef52_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{structtapl_1_1DataFrame_a1f6a23df2e1cc6341242fbf8a281205f}\label{structtapl_1_1DataFrame_a1f6a23df2e1cc6341242fbf8a281205f}} 
+\mbox{\Hypertarget{structtapl_1_1DataFrame_ab923cef38b00d4d67b5a480eb5e323e5}\label{structtapl_1_1DataFrame_ab923cef38b00d4d67b5a480eb5e323e5}} 
 \index{tapl::DataFrame@{tapl::DataFrame}!pushKptsMatches@{pushKptsMatches}}
 \index{pushKptsMatches@{pushKptsMatches}!tapl::DataFrame@{tapl::DataFrame}}
 \doxysubsubsection{\texorpdfstring{pushKptsMatches()}{pushKptsMatches()}}
-{\footnotesize\ttfamily void tapl\+::\+Data\+Frame\+::push\+Kpts\+Matches (\begin{DoxyParamCaption}\item[{std\+::vector$<$ cv\+::\+D\+Match $>$ \&}]{kpt\+Matches }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily void tapl\+::\+Data\+Frame\+::push\+Kpts\+Matches (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ cv\+::\+D\+Match $>$ \&}]{kpt\+Matches }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Definition at line 150 of file tapl\+Types.\+hpp.
+Definition at line 170 of file tapl\+Types.\+hpp.
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{structtapl_1_1DataFrame_a1f6a23df2e1cc6341242fbf8a281205f_icgraph}
+\includegraphics[width=350pt]{structtapl_1_1DataFrame_ab923cef38b00d4d67b5a480eb5e323e5_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{structtapl_1_1DataFrame_a58252333218ee415dc043c54e01e7365}\label{structtapl_1_1DataFrame_a58252333218ee415dc043c54e01e7365}} 
+\mbox{\Hypertarget{structtapl_1_1DataFrame_ac040b5d4f9e337904920168b7e1242db}\label{structtapl_1_1DataFrame_ac040b5d4f9e337904920168b7e1242db}} 
 \index{tapl::DataFrame@{tapl::DataFrame}!pushPose@{pushPose}}
 \index{pushPose@{pushPose}!tapl::DataFrame@{tapl::DataFrame}}
 \doxysubsubsection{\texorpdfstring{pushPose()}{pushPose()}}
-{\footnotesize\ttfamily void tapl\+::\+Data\+Frame\+::push\+Pose (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtapl_1_1Pose6dof}{Pose6dof}} \&}]{pose }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily void tapl\+::\+Data\+Frame\+::push\+Pose (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structtapl_1_1Pose6dof}{Pose6dof}} \&}]{pose }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Definition at line 156 of file tapl\+Types.\+hpp.
+Definition at line 176 of file tapl\+Types.\+hpp.
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{structtapl_1_1DataFrame_a58252333218ee415dc043c54e01e7365_icgraph}
+\includegraphics[width=350pt]{structtapl_1_1DataFrame_ac040b5d4f9e337904920168b7e1242db_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{structtapl_1_1DataFrame_a6a48c0c169570f49e3a3f87e2f947445}\label{structtapl_1_1DataFrame_a6a48c0c169570f49e3a3f87e2f947445}} 
+\mbox{\Hypertarget{structtapl_1_1DataFrame_a234df0c976947072ebca8342b1c6b236}\label{structtapl_1_1DataFrame_a234df0c976947072ebca8342b1c6b236}} 
 \index{tapl::DataFrame@{tapl::DataFrame}!pushTriangulatedPts@{pushTriangulatedPts}}
 \index{pushTriangulatedPts@{pushTriangulatedPts}!tapl::DataFrame@{tapl::DataFrame}}
 \doxysubsubsection{\texorpdfstring{pushTriangulatedPts()}{pushTriangulatedPts()}}
-{\footnotesize\ttfamily void tapl\+::\+Data\+Frame\+::push\+Triangulated\+Pts (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{pts }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily void tapl\+::\+Data\+Frame\+::push\+Triangulated\+Pts (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{pts }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Definition at line 158 of file tapl\+Types.\+hpp.
+Definition at line 178 of file tapl\+Types.\+hpp.
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{structtapl_1_1DataFrame_a6a48c0c169570f49e3a3f87e2f947445_icgraph}
+\includegraphics[width=350pt]{structtapl_1_1DataFrame_a234df0c976947072ebca8342b1c6b236_icgraph}
 \end{center}
 \end{figure}
 
@@ -224,7 +233,17 @@ Here is the caller graph for this function\+:\nopagebreak
 
 Image frame 
 
-Definition at line 146 of file tapl\+Types.\+hpp.
+Definition at line 165 of file tapl\+Types.\+hpp.
+
+\mbox{\Hypertarget{structtapl_1_1DataFrame_a0360d64d27a7251c58e2ab5d30b01b3d}\label{structtapl_1_1DataFrame_a0360d64d27a7251c58e2ab5d30b01b3d}} 
+\index{tapl::DataFrame@{tapl::DataFrame}!otherCameraFrame@{otherCameraFrame}}
+\index{otherCameraFrame@{otherCameraFrame}!tapl::DataFrame@{tapl::DataFrame}}
+\doxysubsubsection{\texorpdfstring{otherCameraFrame}{otherCameraFrame}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtapl_1_1CameraFrame}{Camera\+Frame}}$\ast$ tapl\+::\+Data\+Frame\+::other\+Camera\+Frame}
+
+Other image frame used for computing F, E, etc. 
+
+Definition at line 166 of file tapl\+Types.\+hpp.
 
 
 

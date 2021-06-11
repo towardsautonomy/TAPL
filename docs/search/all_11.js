@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['visualization_2ehpp_129',['visualization.hpp',['../visualization_8hpp.html',1,'']]],
-  ['visualizer_130',['Visualizer',['../classtapl_1_1viz_1_1Visualizer.html',1,'tapl::viz::Visualizer'],['../classtapl_1_1viz_1_1Visualizer.html#a56215eefb4712acf78a922485d844f50',1,'tapl::viz::Visualizer::Visualizer()']]]
+  ['visualization_2ehpp_133',['visualization.hpp',['../visualization_8hpp.html',1,'']]],
+  ['visualizer_134',['Visualizer',['../classtapl_1_1viz_1_1Visualizer.html',1,'tapl::viz::Visualizer'],['../classtapl_1_1viz_1_1Visualizer.html#a56215eefb4712acf78a922485d844f50',1,'tapl::viz::Visualizer::Visualizer()']]]
 ];

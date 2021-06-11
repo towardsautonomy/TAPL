@@ -1,11 +1,11 @@
 var imgProc_8hpp =
 [
-    [ "computeEssentialMatrix", "imgProc_8hpp.html#a30da40f2aa0e434425c7b14f23b59457", null ],
+    [ "computeEssentialMatrix", "imgProc_8hpp.html#aab9ffadadfdcdabde2b84c28ed91b98f", null ],
     [ "computeFundamentalMatrix", "imgProc_8hpp.html#a8e1c9ef8d5eae6975b5e7e7c360fc1e8", null ],
-    [ "computeRelativePose", "imgProc_8hpp.html#ad8314ef8898d3a90c6d93a514bf75d20", null ],
+    [ "computeRelativePose", "imgProc_8hpp.html#a565eba00996d244628d8583e7ce7f618", null ],
     [ "detectAndMatchKpts", "imgProc_8hpp.html#a34cb000d47a121549e81900da9913299", null ],
-    [ "detectKeypoints", "imgProc_8hpp.html#ad74b56dc35c6a902870725543d5df419", null ],
-    [ "extractDescriptors", "imgProc_8hpp.html#a02712316099758c2b4d0bb0e4e5dc219", null ],
+    [ "detectKeypoints", "imgProc_8hpp.html#af3780bfb951944bfb2681080670c748c", null ],
+    [ "extractDescriptors", "imgProc_8hpp.html#a77377946f02e5f619085acd42bda7ea6", null ],
     [ "matchDescriptors", "imgProc_8hpp.html#ae2699cc690841efd3b7a3179be1fb889", null ],
     [ "stitchPanaromic", "imgProc_8hpp.html#aab4041f410589ff960febecf36b3ee2b", null ]
 ];

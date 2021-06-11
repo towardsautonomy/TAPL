@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['nanyear_622',['nanyear',['../namespacedate.html#a162709b3c23232891d6932c93749f936',1,'date']]],
-  ['nov_623',['nov',['../namespacedate_1_1literals.html#a17bd471dc722f11b3841218d1fd78ffd',1,'date::literals::nov()'],['../namespacedate_1_1literals.html#a17bd471dc722f11b3841218d1fd78ffd',1,'date::nov()']]],
-  ['november_624',['November',['../namespacedate.html#abfe49994d0d24461b25dac4b63ca836c',1,'date']]]
+  ['z_279',['z',['../structtapl_1_1Point3d.html#a976e9bc12553d812a95491aa20a50a9b',1,'tapl::Point3d']]],
+  ['z_5fmax_280',['z_max',['../structtapl_1_1BBox3d.html#a6b1ff639ba484bdcf6185d53870d623f',1,'tapl::BBox3d']]],
+  ['z_5fmin_281',['z_min',['../structtapl_1_1BBox3d.html#a62b2d92bf15298ad86a7159aadd232ab',1,'tapl::BBox3d']]]
 ];

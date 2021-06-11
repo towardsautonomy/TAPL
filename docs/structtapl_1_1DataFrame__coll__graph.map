@@ -1,4 +1,4 @@
 <map id="tapl::DataFrame" name="tapl::DataFrame">
-<area shape="rect" id="node1" title="represents the available sensor information at the same time instance" alt="" coords="15,95,142,121"/>
+<area shape="rect" id="node1" title="represents the available sensor information at the same time instance" alt="" coords="15,109,142,136"/>
 <area shape="rect" id="node2" href="$structtapl_1_1CameraFrame.html" title="represents a camera frame" alt="" coords="5,5,152,32"/>
 </map>

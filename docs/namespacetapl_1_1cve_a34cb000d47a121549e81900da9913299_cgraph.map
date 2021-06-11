@@ -1,10 +1,10 @@
 <map id="tapl::cve::detectAndMatchKpts" name="tapl::cve::detectAndMatchKpts">
 <area shape="rect" id="node1" title="This function detects keypoints in two image frames and perform keypoints matching." alt="" coords="5,173,227,200"/>
-<area shape="rect" id="node2" href="$namespacetapl_1_1cve.html#ad74b56dc35c6a902870725543d5df419" title="This function detects keypoints in an image." alt="" coords="283,5,473,32"/>
-<area shape="rect" id="node3" href="$namespacetapl_1_1cve.html#a02712316099758c2b4d0bb0e4e5dc219" title="This function extracts keypoints descriptors in an image." alt="" coords="275,56,481,83"/>
-<area shape="rect" id="node4" href="$structtapl_1_1CameraFrame.html#a173bf0e309ba2a499425bb4d881c3a8f" title=" " alt="" coords="301,107,455,149"/>
+<area shape="rect" id="node2" href="$namespacetapl_1_1cve.html#af3780bfb951944bfb2681080670c748c" title="This function detects keypoints in an image." alt="" coords="283,5,473,32"/>
+<area shape="rect" id="node3" href="$namespacetapl_1_1cve.html#a77377946f02e5f619085acd42bda7ea6" title="This function extracts keypoints descriptors in an image." alt="" coords="275,56,481,83"/>
+<area shape="rect" id="node4" href="$structtapl_1_1CameraFrame.html#a4f4240bb780ff362d7f50312935874e7" title=" " alt="" coords="301,107,455,149"/>
 <area shape="rect" id="node5" href="$namespacetapl_1_1cve.html#ae2699cc690841efd3b7a3179be1fb889" title="This function performs keypoint descriptor matching." alt="" coords="277,173,479,200"/>
-<area shape="rect" id="node6" href="$structtapl_1_1CameraFrame.html#a8fb1c882c8586540cad9ed46e8e2c575" title=" " alt="" coords="301,225,455,266"/>
-<area shape="rect" id="node7" href="$structtapl_1_1CameraFrame.html#a615e5c9e86234c3a1ab0bff9385b2820" title=" " alt="" coords="301,290,455,331"/>
-<area shape="rect" id="node8" href="$structtapl_1_1DataFrame.html#a1f6a23df2e1cc6341242fbf8a281205f" title=" " alt="" coords="281,355,475,397"/>
+<area shape="rect" id="node6" href="$structtapl_1_1CameraFrame.html#abd0116e3b9ee357f91ad1666029c723c" title=" " alt="" coords="301,225,455,266"/>
+<area shape="rect" id="node7" href="$structtapl_1_1CameraFrame.html#a5f02ca05c13ef38701c9311962ac4859" title=" " alt="" coords="301,290,455,331"/>
+<area shape="rect" id="node8" href="$structtapl_1_1DataFrame.html#ab923cef38b00d4d67b5a480eb5e323e5" title=" " alt="" coords="281,355,475,397"/>
 </map>

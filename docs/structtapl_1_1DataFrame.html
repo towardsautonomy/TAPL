@@ -98,7 +98,7 @@ Collaboration diagram for tapl::DataFrame:</div>
 <div class="dyncontent">
 <div class="center"><img src="structtapl_1_1DataFrame__coll__graph.png" border="0" usemap="#tapl_1_1DataFrame_coll__map" alt="Collaboration graph"/></div>
 <map name="tapl_1_1DataFrame_coll__map" id="tapl_1_1DataFrame_coll__map">
-<area shape="rect" title="represents the available sensor information at the same time instance" alt="" coords="15,95,142,121"/>
+<area shape="rect" title="represents the available sensor information at the same time instance" alt="" coords="15,109,142,136"/>
 <area shape="rect" href="structtapl_1_1CameraFrame.html" title="represents a camera frame" alt="" coords="5,5,152,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
@@ -107,36 +107,38 @@ Collaboration diagram for tapl::DataFrame:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a046dcfff07492b3753902bc3bd924e1d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtapl_1_1DataFrame.html#a046dcfff07492b3753902bc3bd924e1d">DataFrame</a> ()</td></tr>
 <tr class="separator:a046dcfff07492b3753902bc3bd924e1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f6a23df2e1cc6341242fbf8a281205f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtapl_1_1DataFrame.html#a1f6a23df2e1cc6341242fbf8a281205f">pushKptsMatches</a> (std::vector&lt; cv::DMatch &gt; &amp;kptMatches)</td></tr>
-<tr class="separator:a1f6a23df2e1cc6341242fbf8a281205f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed714bb88e138e661bc88a7d0f2087ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtapl_1_1DataFrame.html#aed714bb88e138e661bc88a7d0f2087ef">pushFundamentalMatrix</a> (cv::Mat &amp;F)</td></tr>
-<tr class="separator:aed714bb88e138e661bc88a7d0f2087ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad495a9b490f5f56e717251f28c595099"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtapl_1_1DataFrame.html#ad495a9b490f5f56e717251f28c595099">pushEssentialMatrix</a> (cv::Mat &amp;E)</td></tr>
-<tr class="separator:ad495a9b490f5f56e717251f28c595099"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58252333218ee415dc043c54e01e7365"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtapl_1_1DataFrame.html#a58252333218ee415dc043c54e01e7365">pushPose</a> (<a class="el" href="structtapl_1_1Pose6dof.html">Pose6dof</a> &amp;pose)</td></tr>
-<tr class="separator:a58252333218ee415dc043c54e01e7365"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a48c0c169570f49e3a3f87e2f947445"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtapl_1_1DataFrame.html#a6a48c0c169570f49e3a3f87e2f947445">pushTriangulatedPts</a> (cv::Mat &amp;pts)</td></tr>
-<tr class="separator:a6a48c0c169570f49e3a3f87e2f947445"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6784247bd772557ed661a27c011e978"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetapl.html#a196ce1d5bf399fc26f03797e6a8d03ff">ResultCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtapl_1_1DataFrame.html#ad6784247bd772557ed661a27c011e978">getKptsMatches</a> (std::vector&lt; cv::DMatch &gt; &amp;kptMatches)</td></tr>
-<tr class="separator:ad6784247bd772557ed661a27c011e978"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3e40c1a7fc883d041c1bc845ed7a3bb8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetapl.html#a196ce1d5bf399fc26f03797e6a8d03ff">ResultCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtapl_1_1DataFrame.html#a3e40c1a7fc883d041c1bc845ed7a3bb8">getFundamentalMatrix</a> (cv::Mat &amp;F)</td></tr>
-<tr class="separator:a3e40c1a7fc883d041c1bc845ed7a3bb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f7f2252e9c335dfca944d64508b72b4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetapl.html#a196ce1d5bf399fc26f03797e6a8d03ff">ResultCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtapl_1_1DataFrame.html#a0f7f2252e9c335dfca944d64508b72b4">getEssentialMatrix</a> (cv::Mat &amp;E)</td></tr>
-<tr class="separator:a0f7f2252e9c335dfca944d64508b72b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af15fd3aeaaf932b2db3e18e81b0764f2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetapl.html#a196ce1d5bf399fc26f03797e6a8d03ff">ResultCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtapl_1_1DataFrame.html#af15fd3aeaaf932b2db3e18e81b0764f2">getPose</a> (<a class="el" href="structtapl_1_1Pose6dof.html">Pose6dof</a> &amp;pose)</td></tr>
-<tr class="separator:af15fd3aeaaf932b2db3e18e81b0764f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77e09d7c142e062a4ed8fdbc11bba220"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetapl.html#a196ce1d5bf399fc26f03797e6a8d03ff">ResultCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtapl_1_1DataFrame.html#a77e09d7c142e062a4ed8fdbc11bba220">getTriangulatedPoints</a> (cv::Mat &amp;pts)</td></tr>
-<tr class="separator:a77e09d7c142e062a4ed8fdbc11bba220"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab923cef38b00d4d67b5a480eb5e323e5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtapl_1_1DataFrame.html#ab923cef38b00d4d67b5a480eb5e323e5">pushKptsMatches</a> (const std::vector&lt; cv::DMatch &gt; &amp;kptMatches)</td></tr>
+<tr class="separator:ab923cef38b00d4d67b5a480eb5e323e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea06402631517802fc36cd62f7b4ef52"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtapl_1_1DataFrame.html#aea06402631517802fc36cd62f7b4ef52">pushFundamentalMatrix</a> (const cv::Mat &amp;F)</td></tr>
+<tr class="separator:aea06402631517802fc36cd62f7b4ef52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bf64f105e1ddc2e22d9b5c452a348d0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtapl_1_1DataFrame.html#a9bf64f105e1ddc2e22d9b5c452a348d0">pushEssentialMatrix</a> (const cv::Mat &amp;E)</td></tr>
+<tr class="separator:a9bf64f105e1ddc2e22d9b5c452a348d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac040b5d4f9e337904920168b7e1242db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtapl_1_1DataFrame.html#ac040b5d4f9e337904920168b7e1242db">pushPose</a> (const <a class="el" href="structtapl_1_1Pose6dof.html">Pose6dof</a> &amp;pose)</td></tr>
+<tr class="separator:ac040b5d4f9e337904920168b7e1242db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a234df0c976947072ebca8342b1c6b236"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtapl_1_1DataFrame.html#a234df0c976947072ebca8342b1c6b236">pushTriangulatedPts</a> (const cv::Mat &amp;pts)</td></tr>
+<tr class="separator:a234df0c976947072ebca8342b1c6b236"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc568884baeeed4ff0576eef6e725f1a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetapl.html#a196ce1d5bf399fc26f03797e6a8d03ff">ResultCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtapl_1_1DataFrame.html#abc568884baeeed4ff0576eef6e725f1a">getKptsMatches</a> (std::vector&lt; cv::DMatch &gt; &amp;kptMatches) const</td></tr>
+<tr class="separator:abc568884baeeed4ff0576eef6e725f1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d4c42241dccf8430457bf134a465440"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetapl.html#a196ce1d5bf399fc26f03797e6a8d03ff">ResultCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtapl_1_1DataFrame.html#a1d4c42241dccf8430457bf134a465440">getFundamentalMatrix</a> (cv::Mat &amp;F) const</td></tr>
+<tr class="separator:a1d4c42241dccf8430457bf134a465440"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62068412eaaf6c57b69622ed4c8de390"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetapl.html#a196ce1d5bf399fc26f03797e6a8d03ff">ResultCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtapl_1_1DataFrame.html#a62068412eaaf6c57b69622ed4c8de390">getEssentialMatrix</a> (cv::Mat &amp;E) const</td></tr>
+<tr class="separator:a62068412eaaf6c57b69622ed4c8de390"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a373a863b9d5ffb638bebaca02a1d8486"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetapl.html#a196ce1d5bf399fc26f03797e6a8d03ff">ResultCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtapl_1_1DataFrame.html#a373a863b9d5ffb638bebaca02a1d8486">getPose</a> (<a class="el" href="structtapl_1_1Pose6dof.html">Pose6dof</a> &amp;pose) const</td></tr>
+<tr class="separator:a373a863b9d5ffb638bebaca02a1d8486"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdef86602755be2d9d09ea6515a0a1d4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetapl.html#a196ce1d5bf399fc26f03797e6a8d03ff">ResultCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtapl_1_1DataFrame.html#acdef86602755be2d9d09ea6515a0a1d4">getTriangulatedPoints</a> (cv::Mat &amp;pts) const</td></tr>
+<tr class="separator:acdef86602755be2d9d09ea6515a0a1d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a6a9523806fd3280ddd54085669572288"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structtapl_1_1CameraFrame.html">CameraFrame</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtapl_1_1DataFrame.html#a6a9523806fd3280ddd54085669572288">cameraFrame</a></td></tr>
 <tr class="separator:a6a9523806fd3280ddd54085669572288"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0360d64d27a7251c58e2ab5d30b01b3d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structtapl_1_1CameraFrame.html">CameraFrame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtapl_1_1DataFrame.html#a0360d64d27a7251c58e2ab5d30b01b3d">otherCameraFrame</a></td></tr>
+<tr class="separator:a0360d64d27a7251c58e2ab5d30b01b3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>represents the available sensor information at the same time instance </p>
 
-<p class="definition">Definition at line <a class="el" href="taplTypes_8hpp_source.html#l00128">128</a> of file <a class="el" href="taplTypes_8hpp_source.html">taplTypes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="taplTypes_8hpp_source.html#l00143">143</a> of file <a class="el" href="taplTypes_8hpp_source.html">taplTypes.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a046dcfff07492b3753902bc3bd924e1d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a046dcfff07492b3753902bc3bd924e1d">&#9670;&nbsp;</a></span>DataFrame()</h2>
@@ -162,13 +164,13 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <p>&lt; cunstructor </p>
 
-<p class="definition">Definition at line <a class="el" href="taplTypes_8hpp_source.html#l00143">143</a> of file <a class="el" href="taplTypes_8hpp_source.html">taplTypes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="taplTypes_8hpp_source.html#l00158">158</a> of file <a class="el" href="taplTypes_8hpp_source.html">taplTypes.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a0f7f2252e9c335dfca944d64508b72b4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0f7f2252e9c335dfca944d64508b72b4">&#9670;&nbsp;</a></span>getEssentialMatrix()</h2>
+<a id="a62068412eaaf6c57b69622ed4c8de390"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62068412eaaf6c57b69622ed4c8de390">&#9670;&nbsp;</a></span>getEssentialMatrix()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -181,7 +183,7 @@ Data Fields</h2></td></tr>
           <td>(</td>
           <td class="paramtype">cv::Mat &amp;&#160;</td>
           <td class="paramname"><em>E</em></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -191,12 +193,12 @@ Data Fields</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="taplTypes_8hpp_source.html#l00184">184</a> of file <a class="el" href="taplTypes_8hpp_source.html">taplTypes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="taplTypes_8hpp_source.html#l00204">204</a> of file <a class="el" href="taplTypes_8hpp_source.html">taplTypes.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a3e40c1a7fc883d041c1bc845ed7a3bb8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3e40c1a7fc883d041c1bc845ed7a3bb8">&#9670;&nbsp;</a></span>getFundamentalMatrix()</h2>
+<a id="a1d4c42241dccf8430457bf134a465440"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d4c42241dccf8430457bf134a465440">&#9670;&nbsp;</a></span>getFundamentalMatrix()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -209,7 +211,7 @@ Data Fields</h2></td></tr>
           <td>(</td>
           <td class="paramtype">cv::Mat &amp;&#160;</td>
           <td class="paramname"><em>F</em></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -219,12 +221,12 @@ Data Fields</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="taplTypes_8hpp_source.html#l00173">173</a> of file <a class="el" href="taplTypes_8hpp_source.html">taplTypes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="taplTypes_8hpp_source.html#l00193">193</a> of file <a class="el" href="taplTypes_8hpp_source.html">taplTypes.hpp</a>.</p>
 
 </div>
 </div>
-<a id="ad6784247bd772557ed661a27c011e978"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad6784247bd772557ed661a27c011e978">&#9670;&nbsp;</a></span>getKptsMatches()</h2>
+<a id="abc568884baeeed4ff0576eef6e725f1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc568884baeeed4ff0576eef6e725f1a">&#9670;&nbsp;</a></span>getKptsMatches()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -237,7 +239,7 @@ Data Fields</h2></td></tr>
           <td>(</td>
           <td class="paramtype">std::vector&lt; cv::DMatch &gt; &amp;&#160;</td>
           <td class="paramname"><em>kptMatches</em></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -247,23 +249,23 @@ Data Fields</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="taplTypes_8hpp_source.html#l00162">162</a> of file <a class="el" href="taplTypes_8hpp_source.html">taplTypes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="taplTypes_8hpp_source.html#l00182">182</a> of file <a class="el" href="taplTypes_8hpp_source.html">taplTypes.hpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="structtapl_1_1DataFrame_ad6784247bd772557ed661a27c011e978_icgraph.png" border="0" usemap="#structtapl_1_1DataFrame_ad6784247bd772557ed661a27c011e978_icgraph" alt=""/></div>
-<map name="structtapl_1_1DataFrame_ad6784247bd772557ed661a27c011e978_icgraph" id="structtapl_1_1DataFrame_ad6784247bd772557ed661a27c011e978_icgraph">
+<div class="center"><img src="structtapl_1_1DataFrame_abc568884baeeed4ff0576eef6e725f1a_icgraph.png" border="0" usemap="#structtapl_1_1DataFrame_abc568884baeeed4ff0576eef6e725f1a_icgraph" alt=""/></div>
+<map name="structtapl_1_1DataFrame_abc568884baeeed4ff0576eef6e725f1a_icgraph" id="structtapl_1_1DataFrame_abc568884baeeed4ff0576eef6e725f1a_icgraph">
 <area shape="rect" title=" " alt="" coords="281,71,467,112"/>
-<area shape="rect" href="namespacetapl_1_1cve.html#a30da40f2aa0e434425c7b14f23b59457" title="This function retrieves essential matrix between two images contained within their data frame structu..." alt="" coords="18,5,221,47"/>
+<area shape="rect" href="namespacetapl_1_1cve.html#aab9ffadadfdcdabde2b84c28ed91b98f" title="This function retrieves essential matrix between two images contained within their data frame structu..." alt="" coords="18,5,221,47"/>
 <area shape="rect" href="namespacetapl_1_1cve.html#a8e1c9ef8d5eae6975b5e7e7c360fc1e8" title="This function retrieves fundamental matrix between two images contained within their data frame struc..." alt="" coords="5,71,233,112"/>
-<area shape="rect" href="namespacetapl_1_1cve.html#ad8314ef8898d3a90c6d93a514bf75d20" title="This function is used to compute the relative camera pose. Pose is computed for second image containe..." alt="" coords="5,137,233,163"/>
+<area shape="rect" href="namespacetapl_1_1cve.html#a565eba00996d244628d8583e7ce7f618" title="This function is used to compute the relative camera pose. Pose is computed for second image containe..." alt="" coords="5,137,233,163"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="af15fd3aeaaf932b2db3e18e81b0764f2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af15fd3aeaaf932b2db3e18e81b0764f2">&#9670;&nbsp;</a></span>getPose()</h2>
+<a id="a373a863b9d5ffb638bebaca02a1d8486"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a373a863b9d5ffb638bebaca02a1d8486">&#9670;&nbsp;</a></span>getPose()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -276,7 +278,7 @@ Here is the caller graph for this function:</div>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structtapl_1_1Pose6dof.html">Pose6dof</a> &amp;&#160;</td>
           <td class="paramname"><em>pose</em></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -286,12 +288,12 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="taplTypes_8hpp_source.html#l00195">195</a> of file <a class="el" href="taplTypes_8hpp_source.html">taplTypes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="taplTypes_8hpp_source.html#l00215">215</a> of file <a class="el" href="taplTypes_8hpp_source.html">taplTypes.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a77e09d7c142e062a4ed8fdbc11bba220"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a77e09d7c142e062a4ed8fdbc11bba220">&#9670;&nbsp;</a></span>getTriangulatedPoints()</h2>
+<a id="acdef86602755be2d9d09ea6515a0a1d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acdef86602755be2d9d09ea6515a0a1d4">&#9670;&nbsp;</a></span>getTriangulatedPoints()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -304,7 +306,7 @@ Here is the caller graph for this function:</div>
           <td>(</td>
           <td class="paramtype">cv::Mat &amp;&#160;</td>
           <td class="paramname"><em>pts</em></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -314,12 +316,12 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="taplTypes_8hpp_source.html#l00206">206</a> of file <a class="el" href="taplTypes_8hpp_source.html">taplTypes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="taplTypes_8hpp_source.html#l00226">226</a> of file <a class="el" href="taplTypes_8hpp_source.html">taplTypes.hpp</a>.</p>
 
 </div>
 </div>
-<a id="ad495a9b490f5f56e717251f28c595099"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad495a9b490f5f56e717251f28c595099">&#9670;&nbsp;</a></span>pushEssentialMatrix()</h2>
+<a id="a9bf64f105e1ddc2e22d9b5c452a348d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bf64f105e1ddc2e22d9b5c452a348d0">&#9670;&nbsp;</a></span>pushEssentialMatrix()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -330,7 +332,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">void tapl::DataFrame::pushEssentialMatrix </td>
           <td>(</td>
-          <td class="paramtype">cv::Mat &amp;&#160;</td>
+          <td class="paramtype">const cv::Mat &amp;&#160;</td>
           <td class="paramname"><em>E</em></td><td>)</td>
           <td></td>
         </tr>
@@ -342,21 +344,21 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="taplTypes_8hpp_source.html#l00154">154</a> of file <a class="el" href="taplTypes_8hpp_source.html">taplTypes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="taplTypes_8hpp_source.html#l00174">174</a> of file <a class="el" href="taplTypes_8hpp_source.html">taplTypes.hpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="structtapl_1_1DataFrame_ad495a9b490f5f56e717251f28c595099_icgraph.png" border="0" usemap="#structtapl_1_1DataFrame_ad495a9b490f5f56e717251f28c595099_icgraph" alt=""/></div>
-<map name="structtapl_1_1DataFrame_ad495a9b490f5f56e717251f28c595099_icgraph" id="structtapl_1_1DataFrame_ad495a9b490f5f56e717251f28c595099_icgraph">
+<div class="center"><img src="structtapl_1_1DataFrame_a9bf64f105e1ddc2e22d9b5c452a348d0_icgraph.png" border="0" usemap="#structtapl_1_1DataFrame_a9bf64f105e1ddc2e22d9b5c452a348d0_icgraph" alt=""/></div>
+<map name="structtapl_1_1DataFrame_a9bf64f105e1ddc2e22d9b5c452a348d0_icgraph" id="structtapl_1_1DataFrame_a9bf64f105e1ddc2e22d9b5c452a348d0_icgraph">
 <area shape="rect" title=" " alt="" coords="256,5,481,47"/>
-<area shape="rect" href="namespacetapl_1_1cve.html#a30da40f2aa0e434425c7b14f23b59457" title="This function retrieves essential matrix between two images contained within their data frame structu..." alt="" coords="5,5,208,47"/>
+<area shape="rect" href="namespacetapl_1_1cve.html#aab9ffadadfdcdabde2b84c28ed91b98f" title="This function retrieves essential matrix between two images contained within their data frame structu..." alt="" coords="5,5,208,47"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="aed714bb88e138e661bc88a7d0f2087ef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aed714bb88e138e661bc88a7d0f2087ef">&#9670;&nbsp;</a></span>pushFundamentalMatrix()</h2>
+<a id="aea06402631517802fc36cd62f7b4ef52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea06402631517802fc36cd62f7b4ef52">&#9670;&nbsp;</a></span>pushFundamentalMatrix()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -367,7 +369,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">void tapl::DataFrame::pushFundamentalMatrix </td>
           <td>(</td>
-          <td class="paramtype">cv::Mat &amp;&#160;</td>
+          <td class="paramtype">const cv::Mat &amp;&#160;</td>
           <td class="paramname"><em>F</em></td><td>)</td>
           <td></td>
         </tr>
@@ -379,12 +381,12 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="taplTypes_8hpp_source.html#l00152">152</a> of file <a class="el" href="taplTypes_8hpp_source.html">taplTypes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="taplTypes_8hpp_source.html#l00172">172</a> of file <a class="el" href="taplTypes_8hpp_source.html">taplTypes.hpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="structtapl_1_1DataFrame_aed714bb88e138e661bc88a7d0f2087ef_icgraph.png" border="0" usemap="#structtapl_1_1DataFrame_aed714bb88e138e661bc88a7d0f2087ef_icgraph" alt=""/></div>
-<map name="structtapl_1_1DataFrame_aed714bb88e138e661bc88a7d0f2087ef_icgraph" id="structtapl_1_1DataFrame_aed714bb88e138e661bc88a7d0f2087ef_icgraph">
+<div class="center"><img src="structtapl_1_1DataFrame_aea06402631517802fc36cd62f7b4ef52_icgraph.png" border="0" usemap="#structtapl_1_1DataFrame_aea06402631517802fc36cd62f7b4ef52_icgraph" alt=""/></div>
+<map name="structtapl_1_1DataFrame_aea06402631517802fc36cd62f7b4ef52_icgraph" id="structtapl_1_1DataFrame_aea06402631517802fc36cd62f7b4ef52_icgraph">
 <area shape="rect" title=" " alt="" coords="281,5,532,47"/>
 <area shape="rect" href="namespacetapl_1_1cve.html#a8e1c9ef8d5eae6975b5e7e7c360fc1e8" title="This function retrieves fundamental matrix between two images contained within their data frame struc..." alt="" coords="5,5,233,47"/>
 </map>
@@ -392,8 +394,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a1f6a23df2e1cc6341242fbf8a281205f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1f6a23df2e1cc6341242fbf8a281205f">&#9670;&nbsp;</a></span>pushKptsMatches()</h2>
+<a id="ab923cef38b00d4d67b5a480eb5e323e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab923cef38b00d4d67b5a480eb5e323e5">&#9670;&nbsp;</a></span>pushKptsMatches()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -404,7 +406,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">void tapl::DataFrame::pushKptsMatches </td>
           <td>(</td>
-          <td class="paramtype">std::vector&lt; cv::DMatch &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::vector&lt; cv::DMatch &gt; &amp;&#160;</td>
           <td class="paramname"><em>kptMatches</em></td><td>)</td>
           <td></td>
         </tr>
@@ -416,24 +418,24 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="taplTypes_8hpp_source.html#l00150">150</a> of file <a class="el" href="taplTypes_8hpp_source.html">taplTypes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="taplTypes_8hpp_source.html#l00170">170</a> of file <a class="el" href="taplTypes_8hpp_source.html">taplTypes.hpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="structtapl_1_1DataFrame_a1f6a23df2e1cc6341242fbf8a281205f_icgraph.png" border="0" usemap="#structtapl_1_1DataFrame_a1f6a23df2e1cc6341242fbf8a281205f_icgraph" alt=""/></div>
-<map name="structtapl_1_1DataFrame_a1f6a23df2e1cc6341242fbf8a281205f_icgraph" id="structtapl_1_1DataFrame_a1f6a23df2e1cc6341242fbf8a281205f_icgraph">
+<div class="center"><img src="structtapl_1_1DataFrame_ab923cef38b00d4d67b5a480eb5e323e5_icgraph.png" border="0" usemap="#structtapl_1_1DataFrame_ab923cef38b00d4d67b5a480eb5e323e5_icgraph" alt=""/></div>
+<map name="structtapl_1_1DataFrame_ab923cef38b00d4d67b5a480eb5e323e5_icgraph" id="structtapl_1_1DataFrame_ab923cef38b00d4d67b5a480eb5e323e5_icgraph">
 <area shape="rect" title=" " alt="" coords="551,71,745,112"/>
 <area shape="rect" href="namespacetapl_1_1cve.html#a34cb000d47a121549e81900da9913299" title="This function detects keypoints in two image frames and perform keypoints matching." alt="" coords="281,78,503,105"/>
-<area shape="rect" href="namespacetapl_1_1cve.html#a30da40f2aa0e434425c7b14f23b59457" title="This function retrieves essential matrix between two images contained within their data frame structu..." alt="" coords="18,5,221,47"/>
+<area shape="rect" href="namespacetapl_1_1cve.html#aab9ffadadfdcdabde2b84c28ed91b98f" title="This function retrieves essential matrix between two images contained within their data frame structu..." alt="" coords="18,5,221,47"/>
 <area shape="rect" href="namespacetapl_1_1cve.html#a8e1c9ef8d5eae6975b5e7e7c360fc1e8" title="This function retrieves fundamental matrix between two images contained within their data frame struc..." alt="" coords="5,71,233,112"/>
-<area shape="rect" href="namespacetapl_1_1cve.html#ad8314ef8898d3a90c6d93a514bf75d20" title="This function is used to compute the relative camera pose. Pose is computed for second image containe..." alt="" coords="5,137,233,163"/>
+<area shape="rect" href="namespacetapl_1_1cve.html#a565eba00996d244628d8583e7ce7f618" title="This function is used to compute the relative camera pose. Pose is computed for second image containe..." alt="" coords="5,137,233,163"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a58252333218ee415dc043c54e01e7365"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a58252333218ee415dc043c54e01e7365">&#9670;&nbsp;</a></span>pushPose()</h2>
+<a id="ac040b5d4f9e337904920168b7e1242db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac040b5d4f9e337904920168b7e1242db">&#9670;&nbsp;</a></span>pushPose()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -444,7 +446,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">void tapl::DataFrame::pushPose </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structtapl_1_1Pose6dof.html">Pose6dof</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="structtapl_1_1Pose6dof.html">Pose6dof</a> &amp;&#160;</td>
           <td class="paramname"><em>pose</em></td><td>)</td>
           <td></td>
         </tr>
@@ -456,21 +458,21 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="taplTypes_8hpp_source.html#l00156">156</a> of file <a class="el" href="taplTypes_8hpp_source.html">taplTypes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="taplTypes_8hpp_source.html#l00176">176</a> of file <a class="el" href="taplTypes_8hpp_source.html">taplTypes.hpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="structtapl_1_1DataFrame_a58252333218ee415dc043c54e01e7365_icgraph.png" border="0" usemap="#structtapl_1_1DataFrame_a58252333218ee415dc043c54e01e7365_icgraph" alt=""/></div>
-<map name="structtapl_1_1DataFrame_a58252333218ee415dc043c54e01e7365_icgraph" id="structtapl_1_1DataFrame_a58252333218ee415dc043c54e01e7365_icgraph">
+<div class="center"><img src="structtapl_1_1DataFrame_ac040b5d4f9e337904920168b7e1242db_icgraph.png" border="0" usemap="#structtapl_1_1DataFrame_ac040b5d4f9e337904920168b7e1242db_icgraph" alt=""/></div>
+<map name="structtapl_1_1DataFrame_ac040b5d4f9e337904920168b7e1242db_icgraph" id="structtapl_1_1DataFrame_ac040b5d4f9e337904920168b7e1242db_icgraph">
 <area shape="rect" title=" " alt="" coords="281,5,479,32"/>
-<area shape="rect" href="namespacetapl_1_1cve.html#ad8314ef8898d3a90c6d93a514bf75d20" title="This function is used to compute the relative camera pose. Pose is computed for second image containe..." alt="" coords="5,5,233,32"/>
+<area shape="rect" href="namespacetapl_1_1cve.html#a565eba00996d244628d8583e7ce7f618" title="This function is used to compute the relative camera pose. Pose is computed for second image containe..." alt="" coords="5,5,233,32"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a6a48c0c169570f49e3a3f87e2f947445"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6a48c0c169570f49e3a3f87e2f947445">&#9670;&nbsp;</a></span>pushTriangulatedPts()</h2>
+<a id="a234df0c976947072ebca8342b1c6b236"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a234df0c976947072ebca8342b1c6b236">&#9670;&nbsp;</a></span>pushTriangulatedPts()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -481,7 +483,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">void tapl::DataFrame::pushTriangulatedPts </td>
           <td>(</td>
-          <td class="paramtype">cv::Mat &amp;&#160;</td>
+          <td class="paramtype">const cv::Mat &amp;&#160;</td>
           <td class="paramname"><em>pts</em></td><td>)</td>
           <td></td>
         </tr>
@@ -493,14 +495,14 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="taplTypes_8hpp_source.html#l00158">158</a> of file <a class="el" href="taplTypes_8hpp_source.html">taplTypes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="taplTypes_8hpp_source.html#l00178">178</a> of file <a class="el" href="taplTypes_8hpp_source.html">taplTypes.hpp</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="structtapl_1_1DataFrame_a6a48c0c169570f49e3a3f87e2f947445_icgraph.png" border="0" usemap="#structtapl_1_1DataFrame_a6a48c0c169570f49e3a3f87e2f947445_icgraph" alt=""/></div>
-<map name="structtapl_1_1DataFrame_a6a48c0c169570f49e3a3f87e2f947445_icgraph" id="structtapl_1_1DataFrame_a6a48c0c169570f49e3a3f87e2f947445_icgraph">
+<div class="center"><img src="structtapl_1_1DataFrame_a234df0c976947072ebca8342b1c6b236_icgraph.png" border="0" usemap="#structtapl_1_1DataFrame_a234df0c976947072ebca8342b1c6b236_icgraph" alt=""/></div>
+<map name="structtapl_1_1DataFrame_a234df0c976947072ebca8342b1c6b236_icgraph" id="structtapl_1_1DataFrame_a234df0c976947072ebca8342b1c6b236_icgraph">
 <area shape="rect" title=" " alt="" coords="281,5,548,32"/>
-<area shape="rect" href="namespacetapl_1_1cve.html#ad8314ef8898d3a90c6d93a514bf75d20" title="This function is used to compute the relative camera pose. Pose is computed for second image containe..." alt="" coords="5,5,233,32"/>
+<area shape="rect" href="namespacetapl_1_1cve.html#a565eba00996d244628d8583e7ce7f618" title="This function is used to compute the relative camera pose. Pose is computed for second image containe..." alt="" coords="5,5,233,32"/>
 </map>
 </div>
 
@@ -520,7 +522,24 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <p>Image frame </p>
 
-<p class="definition">Definition at line <a class="el" href="taplTypes_8hpp_source.html#l00146">146</a> of file <a class="el" href="taplTypes_8hpp_source.html">taplTypes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="taplTypes_8hpp_source.html#l00165">165</a> of file <a class="el" href="taplTypes_8hpp_source.html">taplTypes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a0360d64d27a7251c58e2ab5d30b01b3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0360d64d27a7251c58e2ab5d30b01b3d">&#9670;&nbsp;</a></span>otherCameraFrame</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structtapl_1_1CameraFrame.html">CameraFrame</a>* tapl::DataFrame::otherCameraFrame</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Other image frame used for computing F, E, etc. </p>
+
+<p class="definition">Definition at line <a class="el" href="taplTypes_8hpp_source.html#l00166">166</a> of file <a class="el" href="taplTypes_8hpp_source.html">taplTypes.hpp</a>.</p>
 
 </div>
 </div>

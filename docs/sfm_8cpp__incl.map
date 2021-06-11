@@ -1,0 +1,10 @@
+<map id="tapl/cve/sfm.cpp" name="tapl/cve/sfm.cpp">
+<area shape="rect" id="node1" title=" " alt="" coords="57,5,188,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,80,85,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="91,229,154,256"/>
+<area shape="rect" id="node4" href="$sfm_8hpp.html" title="This provides the implementation of structure&#45;from&#45;motion algorithm." alt="" coords="224,80,299,107"/>
+<area shape="rect" id="node5" href="$taplLog_8hpp.html" title="This file provides logging functions for TAPL." alt="" coords="339,229,527,256"/>
+<area shape="rect" id="node7" href="$taplTypes_8hpp.html" title="This file provides type definitions used throughout this library." alt="" coords="160,155,363,181"/>
+<area shape="rect" id="node6" title=" " alt="" coords="402,304,465,331"/>
+<area shape="rect" id="node8" title=" " alt="" coords="178,229,315,256"/>
+</map>
