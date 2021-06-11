@@ -1,3 +1,6 @@
 # ignore build directory
 build/
 examples/build/
+
+# ignore local project settings
+.vscode
