@@ -25,7 +25,7 @@ int main(int argc, const char *argv[])
 
     // misc
     int dataBufferSize = 2;       // no. of images which are held in memory (ring buffer) at the same time
-    tapl::RingBuffer<tapl::DataFrame> dataBuffer(dataBufferSize);
+    tapl::RingBuffer<tapl::CameraPairs> dataBuffer(dataBufferSize);
 
     // Read camera calibration
     cv::FileStorage opencv_file(calibPath, cv::FileStorage::READ);
@@ -43,46 +43,61 @@ int main(int argc, const char *argv[])
         fnames.push_back(p.path());
     }
     std::sort(fnames.begin(), fnames.end());
-    for (auto fname : fnames) {
-        /* Load image into buffer */
-        // load image from file and convert to grayscale
-        cv::Mat img, img_undistorted, img_gray;
-        img = cv::imread(fname);
-        cv::undistort(img, img_undistorted, camera_matrix, dist_coeff);
-        cv::cvtColor(img_undistorted, img_gray, cv::COLOR_BGR2GRAY);
+    for (auto it=fnames.begin(); it!=fnames.end(); ++it) {
+        // wait for at least 2 images
+        if (fnames.begin() == it) {
+            // load image from file and convert to grayscale
+            cv::Mat img, img_undistorted, img_gray;
+            img = cv::imread(*it);
+            cv::undistort(img, img_undistorted, camera_matrix, dist_coeff);
+            cv::cvtColor(img_undistorted, img_gray, cv::COLOR_BGR2GRAY);
 
-        // push image into data frame buffer
-        tapl::DataFrame frame;
-        frame.cameraFrame.pushImage(img_gray);
-        frame.cameraFrame.pushIntrinsicMatrix(camera_matrix);
-        dataBuffer.push(frame);
+            // push image into data frame buffer
+            tapl::CameraPairs camPairs;
+            tapl::CameraFrame frame(img_gray);
+            *camPairs.second = frame;
+            camPairs.second->pushIntrinsicMatrix(camera_matrix);
+            dataBuffer.push(camPairs);
+        }
+        else {
+            /* Load image into buffer */
+            // load image from file and convert to grayscale
+            cv::Mat img, img_undistorted, img_gray;
+            img = cv::imread(*it);
+            cv::undistort(img, img_undistorted, camera_matrix, dist_coeff);
+            cv::cvtColor(img_undistorted, img_gray, cv::COLOR_BGR2GRAY);
 
-        TLOG_INFO << "----------------------------------------";
-        TLOG_INFO << "Image [" << imgIndex << "] loaded into the ring buffer";
+            // push image into data frame buffer
+            cv::Mat prev_img;
+            if (dataBuffer.get(dataBuffer.getSize()-1).second->getImage(prev_img) != tapl::SUCCESS) {
+                TLOG_ERROR << "could not retrieve previous frame";
+                exit(1);
+            }
+            tapl::CameraPairs camPairs(prev_img, img_gray);
+            camPairs.second->pushIntrinsicMatrix(camera_matrix);
+            dataBuffer.push(camPairs);
 
-        // perform keypoints detection and matching if more than one image is loaded into the buffer
-        if(dataBuffer.getSize() > 1) {
-            tapl::DataFrame dframe1, dframe2;
-            dframe1 = dataBuffer.get(dataBuffer.getSize()-1);
-            dframe2 = dataBuffer.get(dataBuffer.getSize()-2);
-            if(tapl::cve::detectAndMatchKpts(dframe1, dframe2) == tapl::SUCCESS) {
+            TLOG_INFO << "----------------------------------------";
+            TLOG_INFO << "Image Pair [" << imgIndex << "] loaded into the ring buffer";
+
+            if (tapl::cve::detectAndMatchKpts(camPairs) == tapl::SUCCESS) {
                 // visualize matches between current and previous image
                 cv::Mat img1, img1_color, img2, img2_color, matchImg;
 
                 // retrieve both image frames
-                dframe1.cameraFrame.getImage(img1);
-                dframe2.cameraFrame.getImage(img2);
+                camPairs.first->getImage(img1);
+                camPairs.second->getImage(img2);
                 // convert to RGB
                 cv::cvtColor(img1, img1_color, cv::COLOR_GRAY2BGR);
                 cv::cvtColor(img2, img2_color, cv::COLOR_GRAY2BGR);
                 
                 // retrieve keypoints
                 std::vector<cv::KeyPoint> kpts1, kpts2;
-                dframe1.cameraFrame.getKeypoints(kpts1);
-                dframe2.cameraFrame.getKeypoints(kpts2);
+                camPairs.first->getKeypoints(kpts1);
+                camPairs.second->getKeypoints(kpts2);
                 // retrieve keypoints matches
                 std::vector<cv::DMatch> kptsMatches;
-                dframe1.getKptsMatches(kptsMatches);
+                camPairs.getKptsMatches(kptsMatches);
 
                 // draw the matches 
                 cv::drawMatches(img1_color, kpts1, img2_color, kpts2,

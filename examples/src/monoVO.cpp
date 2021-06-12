@@ -41,7 +41,7 @@ int main(int argc, const char *argv[])
 
     // misc
     int dataBufferSize = 4;       // no. of images which are held in memory (ring buffer) at the same time
-    tapl::RingBuffer<tapl::DataFrame> dataBuffer(dataBufferSize);
+    tapl::RingBuffer<tapl::CameraPairs> dataBuffer(dataBufferSize);
 
     // Read camera calibration
     cv::FileStorage opencv_file(calibPath, cv::FileStorage::READ);
@@ -87,36 +87,50 @@ int main(int argc, const char *argv[])
         fnames.push_back(p.path());
     }
     std::sort(fnames.begin(), fnames.end());
-    for (auto fname : fnames) {
-        /* Load image into buffer */
-        // load image from file and convert to grayscale
-        cv::Mat img, img_undistorted, img_gray;
-        img = cv::imread(fname);
-        cv::undistort(img, img_undistorted, camera_matrix, dist_coeff);
-        cv::cvtColor(img_undistorted, img_gray, cv::COLOR_BGR2GRAY);
+    for (auto it=fnames.begin(); it!=fnames.end(); ++it) {
+        // wait for at least 2 images
+        if (fnames.begin() == it) {
+            // load image from file and convert to grayscale
+            cv::Mat img, img_undistorted, img_gray;
+            img = cv::imread(*it);
+            cv::undistort(img, img_undistorted, camera_matrix, dist_coeff);
+            cv::cvtColor(img_undistorted, img_gray, cv::COLOR_BGR2GRAY);
 
-        // push image into data frame buffer
-        tapl::DataFrame frame;
-        frame.cameraFrame.pushImage(img_gray);
-        frame.cameraFrame.pushIntrinsicMatrix(camera_matrix);
-        dataBuffer.push(frame);
+            // push image into data frame buffer
+            tapl::CameraPairs camPairs;
+            tapl::CameraFrame frame(img_gray);
+            *camPairs.second = frame;
+            camPairs.second->pushIntrinsicMatrix(camera_matrix);
+            dataBuffer.push(camPairs);
+        }
+        else {
+            /* Load image into buffer */
+            // load image from file and convert to grayscale
+            cv::Mat img, img_undistorted, img_gray;
+            img = cv::imread(*it);
+            cv::undistort(img, img_undistorted, camera_matrix, dist_coeff);
+            cv::cvtColor(img_undistorted, img_gray, cv::COLOR_BGR2GRAY);
 
-        TLOG_INFO << "----------------------------------------";
-        TLOG_INFO << "Image [" << imgIndex << "] loaded into the ring buffer";
+            // push image into data frame buffer
+            cv::Mat prev_img;
+            if (dataBuffer.get(dataBuffer.getSize()-1).second->getImage(prev_img) != tapl::SUCCESS) {
+                TLOG_ERROR << "could not retrieve previous frame";
+                exit(1);
+            }
+            tapl::CameraPairs camPairs(prev_img, img_gray);
+            camPairs.first->pushIntrinsicMatrix(camera_matrix);
+            camPairs.second->pushIntrinsicMatrix(camera_matrix);
+            dataBuffer.push(camPairs);
 
-    
-        // perform keypoints detection and matching if more than one image is loaded into the buffer
-        if(dataBuffer.getSize() > 1) {
-            tapl::DataFrame dframe1, dframe2;
-            dframe1 = dataBuffer.get(dataBuffer.getSize()-1);
-            dframe2 = dataBuffer.get(dataBuffer.getSize()-2);
+            TLOG_INFO << "----------------------------------------";
+            TLOG_INFO << "Image [" << imgIndex << "] loaded into the ring buffer";
 
             // transformation matrix
             Eigen::Matrix4f P = Eigen::Matrix4f::Identity();
             // get relative pose
-            if(tapl::cve::computeRelativePose(dframe1, dframe2) == tapl::SUCCESS) {
+            if(tapl::cve::computeRelativePose(camPairs) == tapl::SUCCESS) {
                 tapl::Pose6dof relative_pose;
-                if(dframe1.getPose(relative_pose) == tapl::SUCCESS) {
+                if(camPairs.getPose(relative_pose) == tapl::SUCCESS) {
                     // rotation
                     cv2eigen(relative_pose.R, R);
                     P.block(0, 0, 3, 3) = R;
@@ -142,7 +156,7 @@ int main(int argc, const char *argv[])
 
             // create point cloud from triangulated points
             cv::Mat point3d_homo;
-            if(dframe1.getTriangulatedPoints(point3d_homo) != tapl::SUCCESS) {
+            if(camPairs.getTriangulatedPoints(point3d_homo) != tapl::SUCCESS) {
                 TLOG_INFO << "ERROR: could not retrieve triangulated 3D points";
                 exit(EXIT_FAILURE);
             }
@@ -168,7 +182,7 @@ int main(int argc, const char *argv[])
 
             // display image
             cv::Mat img_disp;
-            if(dframe1.cameraFrame.getImage(img_disp) != tapl::SUCCESS) {
+            if(camPairs.first->getImage(img_disp) != tapl::SUCCESS) {
                 TLOG_INFO << "ERROR: could not retrieve image frame";
                 exit(EXIT_FAILURE);
             }

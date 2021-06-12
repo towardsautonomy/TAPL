@@ -76,9 +76,20 @@ namespace tapl
         cv::Mat descriptors;                /**< keypoint descriptors */
 
     public:
-        // cunstructor
+        /* cunstructors */
         CameraFrame() :
-            img_exists(false), kpts_exists(false), desc_exists(false) {}
+            k_exists(false), 
+            img_exists(false), 
+            kpts_exists(false), 
+            desc_exists(false) {}
+
+        CameraFrame(const cv::Mat &img) :
+            k_exists(false),
+            img_exists(false), 
+            kpts_exists(false), 
+            desc_exists(false) {
+                this->pushImage(img);
+            }
 
         /* setters */
         // push image into this frame
@@ -138,9 +149,9 @@ namespace tapl
     };
 
     /**
-     * @brief represents the available sensor information at the same time instance
+     * @brief represents a pair of camera frames and their properties
      */
-    struct DataFrame {
+    struct CameraPairs {
     private:
         bool kpts_matches_exists;           /**< flag to specify if keypoints matches have been computed */
         bool f_exists;                      /**< flag to specify if fundamental matrix has been computed */
@@ -154,16 +165,28 @@ namespace tapl
         cv::Mat triangulatedPts;            /**< triangulated 3D points corresponding to the tracked keypoints */
 
     public:
-        /**< cunstructor */
-        DataFrame() :
+        /**< cunstructors */
+        CameraPairs() :
             kpts_matches_exists(false), 
             f_exists(false), 
             e_exists(false), 
             pose_exists(false), 
-            triangulated_pts_exists(false) {}
+            triangulated_pts_exists(false),
+            first(new CameraFrame),
+            second(new CameraFrame) {}
+        
+        CameraPairs(const cv::Mat &img1, const cv::Mat &img2) :
+            kpts_matches_exists(false), 
+            f_exists(false), 
+            e_exists(false), 
+            pose_exists(false), 
+            triangulated_pts_exists(false) {
+                *first = CameraFrame(img1);
+                *second = CameraFrame(img2);
+            }
 
-        CameraFrame cameraFrame;            /**< Image frame */
-        CameraFrame * otherCameraFrame;     /**< Other image frame used for computing F, E, etc. */
+        CameraFrame * first;                /**< first camera frame */
+        CameraFrame * second;               /**< first camera frame used for computing F, E, etc. */
 
         /* setters */
         // push keypoints matches

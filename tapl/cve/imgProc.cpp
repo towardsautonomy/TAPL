@@ -53,13 +53,10 @@ tapl::ResultCode tapl::cve::detectKeypoints( const cv::Mat &img,
         cv::convertScaleAbs(dst_norm, dst_norm_scaled);
 
         double maxOverlap = 0.0; // max. permissible overlap between two features in %, used during non-maxima suppression
-        for (size_t j = 0; j < dst_norm.rows; j++)
-        {
-            for (size_t i = 0; i < dst_norm.cols; i++)
-            {
+        for (size_t j = 0; j < dst_norm.rows; j++) {
+            for (size_t i = 0; i < dst_norm.cols; i++) {
                 int response = (int)dst_norm.at<float>(j, i);
-                if (response > minResponse)
-                { // only store points above a threshold
+                if (response > minResponse) { // only store points above a threshold
 
                     cv::KeyPoint newKeyPoint;
                     newKeyPoint.pt = cv::Point2f(i, j);
@@ -68,21 +65,18 @@ tapl::ResultCode tapl::cve::detectKeypoints( const cv::Mat &img,
 
                     // perform non-maximum suppression (NMS) in local neighbourhood around new key point
                     bool bOverlap = false;
-                    for (auto it = keypoints.begin(); it != keypoints.end(); ++it)
-                    {
+                    for (auto it = keypoints.begin(); it != keypoints.end(); ++it) {
                         double kptOverlap = cv::KeyPoint::overlap(newKeyPoint, *it);
-                        if (kptOverlap > maxOverlap)
-                        {
+                        if (kptOverlap > maxOverlap) {
                             bOverlap = true;
-                            if (newKeyPoint.response > (*it).response)
-                            {                      // if overlap is >t AND response is higher for new kpt
+                            // if overlap is >t AND response is higher for new kpt
+                            if (newKeyPoint.response > (*it).response) { 
                                 *it = newKeyPoint; // replace old key point with new one
                                 break;             // quit loop over keypoints
                             }
                         }
                     }
-                    if (!bOverlap)
-                    {                                     // only add new key point if no overlap has been found in previous NMS
+                    if (!bOverlap) { // only add new key point if no overlap has been found in previous NMS
                         keypoints.push_back(newKeyPoint); // store new keypoint in dynamic list
                     }
                 }
@@ -135,8 +129,7 @@ tapl::ResultCode tapl::cve::extractDescriptors( const cv::Mat &img,
                                                 std::string descriptorType ) {
     // select appropriate descriptor
     cv::Ptr<cv::DescriptorExtractor> extractor;
-    if (descriptorType.compare("BRISK") == 0)
-    {
+    if (descriptorType.compare("BRISK") == 0) {
 
         int threshold = 30;        // FAST/AGAST detection threshold score.
         int octaves = 3;           // detection octaves (use 0 to do single scale)
@@ -144,24 +137,19 @@ tapl::ResultCode tapl::cve::extractDescriptors( const cv::Mat &img,
 
         extractor = cv::BRISK::create(threshold, octaves, patternScale);
     } 
-    else if (descriptorType.compare("ORB") == 0)
-    {
+    else if (descriptorType.compare("ORB") == 0) {
         extractor = cv::ORB::create();
     }
-    else if (descriptorType.compare("BRIEF") == 0)
-    {
+    else if (descriptorType.compare("BRIEF") == 0) {
         extractor = cv::xfeatures2d::BriefDescriptorExtractor::create();
     }
-    else if (descriptorType.compare("FREAK") == 0)
-    {
+    else if (descriptorType.compare("FREAK") == 0) {
         extractor = cv::xfeatures2d::FREAK::create();
     }
-    else if (descriptorType.compare("AKAZE") == 0)
-    {
+    else if (descriptorType.compare("AKAZE") == 0) {
         extractor = cv::AKAZE::create();
     }
-    else
-    {
+    else {
         // Use BRISK as the default descriptor
         int threshold = 30;        // FAST/AGAST detection threshold score.
         int octaves = 3;           // detection octaves (use 0 to do single scale)
@@ -196,15 +184,12 @@ tapl::ResultCode tapl::cve::matchDescriptors( std::vector<cv::KeyPoint> &kPtsSou
     descSource.copyTo(descSrcCopy);
     descRef.copyTo(descRefCopy);
 
-    if (matcherType.compare("MAT_BF") == 0)
-    {
+    if (matcherType.compare("MAT_BF") == 0) {
         int norm = normType.compare("NORM_HAMMING") == 0 ? cv::NORM_HAMMING : cv::NORM_L2;
         matcher = cv::BFMatcher::create(norm, crossCheck);
     }
-    else if (matcherType.compare("MAT_FLANN") == 0)
-    {
-        if (descSrcCopy.type() != CV_32F)
-        { // OpenCV bug workaround : convert binary descriptors to floating point due to a bug in current OpenCV implementation
+    else if (matcherType.compare("MAT_FLANN") == 0) {
+        if (descSrcCopy.type() != CV_32F) { // OpenCV bug workaround : convert binary descriptors to floating point due to a bug in current OpenCV implementation
             descSrcCopy.convertTo(descSrcCopy, CV_32F);
             descRefCopy.convertTo(descRefCopy, CV_32F);
         }
@@ -213,30 +198,25 @@ tapl::ResultCode tapl::cve::matchDescriptors( std::vector<cv::KeyPoint> &kPtsSou
     }
 
     // perform matching task
-    if (selectorType.compare("SEL_NN") == 0)
-    { // nearest neighbor (best match)
+    if (selectorType.compare("SEL_NN") == 0) { // nearest neighbor (best match)
 
         matcher->match(descSrcCopy, descRefCopy, matches); // Finds the best match for each descriptor in desc1
     }
-    else if (selectorType.compare("SEL_KNN") == 0)
-    { 
+    else if (selectorType.compare("SEL_KNN") == 0) { 
         std::vector<std::vector<cv::DMatch>> knn_matches;
         matcher->knnMatch(descSrcCopy, descRefCopy, knn_matches, 2); // finds the 2 best matches
 
         // filter matches using descriptor distance ratio test
         double minDescDistRatio = 0.8;
-        for (auto it = knn_matches.begin(); it != knn_matches.end(); ++it)
-        {
+        for (auto it = knn_matches.begin(); it != knn_matches.end(); ++it) {
 
-            if ((*it)[0].distance < minDescDistRatio * (*it)[1].distance)
-            {
+            if ((*it)[0].distance < minDescDistRatio * (*it)[1].distance) {
                 matches.push_back((*it)[0]);
             }
         }
 
     }
-    else
-    {
+    else {
         // use nearest-neighbor method as default
         matcher->match(descSrcCopy, descRefCopy, matches); // Finds the best match for each descriptor in desc1
     }
@@ -246,17 +226,16 @@ tapl::ResultCode tapl::cve::matchDescriptors( std::vector<cv::KeyPoint> &kPtsSou
 }
                                 
 /**
- *  Detect and Match Keypoints; Store the result back into tapl::DataFrame 
+ *  Detect and Match Keypoints; Store the result back into tapl::CameraPairs properties 
  */
-tapl::ResultCode tapl::cve::detectAndMatchKpts( tapl::DataFrame &dframe1, 
-                                                tapl::DataFrame &dframe2 ) {
+tapl::ResultCode tapl::cve::detectAndMatchKpts( tapl::CameraPairs &camPairs ) {
     // get images
     cv::Mat img1, img2;
-    if(dframe1.cameraFrame.getImage(img1) == tapl::FAILURE) {
+    if (camPairs.first->getImage(img1) == tapl::FAILURE) {
         TLOG_ERROR << "could not retrieve image";
         return tapl::FAILURE;
     }
-    if(dframe2.cameraFrame.getImage(img2) == tapl::FAILURE) {
+    if (camPairs.second->getImage(img2) == tapl::FAILURE) {
         TLOG_ERROR << "could not retrieve image";
         return tapl::FAILURE;
     }
@@ -265,15 +244,15 @@ tapl::ResultCode tapl::cve::detectAndMatchKpts( tapl::DataFrame &dframe1,
     std::vector<cv::KeyPoint> keypoints1, keypoints2;    // create empty feature list for current image
         cv::Mat descriptors1, descriptors2;         // create empty feature descriptor list for current image
     
-    if((tapl::cve::detectKeypoints(img1, keypoints1) == tapl::SUCCESS) &&
-       (tapl::cve::detectKeypoints(img2, keypoints2) == tapl::SUCCESS) ) {
+    if ((tapl::cve::detectKeypoints(img1, keypoints1) == tapl::SUCCESS) &&
+        (tapl::cve::detectKeypoints(img2, keypoints2) == tapl::SUCCESS) ) {
         
         /* Extract Keypoint Descriptors */
-        if((tapl::cve::extractDescriptors(img1, keypoints1, descriptors1) == tapl::SUCCESS) &&
-        (tapl::cve::extractDescriptors(img2, keypoints2, descriptors2) == tapl::SUCCESS) ) {
+        if ((tapl::cve::extractDescriptors(img1, keypoints1, descriptors1) == tapl::SUCCESS) &&
+           (tapl::cve::extractDescriptors(img2, keypoints2, descriptors2) == tapl::SUCCESS) ) {
             // push descriptors into the frame
-            dframe1.cameraFrame.pushDescriptors(descriptors1);
-            dframe2.cameraFrame.pushDescriptors(descriptors2);
+            camPairs.first->pushDescriptors(descriptors1);
+            camPairs.second->pushDescriptors(descriptors2);
         }
         else {
             TLOG_ERROR << "Could not perform descriptors extraction";
@@ -281,8 +260,8 @@ tapl::ResultCode tapl::cve::detectAndMatchKpts( tapl::DataFrame &dframe1,
         }   
            
         // push keypoints into the frame
-        dframe1.cameraFrame.pushKeypoints(keypoints1);
-        dframe2.cameraFrame.pushKeypoints(keypoints2);
+        camPairs.first->pushKeypoints(keypoints1);
+        camPairs.second->pushKeypoints(keypoints2);
     }
     else {
         TLOG_ERROR << "Could not perform keypoint detection";
@@ -291,10 +270,9 @@ tapl::ResultCode tapl::cve::detectAndMatchKpts( tapl::DataFrame &dframe1,
 
     /* Perform Keypoints Matching */
     std::vector<cv::DMatch> matches;
-    if(tapl::cve::matchDescriptors(keypoints1, keypoints2, descriptors1, descriptors2, matches) == tapl::SUCCESS) {
+    if (tapl::cve::matchDescriptors(keypoints1, keypoints2, descriptors1, descriptors2, matches) == tapl::SUCCESS) {
         // store matches in current data frame
-        dframe1.pushKptsMatches(matches);
-        dframe1.otherCameraFrame = &dframe2.cameraFrame;
+        camPairs.pushKptsMatches(matches);
     }
     else {
         TLOG_ERROR << "Could not perform descriptors matching";
@@ -308,9 +286,8 @@ tapl::ResultCode tapl::cve::detectAndMatchKpts( tapl::DataFrame &dframe1,
 /**
  * This function computes Fundamental Matrix given two image frames
  */
-tapl::ResultCode tapl::cve::computeFundamentalMatrix( tapl::DataFrame &dframe1, 
-                                                      tapl::DataFrame &dframe2 ) {
-    if(tapl::cve::detectAndMatchKpts(dframe1, dframe2) == tapl::SUCCESS) {
+tapl::ResultCode tapl::cve::computeFundamentalMatrix( tapl::CameraPairs &camPairs ) {
+    if (tapl::cve::detectAndMatchKpts(camPairs) == tapl::SUCCESS) {
         /* Find Fundamental Matrix */
         // store matched keypoints as type Point2f
         std::vector<cv::Point2f> matched_points1;
@@ -319,22 +296,22 @@ tapl::ResultCode tapl::cve::computeFundamentalMatrix( tapl::DataFrame &dframe1,
         std::vector<cv::KeyPoint> kpts2;
 
         // retrieve keypoints
-        if((dframe1.cameraFrame.getKeypoints(kpts1) != tapl::SUCCESS) ||
-            (dframe2.cameraFrame.getKeypoints(kpts2) != tapl::SUCCESS) ) {
+        if ((camPairs.first->getKeypoints(kpts1) != tapl::SUCCESS) ||
+            (camPairs.second->getKeypoints(kpts2) != tapl::SUCCESS) ) {
                 TLOG_ERROR << "could not retrieve keypoints";
                 return tapl::FAILURE;
         }
 
         // retrieve keypoint matches
         std::vector<cv::DMatch> kptsMatches;
-        if(dframe1.getKptsMatches(kptsMatches) == tapl::SUCCESS) {
+        if (camPairs.getKptsMatches(kptsMatches) == tapl::SUCCESS) {
             for (auto matches: kptsMatches) {
                 matched_points1.push_back(kpts1[matches.queryIdx].pt);
                 matched_points2.push_back(kpts2[matches.trainIdx].pt);
             }
             cv::Mat F = cv::findFundamentalMat(matched_points1, matched_points2, cv::FM_RANSAC, 3, 0.99);
             // store the fundamental matrix in current data frame
-            dframe1.pushFundamentalMatrix(F);
+            camPairs.pushFundamentalMatrix(F);
         }
     }
     else {
@@ -349,9 +326,9 @@ tapl::ResultCode tapl::cve::computeFundamentalMatrix( tapl::DataFrame &dframe1,
 /**
  * This function computes Essential Matrix given two image frames
  */
-tapl::ResultCode tapl::cve::computeEssentialMatrix( tapl::DataFrame &dframe1, 
-                                                    tapl::DataFrame &dframe2 ) {
-    if(tapl::cve::detectAndMatchKpts(dframe1, dframe2) == tapl::SUCCESS) {
+tapl::ResultCode tapl::cve::computeEssentialMatrix( tapl::CameraPairs &camPairs ) {
+
+    if (tapl::cve::detectAndMatchKpts(camPairs) == tapl::SUCCESS) {
         /* Find Fundamental Matrix */
         // store matched keypoints as type Point2f
         std::vector<cv::Point2f> matched_points1;
@@ -360,29 +337,29 @@ tapl::ResultCode tapl::cve::computeEssentialMatrix( tapl::DataFrame &dframe1,
         std::vector<cv::KeyPoint> kpts2;
 
         // retrieve keypoints
-        if((dframe1.cameraFrame.getKeypoints(kpts1) != tapl::SUCCESS) ||
-            (dframe2.cameraFrame.getKeypoints(kpts2) != tapl::SUCCESS)   ) {
+        if ((camPairs.first->getKeypoints(kpts1) != tapl::SUCCESS) ||
+            (camPairs.second->getKeypoints(kpts2) != tapl::SUCCESS)   ) {
                 TLOG_ERROR << "could not retrieve keypoints";
                 return tapl::FAILURE;
         }
 
         // retrieve intrinsic matrix
         cv::Mat camera_matrix;
-        if(dframe1.cameraFrame.getIntrinsicMatrix(camera_matrix) != tapl::SUCCESS) {
+        if (camPairs.first->getIntrinsicMatrix(camera_matrix) != tapl::SUCCESS) {
                 TLOG_ERROR << "could not retrieve intrinsic matrix";
                 return tapl::FAILURE;
         }
 
         // retrieve keypoint matches
         std::vector<cv::DMatch> kptsMatches;
-        if(dframe1.getKptsMatches(kptsMatches) == tapl::SUCCESS) {
+        if (camPairs.getKptsMatches(kptsMatches) == tapl::SUCCESS) {
             for (auto matches: kptsMatches) {
                 matched_points1.push_back(kpts1[matches.queryIdx].pt);
                 matched_points2.push_back(kpts2[matches.trainIdx].pt);
             }
             cv::Mat E = cv::findEssentialMat(matched_points1, matched_points2, camera_matrix, cv::RANSAC, 0.99, 2.0);
             // store the fundamental matrix in current data frame
-            dframe1.pushEssentialMatrix(E);
+            camPairs.pushEssentialMatrix(E);
         }
     }
     else {
@@ -404,8 +381,8 @@ void rodrigues2euler( cv::Mat &R,
                       float &yaw ) {
     float cosine_for_pitch = sqrt(pow(R.at<float>(0,0), 2) + pow(R.at<float>(1,0), 2));
     bool is_singular = false;
-    if(cosine_for_pitch < 10e-6) is_singular = true;
-    if(is_singular == false) {
+    if (cosine_for_pitch < 10e-6) is_singular = true;
+    if (is_singular == false) {
         roll = atan2(R.at<float>(2,1), R.at<float>(2,2));
         pitch = atan2(-R.at<float>(2,0), cosine_for_pitch);
         yaw = atan2(R.at<float>(1,0), R.at<float>(0,0));
@@ -420,29 +397,29 @@ void rodrigues2euler( cv::Mat &R,
 /**
  * This function computes relative camera pose between set of image frames
  */
-tapl::ResultCode tapl::cve::computeRelativePose( tapl::DataFrame &dframe1, 
-                                                 tapl::DataFrame &dframe2 ) {
-    if(tapl::cve::detectAndMatchKpts(dframe1, dframe2) == tapl::SUCCESS) {
+tapl::ResultCode tapl::cve::computeRelativePose( tapl::CameraPairs &camPairs ) {
+
+    if (tapl::cve::detectAndMatchKpts(camPairs) == tapl::SUCCESS) {
         std::vector<cv::KeyPoint> kpts1;
         std::vector<cv::KeyPoint> kpts2;
 
         // retrieve keypoints
-        if((dframe1.cameraFrame.getKeypoints(kpts1) != tapl::SUCCESS) ||
-            (dframe2.cameraFrame.getKeypoints(kpts2) != tapl::SUCCESS)   ) {
+        if ((camPairs.first->getKeypoints(kpts1) != tapl::SUCCESS) ||
+            (camPairs.second->getKeypoints(kpts2) != tapl::SUCCESS)   ) {
                 TLOG_ERROR << "could not retrieve keypoints";
                 return tapl::FAILURE;
         }
 
         // retrieve intrinsic matrix
         cv::Mat camera_matrix;
-        if(dframe1.cameraFrame.getIntrinsicMatrix(camera_matrix) != tapl::SUCCESS) {
+        if (camPairs.second->getIntrinsicMatrix(camera_matrix) != tapl::SUCCESS) {
                 TLOG_ERROR << "could not retrieve intrinsic matrix";
                 return tapl::FAILURE;
         }
 
         // retrieve keypoint matches
         std::vector<cv::DMatch> kptsMatches;
-        if(dframe1.getKptsMatches(kptsMatches) == tapl::SUCCESS) {
+        if (camPairs.getKptsMatches(kptsMatches) == tapl::SUCCESS) {
             // store matched keypoints as type Point2f
             std::vector<cv::Point2f> currMatch;
             std::vector<cv::Point2f> prevMatch;
@@ -459,11 +436,11 @@ tapl::ResultCode tapl::cve::computeRelativePose( tapl::DataFrame &dframe1,
 
             std::vector<cv::Point2d> triangulation_points1, triangulation_points2;
             for(int i = 0; i < mask.rows; i++) {
-                if(mask.at<unsigned char>(i)){
-                triangulation_points1.push_back 
-                            (cv::Point2d((double)currMatch[i].x,(double)currMatch[i].y));
-                triangulation_points2.push_back 
-                            (cv::Point2d((double)prevMatch[i].x,(double)prevMatch[i].y));
+                if (mask.at<unsigned char>(i)) {
+                    triangulation_points2.push_back 
+                                (cv::Point2d((double)prevMatch[i].x,(double)prevMatch[i].y));
+                    triangulation_points1.push_back 
+                                (cv::Point2d((double)currMatch[i].x,(double)currMatch[i].y));
                 }
             }
             cv::Mat P1 = cv::Mat::eye(3, 4, CV_64FC1);
@@ -472,7 +449,7 @@ tapl::ResultCode tapl::cve::computeRelativePose( tapl::DataFrame &dframe1,
             R.copyTo(P1.rowRange(0,3).colRange(0,3));
             t.copyTo(P1.rowRange(0,3).col(3));
             cv::Mat triangulated_points;
-            if((triangulation_points1.size() > 0) && (triangulation_points2.size() > 0)) {
+            if ((triangulation_points1.size() > 0) && (triangulation_points2.size() > 0)) {
                 cv::triangulatePoints(camera_matrix * P2, camera_matrix * P1, 
                                         triangulation_points1, triangulation_points2,
                                         triangulated_points);
@@ -481,7 +458,7 @@ tapl::ResultCode tapl::cve::computeRelativePose( tapl::DataFrame &dframe1,
             /* compute pose */
             tapl::Pose6dof pose;
             pose.R = Rinv;
-            pose.t = t;
+            pose.t = -t;
             pose.R.copyTo(pose.P(cv::Rect(0, 0, 3, 3)));
             pose.t.copyTo(pose.P(cv::Rect(3, 0, 1, 3)));
 
@@ -494,14 +471,15 @@ tapl::ResultCode tapl::cve::computeRelativePose( tapl::DataFrame &dframe1,
             euler.at<float>(0,2) = yaw;
             pose.euler = euler;
 
-            dframe1.pushPose(pose);
-            dframe1.pushTriangulatedPts(triangulated_points);
+            camPairs.pushPose(pose);
+            camPairs.pushTriangulatedPts(triangulated_points);
         }
 
         // return success
         return tapl::SUCCESS;
     }
     else {
+        TLOG_ERROR << "could not detect and match keypoints";
         // return failure
         return tapl::FAILURE;
     }
@@ -513,7 +491,7 @@ tapl::ResultCode tapl::cve::computeRelativePose( tapl::DataFrame &dframe1,
 tapl::ResultCode tapl::cve::stitchPanaromic( const std::vector<cv::Mat> &imgs, 
                                              cv::Mat &panoramic_img ) {
     // sanity check 
-    if(imgs.size() < 2) {
+    if (imgs.size() < 2) {
         TLOG_ERROR << "Number of images must be 2 or more";
         return tapl::FAILURE;
     }

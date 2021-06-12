@@ -76,53 +76,53 @@ namespace tapl {
          * @brief This function detects keypoints in two image frames
          *          and perform keypoints matching.
          *
-         * @param[in,out] dframe1 first data frame - query/source/current frame
-         * @param[in,out] dframe2 second data frame - train/reference/previous frame
+         * @param[in,out] camPairs camera frames pair with their properties 
+         *                              - first: query/source/current frame
+         *                              - second: train/reference/previous frame
          * 
          * @return tapl::SUCCESS if success
          * @return tapl::FAILURE if failure 
          */
-        tapl::ResultCode detectAndMatchKpts( tapl::DataFrame &dframe1, 
-                                             tapl::DataFrame &dframe2 );
+        tapl::ResultCode detectAndMatchKpts( tapl::CameraPairs &camPairs );
 
         /** 
          * @brief This function retrieves fundamental matrix between two images
          *          contained within their data frame structure
          *
-         * @param[in,out] dframe1 first data frame - query/source/current frame
-         * @param[in,out] dframe1 second data frame - train/reference/previous frame
+         * @param[in,out] camPairs camera frames pair with their properties 
+         *                              - first: query/source/current frame
+         *                              - second: train/reference/previous frame
          * 
          * @return tapl::SUCCESS if success
          * @return tapl::FAILURE if failure  
          */
-        tapl::ResultCode computeFundamentalMatrix( tapl::DataFrame &dframe1, 
-                                                   tapl::DataFrame &dframe2 );
+        tapl::ResultCode computeFundamentalMatrix( tapl::CameraPairs &camPairs );
 
         /** 
          * @brief This function retrieves essential matrix between two images
          *          contained within their data frame structure
          *
-         * @param[in,out] dframe1 first data frame - query/source/current frame
-         * @param[in,out] dframe1 second data frame - train/reference/previous frame
+         * @param[in,out] camPairs camera frames pair with their properties 
+         *                              - first: query/source/current frame
+         *                              - second: train/reference/previous frame
          * 
          * @return tapl::SUCCESS if success
          * @return tapl::FAILURE if failure 
          */
-        tapl::ResultCode computeEssentialMatrix( tapl::DataFrame &dframe1, 
-                                                 tapl::DataFrame &dframe2 );
+        tapl::ResultCode computeEssentialMatrix( tapl::CameraPairs &camPairs );
 
         /** 
          * @brief This function is used to compute the relative camera pose. Pose is computed
          *          for second image contained within dframe2 relative to dframe1.
          *
-         * @param[in,out] dframe1 first data frame - query/source/current frame
-         * @param[in,out] dframe1 second data frame - train/reference/previous frame
+         * @param[in,out] camPairs camera frames pair with their properties 
+         *                              - first: query/source/current frame
+         *                              - second: train/reference/previous frame
          * 
          * @return tapl::SUCCESS if success
          * @return tapl::FAILURE if failure 
          */
-        tapl::ResultCode computeRelativePose( tapl::DataFrame &dframe1, 
-                                              tapl::DataFrame &dframe2 );
+        tapl::ResultCode computeRelativePose( tapl::CameraPairs &camPairs );
 
         /** 
          * @brief This function is used to stitch multiple images as a panaromic image.
