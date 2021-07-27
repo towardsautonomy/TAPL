@@ -22,12 +22,67 @@ namespace tapl
     } ResultCode;
 
     /**
+     * @brief 2D Point
+     */
+    struct Point2d {
+        double x;                           /**< x-coordinate */
+        double y;                           /**< y-coordinate */
+
+        /**< constructors */
+        Point2d() {}
+        Point2d(const double x, const double y) :
+            x(x), y(y) {}
+
+        /**< print operator */
+        friend std::ostream& operator<<(std::ostream& os, const Point2d &p) {
+            os << "[" << p.x << ", " << p.y << "]" << std::endl;
+            return os;
+        }
+    };
+
+    /**
      * @brief 3D Point
      */
     struct Point3d {
         double x;                           /**< x-coordinate */
         double y;                           /**< y-coordinate */
         double z;                           /**< z-coordinate */
+
+        /**< constructors */
+        Point3d() {}
+        Point3d(const double x, const double y, const double z) :
+            x(x), y(y), z(z) {}
+
+        /**< print operator */
+        friend std::ostream& operator<<(std::ostream& os, const Point3d &p) {
+            os << "[" << p.x << ", " << p.y << ", " << p.z << "]" << std::endl;
+            return os;
+        }
+    };
+
+    /**
+     * @brief 3D Color Point
+     */
+    struct Point3dColor {
+        double x;                           /**< x-coordinate */
+        double y;                           /**< y-coordinate */
+        double z;                           /**< z-coordinate */
+        uint8_t r;                          /**< red pixel value */
+        uint8_t g;                          /**< green pixel value */
+        uint8_t b;                          /**< blue pixel value */
+
+        /**< constructors */
+        Point3dColor() {}
+        Point3dColor(const double x, const double y, const double z,
+                     const uint8_t r, const uint8_t g, const uint8_t b) :
+                x(x), y(y), z(z), r(r), g(g), b(b) {}
+
+        /**< print operator */
+        friend std::ostream& operator<<(std::ostream& os, const Point3dColor &p) {
+            os << "xyz:[" << p.x << ", " << p.y << ", " << p.z << "]" <<
+                  ", rgb:[" << std::to_string(p.r) << ", " << std::to_string(p.g) << ", " << std::to_string(p.b) << "]" << std::endl;
+            return os;
+        }
     };
 
     /**
@@ -46,19 +101,51 @@ namespace tapl
      * @brief 6-DOF Camera Pose
      */
     struct Pose6dof {
+    public:
         cv::Mat R;                          /**< 3x3 rotation matrix */
         cv::Mat t;                          /**< 1x3 translation vector */
-        cv::Mat P;                          /**< 4x4 projection matrix which combines 
-                                                both rotation and translation matrix */
+        cv::Mat T;                          /**< 4x4 projection matrix which combines 
+                                                 both rotation and translation matrix */
         cv::Mat euler;                      /**< roll, pitch, yaw in radians */
 
-         // cunstructor
-        Pose6dof() {
+        /**< constructor */
+        Pose6dof() {}
+        /**< constructor */
+        Pose6dof(const cv::Mat &pose) : T(pose) {
+            // define
             R = cv::Mat::eye(3, 3, CV_64FC1);
             t = cv::Mat::zeros(3, 1, CV_64FC1);
-            P = cv::Mat::eye(4, 4, CV_64FC1);
             euler = cv::Mat::zeros(1, 3, CV_64FC1);
+            // extract rotation and translation
+            pose(cv::Rect(0, 0, 3, 3)).copyTo(this->R);
+            pose(cv::Rect(3, 0, 1, 3)).copyTo(this->t);
+            // // compute euler angles
+            // float roll, pitch, yaw;
+            // rodrigues2euler(R, roll, pitch, yaw);
+            // this->euler.at<float>(0,0) = roll;
+            // this->euler.at<float>(0,1) = pitch;
+            // this->euler.at<float>(0,2) = yaw;
         }
+
+        // /**< Rodrigues to Euler angle conversion */
+        // void rodrigues2euler( cv::Mat &R, 
+        //                       float &roll, 
+        //                       float &pitch, 
+        //                       float &yaw ) {
+        //     float cosine_for_pitch = sqrt(pow(R.at<float>(0,0), 2) + pow(R.at<float>(1,0), 2));
+        //     bool is_singular = false;
+        //     if (cosine_for_pitch < 10e-6) is_singular = true;
+        //     if (is_singular == false) {
+        //         roll = atan2(R.at<float>(2,1), R.at<float>(2,2));
+        //         pitch = atan2(-R.at<float>(2,0), cosine_for_pitch);
+        //         yaw = atan2(R.at<float>(1,0), R.at<float>(0,0));
+        //     }
+        //     else {
+        //         roll = 0;
+        //         pitch = atan2(-R.at<float>(2,0), cosine_for_pitch);
+        //         yaw = atan2(-R.at<float>(1,2), R.at<float>(1,1));
+        //     }
+        // }
     };
 
     /**
@@ -76,7 +163,7 @@ namespace tapl
         cv::Mat descriptors;                /**< keypoint descriptors */
 
     public:
-        /* cunstructors */
+        /**< constructors */
         CameraFrame() :
             k_exists(false), 
             img_exists(false), 
@@ -91,7 +178,7 @@ namespace tapl
                 this->pushImage(img);
             }
 
-        /* setters */
+        /**< setters */
         // push image into this frame
         void pushImage(const cv::Mat &img) { img_exists = true; this->img = img; }
         // push camera intrinsic matrix into this frame
@@ -101,7 +188,7 @@ namespace tapl
         // push descriptors into this frame
         void pushDescriptors(const cv::Mat &descriptors) { desc_exists = true; this->descriptors = descriptors; }
 
-        /* getters */
+        /**< getters */
         // get image
         ResultCode getImage(cv::Mat &img) const { 
             if(img_exists) {
@@ -157,12 +244,14 @@ namespace tapl
         bool f_exists;                      /**< flag to specify if fundamental matrix has been computed */
         bool e_exists;                      /**< flag to specify if essential matrix has been computed */
         bool pose_exists;                   /**< flag to specify if camera relative pose has been computed */
+        bool tracked_kpts_exists;           /**< flag to specify if triangulated 3D points has been computed */
         bool triangulated_pts_exists;       /**< flag to specify if triangulated 3D points has been computed */
         std::vector<cv::DMatch> kptMatches; /**< keypoint matches between previous frame and current/this frame */
         cv::Mat F;                          /**< fundamental matrix for keypoint correspondences between previous and current/this frame */
         cv::Mat E;                          /**< essential matrix for keypoint correspondences between previous and current/this frame */
         Pose6dof pose;                      /**< pose */
-        cv::Mat triangulatedPts;            /**< triangulated 3D points corresponding to the tracked keypoints */
+        std::vector<tapl::Point2d> trackedKpts;           /**< tracked 2D keypoints used for triangulation */
+        std::vector<tapl::Point3dColor> triangulatedPts;  /**< triangulated 3D points in the first camera's coordinate frame */
 
     public:
         /**< cunstructors */
@@ -171,6 +260,7 @@ namespace tapl
             f_exists(false), 
             e_exists(false), 
             pose_exists(false), 
+            tracked_kpts_exists(false),
             triangulated_pts_exists(false),
             first(new CameraFrame),
             second(new CameraFrame) {}
@@ -180,15 +270,29 @@ namespace tapl
             f_exists(false), 
             e_exists(false), 
             pose_exists(false), 
+            tracked_kpts_exists(false),
+            triangulated_pts_exists(false),
+            first(new CameraFrame(img1)),
+            second(new CameraFrame(img2)) {}
+
+        CameraPairs(const cv::Mat &img1, const cv::Mat &img2, const cv::Mat &K) :
+            kpts_matches_exists(false), 
+            f_exists(false), 
+            e_exists(false), 
+            pose_exists(false), 
+            tracked_kpts_exists(false),
             triangulated_pts_exists(false) {
-                *first = CameraFrame(img1);
-                *second = CameraFrame(img2);
+                first = new CameraFrame(img1);
+                first->pushIntrinsicMatrix(K);
+                second = new CameraFrame(img2);
+                second->pushIntrinsicMatrix(K);
             }
 
+        /**< camera frames */
         CameraFrame * first;                /**< first camera frame */
-        CameraFrame * second;               /**< first camera frame used for computing F, E, etc. */
+        CameraFrame * second;               /**< second camera frame used for computing F, E, relative pose, etc. */
 
-        /* setters */
+        /**< setters */
         // push keypoints matches
         void pushKptsMatches(const std::vector<cv::DMatch> &kptMatches) { kpts_matches_exists = true; this->kptMatches = kptMatches; }
         // push fundamental matrix
@@ -197,10 +301,18 @@ namespace tapl
         void pushEssentialMatrix(const cv::Mat &E) { e_exists = true; this->E = E; }
         // push pose
         void pushPose(const Pose6dof &pose) { pose_exists = true; this->pose = pose; }
+        // push tracked 2d keypoints
+        void pushTrackedKpts(std::vector<tapl::Point2d> &pts) { 
+            tracked_kpts_exists = true; 
+            for (auto &point : pts) this->trackedKpts.push_back(point);
+        }
         // push triangulated points
-        void pushTriangulatedPts(const cv::Mat &pts) { triangulated_pts_exists = true; this->triangulatedPts = pts; }
+        void pushTriangulatedPts(std::vector<tapl::Point3dColor> &pts) { 
+            triangulated_pts_exists = true; 
+            for (auto &point : pts) this->triangulatedPts.push_back(point);
+        }
 
-        /* getters */
+        /**< getters */
         // get keypoints matches
         ResultCode getKptsMatches(std::vector<cv::DMatch> &kptMatches) const {
             if(kpts_matches_exists) {
@@ -245,8 +357,19 @@ namespace tapl
                 return FAILURE;
             }
         }
+        // get tracked 2D keypoints
+        ResultCode getTrackedKpts(std::vector<tapl::Point2d> &pts) const {
+            if(tracked_kpts_exists) {
+                pts = this->trackedKpts;
+                return SUCCESS;
+            }
+            else {
+                TLOG_ERROR << "Tracked keypoints not found";
+                return FAILURE;
+            }
+        }
         // get triangulated points
-        ResultCode getTriangulatedPoints(cv::Mat &pts) const {
+        ResultCode getTriangulatedPoints(std::vector<tapl::Point3dColor> &pts) const {
             if(triangulated_pts_exists) {
                 pts = this->triangulatedPts;
                 return SUCCESS;

@@ -8,6 +8,81 @@
 #include "imgProc.hpp"
 
 /*
+ * draw 2D keypoints on an image
+ */
+cv::Mat tapl::cve::drawKeypoints(
+                        const cv::Mat &image, 
+                        const std::vector<tapl::Point2d> &kpts2d,
+                        cv::Scalar color) {
+    cv::Mat img_copy;
+    image.copyTo(img_copy);
+    for(auto& kp: kpts2d) {
+        cv::Point2f pt2d = cv::Point2f(kp.x, kp.y);
+        cv::circle(img_copy, pt2d, 4, CV_RGB(255,255,255), -1);
+        cv::circle(img_copy, pt2d, 3, color, -1);
+    }
+    return img_copy;
+}
+
+/*
+ * draw 3D keypoints on an image by projecting it to the 2D plane
+ */
+cv::Mat tapl::cve::drawKeypoints3D(
+                        const cv::Mat &image, 
+                        const std::vector<tapl::Point3d> &kpts3d,
+                        const cv::Mat &K,
+                        cv::Scalar color) {
+    cv::Mat img_copy;
+    image.copyTo(img_copy);
+    for(auto& kp: kpts3d) 
+    {
+        cv::Mat pt3d = cv::Mat::zeros(3,1, CV_64FC1);
+        pt3d.at<double>(0,0) = kp.x;
+        pt3d.at<double>(1,0) = kp.y;
+        pt3d.at<double>(2,0) = kp.z;
+        K.convertTo(K, CV_64FC1);
+        cv::Mat pt2d_homogeneous = K * pt3d;
+        // std::cout << pt2d_homogeneous << std::endl;
+        cv::Point2f pt2d;
+        pt2d.x = pt2d_homogeneous.at<double>(0,0) / pt2d_homogeneous.at<double>(2,0);
+        pt2d.y = pt2d_homogeneous.at<double>(1,0) / pt2d_homogeneous.at<double>(2,0);
+
+        cv::circle(img_copy, pt2d, 4, CV_RGB(255,255,255), -1);
+        cv::circle(img_copy, pt2d, 3, color, -1);
+    }
+    return img_copy;
+}
+
+/*
+ * draw 3D keypoints on an image by projecting it to the 2D plane
+ */
+cv::Mat tapl::cve::drawKeypoints3D(
+                        const cv::Mat &image, 
+                        const std::vector<tapl::Point3dColor> &kpts3d,
+                        const cv::Mat &K,
+                        cv::Scalar color) {
+    cv::Mat img_copy;
+    image.copyTo(img_copy);
+    for(auto& kp: kpts3d) 
+    {
+        cv::Mat pt3d = cv::Mat::zeros(3,1, CV_64FC1);
+        pt3d.at<double>(0,0) = kp.x;
+        pt3d.at<double>(1,0) = kp.y;
+        pt3d.at<double>(2,0) = kp.z;
+        K.convertTo(K, CV_64FC1);
+        cv::Mat pt2d_homogeneous = K * pt3d;
+        // std::cout << pt2d_homogeneous << std::endl;
+        cv::Point2f pt2d;
+        pt2d.x = pt2d_homogeneous.at<double>(0,0) / pt2d_homogeneous.at<double>(2,0);
+        pt2d.y = pt2d_homogeneous.at<double>(1,0) / pt2d_homogeneous.at<double>(2,0);
+
+        cv::circle(img_copy, pt2d, 4, CV_RGB(255,255,255), -1);
+        cv::circle(img_copy, pt2d, 3, color, -1);
+    }
+    return img_copy;
+}
+
+/*
  * Detect keypoints
  */
 tapl::ResultCode tapl::cve::detectKeypoints( const cv::Mat &img, 
@@ -92,14 +167,32 @@ tapl::ResultCode tapl::cve::detectKeypoints( const cv::Mat &img,
         detector->detect(img, keypoints);
     }
     else if (detectorType.compare("BRISK") == 0) {
-        int threshold = 30;         // FAST/AGAST detection threshold score.
-        int octaves = 3;            // detection octaves. Use 0 to do single scale.
+        int threshold = 10;         // FAST/AGAST detection threshold score.
+        int octaves = 0;            // detection octaves. Use 0 to do single scale.
         float patternScale = 1.0f;  // apply this scale to the pattern used for sampling the neighbourhood of a keypoint.
         detector = cv::BRISK::create(threshold, octaves, patternScale);
         detector->detect(img, keypoints);
     }
     else if (detectorType.compare("ORB") == 0) {
-        detector = cv::ORB::create();       // using all default values
+        // keypoint detector
+        const int  	nfeatures = 1000;
+        const float scaleFactor = 1.2f;
+        const int  	nlevels = 4;
+        const int  	edgeThreshold = 15;
+        const int  	firstLevel = 0;
+        const int  	WTA_K = 2;
+        const cv::ORB::ScoreType scoreType = cv::ORB::HARRIS_SCORE;
+        const int  	patchSize = 15;
+        const int  	fastThreshold = 15; 
+        cv::Ptr<cv::FeatureDetector> detector = cv::ORB::create(nfeatures,
+                                                                        scaleFactor,
+                                                                        nlevels,
+                                                                        edgeThreshold,
+                                                                        firstLevel,
+                                                                        WTA_K,
+                                                                        scoreType,
+                                                                        patchSize,
+                                                                        fastThreshold);
         detector->detect(img, keypoints);
     }
     else if (detectorType.compare("AKAZE") == 0) {
@@ -131,8 +224,8 @@ tapl::ResultCode tapl::cve::extractDescriptors( const cv::Mat &img,
     cv::Ptr<cv::DescriptorExtractor> extractor;
     if (descriptorType.compare("BRISK") == 0) {
 
-        int threshold = 30;        // FAST/AGAST detection threshold score.
-        int octaves = 3;           // detection octaves (use 0 to do single scale)
+        int threshold = 10;        // FAST/AGAST detection threshold score.
+        int octaves = 0;           // detection octaves (use 0 to do single scale)
         float patternScale = 1.0f; // apply this scale to the pattern used for sampling the neighbourhood of a keypoint.
 
         extractor = cv::BRISK::create(threshold, octaves, patternScale);
@@ -167,9 +260,9 @@ tapl::ResultCode tapl::cve::extractDescriptors( const cv::Mat &img,
 /*
  * Match keypoints descriptors 
  */
-tapl::ResultCode tapl::cve::matchDescriptors( std::vector<cv::KeyPoint> &kPtsSource, 
-                                              std::vector<cv::KeyPoint> &kPtsRef, 
-                                              cv::Mat &descSource, 
+tapl::ResultCode tapl::cve::matchDescriptors( std::vector<cv::KeyPoint> &kPtsQuery, 
+                                              std::vector<cv::KeyPoint> &kPtsTrain, 
+                                              cv::Mat &descQuery, 
                                               cv::Mat &descRef,
                                               std::vector<cv::DMatch> &matches, 
                                               std::string normType, 
@@ -180,18 +273,18 @@ tapl::ResultCode tapl::cve::matchDescriptors( std::vector<cv::KeyPoint> &kPtsSou
     cv::Ptr<cv::DescriptorMatcher> matcher;
 
     // create a copy of the descriptors so that any modification does not effect rest of the pipeline
-    cv::Mat descSrcCopy, descRefCopy;
-    descSource.copyTo(descSrcCopy);
-    descRef.copyTo(descRefCopy);
+    cv::Mat descQryCopy, descTrnCopy;
+    descQuery.copyTo(descQryCopy);
+    descRef.copyTo(descTrnCopy);
 
     if (matcherType.compare("MAT_BF") == 0) {
         int norm = normType.compare("NORM_HAMMING") == 0 ? cv::NORM_HAMMING : cv::NORM_L2;
         matcher = cv::BFMatcher::create(norm, crossCheck);
     }
     else if (matcherType.compare("MAT_FLANN") == 0) {
-        if (descSrcCopy.type() != CV_32F) { // OpenCV bug workaround : convert binary descriptors to floating point due to a bug in current OpenCV implementation
-            descSrcCopy.convertTo(descSrcCopy, CV_32F);
-            descRefCopy.convertTo(descRefCopy, CV_32F);
+        if (descQryCopy.type() != CV_32F) { // OpenCV bug workaround : convert binary descriptors to floating point due to a bug in current OpenCV implementation
+            descQryCopy.convertTo(descQryCopy, CV_32F);
+            descTrnCopy.convertTo(descTrnCopy, CV_32F);
         }
 
         matcher = cv::DescriptorMatcher::create(cv::DescriptorMatcher::FLANNBASED);
@@ -200,11 +293,11 @@ tapl::ResultCode tapl::cve::matchDescriptors( std::vector<cv::KeyPoint> &kPtsSou
     // perform matching task
     if (selectorType.compare("SEL_NN") == 0) { // nearest neighbor (best match)
 
-        matcher->match(descSrcCopy, descRefCopy, matches); // Finds the best match for each descriptor in desc1
+        matcher->match(descQryCopy, descTrnCopy, matches); // Finds the best match for each descriptor in desc1
     }
     else if (selectorType.compare("SEL_KNN") == 0) { 
         std::vector<std::vector<cv::DMatch>> knn_matches;
-        matcher->knnMatch(descSrcCopy, descRefCopy, knn_matches, 2); // finds the 2 best matches
+        matcher->knnMatch(descQryCopy, descTrnCopy, knn_matches, 2); // finds the 2 best matches
 
         // filter matches using descriptor distance ratio test
         double minDescDistRatio = 0.8;
@@ -218,7 +311,7 @@ tapl::ResultCode tapl::cve::matchDescriptors( std::vector<cv::KeyPoint> &kPtsSou
     }
     else {
         // use nearest-neighbor method as default
-        matcher->match(descSrcCopy, descRefCopy, matches); // Finds the best match for each descriptor in desc1
+        matcher->match(descQryCopy, descTrnCopy, matches); // Finds the best match for each descriptor in desc1
     }
 
     // return success
@@ -228,7 +321,9 @@ tapl::ResultCode tapl::cve::matchDescriptors( std::vector<cv::KeyPoint> &kPtsSou
 /**
  *  Detect and Match Keypoints; Store the result back into tapl::CameraPairs properties 
  */
-tapl::ResultCode tapl::cve::detectAndMatchKpts( tapl::CameraPairs &camPairs ) {
+tapl::ResultCode tapl::cve::detectAndMatchKpts( tapl::CameraPairs &camPairs,
+                                                const std::string detectorType,
+                                                const std::string descriptorType ) {
     // get images
     cv::Mat img1, img2;
     if (camPairs.first->getImage(img1) == tapl::FAILURE) {
@@ -242,14 +337,14 @@ tapl::ResultCode tapl::cve::detectAndMatchKpts( tapl::CameraPairs &camPairs ) {
     /* Detect Keypoints */
     // extract 2D keypoints from the images
     std::vector<cv::KeyPoint> keypoints1, keypoints2;    // create empty feature list for current image
-        cv::Mat descriptors1, descriptors2;         // create empty feature descriptor list for current image
+    cv::Mat descriptors1, descriptors2;                 // create empty feature descriptor list for current image
     
-    if ((tapl::cve::detectKeypoints(img1, keypoints1) == tapl::SUCCESS) &&
-        (tapl::cve::detectKeypoints(img2, keypoints2) == tapl::SUCCESS) ) {
+    if ((tapl::cve::detectKeypoints(img1, keypoints1, detectorType) == tapl::SUCCESS) &&
+        (tapl::cve::detectKeypoints(img2, keypoints2, detectorType) == tapl::SUCCESS) ) {
         
         /* Extract Keypoint Descriptors */
-        if ((tapl::cve::extractDescriptors(img1, keypoints1, descriptors1) == tapl::SUCCESS) &&
-           (tapl::cve::extractDescriptors(img2, keypoints2, descriptors2) == tapl::SUCCESS) ) {
+        if ((tapl::cve::extractDescriptors(img1, keypoints1, descriptors1, descriptorType) == tapl::SUCCESS) &&
+           (tapl::cve::extractDescriptors(img2, keypoints2, descriptors2, descriptorType) == tapl::SUCCESS) ) {
             // push descriptors into the frame
             camPairs.first->pushDescriptors(descriptors1);
             camPairs.second->pushDescriptors(descriptors2);
@@ -309,7 +404,7 @@ tapl::ResultCode tapl::cve::computeFundamentalMatrix( tapl::CameraPairs &camPair
                 matched_points1.push_back(kpts1[matches.queryIdx].pt);
                 matched_points2.push_back(kpts2[matches.trainIdx].pt);
             }
-            cv::Mat F = cv::findFundamentalMat(matched_points1, matched_points2, cv::FM_RANSAC, 3, 0.99);
+            cv::Mat F = cv::findFundamentalMat(matched_points1, matched_points2, cv::FM_RANSAC, 1, 0.99);
             // store the fundamental matrix in current data frame
             camPairs.pushFundamentalMatrix(F);
         }
@@ -357,7 +452,7 @@ tapl::ResultCode tapl::cve::computeEssentialMatrix( tapl::CameraPairs &camPairs 
                 matched_points1.push_back(kpts1[matches.queryIdx].pt);
                 matched_points2.push_back(kpts2[matches.trainIdx].pt);
             }
-            cv::Mat E = cv::findEssentialMat(matched_points1, matched_points2, camera_matrix, cv::RANSAC, 0.99, 2.0);
+            cv::Mat E = cv::findEssentialMat(matched_points1, matched_points2, camera_matrix, cv::RANSAC, 0.99, 1.0);
             // store the fundamental matrix in current data frame
             camPairs.pushEssentialMatrix(E);
         }
@@ -369,120 +464,6 @@ tapl::ResultCode tapl::cve::computeEssentialMatrix( tapl::CameraPairs &camPairs 
 
     // return success
     return tapl::SUCCESS;
-}
-
-
-/**
- * Rodrigues to Euler angle conversion
- */
-void rodrigues2euler( cv::Mat &R, 
-                      float &roll, 
-                      float &pitch, 
-                      float &yaw ) {
-    float cosine_for_pitch = sqrt(pow(R.at<float>(0,0), 2) + pow(R.at<float>(1,0), 2));
-    bool is_singular = false;
-    if (cosine_for_pitch < 10e-6) is_singular = true;
-    if (is_singular == false) {
-        roll = atan2(R.at<float>(2,1), R.at<float>(2,2));
-        pitch = atan2(-R.at<float>(2,0), cosine_for_pitch);
-        yaw = atan2(R.at<float>(1,0), R.at<float>(0,0));
-    }
-    else {
-        roll = 0;
-        pitch = atan2(-R.at<float>(2,0), cosine_for_pitch);
-        yaw = atan2(-R.at<float>(1,2), R.at<float>(1,1));
-    }
-}
-
-/**
- * This function computes relative camera pose between set of image frames
- */
-tapl::ResultCode tapl::cve::computeRelativePose( tapl::CameraPairs &camPairs ) {
-
-    if (tapl::cve::detectAndMatchKpts(camPairs) == tapl::SUCCESS) {
-        std::vector<cv::KeyPoint> kpts1;
-        std::vector<cv::KeyPoint> kpts2;
-
-        // retrieve keypoints
-        if ((camPairs.first->getKeypoints(kpts1) != tapl::SUCCESS) ||
-            (camPairs.second->getKeypoints(kpts2) != tapl::SUCCESS)   ) {
-                TLOG_ERROR << "could not retrieve keypoints";
-                return tapl::FAILURE;
-        }
-
-        // retrieve intrinsic matrix
-        cv::Mat camera_matrix;
-        if (camPairs.second->getIntrinsicMatrix(camera_matrix) != tapl::SUCCESS) {
-                TLOG_ERROR << "could not retrieve intrinsic matrix";
-                return tapl::FAILURE;
-        }
-
-        // retrieve keypoint matches
-        std::vector<cv::DMatch> kptsMatches;
-        if (camPairs.getKptsMatches(kptsMatches) == tapl::SUCCESS) {
-            // store matched keypoints as type Point2f
-            std::vector<cv::Point2f> currMatch;
-            std::vector<cv::Point2f> prevMatch;
-            for (auto matches: kptsMatches) {
-                currMatch.push_back(kpts1[matches.queryIdx].pt);
-                prevMatch.push_back(kpts2[matches.trainIdx].pt);
-            }
-
-            cv::Mat mask;
-            cv::Mat essential_matrix = cv::findEssentialMat(currMatch, prevMatch, camera_matrix, cv::RANSAC, 0.99, 2.0, mask);
-
-            cv::Mat R, t;
-            cv::recoverPose(essential_matrix, currMatch, prevMatch, camera_matrix, R, t, 50, mask);
-
-            std::vector<cv::Point2d> triangulation_points1, triangulation_points2;
-            for(int i = 0; i < mask.rows; i++) {
-                if (mask.at<unsigned char>(i)) {
-                    triangulation_points2.push_back 
-                                (cv::Point2d((double)prevMatch[i].x,(double)prevMatch[i].y));
-                    triangulation_points1.push_back 
-                                (cv::Point2d((double)currMatch[i].x,(double)currMatch[i].y));
-                }
-            }
-            cv::Mat P1 = cv::Mat::eye(3, 4, CV_64FC1);
-            cv::Mat P2 = cv::Mat::eye(3, 4, CV_64FC1);
-            cv::Mat Rinv = R.inv();
-            R.copyTo(P1.rowRange(0,3).colRange(0,3));
-            t.copyTo(P1.rowRange(0,3).col(3));
-            cv::Mat triangulated_points;
-            if ((triangulation_points1.size() > 0) && (triangulation_points2.size() > 0)) {
-                cv::triangulatePoints(camera_matrix * P2, camera_matrix * P1, 
-                                        triangulation_points1, triangulation_points2,
-                                        triangulated_points);
-            }
-
-            /* compute pose */
-            tapl::Pose6dof pose;
-            pose.R = Rinv;
-            pose.t = -t;
-            pose.R.copyTo(pose.P(cv::Rect(0, 0, 3, 3)));
-            pose.t.copyTo(pose.P(cv::Rect(3, 0, 1, 3)));
-
-            // convert rodrigues to euler angle
-            float roll, pitch, yaw;
-            rodrigues2euler(R, roll, pitch, yaw);
-            cv::Mat euler(1, 3, CV_32FC1);
-            euler.at<float>(0,0) = roll;
-            euler.at<float>(0,1) = pitch;
-            euler.at<float>(0,2) = yaw;
-            pose.euler = euler;
-
-            camPairs.pushPose(pose);
-            camPairs.pushTriangulatedPts(triangulated_points);
-        }
-
-        // return success
-        return tapl::SUCCESS;
-    }
-    else {
-        TLOG_ERROR << "could not detect and match keypoints";
-        // return failure
-        return tapl::FAILURE;
-    }
 }
 
 /*

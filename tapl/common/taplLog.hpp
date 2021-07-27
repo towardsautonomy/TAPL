@@ -4,7 +4,7 @@
  * @author  Shubham Shrivastava
  */
 
-#include "date.h"
+#include "date.hpp"
 
 #ifndef TAPL_LOG_H_
 #define TAPL_LOG_H_
@@ -82,9 +82,7 @@ public:
         // get time string
         std::string datetimeStr = date::format("%F %T", std::chrono::system_clock::now());
         std::cout << "[" << datetimeStr << "]"           \
-                     "[" << "file:" << fileName << "|" \
-                         << "func:" << funcName << "|" \
-                         << "line:" << lineNum << "] || ";
+                     "[" << fileName << ":" << lineNum << "] | ";
     }
 
     template <class T>

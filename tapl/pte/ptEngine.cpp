@@ -435,13 +435,102 @@ namespace tapl {
 		
 			return clusters;
 		}
+
+		/** 
+         * @brief returns world to camera rotation matrix 
+         * 
+         *   Camera Coordinate System:
+         *       X -> To the right
+         *       Y -> Down
+         *       Z -> Forward - Direction where the camera is pointing
+         *
+         *   World Coordinate System:
+         *       X -> Forward - Direction where the camera is pointing
+         *       Y -> To the left
+         *       Z -> Up
+         * @return rotation matrix
+         */
+        cv::Mat world2CamRotation() {
+            // camera coordinate to world coordinate rotation matrix
+            cv::Mat R = cv::Mat::zeros(3, 3, CV_32F);
+            // Camera rotation
+            float Rx = degreesToRadians(-90);
+            float Ry = degreesToRadians(0);
+            float Rz = degreesToRadians(-90);
+            
+            // Rz
+            cv::Mat R_z = cv::Mat::eye(3, 3, CV_32F);
+            R_z.at<float>(0, 0) = cos(Rz);
+            R_z.at<float>(0, 1) = -sin(Rz);
+            R_z.at<float>(1, 0) = sin(Rz);
+            R_z.at<float>(1, 1) = cos(Rz);
+            // Ry
+            cv::Mat R_y = cv::Mat::eye(3, 3, CV_32F);
+            R_y.at<float>(0, 0) = cos(Ry);
+            R_y.at<float>(0, 2) = sin(Ry);
+            R_y.at<float>(2, 0) = -sin(Ry);
+            R_y.at<float>(2, 2) = cos(Ry);
+            // Rx
+            cv::Mat R_x = cv::Mat::eye(3, 3, CV_32F);
+            R_y.at<float>(1, 1) = cos(Rx);
+            R_y.at<float>(1, 2) = -sin(Rx);
+            R_y.at<float>(2, 1) = sin(Rx);
+            R_y.at<float>(2, 2) = cos(Rx);
+
+                            
+            // Camera Rotation Correction Matrix
+            R = R_z * R_y * R_x;
+            
+			// return rotation matrix
+            return R;
+        }
+
+        /** 
+         * @brief affine transform on a point 
+         * 
+         * Apply affine transforms on point given in world coordinate
+         *
+         *
+         *   Camera Coordinate System:
+         *       X -> To the right
+         *       Y -> Down
+         *       Z -> Forward - Direction where the camera is pointing
+         *
+         *   World Coordinate System:
+         *       X -> Forward - Direction where the camera is pointing
+         *       Y -> To the left
+         *       Z -> Up
+         * 
+         * @param[in] point point in world coordinate
+         * 
+         * @return point in camera coordinate
+         */
+        template <typename PointT>
+        void world2CamCoordinate(PointT &point) {
+            // Camera Rotation Correction Matrix
+            cv::Mat R = world2CamRotation();
+            
+            cv::Mat xyz = cv::Mat(3, 1, CV_32F);
+            xyz.at<float>(0, 0) = point.x;
+            xyz.at<float>(1, 0) = point.y;
+            xyz.at<float>(2, 0) = point.z;
+
+            cv::Mat xyz_w = cv::Mat(3, 1, CV_32F);
+
+            xyz_w = R * xyz;
+            point.x = xyz_w.at<float>(0, 0);
+            point.y = xyz_w.at<float>(1, 0);
+            point.z = xyz_w.at<float>(2, 0);
+        }
 	}
 }
 
 // explicit instantiation to avoid linker error
+template class tapl::pte::Line<tapl::Point3d>;
 template class tapl::pte::Line<pcl::PointXYZ>;
 template class tapl::pte::Line<pcl::PointXYZI>;
 template class tapl::pte::Line<pcl::PointXYZRGB>;
+template class tapl::pte::Plane<tapl::Point3d>;
 template class tapl::pte::Plane<pcl::PointXYZ>;
 template class tapl::pte::Plane<pcl::PointXYZI>;
 template class tapl::pte::Plane<pcl::PointXYZRGB>;

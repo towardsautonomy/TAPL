@@ -42,7 +42,7 @@ namespace tapl {
                         case XY : viewer->setCameraPosition(-distance, -distance, distance, 1, 1, 0); break;
                         case TopDown : viewer->setCameraPosition(0, 0, distance, 1, 0, 1); break;
                         case Side : viewer->setCameraPosition(0, -distance, 0, 0, 0, 1); break;
-                        case FPS : viewer->setCameraPosition(-10, 0, 0, 0, 0, 1);
+                        case FPS : viewer->setCameraPosition(-distance, 0, distance, 0, 0, 1); break;
                     }
                 } 
 
@@ -143,11 +143,14 @@ namespace tapl {
                  * @param[in] cloud point-cloud to be rendered
                  * @param[in] ptsize size of the point on visualizer to be rendered
                  * @param[in] r specifies red in rgb colorspace for the 
-                 *              color of sphere in range of [0.0, 1.0]
+                 *              color of sphere in range of [0.0, 1.0];
+                 *              do not render specified color if it is set to -1.0
                  * @param[in] g specifies green in rgb colorspace for the 
                  *              color of sphere in range of [0.0, 1.0]
+                 *              do not render specified color if it is set to -1.0
                  * @param[in] b specifies blue in rgb colorspace for the 
                  *              color of sphere in range of [0.0, 1.0]
+                 *              do not render specified color if it is set to -1.0
                  * @param[in] id the point-cloud object id (default: cloud)
                  */
                 template <typename PointT>
@@ -157,9 +160,11 @@ namespace tapl {
                     viewer->setPointCloudRenderingProperties (pcl::visualization::PCL_VISUALIZER_POINT_SIZE,
                                                                 ptsize,
                                                                 id);
-                    viewer->setPointCloudRenderingProperties (pcl::visualization::PCL_VISUALIZER_COLOR,
-                                                                r, g, b,
-                                                                id);
+                    if ((r != -1.0) && (g == -1.0) && (g == -1.0)) {
+                        viewer->setPointCloudRenderingProperties (pcl::visualization::PCL_VISUALIZER_COLOR,
+                                                                    r, g, b,
+                                                                    id);
+                    }
                 }
 
                 /** 

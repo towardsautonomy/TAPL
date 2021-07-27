@@ -11,14 +11,12 @@
 
 #include "tapl.hpp"
 
-using namespace std;
-
 /* MAIN PROGRAM */
 int main(int argc, const char *argv[])
 {
     // paths
-    string calibPath = "../data/calib/camera_model.yaml";
-    string dataPath = "../data/living_room";
+    std::string calibPath = "../data/calib/camera_model.yaml";
+    std::string dataPath = "../data/living_room";
 
     // number of images
     int nImages = 50;   // last file index to load
@@ -80,7 +78,7 @@ int main(int argc, const char *argv[])
             TLOG_INFO << "----------------------------------------";
             TLOG_INFO << "Image Pair [" << imgIndex << "] loaded into the ring buffer";
 
-            if (tapl::cve::detectAndMatchKpts(camPairs) == tapl::SUCCESS) {
+            if (tapl::cve::detectAndMatchKpts(camPairs, "ORB", "ORB") == tapl::SUCCESS) {
                 // visualize matches between current and previous image
                 cv::Mat img1, img1_color, img2, img2_color, matchImg;
 
@@ -103,11 +101,12 @@ int main(int argc, const char *argv[])
                 cv::drawMatches(img1_color, kpts1, img2_color, kpts2,
                                 kptsMatches, matchImg,
                                 cv::Scalar::all(-1), cv::Scalar::all(-1),
-                                vector<char>(), cv::DrawMatchesFlags::DRAW_RICH_KEYPOINTS);
+                                std::vector<char>(), cv::DrawMatchesFlags::DRAW_RICH_KEYPOINTS);
 
                 // visualize keypoints matches
-                string windowName = "Matching keypoints between two camera images";
-                cv::namedWindow(windowName, 7);
+                std::string windowName = "Matching keypoints between two camera images";
+                cv::namedWindow(windowName, cv::WINDOW_NORMAL);
+                cv::resizeWindow(windowName, 1920, 1080);
                 cv::imshow(windowName, matchImg);
                 TLOG_INFO << "Press key to continue to next image";
                 cv::waitKey(0); // wait for key to be pressed

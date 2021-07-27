@@ -10,6 +10,9 @@
 #include "tapl.hpp"
 
 int main (int argc, char** argv) {
+    //////////////////////////////////////////
+    // Load LiDAR point-clouds and pre-process
+    //////////////////////////////////////////
     // data location
     std::string dataPath = "../data/kitti_pc";
 
@@ -55,6 +58,9 @@ int main (int argc, char** argv) {
                                                 y_lim[0], y_lim[1], 
                                                 z_lim[0], z_lim[1]);
 
+        //////////////////////////////////////////
+        // Perform ground-plane segmentation and extract object clusters
+        //////////////////////////////////////////
         // segment ground plane
         std::pair<typename pcl::PointCloud<pcl::PointXYZ>::Ptr, typename pcl::PointCloud<pcl::PointXYZ>::Ptr> segmentedCloud;
         const int maxIterations = 100;
@@ -88,6 +94,9 @@ int main (int argc, char** argv) {
 
             tapl::BBox3d bbox = tapl::pte::getBoundingBox<pcl::PointXYZ> (cluster);
 
+            //////////////////////////////////////////
+            // Visualization
+            //////////////////////////////////////////
             // any cluster bigger than certain threshold could be 
             // either a building or side boundary of the road
             const float obj_len_thres[] = {0.3, 7};     // {min, max}

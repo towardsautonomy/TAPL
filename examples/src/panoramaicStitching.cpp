@@ -5,13 +5,11 @@
 
 #include "tapl.hpp"
 
-using namespace std;
-
 int main(int argc, const char *argv[])
 {
     // paths
-    string calibPath = "../data/calib/camera_model.yaml";
-    string dataPath = "../data/living_room_panorama";
+    std::string calibPath = "../data/calib/camera_model.yaml";
+    std::string dataPath = "../data/living_room_panorama";
 
     // number of images
     int nImages = -1;   // last file index to load
@@ -52,13 +50,14 @@ int main(int argc, const char *argv[])
     cv::Mat pano;
     tapl::ResultCode result = tapl::cve::stitchPanaromic(imgs, pano);
     if (result != tapl::SUCCESS) {
-        TLOG_INFO << "ERROR: Panoramic stitching failed..";
+        TLOG_INFO << "Panoramic stitching failed..";
         exit(EXIT_FAILURE);
     }    
 
     // show stitched image
-    string windowName = "Panoramic Image";
+    std::string windowName = "Panoramic Image";
     cv::namedWindow(windowName, cv::WINDOW_NORMAL);
+    cv::resizeWindow(windowName, 1920, 1080);
     cv::imshow(windowName, pano);
     cv::waitKey(0); 
 
