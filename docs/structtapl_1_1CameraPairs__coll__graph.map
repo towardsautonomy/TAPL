@@ -1,0 +1,4 @@
+<map id="tapl::CameraPairs" name="tapl::CameraPairs">
+<area shape="rect" id="node1" title="represents a pair of camera frames and their properties" alt="" coords="9,109,148,136"/>
+<area shape="rect" id="node2" href="$structtapl_1_1CameraFrame.html" title="represents a camera frame" alt="" coords="5,5,152,32"/>
+</map>

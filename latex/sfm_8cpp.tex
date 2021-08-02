@@ -2,7 +2,18 @@
 \label{sfm_8cpp}\index{tapl/cve/sfm.cpp@{tapl/cve/sfm.cpp}}
 {\ttfamily \#include $<$iostream$>$}\newline
 {\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
+{\ttfamily \#include $<$opencv2/core/eigen.\+hpp$>$}\newline
+{\ttfamily \#include $<$opencv2/opencv.\+hpp$>$}\newline
+{\ttfamily \#include $<$pcl/common/common\+\_\+headers.\+h$>$}\newline
+{\ttfamily \#include $<$pcl/io/pcd\+\_\+io.\+h$>$}\newline
+{\ttfamily \#include $<$pcl/point\+\_\+types.\+h$>$}\newline
+{\ttfamily \#include $<$pcl/point\+\_\+cloud.\+h$>$}\newline
+{\ttfamily \#include $<$pcl/visualization/pcl\+\_\+visualizer.\+h$>$}\newline
+{\ttfamily \#include $<$pcl/common/transforms.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}img\+Proc.\+hpp\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}sfm.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tapl/pte/pt\+Engine.\+hpp\char`\"{}}\newline
 Include dependency graph for sfm.\+cpp\+:
 \nopagebreak
 \begin{figure}[H]
@@ -11,3 +22,45 @@ Include dependency graph for sfm.\+cpp\+:
 \includegraphics[width=350pt]{sfm_8cpp__incl}
 \end{center}
 \end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{sfm_8cpp_a8012f8bd66798ffbdd27462c9f593a54}{deg2rad}} (double deg)
+\item 
+double \mbox{\hyperlink{sfm_8cpp_ad71ec851896bb003290612760ae0c451}{rad2deg}} (double rad)
+\item 
+std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \mbox{\hyperlink{sfm_8cpp_abe4298f5c3d3113adb7254e25de5163e}{compute\+Initial\+R\+TfromE}} (const Eigen\+::\+Matrix\+Xd \&E)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{sfm_8cpp_abe4298f5c3d3113adb7254e25de5163e}\label{sfm_8cpp_abe4298f5c3d3113adb7254e25de5163e}} 
+\index{sfm.cpp@{sfm.cpp}!computeInitialRTfromE@{computeInitialRTfromE}}
+\index{computeInitialRTfromE@{computeInitialRTfromE}!sfm.cpp@{sfm.cpp}}
+\doxysubsubsection{\texorpdfstring{computeInitialRTfromE()}{computeInitialRTfromE()}}
+{\footnotesize\ttfamily std\+::vector$<$Eigen\+::\+Matrix\+Xd$>$ compute\+Initial\+R\+TfromE (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{E }\end{DoxyParamCaption})}
+
+Estimate four possible R and T from the Essential Matrix 
+
+Definition at line 24 of file sfm.\+cpp.
+
+\mbox{\Hypertarget{sfm_8cpp_a8012f8bd66798ffbdd27462c9f593a54}\label{sfm_8cpp_a8012f8bd66798ffbdd27462c9f593a54}} 
+\index{sfm.cpp@{sfm.cpp}!deg2rad@{deg2rad}}
+\index{deg2rad@{deg2rad}!sfm.cpp@{sfm.cpp}}
+\doxysubsubsection{\texorpdfstring{deg2rad()}{deg2rad()}}
+{\footnotesize\ttfamily double deg2rad (\begin{DoxyParamCaption}\item[{double}]{deg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 18 of file sfm.\+cpp.
+
+\mbox{\Hypertarget{sfm_8cpp_ad71ec851896bb003290612760ae0c451}\label{sfm_8cpp_ad71ec851896bb003290612760ae0c451}} 
+\index{sfm.cpp@{sfm.cpp}!rad2deg@{rad2deg}}
+\index{rad2deg@{rad2deg}!sfm.cpp@{sfm.cpp}}
+\doxysubsubsection{\texorpdfstring{rad2deg()}{rad2deg()}}
+{\footnotesize\ttfamily double rad2deg (\begin{DoxyParamCaption}\item[{double}]{rad }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 19 of file sfm.\+cpp.
+

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['euler_263',['euler',['../structtapl_1_1Pose6dof.html#afa5dd6803d0f682139676e27ff20b9d2',1,'tapl::Pose6dof']]]
+  ['b_635',['b',['../structtapl_1_1Point3dColor.html#ab383241776b60d516a16072f6fa8f50f',1,'tapl::Point3dColor']]]
 ];

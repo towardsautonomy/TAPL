@@ -1,34 +1,43 @@
 \hypertarget{namespacetapl_1_1cve}{}\doxysection{tapl\+::cve Namespace Reference}
 \label{namespacetapl_1_1cve}\index{tapl::cve@{tapl::cve}}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classtapl_1_1cve_1_1StructureFromMotion}{Structure\+From\+Motion}}
+\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{tapl\+::\+Result\+Code}} \mbox{\hyperlink{namespacetapl_1_1cve_af3780bfb951944bfb2681080670c748c}{detect\+Keypoints}} (const cv\+::\+Mat \&img, std\+::vector$<$ cv\+::\+Key\+Point $>$ \&keypoints, std\+::string detector\+Type=\char`\"{}F\+A\+ST\char`\"{})
+cv\+::\+Mat \mbox{\hyperlink{namespacetapl_1_1cve_a58bc944d8c44e0b94f88d2ee2cbe7290}{draw\+Keypoints}} (const cv\+::\+Mat \&image, const std\+::vector$<$ \mbox{\hyperlink{structtapl_1_1Point2d}{tapl\+::\+Point2d}} $>$ \&kpts2d, cv\+::\+Scalar color=C\+V\+\_\+\+R\+GB(255, 0, 0))
+\begin{DoxyCompactList}\small\item\em Draw 2D keypoints on an image. \end{DoxyCompactList}\item 
+cv\+::\+Mat \mbox{\hyperlink{namespacetapl_1_1cve_ade2a6e848150a5a5036d62c1624c7209}{draw\+Keypoints3D}} (const cv\+::\+Mat \&image, const std\+::vector$<$ \mbox{\hyperlink{structtapl_1_1Point3d}{tapl\+::\+Point3d}} $>$ \&kpts3d, const cv\+::\+Mat \&K, cv\+::\+Scalar color=C\+V\+\_\+\+R\+GB(255, 0, 0))
+\begin{DoxyCompactList}\small\item\em Draw 3D keypoints on an image by projecting it to the 2D plane. \end{DoxyCompactList}\item 
+cv\+::\+Mat \mbox{\hyperlink{namespacetapl_1_1cve_aa83393345e40ca0c8ccb4c1b7d5d7c62}{draw\+Keypoints3D}} (const cv\+::\+Mat \&image, const std\+::vector$<$ \mbox{\hyperlink{structtapl_1_1Point3dColor}{tapl\+::\+Point3d\+Color}} $>$ \&kpts3d, const cv\+::\+Mat \&K, cv\+::\+Scalar color=C\+V\+\_\+\+R\+GB(255, 0, 0))
+\begin{DoxyCompactList}\small\item\em Draw 3D keypoints on an image by projecting it to the 2D plane. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{tapl\+::\+Result\+Code}} \mbox{\hyperlink{namespacetapl_1_1cve_a475a42aa19f3641375dcdec85a32740e}{detect\+Keypoints}} (const cv\+::\+Mat \&img, std\+::vector$<$ cv\+::\+Key\+Point $>$ \&keypoints, std\+::string detector\+Type=\char`\"{}B\+R\+I\+SK\char`\"{})
 \begin{DoxyCompactList}\small\item\em This function detects keypoints in an image. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{tapl\+::\+Result\+Code}} \mbox{\hyperlink{namespacetapl_1_1cve_a77377946f02e5f619085acd42bda7ea6}{extract\+Descriptors}} (const cv\+::\+Mat \&img, std\+::vector$<$ cv\+::\+Key\+Point $>$ \&keypoints, cv\+::\+Mat \&descriptors, std\+::string descriptor\+Type=\char`\"{}B\+R\+I\+SK\char`\"{})
 \begin{DoxyCompactList}\small\item\em This function extracts keypoints descriptors in an image. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{tapl\+::\+Result\+Code}} \mbox{\hyperlink{namespacetapl_1_1cve_ae2699cc690841efd3b7a3179be1fb889}{match\+Descriptors}} (std\+::vector$<$ cv\+::\+Key\+Point $>$ \&k\+Pts\+Source, std\+::vector$<$ cv\+::\+Key\+Point $>$ \&k\+Pts\+Ref, cv\+::\+Mat \&desc\+Source, cv\+::\+Mat \&desc\+Ref, std\+::vector$<$ cv\+::\+D\+Match $>$ \&matches, std\+::string norm\+Type=\char`\"{}N\+O\+R\+M\+\_\+\+H\+A\+M\+M\+I\+NG\char`\"{}, std\+::string matcher\+Type=\char`\"{}M\+A\+T\+\_\+\+BF\char`\"{}, std\+::string selector\+Type=\char`\"{}S\+E\+L\+\_\+\+K\+NN\char`\"{})
+\mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{tapl\+::\+Result\+Code}} \mbox{\hyperlink{namespacetapl_1_1cve_a2345fb0168a84b275c82c899f35a21ab}{match\+Descriptors}} (std\+::vector$<$ cv\+::\+Key\+Point $>$ \&k\+Pts\+Query, std\+::vector$<$ cv\+::\+Key\+Point $>$ \&k\+Pts\+Train, cv\+::\+Mat \&desc\+Query, cv\+::\+Mat \&desc\+Ref, std\+::vector$<$ cv\+::\+D\+Match $>$ \&matches, std\+::string norm\+Type=\char`\"{}N\+O\+R\+M\+\_\+\+H\+A\+M\+M\+I\+NG\char`\"{}, std\+::string matcher\+Type=\char`\"{}M\+A\+T\+\_\+\+BF\char`\"{}, std\+::string selector\+Type=\char`\"{}S\+E\+L\+\_\+\+K\+NN\char`\"{})
 \begin{DoxyCompactList}\small\item\em This function performs keypoint descriptor matching. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{tapl\+::\+Result\+Code}} \mbox{\hyperlink{namespacetapl_1_1cve_a34cb000d47a121549e81900da9913299}{detect\+And\+Match\+Kpts}} (\mbox{\hyperlink{structtapl_1_1DataFrame}{tapl\+::\+Data\+Frame}} \&dframe1, \mbox{\hyperlink{structtapl_1_1DataFrame}{tapl\+::\+Data\+Frame}} \&dframe2)
+\mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{tapl\+::\+Result\+Code}} \mbox{\hyperlink{namespacetapl_1_1cve_aa748fe1b014fc3f0382896ce09b90b6a}{detect\+And\+Match\+Kpts}} (\mbox{\hyperlink{structtapl_1_1CameraPairs}{tapl\+::\+Camera\+Pairs}} \&cam\+Pairs, const std\+::string detector\+Type=\char`\"{}B\+R\+I\+SK\char`\"{}, const std\+::string descriptor\+Type=\char`\"{}B\+R\+I\+SK\char`\"{})
 \begin{DoxyCompactList}\small\item\em This function detects keypoints in two image frames and perform keypoints matching. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{tapl\+::\+Result\+Code}} \mbox{\hyperlink{namespacetapl_1_1cve_a8e1c9ef8d5eae6975b5e7e7c360fc1e8}{compute\+Fundamental\+Matrix}} (\mbox{\hyperlink{structtapl_1_1DataFrame}{tapl\+::\+Data\+Frame}} \&dframe1, \mbox{\hyperlink{structtapl_1_1DataFrame}{tapl\+::\+Data\+Frame}} \&dframe2)
+\mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{tapl\+::\+Result\+Code}} \mbox{\hyperlink{namespacetapl_1_1cve_a999103d368283661b24eefdbe4f46c79}{compute\+Fundamental\+Matrix}} (\mbox{\hyperlink{structtapl_1_1CameraPairs}{tapl\+::\+Camera\+Pairs}} \&cam\+Pairs)
 \begin{DoxyCompactList}\small\item\em This function retrieves fundamental matrix between two images contained within their data frame structure. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{tapl\+::\+Result\+Code}} \mbox{\hyperlink{namespacetapl_1_1cve_aab9ffadadfdcdabde2b84c28ed91b98f}{compute\+Essential\+Matrix}} (\mbox{\hyperlink{structtapl_1_1DataFrame}{tapl\+::\+Data\+Frame}} \&dframe1, \mbox{\hyperlink{structtapl_1_1DataFrame}{tapl\+::\+Data\+Frame}} \&dframe2)
+\mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{tapl\+::\+Result\+Code}} \mbox{\hyperlink{namespacetapl_1_1cve_a16d58bca0c27c827b4509e4b90996577}{compute\+Essential\+Matrix}} (\mbox{\hyperlink{structtapl_1_1CameraPairs}{tapl\+::\+Camera\+Pairs}} \&cam\+Pairs)
 \begin{DoxyCompactList}\small\item\em This function retrieves essential matrix between two images contained within their data frame structure. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{tapl\+::\+Result\+Code}} \mbox{\hyperlink{namespacetapl_1_1cve_a565eba00996d244628d8583e7ce7f618}{compute\+Relative\+Pose}} (\mbox{\hyperlink{structtapl_1_1DataFrame}{tapl\+::\+Data\+Frame}} \&dframe1, \mbox{\hyperlink{structtapl_1_1DataFrame}{tapl\+::\+Data\+Frame}} \&dframe2)
+\mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{tapl\+::\+Result\+Code}} \mbox{\hyperlink{namespacetapl_1_1cve_a2e251ccaf93c2d9a030a65092eb03e81}{compute\+Relative\+Pose}} (\mbox{\hyperlink{structtapl_1_1CameraPairs}{tapl\+::\+Camera\+Pairs}} \&cam\+Pairs)
 \begin{DoxyCompactList}\small\item\em This function is used to compute the relative camera pose. Pose is computed for second image contained within dframe2 relative to dframe1. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{tapl\+::\+Result\+Code}} \mbox{\hyperlink{namespacetapl_1_1cve_aab4041f410589ff960febecf36b3ee2b}{stitch\+Panaromic}} (const std\+::vector$<$ cv\+::\+Mat $>$ \&imgs, cv\+::\+Mat \&panoramic\+\_\+img)
-\begin{DoxyCompactList}\small\item\em This function is used to stitch multiple images as a panaromic image. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{tapl\+::\+Result\+Code}} \mbox{\hyperlink{namespacetapl_1_1cve_a0008c85836843f8973f48bf301fcadd8}{sfm}} (std\+::vector$<$ \mbox{\hyperlink{structtapl_1_1CameraFrame}{tapl\+::\+Camera\+Frame}} $>$ \&frames, std\+::vector$<$ \mbox{\hyperlink{structtapl_1_1Point3d}{tapl\+::\+Point3d}} $>$ \&points, std\+::vector$<$ \mbox{\hyperlink{structtapl_1_1Pose6dof}{tapl\+::\+Pose6dof}} $>$ \&poses)
-\begin{DoxyCompactList}\small\item\em This function performs structure-\/from-\/motion given a set of camera frames. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This function is used to stitch multiple images as a panaromic image. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{namespacetapl_1_1cve_aab9ffadadfdcdabde2b84c28ed91b98f}\label{namespacetapl_1_1cve_aab9ffadadfdcdabde2b84c28ed91b98f}} 
+\mbox{\Hypertarget{namespacetapl_1_1cve_a16d58bca0c27c827b4509e4b90996577}\label{namespacetapl_1_1cve_a16d58bca0c27c827b4509e4b90996577}} 
 \index{tapl::cve@{tapl::cve}!computeEssentialMatrix@{computeEssentialMatrix}}
 \index{computeEssentialMatrix@{computeEssentialMatrix}!tapl::cve@{tapl::cve}}
 \doxysubsubsection{\texorpdfstring{computeEssentialMatrix()}{computeEssentialMatrix()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{tapl\+::\+Result\+Code}} tapl\+::cve\+::compute\+Essential\+Matrix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtapl_1_1DataFrame}{tapl\+::\+Data\+Frame}} \&}]{dframe1,  }\item[{\mbox{\hyperlink{structtapl_1_1DataFrame}{tapl\+::\+Data\+Frame}} \&}]{dframe2 }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{tapl\+::\+Result\+Code}} tapl\+::cve\+::compute\+Essential\+Matrix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtapl_1_1CameraPairs}{tapl\+::\+Camera\+Pairs}} \&}]{cam\+Pairs }\end{DoxyParamCaption})}
 
 
 
@@ -36,9 +45,11 @@ This function retrieves essential matrix between two images contained within the
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in,out}}  & {\em dframe1} & first data frame -\/ query/source/current frame \\
-\hline
-\mbox{\texttt{ in,out}}  & {\em dframe1} & second data frame -\/ train/reference/previous frame\\
+\mbox{\texttt{ in,out}}  & {\em cam\+Pairs} & camera frames pair with their properties
+\begin{DoxyItemize}
+\item first\+: query/source/current frame
+\item second\+: train/reference/previous frame
+\end{DoxyItemize}\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -48,21 +59,21 @@ This function retrieves essential matrix between two images contained within the
 \end{DoxyReturn}
 This function computes Essential Matrix given two image frames 
 
-Definition at line 352 of file img\+Proc.\+cpp.
+Definition at line 424 of file img\+Proc.\+cpp.
 
 Here is the call graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{namespacetapl_1_1cve_aab9ffadadfdcdabde2b84c28ed91b98f_cgraph}
+\includegraphics[width=350pt]{namespacetapl_1_1cve_a16d58bca0c27c827b4509e4b90996577_cgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{namespacetapl_1_1cve_a8e1c9ef8d5eae6975b5e7e7c360fc1e8}\label{namespacetapl_1_1cve_a8e1c9ef8d5eae6975b5e7e7c360fc1e8}} 
+\mbox{\Hypertarget{namespacetapl_1_1cve_a999103d368283661b24eefdbe4f46c79}\label{namespacetapl_1_1cve_a999103d368283661b24eefdbe4f46c79}} 
 \index{tapl::cve@{tapl::cve}!computeFundamentalMatrix@{computeFundamentalMatrix}}
 \index{computeFundamentalMatrix@{computeFundamentalMatrix}!tapl::cve@{tapl::cve}}
 \doxysubsubsection{\texorpdfstring{computeFundamentalMatrix()}{computeFundamentalMatrix()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{tapl\+::\+Result\+Code}} tapl\+::cve\+::compute\+Fundamental\+Matrix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtapl_1_1DataFrame}{tapl\+::\+Data\+Frame}} \&}]{dframe1,  }\item[{\mbox{\hyperlink{structtapl_1_1DataFrame}{tapl\+::\+Data\+Frame}} \&}]{dframe2 }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{tapl\+::\+Result\+Code}} tapl\+::cve\+::compute\+Fundamental\+Matrix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtapl_1_1CameraPairs}{tapl\+::\+Camera\+Pairs}} \&}]{cam\+Pairs }\end{DoxyParamCaption})}
 
 
 
@@ -70,9 +81,11 @@ This function retrieves fundamental matrix between two images contained within t
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in,out}}  & {\em dframe1} & first data frame -\/ query/source/current frame \\
-\hline
-\mbox{\texttt{ in,out}}  & {\em dframe1} & second data frame -\/ train/reference/previous frame\\
+\mbox{\texttt{ in,out}}  & {\em cam\+Pairs} & camera frames pair with their properties
+\begin{DoxyItemize}
+\item first\+: query/source/current frame
+\item second\+: train/reference/previous frame
+\end{DoxyItemize}\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -83,82 +96,14 @@ This function retrieves fundamental matrix between two images contained within t
 \end{DoxyReturn}
 This function computes Fundamental Matrix given two image frames 
 
-Definition at line 311 of file img\+Proc.\+cpp.
+Definition at line 384 of file img\+Proc.\+cpp.
 
 Here is the call graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{namespacetapl_1_1cve_a8e1c9ef8d5eae6975b5e7e7c360fc1e8_cgraph}
-\end{center}
-\end{figure}
-\mbox{\Hypertarget{namespacetapl_1_1cve_a565eba00996d244628d8583e7ce7f618}\label{namespacetapl_1_1cve_a565eba00996d244628d8583e7ce7f618}} 
-\index{tapl::cve@{tapl::cve}!computeRelativePose@{computeRelativePose}}
-\index{computeRelativePose@{computeRelativePose}!tapl::cve@{tapl::cve}}
-\doxysubsubsection{\texorpdfstring{computeRelativePose()}{computeRelativePose()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{tapl\+::\+Result\+Code}} tapl\+::cve\+::compute\+Relative\+Pose (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtapl_1_1DataFrame}{tapl\+::\+Data\+Frame}} \&}]{dframe1,  }\item[{\mbox{\hyperlink{structtapl_1_1DataFrame}{tapl\+::\+Data\+Frame}} \&}]{dframe2 }\end{DoxyParamCaption})}
-
-
-
-This function is used to compute the relative camera pose. Pose is computed for second image contained within dframe2 relative to dframe1. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in,out}}  & {\em dframe1} & first data frame -\/ query/source/current frame \\
-\hline
-\mbox{\texttt{ in,out}}  & {\em dframe1} & second data frame -\/ train/reference/previous frame\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-\mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ffafbdd78b1e8654e11461f37fea68c6195}{tapl\+::\+S\+U\+C\+C\+E\+SS}} if success 
-
-\mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ffaa6e243674a964518a62bdda7f20f6453}{tapl\+::\+F\+A\+I\+L\+U\+RE}} if failure
-\end{DoxyReturn}
-This function computes relative camera pose between set of image frames 
-
-Definition at line 423 of file img\+Proc.\+cpp.
-
-Here is the call graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{namespacetapl_1_1cve_a565eba00996d244628d8583e7ce7f618_cgraph}
-\end{center}
-\end{figure}
-\mbox{\Hypertarget{namespacetapl_1_1cve_a34cb000d47a121549e81900da9913299}\label{namespacetapl_1_1cve_a34cb000d47a121549e81900da9913299}} 
-\index{tapl::cve@{tapl::cve}!detectAndMatchKpts@{detectAndMatchKpts}}
-\index{detectAndMatchKpts@{detectAndMatchKpts}!tapl::cve@{tapl::cve}}
-\doxysubsubsection{\texorpdfstring{detectAndMatchKpts()}{detectAndMatchKpts()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{tapl\+::\+Result\+Code}} tapl\+::cve\+::detect\+And\+Match\+Kpts (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtapl_1_1DataFrame}{tapl\+::\+Data\+Frame}} \&}]{dframe1,  }\item[{\mbox{\hyperlink{structtapl_1_1DataFrame}{tapl\+::\+Data\+Frame}} \&}]{dframe2 }\end{DoxyParamCaption})}
-
-
-
-This function detects keypoints in two image frames and perform keypoints matching. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in,out}}  & {\em dframe1} & first data frame -\/ query/source/current frame \\
-\hline
-\mbox{\texttt{ in,out}}  & {\em dframe2} & second data frame -\/ train/reference/previous frame\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-\mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ffafbdd78b1e8654e11461f37fea68c6195}{tapl\+::\+S\+U\+C\+C\+E\+SS}} if success 
-
-\mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ffaa6e243674a964518a62bdda7f20f6453}{tapl\+::\+F\+A\+I\+L\+U\+RE}} if failure
-\end{DoxyReturn}
-Detect and Match Keypoints; Store the result back into \mbox{\hyperlink{structtapl_1_1DataFrame}{tapl\+::\+Data\+Frame}} 
-
-Definition at line 251 of file img\+Proc.\+cpp.
-
-Here is the call graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{namespacetapl_1_1cve_a34cb000d47a121549e81900da9913299_cgraph}
+\includegraphics[width=350pt]{namespacetapl_1_1cve_a999103d368283661b24eefdbe4f46c79_cgraph}
 \end{center}
 \end{figure}
 Here is the caller graph for this function\+:
@@ -166,14 +111,86 @@ Here is the caller graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{namespacetapl_1_1cve_a34cb000d47a121549e81900da9913299_icgraph}
+\includegraphics[width=350pt]{namespacetapl_1_1cve_a999103d368283661b24eefdbe4f46c79_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{namespacetapl_1_1cve_af3780bfb951944bfb2681080670c748c}\label{namespacetapl_1_1cve_af3780bfb951944bfb2681080670c748c}} 
+\mbox{\Hypertarget{namespacetapl_1_1cve_a2e251ccaf93c2d9a030a65092eb03e81}\label{namespacetapl_1_1cve_a2e251ccaf93c2d9a030a65092eb03e81}} 
+\index{tapl::cve@{tapl::cve}!computeRelativePose@{computeRelativePose}}
+\index{computeRelativePose@{computeRelativePose}!tapl::cve@{tapl::cve}}
+\doxysubsubsection{\texorpdfstring{computeRelativePose()}{computeRelativePose()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{tapl\+::\+Result\+Code}} tapl\+::cve\+::compute\+Relative\+Pose (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtapl_1_1CameraPairs}{tapl\+::\+Camera\+Pairs}} \&}]{cam\+Pairs }\end{DoxyParamCaption})}
+
+
+
+This function is used to compute the relative camera pose. Pose is computed for second image contained within dframe2 relative to dframe1. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em cam\+Pairs} & camera frames pair with their properties
+\begin{DoxyItemize}
+\item first\+: query/source/current frame
+\item second\+: train/reference/previous frame
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ffafbdd78b1e8654e11461f37fea68c6195}{tapl\+::\+S\+U\+C\+C\+E\+SS}} if success 
+
+\mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ffaa6e243674a964518a62bdda7f20f6453}{tapl\+::\+F\+A\+I\+L\+U\+RE}} if failure 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacetapl_1_1cve_aa748fe1b014fc3f0382896ce09b90b6a}\label{namespacetapl_1_1cve_aa748fe1b014fc3f0382896ce09b90b6a}} 
+\index{tapl::cve@{tapl::cve}!detectAndMatchKpts@{detectAndMatchKpts}}
+\index{detectAndMatchKpts@{detectAndMatchKpts}!tapl::cve@{tapl::cve}}
+\doxysubsubsection{\texorpdfstring{detectAndMatchKpts()}{detectAndMatchKpts()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{tapl\+::\+Result\+Code}} tapl\+::cve\+::detect\+And\+Match\+Kpts (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtapl_1_1CameraPairs}{tapl\+::\+Camera\+Pairs}} \&}]{cam\+Pairs,  }\item[{const std\+::string}]{detector\+Type = {\ttfamily \char`\"{}BRISK\char`\"{}},  }\item[{const std\+::string}]{descriptor\+Type = {\ttfamily \char`\"{}BRISK\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+This function detects keypoints in two image frames and perform keypoints matching. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em cam\+Pairs} & camera frames pair with their properties
+\begin{DoxyItemize}
+\item first\+: query/source/current frame
+\item second\+: train/reference/previous frame 
+\end{DoxyItemize}\\
+\hline
+\mbox{\texttt{ in}}  & {\em detector\+Type} & detector types; S\+H\+I\+T\+O\+M\+A\+SI, H\+A\+R\+R\+IS, F\+A\+ST, B\+R\+I\+SK, O\+RB, A\+K\+A\+ZE \\
+\hline
+\mbox{\texttt{ in}}  & {\em descriptor\+Type} & descriptor types; options\+: B\+R\+I\+SK, B\+R\+I\+EF, O\+RB, F\+R\+E\+AK, A\+K\+A\+ZE\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ffafbdd78b1e8654e11461f37fea68c6195}{tapl\+::\+S\+U\+C\+C\+E\+SS}} if success 
+
+\mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ffaa6e243674a964518a62bdda7f20f6453}{tapl\+::\+F\+A\+I\+L\+U\+RE}} if failure
+\end{DoxyReturn}
+Detect and Match Keypoints; Store the result back into \mbox{\hyperlink{structtapl_1_1CameraPairs}{tapl\+::\+Camera\+Pairs}} properties 
+
+Definition at line 324 of file img\+Proc.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacetapl_1_1cve_aa748fe1b014fc3f0382896ce09b90b6a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacetapl_1_1cve_aa748fe1b014fc3f0382896ce09b90b6a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacetapl_1_1cve_a475a42aa19f3641375dcdec85a32740e}\label{namespacetapl_1_1cve_a475a42aa19f3641375dcdec85a32740e}} 
 \index{tapl::cve@{tapl::cve}!detectKeypoints@{detectKeypoints}}
 \index{detectKeypoints@{detectKeypoints}!tapl::cve@{tapl::cve}}
 \doxysubsubsection{\texorpdfstring{detectKeypoints()}{detectKeypoints()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{tapl\+::\+Result\+Code}} tapl\+::cve\+::detect\+Keypoints (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{img,  }\item[{std\+::vector$<$ cv\+::\+Key\+Point $>$ \&}]{keypoints,  }\item[{std\+::string}]{detector\+Type = {\ttfamily \char`\"{}FAST\char`\"{}} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{tapl\+::\+Result\+Code}} tapl\+::cve\+::detect\+Keypoints (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{img,  }\item[{std\+::vector$<$ cv\+::\+Key\+Point $>$ \&}]{keypoints,  }\item[{std\+::string}]{detector\+Type = {\ttfamily \char`\"{}BRISK\char`\"{}} }\end{DoxyParamCaption})}
 
 
 
@@ -195,16 +212,98 @@ This function detects keypoints in an image.
 \end{DoxyReturn}
 
 
-Definition at line 13 of file img\+Proc.\+cpp.
+Definition at line 88 of file img\+Proc.\+cpp.
 
 Here is the caller graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{namespacetapl_1_1cve_af3780bfb951944bfb2681080670c748c_icgraph}
+\includegraphics[width=350pt]{namespacetapl_1_1cve_a475a42aa19f3641375dcdec85a32740e_icgraph}
 \end{center}
 \end{figure}
+\mbox{\Hypertarget{namespacetapl_1_1cve_a58bc944d8c44e0b94f88d2ee2cbe7290}\label{namespacetapl_1_1cve_a58bc944d8c44e0b94f88d2ee2cbe7290}} 
+\index{tapl::cve@{tapl::cve}!drawKeypoints@{drawKeypoints}}
+\index{drawKeypoints@{drawKeypoints}!tapl::cve@{tapl::cve}}
+\doxysubsubsection{\texorpdfstring{drawKeypoints()}{drawKeypoints()}}
+{\footnotesize\ttfamily cv\+::\+Mat tapl\+::cve\+::draw\+Keypoints (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{image,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{structtapl_1_1Point2d}{tapl\+::\+Point2d}} $>$ \&}]{kpts2d,  }\item[{cv\+::\+Scalar}]{color = {\ttfamily CV\+\_\+RGB(255,0,0)} }\end{DoxyParamCaption})}
+
+
+
+Draw 2D keypoints on an image. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em image} & image for which the detected 2D keypoints need to be visualized \\
+\hline
+\mbox{\texttt{ in}}  & {\em kpts2d} & 2D keypoints \\
+\hline
+\mbox{\texttt{ in}}  & {\em color} & color for 2D keypoints\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+image with 2d keypoints overlaid 
+\end{DoxyReturn}
+
+
+Definition at line 13 of file img\+Proc.\+cpp.
+
+\mbox{\Hypertarget{namespacetapl_1_1cve_ade2a6e848150a5a5036d62c1624c7209}\label{namespacetapl_1_1cve_ade2a6e848150a5a5036d62c1624c7209}} 
+\index{tapl::cve@{tapl::cve}!drawKeypoints3D@{drawKeypoints3D}}
+\index{drawKeypoints3D@{drawKeypoints3D}!tapl::cve@{tapl::cve}}
+\doxysubsubsection{\texorpdfstring{drawKeypoints3D()}{drawKeypoints3D()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily cv\+::\+Mat tapl\+::cve\+::draw\+Keypoints3D (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{image,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{structtapl_1_1Point3d}{tapl\+::\+Point3d}} $>$ \&}]{kpts3d,  }\item[{const cv\+::\+Mat \&}]{K,  }\item[{cv\+::\+Scalar}]{color = {\ttfamily CV\+\_\+RGB(255,0,0)} }\end{DoxyParamCaption})}
+
+
+
+Draw 3D keypoints on an image by projecting it to the 2D plane. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em image} & image for which the detected 2D keypoints need to be visualized \\
+\hline
+\mbox{\texttt{ in}}  & {\em kpts3d} & 3D keypoints \\
+\hline
+\mbox{\texttt{ in}}  & {\em K} & Camera intrinsic matrix \\
+\hline
+\mbox{\texttt{ in}}  & {\em color} & color for 2D keypoints\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+image with 3d keypoints overlaid 
+\end{DoxyReturn}
+
+
+Definition at line 30 of file img\+Proc.\+cpp.
+
+\mbox{\Hypertarget{namespacetapl_1_1cve_aa83393345e40ca0c8ccb4c1b7d5d7c62}\label{namespacetapl_1_1cve_aa83393345e40ca0c8ccb4c1b7d5d7c62}} 
+\index{tapl::cve@{tapl::cve}!drawKeypoints3D@{drawKeypoints3D}}
+\index{drawKeypoints3D@{drawKeypoints3D}!tapl::cve@{tapl::cve}}
+\doxysubsubsection{\texorpdfstring{drawKeypoints3D()}{drawKeypoints3D()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily cv\+::\+Mat tapl\+::cve\+::draw\+Keypoints3D (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{image,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{structtapl_1_1Point3dColor}{tapl\+::\+Point3d\+Color}} $>$ \&}]{kpts3d,  }\item[{const cv\+::\+Mat \&}]{K,  }\item[{cv\+::\+Scalar}]{color = {\ttfamily CV\+\_\+RGB(255,0,0)} }\end{DoxyParamCaption})}
+
+
+
+Draw 3D keypoints on an image by projecting it to the 2D plane. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em image} & image for which the detected 2D keypoints need to be visualized \\
+\hline
+\mbox{\texttt{ in}}  & {\em kpts3d} & 3D keypoints \\
+\hline
+\mbox{\texttt{ in}}  & {\em K} & Camera intrinsic matrix \\
+\hline
+\mbox{\texttt{ in}}  & {\em color} & color for 2D keypoints\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+image with 3d keypoints overlaid 
+\end{DoxyReturn}
+
+
+Definition at line 59 of file img\+Proc.\+cpp.
+
 \mbox{\Hypertarget{namespacetapl_1_1cve_a77377946f02e5f619085acd42bda7ea6}\label{namespacetapl_1_1cve_a77377946f02e5f619085acd42bda7ea6}} 
 \index{tapl::cve@{tapl::cve}!extractDescriptors@{extractDescriptors}}
 \index{extractDescriptors@{extractDescriptors}!tapl::cve@{tapl::cve}}
@@ -233,7 +332,7 @@ This function extracts keypoints descriptors in an image.
 \end{DoxyReturn}
 
 
-Definition at line 132 of file img\+Proc.\+cpp.
+Definition at line 219 of file img\+Proc.\+cpp.
 
 Here is the caller graph for this function\+:
 \nopagebreak
@@ -243,11 +342,11 @@ Here is the caller graph for this function\+:
 \includegraphics[width=350pt]{namespacetapl_1_1cve_a77377946f02e5f619085acd42bda7ea6_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{namespacetapl_1_1cve_ae2699cc690841efd3b7a3179be1fb889}\label{namespacetapl_1_1cve_ae2699cc690841efd3b7a3179be1fb889}} 
+\mbox{\Hypertarget{namespacetapl_1_1cve_a2345fb0168a84b275c82c899f35a21ab}\label{namespacetapl_1_1cve_a2345fb0168a84b275c82c899f35a21ab}} 
 \index{tapl::cve@{tapl::cve}!matchDescriptors@{matchDescriptors}}
 \index{matchDescriptors@{matchDescriptors}!tapl::cve@{tapl::cve}}
 \doxysubsubsection{\texorpdfstring{matchDescriptors()}{matchDescriptors()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{tapl\+::\+Result\+Code}} tapl\+::cve\+::match\+Descriptors (\begin{DoxyParamCaption}\item[{std\+::vector$<$ cv\+::\+Key\+Point $>$ \&}]{k\+Pts\+Source,  }\item[{std\+::vector$<$ cv\+::\+Key\+Point $>$ \&}]{k\+Pts\+Ref,  }\item[{cv\+::\+Mat \&}]{desc\+Source,  }\item[{cv\+::\+Mat \&}]{desc\+Ref,  }\item[{std\+::vector$<$ cv\+::\+D\+Match $>$ \&}]{matches,  }\item[{std\+::string}]{norm\+Type = {\ttfamily \char`\"{}NORM\+\_\+HAMMING\char`\"{}},  }\item[{std\+::string}]{matcher\+Type = {\ttfamily \char`\"{}MAT\+\_\+BF\char`\"{}},  }\item[{std\+::string}]{selector\+Type = {\ttfamily \char`\"{}SEL\+\_\+KNN\char`\"{}} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{tapl\+::\+Result\+Code}} tapl\+::cve\+::match\+Descriptors (\begin{DoxyParamCaption}\item[{std\+::vector$<$ cv\+::\+Key\+Point $>$ \&}]{k\+Pts\+Query,  }\item[{std\+::vector$<$ cv\+::\+Key\+Point $>$ \&}]{k\+Pts\+Train,  }\item[{cv\+::\+Mat \&}]{desc\+Query,  }\item[{cv\+::\+Mat \&}]{desc\+Ref,  }\item[{std\+::vector$<$ cv\+::\+D\+Match $>$ \&}]{matches,  }\item[{std\+::string}]{norm\+Type = {\ttfamily \char`\"{}NORM\+\_\+HAMMING\char`\"{}},  }\item[{std\+::string}]{matcher\+Type = {\ttfamily \char`\"{}MAT\+\_\+BF\char`\"{}},  }\item[{std\+::string}]{selector\+Type = {\ttfamily \char`\"{}SEL\+\_\+KNN\char`\"{}} }\end{DoxyParamCaption})}
 
 
 
@@ -255,13 +354,13 @@ This function performs keypoint descriptor matching.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em k\+Pts\+Source} & keypoints in the source/query image \\
+\mbox{\texttt{ in}}  & {\em k\+Pts\+Query} & keypoints in the query image \\
 \hline
-\mbox{\texttt{ in}}  & {\em k\+Pts\+Ref} & keypoints in the reference/train image \\
+\mbox{\texttt{ in}}  & {\em k\+Pts\+Train} & keypoints in the trainimage \\
 \hline
-\mbox{\texttt{ in}}  & {\em desc\+Source} & descriptors in the source/query image \\
+\mbox{\texttt{ in}}  & {\em desc\+Query} & descriptors in the query image \\
 \hline
-\mbox{\texttt{ in}}  & {\em desc\+Ref} & descriptors in the reference/train image \\
+\mbox{\texttt{ in}}  & {\em desc\+Ref} & descriptors in the trainimage \\
 \hline
 \mbox{\texttt{ out}}  & {\em matches} & descriptor match output \\
 \hline
@@ -280,44 +379,16 @@ This function performs keypoint descriptor matching.
 \end{DoxyReturn}
 
 
-Definition at line 182 of file img\+Proc.\+cpp.
+Definition at line 263 of file img\+Proc.\+cpp.
 
 Here is the caller graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{namespacetapl_1_1cve_ae2699cc690841efd3b7a3179be1fb889_icgraph}
+\includegraphics[width=350pt]{namespacetapl_1_1cve_a2345fb0168a84b275c82c899f35a21ab_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{namespacetapl_1_1cve_a0008c85836843f8973f48bf301fcadd8}\label{namespacetapl_1_1cve_a0008c85836843f8973f48bf301fcadd8}} 
-\index{tapl::cve@{tapl::cve}!sfm@{sfm}}
-\index{sfm@{sfm}!tapl::cve@{tapl::cve}}
-\doxysubsubsection{\texorpdfstring{sfm()}{sfm()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{tapl\+::\+Result\+Code}} tapl\+::cve\+::sfm (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{structtapl_1_1CameraFrame}{tapl\+::\+Camera\+Frame}} $>$ \&}]{frames,  }\item[{std\+::vector$<$ \mbox{\hyperlink{structtapl_1_1Point3d}{tapl\+::\+Point3d}} $>$ \&}]{points,  }\item[{std\+::vector$<$ \mbox{\hyperlink{structtapl_1_1Pose6dof}{tapl\+::\+Pose6dof}} $>$ \&}]{poses }\end{DoxyParamCaption})}
-
-
-
-This function performs structure-\/from-\/motion given a set of camera frames. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em frames} & image frames from which structure-\/from-\/motion is to be computed \\
-\hline
-\mbox{\texttt{ out}}  & {\em points} & point-\/cloud corresponding to keypoints in the first camera\textquotesingle{}s coordinate frame \\
-\hline
-\mbox{\texttt{ out}}  & {\em poses} & poses of each camera frame\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-\mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ffafbdd78b1e8654e11461f37fea68c6195}{tapl\+::\+S\+U\+C\+C\+E\+SS}} if success 
-
-\mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ffaa6e243674a964518a62bdda7f20f6453}{tapl\+::\+F\+A\+I\+L\+U\+RE}} if failure
-\end{DoxyReturn}
-Structure-\/from-\/\+Motion implementation 
-
-Definition at line 9 of file sfm.\+cpp.
-
 \mbox{\Hypertarget{namespacetapl_1_1cve_aab4041f410589ff960febecf36b3ee2b}\label{namespacetapl_1_1cve_aab4041f410589ff960febecf36b3ee2b}} 
 \index{tapl::cve@{tapl::cve}!stitchPanaromic@{stitchPanaromic}}
 \index{stitchPanaromic@{stitchPanaromic}!tapl::cve@{tapl::cve}}
@@ -342,5 +413,5 @@ This function is used to stitch multiple images as a panaromic image.
 \end{DoxyReturn}
 
 
-Definition at line 513 of file img\+Proc.\+cpp.
+Definition at line 472 of file img\+Proc.\+cpp.
 

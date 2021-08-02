@@ -1,0 +1,284 @@
+\hypertarget{structtapl_1_1CameraPairs}{}\doxysection{tapl\+::Camera\+Pairs Struct Reference}
+\label{structtapl_1_1CameraPairs}\index{tapl::CameraPairs@{tapl::CameraPairs}}
+
+
+represents a pair of camera frames and their properties  
+
+
+
+
+{\ttfamily \#include $<$tapl\+Types.\+hpp$>$}
+
+
+
+Collaboration diagram for tapl\+::Camera\+Pairs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{structtapl_1_1CameraPairs__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtapl_1_1CameraPairs_aa0ae1c637a510259c53eb9e3e58aecd6}{Camera\+Pairs}} ()
+\item 
+\mbox{\hyperlink{structtapl_1_1CameraPairs_acbc5b66c8b59476a4dcb40259398537f}{Camera\+Pairs}} (const cv\+::\+Mat \&img1, const cv\+::\+Mat \&img2)
+\item 
+void \mbox{\hyperlink{structtapl_1_1CameraPairs_a18ed9e90c09755468e02b2e1c80dfd76}{push\+Kpts\+Matches}} (const std\+::vector$<$ cv\+::\+D\+Match $>$ \&kpt\+Matches)
+\item 
+void \mbox{\hyperlink{structtapl_1_1CameraPairs_a1fb74f805ccbafb66882ee06aa9e5632}{push\+Fundamental\+Matrix}} (const cv\+::\+Mat \&F)
+\item 
+void \mbox{\hyperlink{structtapl_1_1CameraPairs_abfe1f45ea0430a0bb86809cd91b0f064}{push\+Essential\+Matrix}} (const cv\+::\+Mat \&E)
+\item 
+void \mbox{\hyperlink{structtapl_1_1CameraPairs_a8d951884d8defaa76bd30ae19920171e}{push\+Pose}} (const \mbox{\hyperlink{structtapl_1_1Pose6dof}{Pose6dof}} \&pose)
+\item 
+void \mbox{\hyperlink{structtapl_1_1CameraPairs_aa43af27a1b5d7ac3776b1e08c34ede8c}{push\+Tracked\+Kpts}} (std\+::vector$<$ \mbox{\hyperlink{structtapl_1_1Point2d}{tapl\+::\+Point2d}} $>$ \&pts)
+\item 
+\mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{Result\+Code}} \mbox{\hyperlink{structtapl_1_1CameraPairs_a4c1b0d9dfeb4f2b2016e60451285d28b}{get\+Kpts\+Matches}} (std\+::vector$<$ cv\+::\+D\+Match $>$ \&kpt\+Matches) const
+\item 
+\mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{Result\+Code}} \mbox{\hyperlink{structtapl_1_1CameraPairs_ae5b1cc847f1bdc19448a62cae9f7f40c}{get\+Fundamental\+Matrix}} (cv\+::\+Mat \&F) const
+\item 
+\mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{Result\+Code}} \mbox{\hyperlink{structtapl_1_1CameraPairs_a181d7a0c9ca9fc26795df6aac50a5a18}{get\+Essential\+Matrix}} (cv\+::\+Mat \&E) const
+\item 
+\mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{Result\+Code}} \mbox{\hyperlink{structtapl_1_1CameraPairs_af5dd871227e8a3765b56471484440648}{get\+Pose}} (\mbox{\hyperlink{structtapl_1_1Pose6dof}{Pose6dof}} \&pose) const
+\item 
+\mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{Result\+Code}} \mbox{\hyperlink{structtapl_1_1CameraPairs_a896f84774bbd5006fcb0247b31761ce0}{get\+Tracked\+Kpts}} (std\+::vector$<$ \mbox{\hyperlink{structtapl_1_1Point2d}{tapl\+::\+Point2d}} $>$ \&pts) const
+\item 
+\mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{Result\+Code}} \mbox{\hyperlink{structtapl_1_1CameraPairs_a17622e35e5deb59e590908b1f2c7704b}{get\+Triangulated\+Points}} (std\+::vector$<$ \mbox{\hyperlink{structtapl_1_1Point3dColor}{tapl\+::\+Point3d\+Color}} $>$ \&pts) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtapl_1_1CameraFrame}{Camera\+Frame}} $\ast$ \mbox{\hyperlink{structtapl_1_1CameraPairs_a812693ff1c60e4f5795477cd7980e446}{first}}
+\item 
+\mbox{\hyperlink{structtapl_1_1CameraFrame}{Camera\+Frame}} $\ast$ \mbox{\hyperlink{structtapl_1_1CameraPairs_a1b356732f82b44687cae0ddc4d039740}{second}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+represents a pair of camera frames and their properties 
+
+Definition at line 241 of file tapl\+Types.\+hpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structtapl_1_1CameraPairs_aa0ae1c637a510259c53eb9e3e58aecd6}\label{structtapl_1_1CameraPairs_aa0ae1c637a510259c53eb9e3e58aecd6}} 
+\index{tapl::CameraPairs@{tapl::CameraPairs}!CameraPairs@{CameraPairs}}
+\index{CameraPairs@{CameraPairs}!tapl::CameraPairs@{tapl::CameraPairs}}
+\doxysubsubsection{\texorpdfstring{CameraPairs()}{CameraPairs()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily tapl\+::\+Camera\+Pairs\+::\+Camera\+Pairs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+$<$ cunstructors 
+
+Definition at line 258 of file tapl\+Types.\+hpp.
+
+\mbox{\Hypertarget{structtapl_1_1CameraPairs_acbc5b66c8b59476a4dcb40259398537f}\label{structtapl_1_1CameraPairs_acbc5b66c8b59476a4dcb40259398537f}} 
+\index{tapl::CameraPairs@{tapl::CameraPairs}!CameraPairs@{CameraPairs}}
+\index{CameraPairs@{CameraPairs}!tapl::CameraPairs@{tapl::CameraPairs}}
+\doxysubsubsection{\texorpdfstring{CameraPairs()}{CameraPairs()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily tapl\+::\+Camera\+Pairs\+::\+Camera\+Pairs (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{img1,  }\item[{const cv\+::\+Mat \&}]{img2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 268 of file tapl\+Types.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structtapl_1_1CameraPairs_a181d7a0c9ca9fc26795df6aac50a5a18}\label{structtapl_1_1CameraPairs_a181d7a0c9ca9fc26795df6aac50a5a18}} 
+\index{tapl::CameraPairs@{tapl::CameraPairs}!getEssentialMatrix@{getEssentialMatrix}}
+\index{getEssentialMatrix@{getEssentialMatrix}!tapl::CameraPairs@{tapl::CameraPairs}}
+\doxysubsubsection{\texorpdfstring{getEssentialMatrix()}{getEssentialMatrix()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{Result\+Code}} tapl\+::\+Camera\+Pairs\+::get\+Essential\+Matrix (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{E }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 339 of file tapl\+Types.\+hpp.
+
+\mbox{\Hypertarget{structtapl_1_1CameraPairs_ae5b1cc847f1bdc19448a62cae9f7f40c}\label{structtapl_1_1CameraPairs_ae5b1cc847f1bdc19448a62cae9f7f40c}} 
+\index{tapl::CameraPairs@{tapl::CameraPairs}!getFundamentalMatrix@{getFundamentalMatrix}}
+\index{getFundamentalMatrix@{getFundamentalMatrix}!tapl::CameraPairs@{tapl::CameraPairs}}
+\doxysubsubsection{\texorpdfstring{getFundamentalMatrix()}{getFundamentalMatrix()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{Result\+Code}} tapl\+::\+Camera\+Pairs\+::get\+Fundamental\+Matrix (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{F }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 328 of file tapl\+Types.\+hpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structtapl_1_1CameraPairs_ae5b1cc847f1bdc19448a62cae9f7f40c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structtapl_1_1CameraPairs_a4c1b0d9dfeb4f2b2016e60451285d28b}\label{structtapl_1_1CameraPairs_a4c1b0d9dfeb4f2b2016e60451285d28b}} 
+\index{tapl::CameraPairs@{tapl::CameraPairs}!getKptsMatches@{getKptsMatches}}
+\index{getKptsMatches@{getKptsMatches}!tapl::CameraPairs@{tapl::CameraPairs}}
+\doxysubsubsection{\texorpdfstring{getKptsMatches()}{getKptsMatches()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{Result\+Code}} tapl\+::\+Camera\+Pairs\+::get\+Kpts\+Matches (\begin{DoxyParamCaption}\item[{std\+::vector$<$ cv\+::\+D\+Match $>$ \&}]{kpt\+Matches }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 317 of file tapl\+Types.\+hpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structtapl_1_1CameraPairs_a4c1b0d9dfeb4f2b2016e60451285d28b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structtapl_1_1CameraPairs_af5dd871227e8a3765b56471484440648}\label{structtapl_1_1CameraPairs_af5dd871227e8a3765b56471484440648}} 
+\index{tapl::CameraPairs@{tapl::CameraPairs}!getPose@{getPose}}
+\index{getPose@{getPose}!tapl::CameraPairs@{tapl::CameraPairs}}
+\doxysubsubsection{\texorpdfstring{getPose()}{getPose()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{Result\+Code}} tapl\+::\+Camera\+Pairs\+::get\+Pose (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtapl_1_1Pose6dof}{Pose6dof}} \&}]{pose }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 350 of file tapl\+Types.\+hpp.
+
+\mbox{\Hypertarget{structtapl_1_1CameraPairs_a896f84774bbd5006fcb0247b31761ce0}\label{structtapl_1_1CameraPairs_a896f84774bbd5006fcb0247b31761ce0}} 
+\index{tapl::CameraPairs@{tapl::CameraPairs}!getTrackedKpts@{getTrackedKpts}}
+\index{getTrackedKpts@{getTrackedKpts}!tapl::CameraPairs@{tapl::CameraPairs}}
+\doxysubsubsection{\texorpdfstring{getTrackedKpts()}{getTrackedKpts()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{Result\+Code}} tapl\+::\+Camera\+Pairs\+::get\+Tracked\+Kpts (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{structtapl_1_1Point2d}{tapl\+::\+Point2d}} $>$ \&}]{pts }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 361 of file tapl\+Types.\+hpp.
+
+\mbox{\Hypertarget{structtapl_1_1CameraPairs_a17622e35e5deb59e590908b1f2c7704b}\label{structtapl_1_1CameraPairs_a17622e35e5deb59e590908b1f2c7704b}} 
+\index{tapl::CameraPairs@{tapl::CameraPairs}!getTriangulatedPoints@{getTriangulatedPoints}}
+\index{getTriangulatedPoints@{getTriangulatedPoints}!tapl::CameraPairs@{tapl::CameraPairs}}
+\doxysubsubsection{\texorpdfstring{getTriangulatedPoints()}{getTriangulatedPoints()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{Result\+Code}} tapl\+::\+Camera\+Pairs\+::get\+Triangulated\+Points (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{structtapl_1_1Point3dColor}{tapl\+::\+Point3d\+Color}} $>$ \&}]{pts }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 372 of file tapl\+Types.\+hpp.
+
+\mbox{\Hypertarget{structtapl_1_1CameraPairs_abfe1f45ea0430a0bb86809cd91b0f064}\label{structtapl_1_1CameraPairs_abfe1f45ea0430a0bb86809cd91b0f064}} 
+\index{tapl::CameraPairs@{tapl::CameraPairs}!pushEssentialMatrix@{pushEssentialMatrix}}
+\index{pushEssentialMatrix@{pushEssentialMatrix}!tapl::CameraPairs@{tapl::CameraPairs}}
+\doxysubsubsection{\texorpdfstring{pushEssentialMatrix()}{pushEssentialMatrix()}}
+{\footnotesize\ttfamily void tapl\+::\+Camera\+Pairs\+::push\+Essential\+Matrix (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{E }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 301 of file tapl\+Types.\+hpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structtapl_1_1CameraPairs_abfe1f45ea0430a0bb86809cd91b0f064_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structtapl_1_1CameraPairs_a1fb74f805ccbafb66882ee06aa9e5632}\label{structtapl_1_1CameraPairs_a1fb74f805ccbafb66882ee06aa9e5632}} 
+\index{tapl::CameraPairs@{tapl::CameraPairs}!pushFundamentalMatrix@{pushFundamentalMatrix}}
+\index{pushFundamentalMatrix@{pushFundamentalMatrix}!tapl::CameraPairs@{tapl::CameraPairs}}
+\doxysubsubsection{\texorpdfstring{pushFundamentalMatrix()}{pushFundamentalMatrix()}}
+{\footnotesize\ttfamily void tapl\+::\+Camera\+Pairs\+::push\+Fundamental\+Matrix (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{F }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 299 of file tapl\+Types.\+hpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structtapl_1_1CameraPairs_a1fb74f805ccbafb66882ee06aa9e5632_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structtapl_1_1CameraPairs_a18ed9e90c09755468e02b2e1c80dfd76}\label{structtapl_1_1CameraPairs_a18ed9e90c09755468e02b2e1c80dfd76}} 
+\index{tapl::CameraPairs@{tapl::CameraPairs}!pushKptsMatches@{pushKptsMatches}}
+\index{pushKptsMatches@{pushKptsMatches}!tapl::CameraPairs@{tapl::CameraPairs}}
+\doxysubsubsection{\texorpdfstring{pushKptsMatches()}{pushKptsMatches()}}
+{\footnotesize\ttfamily void tapl\+::\+Camera\+Pairs\+::push\+Kpts\+Matches (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ cv\+::\+D\+Match $>$ \&}]{kpt\+Matches }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 297 of file tapl\+Types.\+hpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structtapl_1_1CameraPairs_a18ed9e90c09755468e02b2e1c80dfd76_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structtapl_1_1CameraPairs_a8d951884d8defaa76bd30ae19920171e}\label{structtapl_1_1CameraPairs_a8d951884d8defaa76bd30ae19920171e}} 
+\index{tapl::CameraPairs@{tapl::CameraPairs}!pushPose@{pushPose}}
+\index{pushPose@{pushPose}!tapl::CameraPairs@{tapl::CameraPairs}}
+\doxysubsubsection{\texorpdfstring{pushPose()}{pushPose()}}
+{\footnotesize\ttfamily void tapl\+::\+Camera\+Pairs\+::push\+Pose (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structtapl_1_1Pose6dof}{Pose6dof}} \&}]{pose }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 303 of file tapl\+Types.\+hpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structtapl_1_1CameraPairs_a8d951884d8defaa76bd30ae19920171e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structtapl_1_1CameraPairs_aa43af27a1b5d7ac3776b1e08c34ede8c}\label{structtapl_1_1CameraPairs_aa43af27a1b5d7ac3776b1e08c34ede8c}} 
+\index{tapl::CameraPairs@{tapl::CameraPairs}!pushTrackedKpts@{pushTrackedKpts}}
+\index{pushTrackedKpts@{pushTrackedKpts}!tapl::CameraPairs@{tapl::CameraPairs}}
+\doxysubsubsection{\texorpdfstring{pushTrackedKpts()}{pushTrackedKpts()}}
+{\footnotesize\ttfamily void tapl\+::\+Camera\+Pairs\+::push\+Tracked\+Kpts (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{structtapl_1_1Point2d}{tapl\+::\+Point2d}} $>$ \&}]{pts }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 305 of file tapl\+Types.\+hpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structtapl_1_1CameraPairs_aa43af27a1b5d7ac3776b1e08c34ede8c_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{structtapl_1_1CameraPairs_a812693ff1c60e4f5795477cd7980e446}\label{structtapl_1_1CameraPairs_a812693ff1c60e4f5795477cd7980e446}} 
+\index{tapl::CameraPairs@{tapl::CameraPairs}!first@{first}}
+\index{first@{first}!tapl::CameraPairs@{tapl::CameraPairs}}
+\doxysubsubsection{\texorpdfstring{first}{first}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtapl_1_1CameraFrame}{Camera\+Frame}}$\ast$ tapl\+::\+Camera\+Pairs\+::first}
+
+first camera frame 
+
+Definition at line 292 of file tapl\+Types.\+hpp.
+
+\mbox{\Hypertarget{structtapl_1_1CameraPairs_a1b356732f82b44687cae0ddc4d039740}\label{structtapl_1_1CameraPairs_a1b356732f82b44687cae0ddc4d039740}} 
+\index{tapl::CameraPairs@{tapl::CameraPairs}!second@{second}}
+\index{second@{second}!tapl::CameraPairs@{tapl::CameraPairs}}
+\doxysubsubsection{\texorpdfstring{second}{second}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtapl_1_1CameraFrame}{Camera\+Frame}}$\ast$ tapl\+::\+Camera\+Pairs\+::second}
+
+second camera frame used for computing F, E, relative pose, etc. setters 
+
+Definition at line 293 of file tapl\+Types.\+hpp.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+tapl/common/\mbox{\hyperlink{taplTypes_8hpp}{tapl\+Types.\+hpp}}\end{DoxyCompactItemize}

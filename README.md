@@ -1,30 +1,23 @@
 
 # Towards Autonomy Perception Library (TAPL)
 
-Goal of this library is to provide an easy and quick way of implementing perception pipelines. 
+The goal of this library is to provide an open-source platform for perception algorithm pipelines. It provides methods for several computer vision algorithms such as Structure from Motion (SfM), Camera Calibration from a single image, Visual Odometry, Bundle Adjustment, Feature Detection and Tracking, Panoramic Image Stitching, etc. TAPL also provides methods for point-based processing such as KD tree implementation, Euclidian Clustering, Plane Fitting, and so on.  
 
 ![](media/tapl_architecture.png)
 
-## [**Find on GitHub**](https://github.com/towardsautonomy/TAPL)
+## [**Library Home (GitHub)**](https://github.com/towardsautonomy/TAPL)
 
-## Examples of Perception Task  
+### Structure-from-Motion
 
-#### Visual Odometry for a sequence of Monocular camera images  
+Structure from Motion (SfM) is inspired by our ability to learn about the 3D structure in the surrounding environment by moving through it. Given a sequence of images, we are able to simultaneously estimate both the 3D structure and the path the camera took.
 
-This example is provided at ```examples/src/monoVO.cpp```. It uses a sequence of monocular images to perform visual odometry and build sparse point-cloud. This functionality is provided as an API and can be accessed using the function: ```tapl::cve::computeRelativePose()```.  
+SfM can be solved using either Factorization Method or Algebraic Method. Some of the drawbacks of the Factorization Method are: (1) It assumes that the 3D points are visible in all cameras. (2) It assumes Affine Cameras and therefore, there exists affine ambiguity in the solution in addition to similarity ambiguity.
 
-**Pipeline**  
+In Algebraic Method, we assume a projective camera and then solve for camera poses and 3D points using non-linear optimization for bundle adjustment. We first compute Essential Matrix and then use it to find out 4 possible pairs of R,T for each pair of cameras. For each pair of R,T, we then compute the linear estimate of 3D points which is further refined using bundle adjustment for minimizing reprojection errors between pairwise cameras with non-linear optimization method (Gauss-Newton). These 3D points can further be used to filter the best R,T, by enforcing the criteria that all the points should be ahead of camera planes.
 
-  - Read images and push into a ring buffer.  
-  - If more than one image is available in the buffer then:  
-    - Perform keypoint detection and matching.  
-    - Compute essential matrix. 
-    - Compute relative pose (R, t)  
-    - Triangulate good keypoints for which a match is found.  
-  - Compute global pose from this relative pose.  
+We also provide an implementation of Gauss-Newton Optimization for reprojection loss minimization during bundle adjustment, which is used in the SFM pipeline for 3D point estimation.
 
-
-![](media/mono_vo.gif)
+![](media/sfm.png)
 
 #### LiDAR Object Detection  
 

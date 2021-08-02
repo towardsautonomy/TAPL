@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['kdtree_159',['KdTree',['../structtapl_1_1pte_1_1KdTree.html',1,'tapl::pte']]]
+  ['fields_377',['fields',['../structdate_1_1fields.html',1,'date']]]
 ];

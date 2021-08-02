@@ -5,9 +5,12 @@
 This provides the implementation of structure-\/from-\/motion algorithm.  
 
 
-{\ttfamily \#include \char`\"{}tapl/common/tapl\+Log.\+hpp\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}tapl/common/tapl\+Types.\+hpp\char`\"{}}\newline
-Include dependency graph for sfm.\+hpp\+:\nopagebreak
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
+{\ttfamily \#include \char`\"{}tapl/common/common.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tapl/optim/gauss\+Newton.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tapl/viz/visualization.\+hpp\char`\"{}}\newline
+Include dependency graph for sfm.\+hpp\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -19,9 +22,14 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{sfm_8hpp__dep__incl}
+\includegraphics[width=320pt]{sfm_8hpp__dep__incl}
 \end{center}
 \end{figure}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classtapl_1_1cve_1_1StructureFromMotion}{tapl\+::cve\+::\+Structure\+From\+Motion}}
+\end{DoxyCompactItemize}
 \doxysubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
@@ -29,11 +37,6 @@ This graph shows which files directly or indirectly include this file\+:
 \item 
  \mbox{\hyperlink{namespacetapl_1_1cve}{tapl\+::cve}}
 \end{DoxyCompactItemize}
-\doxysubsection*{Functions}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{tapl\+::\+Result\+Code}} \mbox{\hyperlink{namespacetapl_1_1cve_a0008c85836843f8973f48bf301fcadd8}{tapl\+::cve\+::sfm}} (std\+::vector$<$ \mbox{\hyperlink{structtapl_1_1CameraFrame}{tapl\+::\+Camera\+Frame}} $>$ \&frames, std\+::vector$<$ \mbox{\hyperlink{structtapl_1_1Point3d}{tapl\+::\+Point3d}} $>$ \&points, std\+::vector$<$ \mbox{\hyperlink{structtapl_1_1Pose6dof}{tapl\+::\+Pose6dof}} $>$ \&poses)
-\begin{DoxyCompactList}\small\item\em This function performs structure-\/from-\/motion given a set of camera frames. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}

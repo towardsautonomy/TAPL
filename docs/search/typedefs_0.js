@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['days_664',['days',['../namespacedate.html#ad6eee1483b10d62a53de0f5015f819f5',1,'date']]]
+  ['days_711',['days',['../namespacedate.html#ad6eee1483b10d62a53de0f5015f819f5',1,'date']]]
 ];

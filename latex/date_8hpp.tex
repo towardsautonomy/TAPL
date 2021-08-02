@@ -1,0 +1,876 @@
+\hypertarget{date_8hpp}{}\doxysection{tapl/common/date.hpp File Reference}
+\label{date_8hpp}\index{tapl/common/date.hpp@{tapl/common/date.hpp}}
+{\ttfamily \#include $<$cassert$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$cctype$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$climits$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$cstddef$>$}\newline
+{\ttfamily \#include $<$cstdint$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$ctime$>$}\newline
+{\ttfamily \#include $<$ios$>$}\newline
+{\ttfamily \#include $<$istream$>$}\newline
+{\ttfamily \#include $<$iterator$>$}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+{\ttfamily \#include $<$locale$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$ostream$>$}\newline
+{\ttfamily \#include $<$ratio$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$type\+\_\+traits$>$}\newline
+Include dependency graph for date.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{date_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{date_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structdate_1_1local__t}{date\+::local\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structdate_1_1last__spec}{date\+::last\+\_\+spec}}
+\item 
+class \mbox{\hyperlink{classdate_1_1day}{date\+::day}}
+\item 
+class \mbox{\hyperlink{classdate_1_1month}{date\+::month}}
+\item 
+class \mbox{\hyperlink{classdate_1_1year}{date\+::year}}
+\item 
+class \mbox{\hyperlink{classdate_1_1weekday}{date\+::weekday}}
+\item 
+class \mbox{\hyperlink{classdate_1_1weekday__indexed}{date\+::weekday\+\_\+indexed}}
+\item 
+class \mbox{\hyperlink{classdate_1_1weekday__last}{date\+::weekday\+\_\+last}}
+\item 
+struct \mbox{\hyperlink{structdate_1_1detail_1_1unspecified__month__disambiguator}{date\+::detail\+::unspecified\+\_\+month\+\_\+disambiguator}}
+\item 
+class \mbox{\hyperlink{classdate_1_1year__month}{date\+::year\+\_\+month}}
+\item 
+class \mbox{\hyperlink{classdate_1_1month__day}{date\+::month\+\_\+day}}
+\item 
+class \mbox{\hyperlink{classdate_1_1month__day__last}{date\+::month\+\_\+day\+\_\+last}}
+\item 
+class \mbox{\hyperlink{classdate_1_1month__weekday}{date\+::month\+\_\+weekday}}
+\item 
+class \mbox{\hyperlink{classdate_1_1month__weekday__last}{date\+::month\+\_\+weekday\+\_\+last}}
+\item 
+class \mbox{\hyperlink{classdate_1_1year__month__day}{date\+::year\+\_\+month\+\_\+day}}
+\item 
+class \mbox{\hyperlink{classdate_1_1year__month__day__last}{date\+::year\+\_\+month\+\_\+day\+\_\+last}}
+\item 
+class \mbox{\hyperlink{classdate_1_1year__month__weekday}{date\+::year\+\_\+month\+\_\+weekday}}
+\item 
+class \mbox{\hyperlink{classdate_1_1year__month__weekday__last}{date\+::year\+\_\+month\+\_\+weekday\+\_\+last}}
+\item 
+class \mbox{\hyperlink{classdate_1_1detail_1_1save__istream}{date\+::detail\+::save\+\_\+istream$<$ Char\+T, Traits $>$}}
+\item 
+class \mbox{\hyperlink{classdate_1_1detail_1_1save__ostream}{date\+::detail\+::save\+\_\+ostream$<$ Char\+T, Traits $>$}}
+\item 
+struct \mbox{\hyperlink{structdate_1_1detail_1_1choose__trunc__type}{date\+::detail\+::choose\+\_\+trunc\+\_\+type$<$ T $>$}}
+\item 
+struct \mbox{\hyperlink{structdate_1_1detail_1_1static__gcd}{date\+::detail\+::static\+\_\+gcd$<$ Xp, Yp $>$}}
+\item 
+struct \mbox{\hyperlink{structdate_1_1detail_1_1static__gcd_3_01Xp_00_010_01_4}{date\+::detail\+::static\+\_\+gcd$<$ Xp, 0 $>$}}
+\item 
+struct \mbox{\hyperlink{structdate_1_1detail_1_1static__gcd_3_010_00_010_01_4}{date\+::detail\+::static\+\_\+gcd$<$ 0, 0 $>$}}
+\item 
+struct \mbox{\hyperlink{structdate_1_1detail_1_1no__overflow}{date\+::detail\+::no\+\_\+overflow$<$ R1, R2 $>$}}
+\item 
+struct \mbox{\hyperlink{structdate_1_1fields}{date\+::fields$<$ Duration $>$}}
+\item 
+struct \mbox{\hyperlink{structdate_1_1detail_1_1undocumented}{date\+::detail\+::undocumented}}
+\item 
+struct \mbox{\hyperlink{structdate_1_1detail_1_1width}{date\+::detail\+::width$<$ n, d, w, should\+\_\+continue $>$}}
+\item 
+struct \mbox{\hyperlink{structdate_1_1detail_1_1width_3_01n_00_01d_00_01w_00_01false_01_4}{date\+::detail\+::width$<$ n, d, w, false $>$}}
+\item 
+struct \mbox{\hyperlink{structdate_1_1detail_1_1static__pow10}{date\+::detail\+::static\+\_\+pow10$<$ exp $>$}}
+\item 
+struct \mbox{\hyperlink{structdate_1_1detail_1_1static__pow10_3_010_01_4}{date\+::detail\+::static\+\_\+pow10$<$ 0 $>$}}
+\item 
+class \mbox{\hyperlink{classdate_1_1detail_1_1decimal__format__seconds}{date\+::detail\+::decimal\+\_\+format\+\_\+seconds$<$ Duration $>$}}
+\item 
+class \mbox{\hyperlink{classdate_1_1hh__mm__ss}{date\+::hh\+\_\+mm\+\_\+ss$<$ Duration $>$}}
+\item 
+class \mbox{\hyperlink{classdate_1_1detail_1_1string__literal}{date\+::detail\+::string\+\_\+literal$<$ Char\+T, N $>$}}
+\item 
+struct \mbox{\hyperlink{structdate_1_1fields}{date\+::fields$<$ Duration $>$}}
+\item 
+struct \mbox{\hyperlink{structdate_1_1detail_1_1rs}{date\+::detail\+::rs}}
+\item 
+struct \mbox{\hyperlink{structdate_1_1detail_1_1ru}{date\+::detail\+::ru}}
+\item 
+struct \mbox{\hyperlink{structdate_1_1detail_1_1rld}{date\+::detail\+::rld}}
+\item 
+struct \mbox{\hyperlink{structdate_1_1parse__manip}{date\+::parse\+\_\+manip$<$ Parsable, Char\+T, Traits, Alloc $>$}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacedate}{date}}
+\item 
+ \mbox{\hyperlink{namespacedate_1_1detail}{date\+::detail}}
+\item 
+ \mbox{\hyperlink{namespacedate_1_1literals}{date\+::literals}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{date_8hpp_a355f08725825926dae76d6204e55188d}{H\+A\+S\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+V\+I\+EW}}~0
+\item 
+\#define \mbox{\hyperlink{date_8hpp_ae455a92a107098eb0f1870875285faaf}{O\+N\+L\+Y\+\_\+\+C\+\_\+\+L\+O\+C\+A\+LE}}~0
+\item 
+\#define \mbox{\hyperlink{date_8hpp_a1262e7cef5d1d56fb1f1ed2a43bfe4d1}{C\+O\+N\+S\+T\+D\+A\+TA}}~constexpr const
+\item 
+\#define \mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}}~constexpr
+\item 
+\#define \mbox{\hyperlink{date_8hpp_a3893ed763f820a91f169a2e9777aa325}{C\+O\+N\+S\+T\+C\+D14}}
+\item 
+\#define \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}~noexcept
+\item 
+\#define \mbox{\hyperlink{date_8hpp_acd38f2d3d105d45b40a5604b25fbc2a5}{H\+A\+S\+\_\+\+U\+N\+C\+A\+U\+G\+H\+T\+\_\+\+E\+X\+C\+E\+P\+T\+I\+O\+NS}}~0
+\item 
+\#define \mbox{\hyperlink{date_8hpp_a96e8c4474dd55b7f211853922d8b9a2b}{H\+A\+S\+\_\+\+V\+O\+I\+D\+\_\+T}}~0
+\item 
+\#define \mbox{\hyperlink{date_8hpp_a3669f0d0de342066134da35844c2e1ad}{H\+A\+S\+\_\+\+C\+H\+R\+O\+N\+O\+\_\+\+R\+O\+U\+N\+D\+I\+NG}}~0
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename R1 , typename R2 $>$ }\\using \mbox{\hyperlink{namespacedate_1_1detail_a5a1b46d257af08a5c16db8dc20969d37}{date\+::detail\+::ratio\+\_\+multiply}} = decltype(std\+::ratio\+\_\+multiply$<$ R1, R2 $>$\{\})
+\item 
+{\footnotesize template$<$typename R1 , typename R2 $>$ }\\using \mbox{\hyperlink{namespacedate_1_1detail_a53251b06745d1e2c854f690820a445e5}{date\+::detail\+::ratio\+\_\+divide}} = decltype(std\+::ratio\+\_\+divide$<$ R1, R2 $>$\{\})
+\item 
+using \mbox{\hyperlink{namespacedate_ad6eee1483b10d62a53de0f5015f819f5}{date\+::days}} = std\+::chrono\+::duration$<$ int, detail\+::ratio\+\_\+multiply$<$ std\+::ratio$<$ 24 $>$, std\+::chrono\+::hours\+::period $>$ $>$
+\item 
+using \mbox{\hyperlink{namespacedate_a54e5ce15b4b9f9550d5dfa3bae2fabd6}{date\+::weeks}} = std\+::chrono\+::duration$<$ int, detail\+::ratio\+\_\+multiply$<$ std\+::ratio$<$ 7 $>$, days\+::period $>$ $>$
+\item 
+using \mbox{\hyperlink{namespacedate_a265d5328bec716d232b10a423090ef90}{date\+::years}} = std\+::chrono\+::duration$<$ int, detail\+::ratio\+\_\+multiply$<$ std\+::ratio$<$ 146097, 400 $>$, days\+::period $>$ $>$
+\item 
+using \mbox{\hyperlink{namespacedate_ae22cc517786e7f4d3f0fc94ec2ad0282}{date\+::months}} = std\+::chrono\+::duration$<$ int, detail\+::ratio\+\_\+divide$<$ years\+::period, std\+::ratio$<$ 12 $>$ $>$$>$
+\item 
+{\footnotesize template$<$class Duration $>$ }\\using \mbox{\hyperlink{namespacedate_a79aceba3594c9da2a7f09b0b992be3e2}{date\+::sys\+\_\+time}} = std\+::chrono\+::time\+\_\+point$<$ std\+::chrono\+::system\+\_\+clock, Duration $>$
+\item 
+using \mbox{\hyperlink{namespacedate_ae5b7953f5a7367396877454e5a88b809}{date\+::sys\+\_\+days}} = sys\+\_\+time$<$ days $>$
+\item 
+using \mbox{\hyperlink{namespacedate_adcbf0401c4632c85be5cae32930ae631}{date\+::sys\+\_\+seconds}} = sys\+\_\+time$<$ std\+::chrono\+::seconds $>$
+\item 
+{\footnotesize template$<$class Duration $>$ }\\using \mbox{\hyperlink{namespacedate_adc9dd2e86274818079be9919f3ff0efd}{date\+::local\+\_\+time}} = std\+::chrono\+::time\+\_\+point$<$ local\+\_\+t, Duration $>$
+\item 
+using \mbox{\hyperlink{namespacedate_a19108953dec934a2d04cdd8b8102bfba}{date\+::local\+\_\+seconds}} = local\+\_\+time$<$ std\+::chrono\+::seconds $>$
+\item 
+using \mbox{\hyperlink{namespacedate_a396e62efd18a8a3544e9f09d91ef7eb3}{date\+::local\+\_\+days}} = local\+\_\+time$<$ days $>$
+\item 
+{\footnotesize template$<$class Duration $>$ }\\using \mbox{\hyperlink{namespacedate_a74c839bc1fb049e2df749676f42ead3a}{date\+::time\+\_\+of\+\_\+day}} = hh\+\_\+mm\+\_\+ss$<$ Duration $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} year\+\_\+month \mbox{\hyperlink{namespacedate_a738de58740c3159dd2c14a1db15178c1}{date\+::operator/}} (const year \&y, const month \&m) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} year\+\_\+month \mbox{\hyperlink{namespacedate_a65722134cf629ed2ba291b268ee3e85e}{date\+::operator/}} (const year \&y, int m) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} month\+\_\+day \mbox{\hyperlink{namespacedate_aa6a3b6eac7dc66c78d2514dc2eb0e5f4}{date\+::operator/}} (const day \&d, const month \&m) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} month\+\_\+day \mbox{\hyperlink{namespacedate_a44e2ca7658f5b99b529ccf3d89f0c2ac}{date\+::operator/}} (const day \&d, int m) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} month\+\_\+day \mbox{\hyperlink{namespacedate_a4b9de142ee806e758799a28bcafcc998}{date\+::operator/}} (const month \&m, const day \&d) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} month\+\_\+day \mbox{\hyperlink{namespacedate_a8adaf652acea0acb996242300edd11d9}{date\+::operator/}} (const month \&m, int d) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} month\+\_\+day \mbox{\hyperlink{namespacedate_a6f8acf54f4ec1a5ae38449af948dfe2b}{date\+::operator/}} (int m, const day \&d) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} month\+\_\+day\+\_\+last \mbox{\hyperlink{namespacedate_a400b093c2528fb0b3adf107c9f9e3d16}{date\+::operator/}} (const month \&m, last\+\_\+spec) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} month\+\_\+day\+\_\+last \mbox{\hyperlink{namespacedate_a13e27944d8eb820cc280356384c100a7}{date\+::operator/}} (int m, last\+\_\+spec) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} month\+\_\+day\+\_\+last \mbox{\hyperlink{namespacedate_a05360141ee3b07eb890985e59a7b125e}{date\+::operator/}} (last\+\_\+spec, const month \&m) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} month\+\_\+day\+\_\+last \mbox{\hyperlink{namespacedate_a29a697934e10ee81bc9579d62eae73fb}{date\+::operator/}} (last\+\_\+spec, int m) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} month\+\_\+weekday \mbox{\hyperlink{namespacedate_a67787991bfb6ac112ab414735b2d53a0}{date\+::operator/}} (const month \&m, const weekday\+\_\+indexed \&wdi) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} month\+\_\+weekday \mbox{\hyperlink{namespacedate_af09f26058b95fca8801c9de0045b9bec}{date\+::operator/}} (int m, const weekday\+\_\+indexed \&wdi) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} month\+\_\+weekday \mbox{\hyperlink{namespacedate_a8535390bffcd3cba0992da4bfc23ba90}{date\+::operator/}} (const weekday\+\_\+indexed \&wdi, const month \&m) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} month\+\_\+weekday \mbox{\hyperlink{namespacedate_a732de66684b1b32869c3f1c5ef5297e7}{date\+::operator/}} (const weekday\+\_\+indexed \&wdi, int m) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} month\+\_\+weekday\+\_\+last \mbox{\hyperlink{namespacedate_a8aa6e487adcde5c7b7437a268ecd5f98}{date\+::operator/}} (const month \&m, const weekday\+\_\+last \&wdl) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} month\+\_\+weekday\+\_\+last \mbox{\hyperlink{namespacedate_a82be032ea6387039aab96adb36a52ed3}{date\+::operator/}} (int m, const weekday\+\_\+last \&wdl) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} month\+\_\+weekday\+\_\+last \mbox{\hyperlink{namespacedate_aa270771d06d6aca21d903cb402522ab3}{date\+::operator/}} (const weekday\+\_\+last \&wdl, const month \&m) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} month\+\_\+weekday\+\_\+last \mbox{\hyperlink{namespacedate_af99467aa924b97dd683a53deb81f37e1}{date\+::operator/}} (const weekday\+\_\+last \&wdl, int m) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} year\+\_\+month\+\_\+day \mbox{\hyperlink{namespacedate_a499d9e1919783ce5e292cdc932087ab8}{date\+::operator/}} (const year\+\_\+month \&ym, const day \&d) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} year\+\_\+month\+\_\+day \mbox{\hyperlink{namespacedate_ac972b9cacf284f0686c4d0e67d1db031}{date\+::operator/}} (const year\+\_\+month \&ym, int d) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} year\+\_\+month\+\_\+day \mbox{\hyperlink{namespacedate_a8b5fc24b52d1203b5e51ba1b233f7f17}{date\+::operator/}} (const year \&y, const month\+\_\+day \&md) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} year\+\_\+month\+\_\+day \mbox{\hyperlink{namespacedate_af37efd1e623b3af9d3cfaef6cd920f17}{date\+::operator/}} (int y, const month\+\_\+day \&md) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} year\+\_\+month\+\_\+day \mbox{\hyperlink{namespacedate_a4506965880693268baa17792a37a93d8}{date\+::operator/}} (const month\+\_\+day \&md, const year \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} year\+\_\+month\+\_\+day \mbox{\hyperlink{namespacedate_a9f4c12e286d5abc2d5e73c040e4992ec}{date\+::operator/}} (const month\+\_\+day \&md, int y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} year\+\_\+month\+\_\+day\+\_\+last \mbox{\hyperlink{namespacedate_a3b5a1a87e5ee8092e23e90a206363a1b}{date\+::operator/}} (const year\+\_\+month \&ym, last\+\_\+spec) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} year\+\_\+month\+\_\+day\+\_\+last \mbox{\hyperlink{namespacedate_afb8042576615da3b89608154597228db}{date\+::operator/}} (const year \&y, const month\+\_\+day\+\_\+last \&mdl) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} year\+\_\+month\+\_\+day\+\_\+last \mbox{\hyperlink{namespacedate_a7179c6158059fd6cff3106e262a8538b}{date\+::operator/}} (int y, const month\+\_\+day\+\_\+last \&mdl) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} year\+\_\+month\+\_\+day\+\_\+last \mbox{\hyperlink{namespacedate_ac68a11aa133aa1720bc704c802f2e074}{date\+::operator/}} (const month\+\_\+day\+\_\+last \&mdl, const year \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} year\+\_\+month\+\_\+day\+\_\+last \mbox{\hyperlink{namespacedate_a5e0f11b007c2cd5f1ed921640501f556}{date\+::operator/}} (const month\+\_\+day\+\_\+last \&mdl, int y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} year\+\_\+month\+\_\+weekday \mbox{\hyperlink{namespacedate_a9b9a85fe8330d2f2ff230a49ec7705f4}{date\+::operator/}} (const year\+\_\+month \&ym, const weekday\+\_\+indexed \&wdi) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} year\+\_\+month\+\_\+weekday \mbox{\hyperlink{namespacedate_a45841cc62ab1c8a5de837125498f3016}{date\+::operator/}} (const year \&y, const month\+\_\+weekday \&mwd) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} year\+\_\+month\+\_\+weekday \mbox{\hyperlink{namespacedate_a0a9ab023f3e5ddf4e0934d72ec4ab61e}{date\+::operator/}} (int y, const month\+\_\+weekday \&mwd) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} year\+\_\+month\+\_\+weekday \mbox{\hyperlink{namespacedate_a9e4938dae3c5ac59aba34df877156865}{date\+::operator/}} (const month\+\_\+weekday \&mwd, const year \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} year\+\_\+month\+\_\+weekday \mbox{\hyperlink{namespacedate_a15f8ef0cc4ebd20dcae13b122597230c}{date\+::operator/}} (const month\+\_\+weekday \&mwd, int y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} year\+\_\+month\+\_\+weekday\+\_\+last \mbox{\hyperlink{namespacedate_a2a4f2baaf8711639357e67fce1622a0f}{date\+::operator/}} (const year\+\_\+month \&ym, const weekday\+\_\+last \&wdl) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} year\+\_\+month\+\_\+weekday\+\_\+last \mbox{\hyperlink{namespacedate_ab76160951992f4f2339d5e575c8cbd7b}{date\+::operator/}} (const year \&y, const month\+\_\+weekday\+\_\+last \&mwdl) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} year\+\_\+month\+\_\+weekday\+\_\+last \mbox{\hyperlink{namespacedate_a6c55abcb8ce6f09b0e002578379431b9}{date\+::operator/}} (int y, const month\+\_\+weekday\+\_\+last \&mwdl) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} year\+\_\+month\+\_\+weekday\+\_\+last \mbox{\hyperlink{namespacedate_ab76b4a628f234ffd1d9bfdffe592183c}{date\+::operator/}} (const month\+\_\+weekday\+\_\+last \&mwdl, const year \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} year\+\_\+month\+\_\+weekday\+\_\+last \mbox{\hyperlink{namespacedate_a550462749534da9961fe549f26eb122e}{date\+::operator/}} (const month\+\_\+weekday\+\_\+last \&mwdl, int y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_a797d22fa1abe76dcaa63500561ec37fe}{date\+::operator==}} (const day \&x, const day \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_a917b00f8df9588eff035a7f1b81f79a7}{date\+::operator!=}} (const day \&x, const day \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_acb2211372e9281769fae4fab3d82cd93}{date\+::operator$<$}} (const day \&x, const day \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_a70e7968a4183977436377714d6cb63ed}{date\+::operator$>$}} (const day \&x, const day \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_aa42f3c31bb23193a6bc925fa98521aab}{date\+::operator$<$=}} (const day \&x, const day \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_a0cd159b63a81fdfc349d32e8db5825ef}{date\+::operator$>$=}} (const day \&x, const day \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} day \mbox{\hyperlink{namespacedate_a1a05337ec366df3812ddd7e08f9063ed}{date\+::operator+}} (const day \&x, const days \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} day \mbox{\hyperlink{namespacedate_ac47420bda3312118e42b2b28c67ea24e}{date\+::operator+}} (const days \&x, const day \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} day \mbox{\hyperlink{namespacedate_a248109a457512f6cd5e7fe3051050908}{date\+::operator-\/}} (const day \&x, const days \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} days \mbox{\hyperlink{namespacedate_ac8d31d6364ab40223721e130a7ec3434}{date\+::operator-\/}} (const day \&x, const day \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_a33b57cfd037c2cbabdc2cf0ac5af2c48}{date\+::operator$<$$<$}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const day \&d)
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_a6693959b06a08e8856f5251fab0d0fb7}{date\+::operator==}} (const month \&x, const month \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_a4a103bc66c0623a61450be3eb701b366}{date\+::operator!=}} (const month \&x, const month \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_a81423a5c1008935363d3b854b51e9892}{date\+::operator$<$}} (const month \&x, const month \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_a70200fb3bcb823cb43f1d5854fd495ec}{date\+::operator$>$}} (const month \&x, const month \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_aee66293ac895c39e9c617fdaf3af6c28}{date\+::operator$<$=}} (const month \&x, const month \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_a81d39fab48e017d740408b38de86ffed}{date\+::operator$>$=}} (const month \&x, const month \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a3893ed763f820a91f169a2e9777aa325}{C\+O\+N\+S\+T\+C\+D14}} month \mbox{\hyperlink{namespacedate_a3a48dd59cc45164715335354b4eb046a}{date\+::operator+}} (const month \&x, const months \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a3893ed763f820a91f169a2e9777aa325}{C\+O\+N\+S\+T\+C\+D14}} month \mbox{\hyperlink{namespacedate_aa45b0592ba9c40e45f75442783dd7faa}{date\+::operator+}} (const months \&x, const month \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a3893ed763f820a91f169a2e9777aa325}{C\+O\+N\+S\+T\+C\+D14}} month \mbox{\hyperlink{namespacedate_ab8fdb5a4039c04390947d721dad8d931}{date\+::operator-\/}} (const month \&x, const months \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a3893ed763f820a91f169a2e9777aa325}{C\+O\+N\+S\+T\+C\+D14}} months \mbox{\hyperlink{namespacedate_aab7ee826de00f29e3bde3872bdcdca68}{date\+::operator-\/}} (const month \&x, const month \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_a9cd427bde4f1b8d310af2d94f9068624}{date\+::operator$<$$<$}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const month \&m)
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_a42c845ef892d14ac628310607371a077}{date\+::operator==}} (const year \&x, const year \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_a271bf881f64c965441b3cb8b199a59a1}{date\+::operator!=}} (const year \&x, const year \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_ada3fab4c7b85cfb37fa529af19771b6e}{date\+::operator$<$}} (const year \&x, const year \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_a6b4dfb85b3b9ae862c83bc9090d5699b}{date\+::operator$>$}} (const year \&x, const year \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_a993185da6863a07a708e63e7ef660a1d}{date\+::operator$<$=}} (const year \&x, const year \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_ac08c8d1fda91bd9200cb40589737cb50}{date\+::operator$>$=}} (const year \&x, const year \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} year \mbox{\hyperlink{namespacedate_ad275f37aaf122391a0f9f71806fee604}{date\+::operator+}} (const year \&x, const years \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} year \mbox{\hyperlink{namespacedate_a13840edbd42e871a37a91a21a776c87c}{date\+::operator+}} (const years \&x, const year \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} year \mbox{\hyperlink{namespacedate_ab309decf94c272ef08d9c662ee00f71c}{date\+::operator-\/}} (const year \&x, const years \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} years \mbox{\hyperlink{namespacedate_a8702cf32648a55bdfa33e799fe553ff8}{date\+::operator-\/}} (const year \&x, const year \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_abc64e59390e042da9cd5d121dd8c7bfe}{date\+::operator$<$$<$}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const year \&y)
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_a7afa959e791ba0da69554fd892e20fcc}{date\+::operator==}} (const weekday \&x, const weekday \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_a5d52bd9a895e80916aa064882a769f30}{date\+::operator!=}} (const weekday \&x, const weekday \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a3893ed763f820a91f169a2e9777aa325}{C\+O\+N\+S\+T\+C\+D14}} weekday \mbox{\hyperlink{namespacedate_a380af855fe79269f89e6e33e26214c13}{date\+::operator+}} (const weekday \&x, const days \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a3893ed763f820a91f169a2e9777aa325}{C\+O\+N\+S\+T\+C\+D14}} weekday \mbox{\hyperlink{namespacedate_ab10dcd4dfb6b8a5713e0641276843b91}{date\+::operator+}} (const days \&x, const weekday \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a3893ed763f820a91f169a2e9777aa325}{C\+O\+N\+S\+T\+C\+D14}} weekday \mbox{\hyperlink{namespacedate_afbd2d136106e856c6f3d70eaa604c174}{date\+::operator-\/}} (const weekday \&x, const days \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a3893ed763f820a91f169a2e9777aa325}{C\+O\+N\+S\+T\+C\+D14}} days \mbox{\hyperlink{namespacedate_a1f280d36ca71492981da26960cc3566c}{date\+::operator-\/}} (const weekday \&x, const weekday \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_aeba2ca917d1ae16bc545fd5f16c9099c}{date\+::operator$<$$<$}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const weekday \&wd)
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_a3aa1d46702c72386c0d503e32387b8c1}{date\+::operator==}} (const weekday\+\_\+indexed \&x, const weekday\+\_\+indexed \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_a27eef23781f3d8297310843952947ec4}{date\+::operator!=}} (const weekday\+\_\+indexed \&x, const weekday\+\_\+indexed \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_a3c69ae0dfec738499d3562d06042fa17}{date\+::operator$<$$<$}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const weekday\+\_\+indexed \&wdi)
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_a4b8a42735b4020e60381c76ccc0e753e}{date\+::operator==}} (const weekday\+\_\+last \&x, const weekday\+\_\+last \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_af0352c0fa35a41a87f41963c7378e75f}{date\+::operator!=}} (const weekday\+\_\+last \&x, const weekday\+\_\+last \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_a00c466d95eacd06d53457c77962e48e8}{date\+::operator$<$$<$}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const weekday\+\_\+last \&wdl)
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_a25b8be2c8beaf1a6fbd8d8d692d375a0}{date\+::operator==}} (const year\+\_\+month \&x, const year\+\_\+month \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_aa7bcc86efff33c76c476112a5fb28125}{date\+::operator!=}} (const year\+\_\+month \&x, const year\+\_\+month \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_a2377e3521fabe64da9dafed864d3c0b4}{date\+::operator$<$}} (const year\+\_\+month \&x, const year\+\_\+month \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_afe915104e87b0cd640595d12689700ca}{date\+::operator$>$}} (const year\+\_\+month \&x, const year\+\_\+month \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_a5234b1b362fe55dff08e2b4322d4ae98}{date\+::operator$<$=}} (const year\+\_\+month \&x, const year\+\_\+month \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_ae4c5bb20595e4f5309882dbe7ec82792}{date\+::operator$>$=}} (const year\+\_\+month \&x, const year\+\_\+month \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+{\footnotesize template$<$class  = detail\+::unspecified\+\_\+month\+\_\+disambiguator$>$ }\\\mbox{\hyperlink{date_8hpp_a3893ed763f820a91f169a2e9777aa325}{C\+O\+N\+S\+T\+C\+D14}} year\+\_\+month \mbox{\hyperlink{namespacedate_adfeff3b6b7db6514aa2c5e154990aec1}{date\+::operator+}} (const year\+\_\+month \&ym, const months \&dm) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+{\footnotesize template$<$class  = detail\+::unspecified\+\_\+month\+\_\+disambiguator$>$ }\\\mbox{\hyperlink{date_8hpp_a3893ed763f820a91f169a2e9777aa325}{C\+O\+N\+S\+T\+C\+D14}} year\+\_\+month \mbox{\hyperlink{namespacedate_ac27ac3fbf805d95bd799c0a9addeee59}{date\+::operator+}} (const months \&dm, const year\+\_\+month \&ym) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+{\footnotesize template$<$class  = detail\+::unspecified\+\_\+month\+\_\+disambiguator$>$ }\\\mbox{\hyperlink{date_8hpp_a3893ed763f820a91f169a2e9777aa325}{C\+O\+N\+S\+T\+C\+D14}} year\+\_\+month \mbox{\hyperlink{namespacedate_a8be1c26ad342e5d0edb69d0ba54c1e19}{date\+::operator-\/}} (const year\+\_\+month \&ym, const months \&dm) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} months \mbox{\hyperlink{namespacedate_a1c9e9891a588c709db1dccd624a98631}{date\+::operator-\/}} (const year\+\_\+month \&x, const year\+\_\+month \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} year\+\_\+month \mbox{\hyperlink{namespacedate_a2407ba68bfc6f8c7d7eca3ac780e3369}{date\+::operator+}} (const year\+\_\+month \&ym, const years \&dy) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} year\+\_\+month \mbox{\hyperlink{namespacedate_a6d2066ae70838184aba6b6e77cca1f6a}{date\+::operator+}} (const years \&dy, const year\+\_\+month \&ym) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} year\+\_\+month \mbox{\hyperlink{namespacedate_ad45890095a967be9d2b022799f2fea4a}{date\+::operator-\/}} (const year\+\_\+month \&ym, const years \&dy) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_ab85a0e2fa0a5c6e590c9f938689baa73}{date\+::operator$<$$<$}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const year\+\_\+month \&ym)
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_a3b44aa0d2c2875c4744f22709b40cdcd}{date\+::operator==}} (const month\+\_\+day \&x, const month\+\_\+day \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_a957310fd0eefa25833489885d36f37f7}{date\+::operator!=}} (const month\+\_\+day \&x, const month\+\_\+day \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_aef6228ea117503f244d00730132a9164}{date\+::operator$<$}} (const month\+\_\+day \&x, const month\+\_\+day \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_a8fff62204d4e8c93fce5ff573232cb82}{date\+::operator$>$}} (const month\+\_\+day \&x, const month\+\_\+day \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_a86d65275b5da0fa867d48e1fd4b8ca85}{date\+::operator$<$=}} (const month\+\_\+day \&x, const month\+\_\+day \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_aae5f72968db998f331286b271a89bc26}{date\+::operator$>$=}} (const month\+\_\+day \&x, const month\+\_\+day \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_a02ee20a3bb7aae65854ddafad87eb7b2}{date\+::operator$<$$<$}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const month\+\_\+day \&md)
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_a55dbbbe7db8b534a74ff10190dad262b}{date\+::operator==}} (const month\+\_\+day\+\_\+last \&x, const month\+\_\+day\+\_\+last \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_af8e631b6df4406a6433588915ab8f717}{date\+::operator!=}} (const month\+\_\+day\+\_\+last \&x, const month\+\_\+day\+\_\+last \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_afcf2ac23e45df08a02ad5bdacf0830b2}{date\+::operator$<$}} (const month\+\_\+day\+\_\+last \&x, const month\+\_\+day\+\_\+last \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_a2907dff1804711f29d62f53144e094ec}{date\+::operator$>$}} (const month\+\_\+day\+\_\+last \&x, const month\+\_\+day\+\_\+last \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_a3b8074bcd99b403736a36c75c97e34ad}{date\+::operator$<$=}} (const month\+\_\+day\+\_\+last \&x, const month\+\_\+day\+\_\+last \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_a2039cfaaf366459d58e5e85bbe0a2c90}{date\+::operator$>$=}} (const month\+\_\+day\+\_\+last \&x, const month\+\_\+day\+\_\+last \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_a38bc0d866a9316748492aa2df1a0eab7}{date\+::operator$<$$<$}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const month\+\_\+day\+\_\+last \&mdl)
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_a0f77190eca66247187248271b1dee7f2}{date\+::operator==}} (const month\+\_\+weekday \&x, const month\+\_\+weekday \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_a851c40136e2efbcdaad129572d9a43ed}{date\+::operator!=}} (const month\+\_\+weekday \&x, const month\+\_\+weekday \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_a94f58ecfa45d3c6c8a94609b860d8abe}{date\+::operator$<$$<$}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const month\+\_\+weekday \&mwd)
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_ad5105c214cf0c5cc2286fc24cc9ebd01}{date\+::operator==}} (const month\+\_\+weekday\+\_\+last \&x, const month\+\_\+weekday\+\_\+last \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_ae3f2cc7d0fc787ebcf5f7088bc20a6b1}{date\+::operator!=}} (const month\+\_\+weekday\+\_\+last \&x, const month\+\_\+weekday\+\_\+last \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_a37b3669de440a4637d3bbdd1f188d455}{date\+::operator$<$$<$}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const month\+\_\+weekday\+\_\+last \&mwdl)
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_a91a7043a0a49bba07bfce6b864180094}{date\+::operator==}} (const year\+\_\+month\+\_\+day \&x, const year\+\_\+month\+\_\+day \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_a564f051842ce14c864bd634a60fd6ec3}{date\+::operator!=}} (const year\+\_\+month\+\_\+day \&x, const year\+\_\+month\+\_\+day \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_a59bbec8f62e4d53d023af2a228800017}{date\+::operator$<$}} (const year\+\_\+month\+\_\+day \&x, const year\+\_\+month\+\_\+day \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_a903ef4bff3fc3cb84fbcf869b7ad222f}{date\+::operator$>$}} (const year\+\_\+month\+\_\+day \&x, const year\+\_\+month\+\_\+day \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_aa0445481ada66f561a70834c3a551ede}{date\+::operator$<$=}} (const year\+\_\+month\+\_\+day \&x, const year\+\_\+month\+\_\+day \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_aed6f8d54525616ee9e21e6a3764e9e5e}{date\+::operator$>$=}} (const year\+\_\+month\+\_\+day \&x, const year\+\_\+month\+\_\+day \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+{\footnotesize template$<$class  = detail\+::unspecified\+\_\+month\+\_\+disambiguator$>$ }\\\mbox{\hyperlink{date_8hpp_a3893ed763f820a91f169a2e9777aa325}{C\+O\+N\+S\+T\+C\+D14}} year\+\_\+month\+\_\+day \mbox{\hyperlink{namespacedate_a631b038cc343fcda486c686dd67feaf6}{date\+::operator+}} (const year\+\_\+month\+\_\+day \&ymd, const months \&dm) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+{\footnotesize template$<$class  = detail\+::unspecified\+\_\+month\+\_\+disambiguator$>$ }\\\mbox{\hyperlink{date_8hpp_a3893ed763f820a91f169a2e9777aa325}{C\+O\+N\+S\+T\+C\+D14}} year\+\_\+month\+\_\+day \mbox{\hyperlink{namespacedate_adb1ea5c297f0b5f1533a8ea65a8e42bb}{date\+::operator+}} (const months \&dm, const year\+\_\+month\+\_\+day \&ymd) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+{\footnotesize template$<$class  = detail\+::unspecified\+\_\+month\+\_\+disambiguator$>$ }\\\mbox{\hyperlink{date_8hpp_a3893ed763f820a91f169a2e9777aa325}{C\+O\+N\+S\+T\+C\+D14}} year\+\_\+month\+\_\+day \mbox{\hyperlink{namespacedate_abcaeafe8f25efc35d52fa88f297f2f62}{date\+::operator-\/}} (const year\+\_\+month\+\_\+day \&ymd, const months \&dm) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} year\+\_\+month\+\_\+day \mbox{\hyperlink{namespacedate_a0d1591b62f4d2f1d9baca93eafcc4c98}{date\+::operator+}} (const year\+\_\+month\+\_\+day \&ymd, const years \&dy) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} year\+\_\+month\+\_\+day \mbox{\hyperlink{namespacedate_ad035d7184bb4f37b908242b6015ae9af}{date\+::operator+}} (const years \&dy, const year\+\_\+month\+\_\+day \&ymd) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} year\+\_\+month\+\_\+day \mbox{\hyperlink{namespacedate_a973fbb7e1a5c97eeefcac31bfbab23b7}{date\+::operator-\/}} (const year\+\_\+month\+\_\+day \&ymd, const years \&dy) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_a7d5d6140a9b4a5d520d8e3e26ebeaf22}{date\+::operator$<$$<$}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const year\+\_\+month\+\_\+day \&ymd)
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_a73e131141e5d6868a6a08598cddf3d21}{date\+::operator==}} (const year\+\_\+month\+\_\+day\+\_\+last \&x, const year\+\_\+month\+\_\+day\+\_\+last \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_ac939721182628dea9f9c7c34feed6ef9}{date\+::operator!=}} (const year\+\_\+month\+\_\+day\+\_\+last \&x, const year\+\_\+month\+\_\+day\+\_\+last \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_aff2bec3947ca404143d72c2680e8adcf}{date\+::operator$<$}} (const year\+\_\+month\+\_\+day\+\_\+last \&x, const year\+\_\+month\+\_\+day\+\_\+last \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_aea24ce60f27baebe5a9763e11c0639cc}{date\+::operator$>$}} (const year\+\_\+month\+\_\+day\+\_\+last \&x, const year\+\_\+month\+\_\+day\+\_\+last \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_acd5a260001b6b3808b5b7bb8754f7dca}{date\+::operator$<$=}} (const year\+\_\+month\+\_\+day\+\_\+last \&x, const year\+\_\+month\+\_\+day\+\_\+last \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_a1ec04280e79280d6938d604508bae1bd}{date\+::operator$>$=}} (const year\+\_\+month\+\_\+day\+\_\+last \&x, const year\+\_\+month\+\_\+day\+\_\+last \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+{\footnotesize template$<$class  = detail\+::unspecified\+\_\+month\+\_\+disambiguator$>$ }\\\mbox{\hyperlink{date_8hpp_a3893ed763f820a91f169a2e9777aa325}{C\+O\+N\+S\+T\+C\+D14}} year\+\_\+month\+\_\+day\+\_\+last \mbox{\hyperlink{namespacedate_a39febdd9aea954e2b8cbb8bfeb675334}{date\+::operator+}} (const year\+\_\+month\+\_\+day\+\_\+last \&ymdl, const months \&dm) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+{\footnotesize template$<$class  = detail\+::unspecified\+\_\+month\+\_\+disambiguator$>$ }\\\mbox{\hyperlink{date_8hpp_a3893ed763f820a91f169a2e9777aa325}{C\+O\+N\+S\+T\+C\+D14}} year\+\_\+month\+\_\+day\+\_\+last \mbox{\hyperlink{namespacedate_a28253acd0713810b45c6625593914cb5}{date\+::operator+}} (const months \&dm, const year\+\_\+month\+\_\+day\+\_\+last \&ymdl) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} year\+\_\+month\+\_\+day\+\_\+last \mbox{\hyperlink{namespacedate_a103239921cf56c1182a2f5aa31e4218b}{date\+::operator+}} (const year\+\_\+month\+\_\+day\+\_\+last \&ymdl, const years \&dy) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} year\+\_\+month\+\_\+day\+\_\+last \mbox{\hyperlink{namespacedate_a7afd5ccea50b003b570ade38caaa3517}{date\+::operator+}} (const years \&dy, const year\+\_\+month\+\_\+day\+\_\+last \&ymdl) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+{\footnotesize template$<$class  = detail\+::unspecified\+\_\+month\+\_\+disambiguator$>$ }\\\mbox{\hyperlink{date_8hpp_a3893ed763f820a91f169a2e9777aa325}{C\+O\+N\+S\+T\+C\+D14}} year\+\_\+month\+\_\+day\+\_\+last \mbox{\hyperlink{namespacedate_a82e7a4602c0b83e792d49e234d12ca30}{date\+::operator-\/}} (const year\+\_\+month\+\_\+day\+\_\+last \&ymdl, const months \&dm) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} year\+\_\+month\+\_\+day\+\_\+last \mbox{\hyperlink{namespacedate_a43ea3c116f3eb9da6c37e45adaadee89}{date\+::operator-\/}} (const year\+\_\+month\+\_\+day\+\_\+last \&ymdl, const years \&dy) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_a0ec7e4b21f08056d3ad8f5d5e240d0e5}{date\+::operator$<$$<$}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const year\+\_\+month\+\_\+day\+\_\+last \&ymdl)
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_a67cec488f2112d86659eec0ebf01f697}{date\+::operator==}} (const year\+\_\+month\+\_\+weekday \&x, const year\+\_\+month\+\_\+weekday \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_af5c0a9929405ac6b73e0dc8be4cb0e29}{date\+::operator!=}} (const year\+\_\+month\+\_\+weekday \&x, const year\+\_\+month\+\_\+weekday \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+{\footnotesize template$<$class  = detail\+::unspecified\+\_\+month\+\_\+disambiguator$>$ }\\\mbox{\hyperlink{date_8hpp_a3893ed763f820a91f169a2e9777aa325}{C\+O\+N\+S\+T\+C\+D14}} year\+\_\+month\+\_\+weekday \mbox{\hyperlink{namespacedate_af766b66b10c371df6d5314cdcc99d805}{date\+::operator+}} (const year\+\_\+month\+\_\+weekday \&ymwd, const months \&dm) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+{\footnotesize template$<$class  = detail\+::unspecified\+\_\+month\+\_\+disambiguator$>$ }\\\mbox{\hyperlink{date_8hpp_a3893ed763f820a91f169a2e9777aa325}{C\+O\+N\+S\+T\+C\+D14}} year\+\_\+month\+\_\+weekday \mbox{\hyperlink{namespacedate_af9a87f59aae14ffb429e813ed19c9093}{date\+::operator+}} (const months \&dm, const year\+\_\+month\+\_\+weekday \&ymwd) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} year\+\_\+month\+\_\+weekday \mbox{\hyperlink{namespacedate_abe26fad14971f94cf362e73db9c4b9c9}{date\+::operator+}} (const year\+\_\+month\+\_\+weekday \&ymwd, const years \&dy) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} year\+\_\+month\+\_\+weekday \mbox{\hyperlink{namespacedate_a6b0e2e2887af25fc547b1ad47848f44d}{date\+::operator+}} (const years \&dy, const year\+\_\+month\+\_\+weekday \&ymwd) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+{\footnotesize template$<$class  = detail\+::unspecified\+\_\+month\+\_\+disambiguator$>$ }\\\mbox{\hyperlink{date_8hpp_a3893ed763f820a91f169a2e9777aa325}{C\+O\+N\+S\+T\+C\+D14}} year\+\_\+month\+\_\+weekday \mbox{\hyperlink{namespacedate_aa928b94b9ea4edd2c7a2b04ba2170edd}{date\+::operator-\/}} (const year\+\_\+month\+\_\+weekday \&ymwd, const months \&dm) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} year\+\_\+month\+\_\+weekday \mbox{\hyperlink{namespacedate_a5f13387cf336d6e0fa8026eafb1747aa}{date\+::operator-\/}} (const year\+\_\+month\+\_\+weekday \&ymwd, const years \&dy) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_aed3169961d840f33c60e650d4e01db79}{date\+::operator$<$$<$}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const year\+\_\+month\+\_\+weekday \&ymwdi)
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_afae86d82fbd041a6255d5fb76497cc8a}{date\+::operator==}} (const year\+\_\+month\+\_\+weekday\+\_\+last \&x, const year\+\_\+month\+\_\+weekday\+\_\+last \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} bool \mbox{\hyperlink{namespacedate_a46116264a6688671fc25beb64e3c8555}{date\+::operator!=}} (const year\+\_\+month\+\_\+weekday\+\_\+last \&x, const year\+\_\+month\+\_\+weekday\+\_\+last \&y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+{\footnotesize template$<$class  = detail\+::unspecified\+\_\+month\+\_\+disambiguator$>$ }\\\mbox{\hyperlink{date_8hpp_a3893ed763f820a91f169a2e9777aa325}{C\+O\+N\+S\+T\+C\+D14}} year\+\_\+month\+\_\+weekday\+\_\+last \mbox{\hyperlink{namespacedate_a1a7a07a96ef26c0d8cf41d7665d3e314}{date\+::operator+}} (const year\+\_\+month\+\_\+weekday\+\_\+last \&ymwdl, const months \&dm) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+{\footnotesize template$<$class  = detail\+::unspecified\+\_\+month\+\_\+disambiguator$>$ }\\\mbox{\hyperlink{date_8hpp_a3893ed763f820a91f169a2e9777aa325}{C\+O\+N\+S\+T\+C\+D14}} year\+\_\+month\+\_\+weekday\+\_\+last \mbox{\hyperlink{namespacedate_a99e918dd0971e015e7eecba3ec606d15}{date\+::operator+}} (const months \&dm, const year\+\_\+month\+\_\+weekday\+\_\+last \&ymwdl) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} year\+\_\+month\+\_\+weekday\+\_\+last \mbox{\hyperlink{namespacedate_a71a3fc789a210ba51870bda3f117230f}{date\+::operator+}} (const year\+\_\+month\+\_\+weekday\+\_\+last \&ymwdl, const years \&dy) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} year\+\_\+month\+\_\+weekday\+\_\+last \mbox{\hyperlink{namespacedate_a764beedb14f52e3c1fdbeb5423c363ec}{date\+::operator+}} (const years \&dy, const year\+\_\+month\+\_\+weekday\+\_\+last \&ymwdl) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+{\footnotesize template$<$class  = detail\+::unspecified\+\_\+month\+\_\+disambiguator$>$ }\\\mbox{\hyperlink{date_8hpp_a3893ed763f820a91f169a2e9777aa325}{C\+O\+N\+S\+T\+C\+D14}} year\+\_\+month\+\_\+weekday\+\_\+last \mbox{\hyperlink{namespacedate_accfca13ce718f0f66c57f270c0114a6b}{date\+::operator-\/}} (const year\+\_\+month\+\_\+weekday\+\_\+last \&ymwdl, const months \&dm) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} year\+\_\+month\+\_\+weekday\+\_\+last \mbox{\hyperlink{namespacedate_aff7864e27c03c9aa649d26e542843490}{date\+::operator-\/}} (const year\+\_\+month\+\_\+weekday\+\_\+last \&ymwdl, const years \&dy) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_a2e10d9652fd0f531dac68697624d34f9}{date\+::operator$<$$<$}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const year\+\_\+month\+\_\+weekday\+\_\+last \&ymwdl)
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} \mbox{\hyperlink{classdate_1_1day}{date\+::day}} \mbox{\hyperlink{namespacedate_1_1literals_a3f6eb8a823ff5e809fdc07245e9c8219}{date\+::literals\+::operator\char`\"{}\char`\"{}\+\_\+d}} (unsigned long long d) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} \mbox{\hyperlink{classdate_1_1year}{date\+::year}} \mbox{\hyperlink{namespacedate_1_1literals_a8d8fc72fda866b3cc5ce3e2424d7aded}{date\+::literals\+::operator\char`\"{}\char`\"{}\+\_\+y}} (unsigned long long y) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+{\footnotesize template$<$class T $>$ }\\\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} std\+::enable\+\_\+if$<$ !std\+::chrono\+::treat\+\_\+as\+\_\+floating\+\_\+point$<$ T $>$\+::value, T $>$\+::type \mbox{\hyperlink{namespacedate_1_1detail_a4f8cb9bfd750eb77b0df0379b1283855}{date\+::detail\+::trunc}} (T t) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+{\footnotesize template$<$class T $>$ }\\\mbox{\hyperlink{date_8hpp_a3893ed763f820a91f169a2e9777aa325}{C\+O\+N\+S\+T\+C\+D14}} std\+::enable\+\_\+if$<$ std\+::chrono\+::treat\+\_\+as\+\_\+floating\+\_\+point$<$ T $>$\+::value, T $>$\+::type \mbox{\hyperlink{namespacedate_1_1detail_a2b9554b90b252e4260e3b390ddc13b89}{date\+::detail\+::trunc}} (T t) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+{\footnotesize template$<$class To , class Rep , class Period $>$ }\\\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} std\+::enable\+\_\+if$<$ detail\+::no\+\_\+overflow$<$ Period, typename To\+::period $>$\+::value, To $>$\+::type \mbox{\hyperlink{namespacedate_a512f0708f1408ad470975c35950fe2c9}{date\+::trunc}} (const std\+::chrono\+::duration$<$ Rep, Period $>$ \&d)
+\item 
+{\footnotesize template$<$class To , class Rep , class Period $>$ }\\\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} std\+::enable\+\_\+if$<$ !detail\+::no\+\_\+overflow$<$ Period, typename To\+::period $>$\+::value, To $>$\+::type \mbox{\hyperlink{namespacedate_ae9cde17a898a2a68a5e48947f1b59fc2}{date\+::trunc}} (const std\+::chrono\+::duration$<$ Rep, Period $>$ \&d)
+\item 
+{\footnotesize template$<$class To , class Rep , class Period $>$ }\\\mbox{\hyperlink{date_8hpp_a3893ed763f820a91f169a2e9777aa325}{C\+O\+N\+S\+T\+C\+D14}} std\+::enable\+\_\+if$<$ detail\+::no\+\_\+overflow$<$ Period, typename To\+::period $>$\+::value, To $>$\+::type \mbox{\hyperlink{namespacedate_a89fc36e6e98567670205bffe8ac61fa2}{date\+::floor}} (const std\+::chrono\+::duration$<$ Rep, Period $>$ \&d)
+\item 
+{\footnotesize template$<$class To , class Rep , class Period $>$ }\\\mbox{\hyperlink{date_8hpp_a3893ed763f820a91f169a2e9777aa325}{C\+O\+N\+S\+T\+C\+D14}} std\+::enable\+\_\+if$<$ !detail\+::no\+\_\+overflow$<$ Period, typename To\+::period $>$\+::value, To $>$\+::type \mbox{\hyperlink{namespacedate_a4a628327265d8de240424a2a73846cb9}{date\+::floor}} (const std\+::chrono\+::duration$<$ Rep, Period $>$ \&d)
+\item 
+{\footnotesize template$<$class To , class Rep , class Period $>$ }\\\mbox{\hyperlink{date_8hpp_a3893ed763f820a91f169a2e9777aa325}{C\+O\+N\+S\+T\+C\+D14}} To \mbox{\hyperlink{namespacedate_a137f7c160374c629a39afb6b53f18cc2}{date\+::round}} (const std\+::chrono\+::duration$<$ Rep, Period $>$ \&d)
+\item 
+{\footnotesize template$<$class To , class Rep , class Period $>$ }\\\mbox{\hyperlink{date_8hpp_a3893ed763f820a91f169a2e9777aa325}{C\+O\+N\+S\+T\+C\+D14}} To \mbox{\hyperlink{namespacedate_aec0d366f4018e3655c6aea0451560533}{date\+::ceil}} (const std\+::chrono\+::duration$<$ Rep, Period $>$ \&d)
+\item 
+{\footnotesize template$<$class Rep , class Period , class  = typename std\+::enable\+\_\+if $<$              std\+::numeric\+\_\+limits$<$\+Rep$>$\+::is\+\_\+signed          $>$\+::type$>$ }\\\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} std\+::chrono\+::duration$<$ Rep, Period $>$ \mbox{\hyperlink{namespacedate_ad15b8066673c9f9e74eaceb7f3d8a977}{date\+::abs}} (std\+::chrono\+::duration$<$ Rep, Period $>$ d)
+\item 
+{\footnotesize template$<$class To , class Clock , class From\+Duration $>$ }\\\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} std\+::chrono\+::time\+\_\+point$<$ Clock, To $>$ \mbox{\hyperlink{namespacedate_adc041b6a8ef7135ee16b665de447eac5}{date\+::floor}} (const std\+::chrono\+::time\+\_\+point$<$ Clock, From\+Duration $>$ \&tp)
+\item 
+{\footnotesize template$<$class To , class Clock , class From\+Duration $>$ }\\\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} std\+::chrono\+::time\+\_\+point$<$ Clock, To $>$ \mbox{\hyperlink{namespacedate_a15d195fd10c89bd2351a2da8bfabbb12}{date\+::round}} (const std\+::chrono\+::time\+\_\+point$<$ Clock, From\+Duration $>$ \&tp)
+\item 
+{\footnotesize template$<$class To , class Clock , class From\+Duration $>$ }\\\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} std\+::chrono\+::time\+\_\+point$<$ Clock, To $>$ \mbox{\hyperlink{namespacedate_ae3a533d82ee1093f257ba865d6d190f3}{date\+::ceil}} (const std\+::chrono\+::time\+\_\+point$<$ Clock, From\+Duration $>$ \&tp)
+\item 
+{\footnotesize template$<$class To , class Rep , class Period $>$ }\\\mbox{\hyperlink{date_8hpp_a3893ed763f820a91f169a2e9777aa325}{C\+O\+N\+S\+T\+C\+D14}} std\+::enable\+\_\+if$<$ !std\+::chrono\+::treat\+\_\+as\+\_\+floating\+\_\+point$<$ typename To\+::rep $>$\+::value, To $>$\+::type \mbox{\hyperlink{namespacedate_1_1detail_aa24aa9922a5223ab90cfcfddece9acdf}{date\+::detail\+::round\+\_\+i}} (const std\+::chrono\+::duration$<$ Rep, Period $>$ \&d)
+\item 
+{\footnotesize template$<$class To , class Rep , class Period $>$ }\\\mbox{\hyperlink{date_8hpp_a3893ed763f820a91f169a2e9777aa325}{C\+O\+N\+S\+T\+C\+D14}} std\+::enable\+\_\+if$<$ std\+::chrono\+::treat\+\_\+as\+\_\+floating\+\_\+point$<$ typename To\+::rep $>$\+::value, To $>$\+::type \mbox{\hyperlink{namespacedate_1_1detail_a33a3516b7697317bb5e2695b23599af3}{date\+::detail\+::round\+\_\+i}} (const std\+::chrono\+::duration$<$ Rep, Period $>$ \&d)
+\item 
+{\footnotesize template$<$class To , class Clock , class From\+Duration $>$ }\\\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} std\+::chrono\+::time\+\_\+point$<$ Clock, To $>$ \mbox{\hyperlink{namespacedate_1_1detail_af954694297b33a86ef0665d7cee1d7e0}{date\+::detail\+::round\+\_\+i}} (const std\+::chrono\+::time\+\_\+point$<$ Clock, From\+Duration $>$ \&tp)
+\item 
+{\footnotesize template$<$class To , class Clock , class From\+Duration $>$ }\\\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} std\+::chrono\+::time\+\_\+point$<$ Clock, To $>$ \mbox{\hyperlink{namespacedate_aae52289ddb56139bfd2d36f1d3cc6283}{date\+::trunc}} (const std\+::chrono\+::time\+\_\+point$<$ Clock, From\+Duration $>$ \&tp)
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_1_1detail_a3f180a0d2e4825fbafd2b6d59e8c9985}{date\+::detail\+::low\+\_\+level\+\_\+fmt}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const day \&d)
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_1_1detail_a864a52bf91445f9df313b256940a127a}{date\+::detail\+::low\+\_\+level\+\_\+fmt}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const month \&m)
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_1_1detail_aac07b3773dd425acfbc063012e2f587d}{date\+::detail\+::low\+\_\+level\+\_\+fmt}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const year \&y)
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_1_1detail_afea7f2af2e0d4cad2db9fc9a4f6c0098}{date\+::detail\+::low\+\_\+level\+\_\+fmt}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const weekday \&wd)
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_1_1detail_a6aa5879c1a3753bf75bc803a71e67c32}{date\+::detail\+::low\+\_\+level\+\_\+fmt}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const weekday\+\_\+indexed \&wdi)
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_1_1detail_a09da224ee5dacc33191710cb93b3f2a1}{date\+::detail\+::low\+\_\+level\+\_\+fmt}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const weekday\+\_\+last \&wdl)
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_1_1detail_a413fb5a60204533e00e6028589cf7fef}{date\+::detail\+::low\+\_\+level\+\_\+fmt}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const year\+\_\+month \&ym)
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_1_1detail_a2007c3c8fb3b144db3447fc804adccf8}{date\+::detail\+::low\+\_\+level\+\_\+fmt}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const month\+\_\+day \&md)
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_1_1detail_a17fd322219f8218a32ed2980091e0d1f}{date\+::detail\+::low\+\_\+level\+\_\+fmt}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const month\+\_\+day\+\_\+last \&mdl)
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_1_1detail_a73a98bc78cbcd7bea10935bf5b9b547c}{date\+::detail\+::low\+\_\+level\+\_\+fmt}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const month\+\_\+weekday \&mwd)
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_1_1detail_a6dc0155f777046a0323c77f14d0b197a}{date\+::detail\+::low\+\_\+level\+\_\+fmt}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const month\+\_\+weekday\+\_\+last \&mwdl)
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_1_1detail_a0ed346edc7c344477f93094dc778daac}{date\+::detail\+::low\+\_\+level\+\_\+fmt}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const year\+\_\+month\+\_\+day\+\_\+last \&ymdl)
+\item 
+{\footnotesize template$<$class CharT , class Traits , class Duration $>$ }\\std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_a336f0e5a2a894a9c4bcac2f2b2b28fd9}{date\+::to\+\_\+stream}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const CharT $\ast$fmt, const fields$<$ Duration $>$ \&fds, const std\+::string $\ast$abbrev=nullptr, const std\+::chrono\+::seconds $\ast$offset\+\_\+sec=nullptr)
+\item 
+{\footnotesize template$<$class CharT , class Traits , class Duration , class Alloc $>$ }\\std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_a894be523c1eae57a1eda1942f1620ea7}{date\+::from\+\_\+stream}} (std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \&is, const CharT $\ast$fmt, fields$<$ Duration $>$ \&fds, std\+::basic\+\_\+string$<$ CharT, Traits, Alloc $>$ $\ast$abbrev=nullptr, std\+::chrono\+::minutes $\ast$offset=nullptr)
+\item 
+{\footnotesize template$<$class Rep , class Period $>$ }\\\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} std\+::enable\+\_\+if$<$ std\+::numeric\+\_\+limits$<$ Rep $>$\+::is\+\_\+signed, std\+::chrono\+::duration$<$ Rep, Period $>$ $>$\+::type \mbox{\hyperlink{namespacedate_1_1detail_a16721f884c348136e5fa12ff687140ef}{date\+::detail\+::abs}} (std\+::chrono\+::duration$<$ Rep, Period $>$ d)
+\item 
+{\footnotesize template$<$class Rep , class Period $>$ }\\\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} std\+::enable\+\_\+if$<$ !std\+::numeric\+\_\+limits$<$ Rep $>$\+::is\+\_\+signed, std\+::chrono\+::duration$<$ Rep, Period $>$ $>$\+::type \mbox{\hyperlink{namespacedate_1_1detail_aa61b1967e725f0705ca780e858ef2970}{date\+::detail\+::abs}} (std\+::chrono\+::duration$<$ Rep, Period $>$ d)
+\item 
+\mbox{\hyperlink{date_8hpp_a3893ed763f820a91f169a2e9777aa325}{C\+O\+N\+S\+T\+C\+D14}} bool \mbox{\hyperlink{namespacedate_a50a7e5f904d032cf278a02c5215db23d}{date\+::is\+\_\+am}} (std\+::chrono\+::hours const \&h) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a3893ed763f820a91f169a2e9777aa325}{C\+O\+N\+S\+T\+C\+D14}} bool \mbox{\hyperlink{namespacedate_aa3b9c47d30147b43d4f9f3f19e5457e5}{date\+::is\+\_\+pm}} (std\+::chrono\+::hours const \&h) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a3893ed763f820a91f169a2e9777aa325}{C\+O\+N\+S\+T\+C\+D14}} std\+::chrono\+::hours \mbox{\hyperlink{namespacedate_a16c07500c5218ebc1d7a05b900835ca7}{date\+::make12}} (std\+::chrono\+::hours h) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+\mbox{\hyperlink{date_8hpp_a3893ed763f820a91f169a2e9777aa325}{C\+O\+N\+S\+T\+C\+D14}} std\+::chrono\+::hours \mbox{\hyperlink{namespacedate_a75aa668141a024a193191c274816b9fe}{date\+::make24}} (std\+::chrono\+::hours h, bool is\+\_\+pm) \mbox{\hyperlink{date_8hpp_a10a59554805ac7ce3905fd3540f98137}{N\+O\+E\+X\+C\+E\+PT}}
+\item 
+{\footnotesize template$<$class Rep , class Period $>$ }\\\mbox{\hyperlink{date_8hpp_a98c025909efef28d356780da89fc44b6}{C\+O\+N\+S\+T\+C\+D11}} hh\+\_\+mm\+\_\+ss$<$ std\+::chrono\+::duration$<$ Rep, Period $>$ $>$ \mbox{\hyperlink{namespacedate_abd153c5c2320db7706e16076a014a95e}{date\+::make\+\_\+time}} (const std\+::chrono\+::duration$<$ Rep, Period $>$ \&d)
+\item 
+{\footnotesize template$<$class CharT , class Traits , class Duration $>$ }\\std\+::enable\+\_\+if$<$ std\+::ratio\+\_\+less$<$ typename Duration\+::period, days\+::period $>$\+::value, std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& $>$\+::type \mbox{\hyperlink{namespacedate_a446eec9c73cc45d0ff99f09f7a57af98}{date\+::operator$<$$<$}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const sys\+\_\+time$<$ Duration $>$ \&tp)
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_ac76dc684b4fd759e748322801cf24e6a}{date\+::operator$<$$<$}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const sys\+\_\+days \&dp)
+\item 
+{\footnotesize template$<$class CharT , class Traits , class Duration $>$ }\\std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_a1f45f1e425c88465bd341bfe98d15770}{date\+::operator$<$$<$}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const local\+\_\+time$<$ Duration $>$ \&ut)
+\item 
+{\footnotesize template$<$class CharT , class Traits , class Duration $>$ }\\unsigned \mbox{\hyperlink{namespacedate_1_1detail_a7c3664e1fc8b97a029356a3ee3e40b32}{date\+::detail\+::extract\+\_\+weekday}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const fields$<$ Duration $>$ \&fds)
+\item 
+{\footnotesize template$<$class CharT , class Traits , class Duration $>$ }\\unsigned \mbox{\hyperlink{namespacedate_1_1detail_a7a6875dc60538c876852d3dc44ec914f}{date\+::detail\+::extract\+\_\+month}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const fields$<$ Duration $>$ \&fds)
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_a137ca91ea675b508e56c87e3e81a12f7}{date\+::to\+\_\+stream}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const CharT $\ast$fmt, const year \&y)
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_a2db1f5aec4fd97f315bda1372631491e}{date\+::to\+\_\+stream}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const CharT $\ast$fmt, const month \&m)
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_a2001fbe134409bf82548b484c28a31ee}{date\+::to\+\_\+stream}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const CharT $\ast$fmt, const day \&d)
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_a054f48fbdb81c191073f537ba4c4f3ea}{date\+::to\+\_\+stream}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const CharT $\ast$fmt, const weekday \&wd)
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_a7364dce18c23cfe2e42b5013e50570f6}{date\+::to\+\_\+stream}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const CharT $\ast$fmt, const year\+\_\+month \&ym)
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_ad50e71f725f3b8180d55ee56d9eb5d94}{date\+::to\+\_\+stream}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const CharT $\ast$fmt, const month\+\_\+day \&md)
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_a094e9bb4dd7db05cef7f650727306c94}{date\+::to\+\_\+stream}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const CharT $\ast$fmt, const year\+\_\+month\+\_\+day \&ymd)
+\item 
+{\footnotesize template$<$class CharT , class Traits , class Rep , class Period $>$ }\\std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_a10f62a37b44fdea471ff04fe2cde4ed7}{date\+::to\+\_\+stream}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const CharT $\ast$fmt, const std\+::chrono\+::duration$<$ Rep, Period $>$ \&d)
+\item 
+{\footnotesize template$<$class CharT , class Traits , class Duration $>$ }\\std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_a2834e3b04559e374b96e1dfa773f90ae}{date\+::to\+\_\+stream}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const CharT $\ast$fmt, const local\+\_\+time$<$ Duration $>$ \&tp, const std\+::string $\ast$abbrev=nullptr, const std\+::chrono\+::seconds $\ast$offset\+\_\+sec=nullptr)
+\item 
+{\footnotesize template$<$class CharT , class Traits , class Duration $>$ }\\std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_a313525317fc5caf8c2f68c0b8bee1e7c}{date\+::to\+\_\+stream}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const CharT $\ast$fmt, const sys\+\_\+time$<$ Duration $>$ \&tp)
+\item 
+{\footnotesize template$<$class CharT , class Streamable $>$ }\\auto \mbox{\hyperlink{namespacedate_a877f8169e9e16cb6e0d1c020f04c6851}{date\+::format}} (const std\+::locale \&loc, const CharT $\ast$fmt, const Streamable \&tp) -\/$>$ decltype(to\+\_\+stream(std\+::declval$<$ std\+::basic\+\_\+ostream$<$ CharT $>$ \& $>$(), fmt, tp), std\+::basic\+\_\+string$<$ CharT $>$
+\item 
+os \mbox{\hyperlink{namespacedate_a9c6060496d3b5e21fe23e701d10b3935}{date\+::exceptions}} (std\+::ios\+::failbit$\vert$std\+::ios\+::badbit)
+\item 
+os \mbox{\hyperlink{namespacedate_af7ff66572d7c6c23b78ced943b149532}{date\+::imbue}} (loc)
+\item 
+\mbox{\hyperlink{namespacedate_aad529181dcbd23596bffa7f231d09c30}{date\+::to\+\_\+stream}} (os, fmt, tp)
+\item 
+return os \mbox{\hyperlink{namespacedate_a986dc629a987fefaa8f8de5d62d122d8}{date\+::str}} ()
+\item 
+{\footnotesize template$<$class CharT , class Streamable $>$ }\\auto \mbox{\hyperlink{namespacedate_a75743a4d77010484dbeefea06af34182}{date\+::format}} (const CharT $\ast$fmt, const Streamable \&tp) -\/$>$ decltype(to\+\_\+stream(std\+::declval$<$ std\+::basic\+\_\+ostream$<$ CharT $>$ \& $>$(), fmt, tp), std\+::basic\+\_\+string$<$ CharT $>$
+\item 
+{\footnotesize template$<$class CharT , class Traits , class Alloc , class Streamable $>$ }\\auto \mbox{\hyperlink{namespacedate_a18e2d49611b368acaab0da15c2b37ffe}{date\+::format}} (const std\+::locale \&loc, const std\+::basic\+\_\+string$<$ CharT, Traits, Alloc $>$ \&fmt, const Streamable \&tp) -\/$>$ decltype(to\+\_\+stream(std\+::declval$<$ std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& $>$(), fmt.\+c\+\_\+str(), tp), std\+::basic\+\_\+string$<$ CharT, Traits, Alloc $>$
+\item 
+\mbox{\hyperlink{namespacedate_ac16cfe3b4d7c418eb779e14fae0db96b}{date\+::to\+\_\+stream}} (os, fmt.\+c\+\_\+str(), tp)
+\item 
+{\footnotesize template$<$class CharT , class Traits , class Alloc , class Streamable $>$ }\\auto \mbox{\hyperlink{namespacedate_ac6bc54d4d0fee1e45574e25bd2316447}{date\+::format}} (const std\+::basic\+\_\+string$<$ CharT, Traits, Alloc $>$ \&fmt, const Streamable \&tp) -\/$>$ decltype(to\+\_\+stream(std\+::declval$<$ std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& $>$(), fmt.\+c\+\_\+str(), tp), std\+::basic\+\_\+string$<$ CharT, Traits, Alloc $>$
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\bool \mbox{\hyperlink{namespacedate_1_1detail_aae0a6aa8d638275382c11e703a18d095}{date\+::detail\+::read\+\_\+char}} (std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \&is, CharT fmt, std\+::ios\+::iostate \&err)
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\unsigned \mbox{\hyperlink{namespacedate_1_1detail_a0f5b8ce3fc13b73664f5df3df33dcfd4}{date\+::detail\+::read\+\_\+unsigned}} (std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \&is, unsigned m=1, unsigned M=10)
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\int \mbox{\hyperlink{namespacedate_1_1detail_a5554c33cd3b8193a6ad0fbd684b0b486}{date\+::detail\+::read\+\_\+signed}} (std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \&is, unsigned m=1, unsigned M=10)
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\long double \mbox{\hyperlink{namespacedate_1_1detail_acc406a54f9d73ab043bfc7c905185721}{date\+::detail\+::read\+\_\+long\+\_\+double}} (std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \&is, unsigned m=1, unsigned M=10)
+\item 
+{\footnotesize template$<$class CharT , class Traits $>$ }\\void \mbox{\hyperlink{namespacedate_1_1detail_a54db98d331e44d62c0466b03add3b06f}{date\+::detail\+::read}} (std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \&)
+\item 
+{\footnotesize template$<$class CharT , class Traits , class ... Args$>$ }\\void \mbox{\hyperlink{namespacedate_1_1detail_a4c40cf530fca0385d6df1b7688a7f95d}{date\+::detail\+::read}} (std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \&is, CharT a0, Args \&\&...args)
+\item 
+{\footnotesize template$<$class CharT , class Traits , class ... Args$>$ }\\void \mbox{\hyperlink{namespacedate_1_1detail_a04f33a32f05be39048493fff71c596e5}{date\+::detail\+::read}} (std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \&is, rs a0, Args \&\&...args)
+\item 
+{\footnotesize template$<$class CharT , class Traits , class ... Args$>$ }\\void \mbox{\hyperlink{namespacedate_1_1detail_aecb203889c8250f8a1f58dc59c7ad504}{date\+::detail\+::read}} (std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \&is, ru a0, Args \&\&...args)
+\item 
+{\footnotesize template$<$class CharT , class Traits , class ... Args$>$ }\\void \mbox{\hyperlink{namespacedate_1_1detail_a0bbcb0ddc6ed0d1529b78fc547b61bc2}{date\+::detail\+::read}} (std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \&is, int a0, Args \&\&...args)
+\item 
+{\footnotesize template$<$class CharT , class Traits , class ... Args$>$ }\\void \mbox{\hyperlink{namespacedate_1_1detail_aa89ac456067c9bb381b2aa1cc131980a}{date\+::detail\+::read}} (std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \&is, rld a0, Args \&\&...args)
+\item 
+{\footnotesize template$<$class T , class CharT , class Traits $>$ }\\void \mbox{\hyperlink{namespacedate_1_1detail_a20047d6af2ec35dc791bc38e9bfc8ef5}{date\+::detail\+::checked\+\_\+set}} (T \&value, T from, T not\+\_\+a\+\_\+value, std\+::basic\+\_\+ios$<$ CharT, Traits $>$ \&is)
+\item 
+{\footnotesize template$<$class CharT , class Traits , class Alloc  = std\+::allocator$<$\+Char\+T$>$$>$ }\\std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_ad6325e5762d07e4b5df063f9cde8affc}{date\+::from\+\_\+stream}} (std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \&is, const CharT $\ast$fmt, year \&y, std\+::basic\+\_\+string$<$ CharT, Traits, Alloc $>$ $\ast$abbrev=nullptr, std\+::chrono\+::minutes $\ast$offset=nullptr)
+\item 
+{\footnotesize template$<$class CharT , class Traits , class Alloc  = std\+::allocator$<$\+Char\+T$>$$>$ }\\std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_ab69ef34003c4e9aca677c239bc91657e}{date\+::from\+\_\+stream}} (std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \&is, const CharT $\ast$fmt, month \&m, std\+::basic\+\_\+string$<$ CharT, Traits, Alloc $>$ $\ast$abbrev=nullptr, std\+::chrono\+::minutes $\ast$offset=nullptr)
+\item 
+{\footnotesize template$<$class CharT , class Traits , class Alloc  = std\+::allocator$<$\+Char\+T$>$$>$ }\\std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_ad969eefcde962da340fb333b4877397f}{date\+::from\+\_\+stream}} (std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \&is, const CharT $\ast$fmt, day \&d, std\+::basic\+\_\+string$<$ CharT, Traits, Alloc $>$ $\ast$abbrev=nullptr, std\+::chrono\+::minutes $\ast$offset=nullptr)
+\item 
+{\footnotesize template$<$class CharT , class Traits , class Alloc  = std\+::allocator$<$\+Char\+T$>$$>$ }\\std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_a82fc25a8f08ded08e18399fcdc49be4e}{date\+::from\+\_\+stream}} (std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \&is, const CharT $\ast$fmt, weekday \&wd, std\+::basic\+\_\+string$<$ CharT, Traits, Alloc $>$ $\ast$abbrev=nullptr, std\+::chrono\+::minutes $\ast$offset=nullptr)
+\item 
+{\footnotesize template$<$class CharT , class Traits , class Alloc  = std\+::allocator$<$\+Char\+T$>$$>$ }\\std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_a022f6b989d33c267b6fb0a9064d54eb6}{date\+::from\+\_\+stream}} (std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \&is, const CharT $\ast$fmt, year\+\_\+month \&ym, std\+::basic\+\_\+string$<$ CharT, Traits, Alloc $>$ $\ast$abbrev=nullptr, std\+::chrono\+::minutes $\ast$offset=nullptr)
+\item 
+{\footnotesize template$<$class CharT , class Traits , class Alloc  = std\+::allocator$<$\+Char\+T$>$$>$ }\\std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_a94adbda188e74b6524d0255f5c6bea2b}{date\+::from\+\_\+stream}} (std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \&is, const CharT $\ast$fmt, month\+\_\+day \&md, std\+::basic\+\_\+string$<$ CharT, Traits, Alloc $>$ $\ast$abbrev=nullptr, std\+::chrono\+::minutes $\ast$offset=nullptr)
+\item 
+{\footnotesize template$<$class CharT , class Traits , class Alloc  = std\+::allocator$<$\+Char\+T$>$$>$ }\\std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_a0edcaca3e0067a05530494838b28eadf}{date\+::from\+\_\+stream}} (std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \&is, const CharT $\ast$fmt, year\+\_\+month\+\_\+day \&ymd, std\+::basic\+\_\+string$<$ CharT, Traits, Alloc $>$ $\ast$abbrev=nullptr, std\+::chrono\+::minutes $\ast$offset=nullptr)
+\item 
+{\footnotesize template$<$class Duration , class CharT , class Traits , class Alloc  = std\+::allocator$<$\+Char\+T$>$$>$ }\\std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_ae09833754254e3b12798d2e2a9880ff4}{date\+::from\+\_\+stream}} (std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \&is, const CharT $\ast$fmt, sys\+\_\+time$<$ Duration $>$ \&tp, std\+::basic\+\_\+string$<$ CharT, Traits, Alloc $>$ $\ast$abbrev=nullptr, std\+::chrono\+::minutes $\ast$offset=nullptr)
+\item 
+{\footnotesize template$<$class Duration , class CharT , class Traits , class Alloc  = std\+::allocator$<$\+Char\+T$>$$>$ }\\std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_aa3989c66905e2ad38fca0f0328cd04fd}{date\+::from\+\_\+stream}} (std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \&is, const CharT $\ast$fmt, local\+\_\+time$<$ Duration $>$ \&tp, std\+::basic\+\_\+string$<$ CharT, Traits, Alloc $>$ $\ast$abbrev=nullptr, std\+::chrono\+::minutes $\ast$offset=nullptr)
+\item 
+{\footnotesize template$<$class Rep , class Period , class CharT , class Traits , class Alloc  = std\+::allocator$<$\+Char\+T$>$$>$ }\\std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_ad6ecf23cd731d1c2ff4ab18a7e7e4214}{date\+::from\+\_\+stream}} (std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \&is, const CharT $\ast$fmt, std\+::chrono\+::duration$<$ Rep, Period $>$ \&d, std\+::basic\+\_\+string$<$ CharT, Traits, Alloc $>$ $\ast$abbrev=nullptr, std\+::chrono\+::minutes $\ast$offset=nullptr)
+\item 
+{\footnotesize template$<$class Parsable , class CharT , class Traits , class Alloc $>$ }\\std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_a0eb4780f63b3db588c26d4fab3069d5e}{date\+::operator$>$$>$}} (std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \&is, const parse\+\_\+manip$<$ Parsable, CharT, Traits, Alloc $>$ \&x)
+\item 
+{\footnotesize template$<$class Parsable , class CharT , class Traits , class Alloc $>$ }\\auto \mbox{\hyperlink{namespacedate_a0d4e5725d46ab9dbc7bfc0676270053b}{date\+::parse}} (const std\+::basic\+\_\+string$<$ CharT, Traits, Alloc $>$ \&format, Parsable \&tp) -\/$>$ decltype(\mbox{\hyperlink{namespacedate_a894be523c1eae57a1eda1942f1620ea7}{date\+::from\+\_\+stream}}(std\+::declval$<$ std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \& $>$(), format.\+c\+\_\+str(), tp), parse\+\_\+manip$<$ Parsable, CharT, Traits, Alloc $>$
+\item 
+{\footnotesize template$<$class Parsable , class CharT , class Traits , class Alloc $>$ }\\auto \mbox{\hyperlink{namespacedate_a608936a1d7ebb1204fcc3d6836cca418}{date\+::parse}} (const std\+::basic\+\_\+string$<$ CharT, Traits, Alloc $>$ \&format, Parsable \&tp, std\+::basic\+\_\+string$<$ CharT, Traits, Alloc $>$ \&abbrev) -\/$>$ decltype(\mbox{\hyperlink{namespacedate_a894be523c1eae57a1eda1942f1620ea7}{date\+::from\+\_\+stream}}(std\+::declval$<$ std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \& $>$(), format.\+c\+\_\+str(), tp, \&abbrev), parse\+\_\+manip$<$ Parsable, CharT, Traits, Alloc $>$
+\item 
+{\footnotesize template$<$class Parsable , class CharT , class Traits , class Alloc $>$ }\\auto \mbox{\hyperlink{namespacedate_a49bd625721dfae0abc68f28549551e6b}{date\+::parse}} (const std\+::basic\+\_\+string$<$ CharT, Traits, Alloc $>$ \&format, Parsable \&tp, std\+::chrono\+::minutes \&offset) -\/$>$ decltype(\mbox{\hyperlink{namespacedate_a894be523c1eae57a1eda1942f1620ea7}{date\+::from\+\_\+stream}}(std\+::declval$<$ std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \& $>$(), format.\+c\+\_\+str(), tp, std\+::declval$<$ std\+::basic\+\_\+string$<$ CharT, Traits, Alloc $>$ $\ast$ $>$(), \&offset), parse\+\_\+manip$<$ Parsable, CharT, Traits, Alloc $>$
+\item 
+{\footnotesize template$<$class Parsable , class CharT , class Traits , class Alloc $>$ }\\auto \mbox{\hyperlink{namespacedate_a39d1303882e2457e5fbebce514ae337f}{date\+::parse}} (const std\+::basic\+\_\+string$<$ CharT, Traits, Alloc $>$ \&format, Parsable \&tp, std\+::basic\+\_\+string$<$ CharT, Traits, Alloc $>$ \&abbrev, std\+::chrono\+::minutes \&offset) -\/$>$ decltype(\mbox{\hyperlink{namespacedate_a894be523c1eae57a1eda1942f1620ea7}{date\+::from\+\_\+stream}}(std\+::declval$<$ std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \& $>$(), format.\+c\+\_\+str(), tp, \&abbrev, \&offset), parse\+\_\+manip$<$ Parsable, CharT, Traits, Alloc $>$
+\item 
+{\footnotesize template$<$class Parsable , class CharT $>$ }\\auto \mbox{\hyperlink{namespacedate_af3f1ea079ad0edac099634661f55f1b5}{date\+::parse}} (const CharT $\ast$format, Parsable \&tp) -\/$>$ decltype(\mbox{\hyperlink{namespacedate_a894be523c1eae57a1eda1942f1620ea7}{date\+::from\+\_\+stream}}(std\+::declval$<$ std\+::basic\+\_\+istream$<$ CharT $>$ \& $>$(), format, tp), parse\+\_\+manip$<$ Parsable, CharT $>$
+\item 
+{\footnotesize template$<$class Parsable , class CharT , class Traits , class Alloc $>$ }\\auto \mbox{\hyperlink{namespacedate_a60327ace36f473c5bbe8eb7a50fb1fdd}{date\+::parse}} (const CharT $\ast$format, Parsable \&tp, std\+::basic\+\_\+string$<$ CharT, Traits, Alloc $>$ \&abbrev) -\/$>$ decltype(\mbox{\hyperlink{namespacedate_a894be523c1eae57a1eda1942f1620ea7}{date\+::from\+\_\+stream}}(std\+::declval$<$ std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \& $>$(), format, tp, \&abbrev), parse\+\_\+manip$<$ Parsable, CharT, Traits, Alloc $>$
+\item 
+{\footnotesize template$<$class Parsable , class CharT $>$ }\\auto \mbox{\hyperlink{namespacedate_af70bfab178252074c01aa614ea2aa27d}{date\+::parse}} (const CharT $\ast$format, Parsable \&tp, std\+::chrono\+::minutes \&offset) -\/$>$ decltype(\mbox{\hyperlink{namespacedate_a894be523c1eae57a1eda1942f1620ea7}{date\+::from\+\_\+stream}}(std\+::declval$<$ std\+::basic\+\_\+istream$<$ CharT $>$ \& $>$(), format, tp, std\+::declval$<$ std\+::basic\+\_\+string$<$ CharT $>$ $\ast$ $>$(), \&offset), parse\+\_\+manip$<$ Parsable, CharT $>$
+\item 
+{\footnotesize template$<$class Parsable , class CharT , class Traits , class Alloc $>$ }\\auto \mbox{\hyperlink{namespacedate_a3e507ffafabed464c1de1572135a6630}{date\+::parse}} (const CharT $\ast$format, Parsable \&tp, std\+::basic\+\_\+string$<$ CharT, Traits, Alloc $>$ \&abbrev, std\+::chrono\+::minutes \&offset) -\/$>$ decltype(\mbox{\hyperlink{namespacedate_a894be523c1eae57a1eda1942f1620ea7}{date\+::from\+\_\+stream}}(std\+::declval$<$ std\+::basic\+\_\+istream$<$ CharT, Traits $>$ \& $>$(), format, tp, \&abbrev, \&offset), parse\+\_\+manip$<$ Parsable, CharT, Traits, Alloc $>$
+\item 
+{\footnotesize template$<$class CharT , class Traits , class Rep , class Period $>$ }\\std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \& \mbox{\hyperlink{namespacedate_af9369efdaa9b44e918c1ecf410a16382}{date\+::operator$<$$<$}} (std\+::basic\+\_\+ostream$<$ CharT, Traits $>$ \&os, const std\+::chrono\+::duration$<$ Rep, Period $>$ \&d)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{date_8hpp_a1262e7cef5d1d56fb1f1ed2a43bfe4d1}{C\+O\+N\+S\+T\+D\+A\+TA}} \mbox{\hyperlink{structdate_1_1last__spec}{date\+::last\+\_\+spec}} \mbox{\hyperlink{namespacedate_1_1literals_a69e2181e335259f5d827a689e3a156ba}{date\+::literals\+::last}} \{\}
+\item 
+\mbox{\hyperlink{date_8hpp_a1262e7cef5d1d56fb1f1ed2a43bfe4d1}{C\+O\+N\+S\+T\+D\+A\+TA}} \mbox{\hyperlink{classdate_1_1month}{date\+::month}} \mbox{\hyperlink{namespacedate_1_1literals_af74ed14fd96db48ccc311bba2cd6b5ed}{date\+::literals\+::jan}} \{1\}
+\item 
+\mbox{\hyperlink{date_8hpp_a1262e7cef5d1d56fb1f1ed2a43bfe4d1}{C\+O\+N\+S\+T\+D\+A\+TA}} \mbox{\hyperlink{classdate_1_1month}{date\+::month}} \mbox{\hyperlink{namespacedate_1_1literals_a8096bd2a5068976f59ad16cd1ce44c93}{date\+::literals\+::feb}} \{2\}
+\item 
+\mbox{\hyperlink{date_8hpp_a1262e7cef5d1d56fb1f1ed2a43bfe4d1}{C\+O\+N\+S\+T\+D\+A\+TA}} \mbox{\hyperlink{classdate_1_1month}{date\+::month}} \mbox{\hyperlink{namespacedate_1_1literals_aca28754df8fa08ecc96d676de8f1e5da}{date\+::literals\+::mar}} \{3\}
+\item 
+\mbox{\hyperlink{date_8hpp_a1262e7cef5d1d56fb1f1ed2a43bfe4d1}{C\+O\+N\+S\+T\+D\+A\+TA}} \mbox{\hyperlink{classdate_1_1month}{date\+::month}} \mbox{\hyperlink{namespacedate_1_1literals_a044af235343f7586e45400f02b792cb2}{date\+::literals\+::apr}} \{4\}
+\item 
+\mbox{\hyperlink{date_8hpp_a1262e7cef5d1d56fb1f1ed2a43bfe4d1}{C\+O\+N\+S\+T\+D\+A\+TA}} \mbox{\hyperlink{classdate_1_1month}{date\+::month}} \mbox{\hyperlink{namespacedate_1_1literals_aa9809cb9c83eb2dcedfc3f080ac7025c}{date\+::literals\+::may}} \{5\}
+\item 
+\mbox{\hyperlink{date_8hpp_a1262e7cef5d1d56fb1f1ed2a43bfe4d1}{C\+O\+N\+S\+T\+D\+A\+TA}} \mbox{\hyperlink{classdate_1_1month}{date\+::month}} \mbox{\hyperlink{namespacedate_1_1literals_a26b105ea66c9ec3936b0d855d066ccf6}{date\+::literals\+::jun}} \{6\}
+\item 
+\mbox{\hyperlink{date_8hpp_a1262e7cef5d1d56fb1f1ed2a43bfe4d1}{C\+O\+N\+S\+T\+D\+A\+TA}} \mbox{\hyperlink{classdate_1_1month}{date\+::month}} \mbox{\hyperlink{namespacedate_1_1literals_a41acc8d7266b5c213d11ee09e516d84a}{date\+::literals\+::jul}} \{7\}
+\item 
+\mbox{\hyperlink{date_8hpp_a1262e7cef5d1d56fb1f1ed2a43bfe4d1}{C\+O\+N\+S\+T\+D\+A\+TA}} \mbox{\hyperlink{classdate_1_1month}{date\+::month}} \mbox{\hyperlink{namespacedate_1_1literals_a9078347ae9a1f6e4e9ab4cc100ef8037}{date\+::literals\+::aug}} \{8\}
+\item 
+\mbox{\hyperlink{date_8hpp_a1262e7cef5d1d56fb1f1ed2a43bfe4d1}{C\+O\+N\+S\+T\+D\+A\+TA}} \mbox{\hyperlink{classdate_1_1month}{date\+::month}} \mbox{\hyperlink{namespacedate_1_1literals_a844d47215b2f8d27a77719d418e55298}{date\+::literals\+::sep}} \{9\}
+\item 
+\mbox{\hyperlink{date_8hpp_a1262e7cef5d1d56fb1f1ed2a43bfe4d1}{C\+O\+N\+S\+T\+D\+A\+TA}} \mbox{\hyperlink{classdate_1_1month}{date\+::month}} \mbox{\hyperlink{namespacedate_1_1literals_a7138c6abade6ab5f79eddcf6c750576f}{date\+::literals\+::oct}} \{10\}
+\item 
+\mbox{\hyperlink{date_8hpp_a1262e7cef5d1d56fb1f1ed2a43bfe4d1}{C\+O\+N\+S\+T\+D\+A\+TA}} \mbox{\hyperlink{classdate_1_1month}{date\+::month}} \mbox{\hyperlink{namespacedate_1_1literals_a17bd471dc722f11b3841218d1fd78ffd}{date\+::literals\+::nov}} \{11\}
+\item 
+\mbox{\hyperlink{date_8hpp_a1262e7cef5d1d56fb1f1ed2a43bfe4d1}{C\+O\+N\+S\+T\+D\+A\+TA}} \mbox{\hyperlink{classdate_1_1month}{date\+::month}} \mbox{\hyperlink{namespacedate_1_1literals_a966275491d1bc7eebda3f0446e51ee0a}{date\+::literals\+::dec}} \{12\}
+\item 
+\mbox{\hyperlink{date_8hpp_a1262e7cef5d1d56fb1f1ed2a43bfe4d1}{C\+O\+N\+S\+T\+D\+A\+TA}} \mbox{\hyperlink{classdate_1_1weekday}{date\+::weekday}} \mbox{\hyperlink{namespacedate_1_1literals_aad7f657a7e032c632f18894eff1c030e}{date\+::literals\+::sun}} \{0u\}
+\item 
+\mbox{\hyperlink{date_8hpp_a1262e7cef5d1d56fb1f1ed2a43bfe4d1}{C\+O\+N\+S\+T\+D\+A\+TA}} \mbox{\hyperlink{classdate_1_1weekday}{date\+::weekday}} \mbox{\hyperlink{namespacedate_1_1literals_a408be38a2a1ef37a7bfe2da0939f94ae}{date\+::literals\+::mon}} \{1u\}
+\item 
+\mbox{\hyperlink{date_8hpp_a1262e7cef5d1d56fb1f1ed2a43bfe4d1}{C\+O\+N\+S\+T\+D\+A\+TA}} \mbox{\hyperlink{classdate_1_1weekday}{date\+::weekday}} \mbox{\hyperlink{namespacedate_1_1literals_a0736fb9d7a31754f2c1a940187890796}{date\+::literals\+::tue}} \{2u\}
+\item 
+\mbox{\hyperlink{date_8hpp_a1262e7cef5d1d56fb1f1ed2a43bfe4d1}{C\+O\+N\+S\+T\+D\+A\+TA}} \mbox{\hyperlink{classdate_1_1weekday}{date\+::weekday}} \mbox{\hyperlink{namespacedate_1_1literals_a42fd2852fd18139e03f1d31264ddcd36}{date\+::literals\+::wed}} \{3u\}
+\item 
+\mbox{\hyperlink{date_8hpp_a1262e7cef5d1d56fb1f1ed2a43bfe4d1}{C\+O\+N\+S\+T\+D\+A\+TA}} \mbox{\hyperlink{classdate_1_1weekday}{date\+::weekday}} \mbox{\hyperlink{namespacedate_1_1literals_abff29c3d080b55586b4067f6f42b8532}{date\+::literals\+::thu}} \{4u\}
+\item 
+\mbox{\hyperlink{date_8hpp_a1262e7cef5d1d56fb1f1ed2a43bfe4d1}{C\+O\+N\+S\+T\+D\+A\+TA}} \mbox{\hyperlink{classdate_1_1weekday}{date\+::weekday}} \mbox{\hyperlink{namespacedate_1_1literals_a8abb62ffb0f72cfd0372a567e133f2b6}{date\+::literals\+::fri}} \{5u\}
+\item 
+\mbox{\hyperlink{date_8hpp_a1262e7cef5d1d56fb1f1ed2a43bfe4d1}{C\+O\+N\+S\+T\+D\+A\+TA}} \mbox{\hyperlink{classdate_1_1weekday}{date\+::weekday}} \mbox{\hyperlink{namespacedate_1_1literals_abec7ea90e1a93502c8d9e5fdee4cc945}{date\+::literals\+::sat}} \{6u\}
+\item 
+\mbox{\hyperlink{date_8hpp_a1262e7cef5d1d56fb1f1ed2a43bfe4d1}{C\+O\+N\+S\+T\+D\+A\+TA}} \mbox{\hyperlink{classdate_1_1month}{date\+::month}} \mbox{\hyperlink{namespacedate_a681549e324f246a6d23bc1c97c696cda}{date\+::\+January}} \{1\}
+\item 
+\mbox{\hyperlink{date_8hpp_a1262e7cef5d1d56fb1f1ed2a43bfe4d1}{C\+O\+N\+S\+T\+D\+A\+TA}} \mbox{\hyperlink{classdate_1_1month}{date\+::month}} \mbox{\hyperlink{namespacedate_adbe32fe61c795f94ef75ef90faacfc0a}{date\+::\+February}} \{2\}
+\item 
+\mbox{\hyperlink{date_8hpp_a1262e7cef5d1d56fb1f1ed2a43bfe4d1}{C\+O\+N\+S\+T\+D\+A\+TA}} \mbox{\hyperlink{classdate_1_1month}{date\+::month}} \mbox{\hyperlink{namespacedate_ae028b3b89a91263defcc4f9468465d44}{date\+::\+March}} \{3\}
+\item 
+\mbox{\hyperlink{date_8hpp_a1262e7cef5d1d56fb1f1ed2a43bfe4d1}{C\+O\+N\+S\+T\+D\+A\+TA}} \mbox{\hyperlink{classdate_1_1month}{date\+::month}} \mbox{\hyperlink{namespacedate_abde57fc9bf4658df5fdf90d02bfb9aa7}{date\+::\+April}} \{4\}
+\item 
+\mbox{\hyperlink{date_8hpp_a1262e7cef5d1d56fb1f1ed2a43bfe4d1}{C\+O\+N\+S\+T\+D\+A\+TA}} \mbox{\hyperlink{classdate_1_1month}{date\+::month}} \mbox{\hyperlink{namespacedate_a410709bf9e625fab1450f709dede9b26}{date\+::\+May}} \{5\}
+\item 
+\mbox{\hyperlink{date_8hpp_a1262e7cef5d1d56fb1f1ed2a43bfe4d1}{C\+O\+N\+S\+T\+D\+A\+TA}} \mbox{\hyperlink{classdate_1_1month}{date\+::month}} \mbox{\hyperlink{namespacedate_af2b4a54e6bfed6c42f5d19d96042e1c2}{date\+::\+June}} \{6\}
+\item 
+\mbox{\hyperlink{date_8hpp_a1262e7cef5d1d56fb1f1ed2a43bfe4d1}{C\+O\+N\+S\+T\+D\+A\+TA}} \mbox{\hyperlink{classdate_1_1month}{date\+::month}} \mbox{\hyperlink{namespacedate_aa6a4b6623fc545ebd73de3c8b5e06d38}{date\+::\+July}} \{7\}
+\item 
+\mbox{\hyperlink{date_8hpp_a1262e7cef5d1d56fb1f1ed2a43bfe4d1}{C\+O\+N\+S\+T\+D\+A\+TA}} \mbox{\hyperlink{classdate_1_1month}{date\+::month}} \mbox{\hyperlink{namespacedate_a5980b21c2a17565e9884cdac8d5777f5}{date\+::\+August}} \{8\}
+\item 
+\mbox{\hyperlink{date_8hpp_a1262e7cef5d1d56fb1f1ed2a43bfe4d1}{C\+O\+N\+S\+T\+D\+A\+TA}} \mbox{\hyperlink{classdate_1_1month}{date\+::month}} \mbox{\hyperlink{namespacedate_af119ee0e46413176a5b1295d7723f68e}{date\+::\+September}} \{9\}
+\item 
+\mbox{\hyperlink{date_8hpp_a1262e7cef5d1d56fb1f1ed2a43bfe4d1}{C\+O\+N\+S\+T\+D\+A\+TA}} \mbox{\hyperlink{classdate_1_1month}{date\+::month}} \mbox{\hyperlink{namespacedate_a6f0f997372d473da0252c853f854b061}{date\+::\+October}} \{10\}
+\item 
+\mbox{\hyperlink{date_8hpp_a1262e7cef5d1d56fb1f1ed2a43bfe4d1}{C\+O\+N\+S\+T\+D\+A\+TA}} \mbox{\hyperlink{classdate_1_1month}{date\+::month}} \mbox{\hyperlink{namespacedate_abfe49994d0d24461b25dac4b63ca836c}{date\+::\+November}} \{11\}
+\item 
+\mbox{\hyperlink{date_8hpp_a1262e7cef5d1d56fb1f1ed2a43bfe4d1}{C\+O\+N\+S\+T\+D\+A\+TA}} \mbox{\hyperlink{classdate_1_1month}{date\+::month}} \mbox{\hyperlink{namespacedate_a8bc259b9460788f549558c8e9c90ebd7}{date\+::\+December}} \{12\}
+\item 
+\mbox{\hyperlink{date_8hpp_a1262e7cef5d1d56fb1f1ed2a43bfe4d1}{C\+O\+N\+S\+T\+D\+A\+TA}} \mbox{\hyperlink{classdate_1_1weekday}{date\+::weekday}} \mbox{\hyperlink{namespacedate_a954e57262eed8c90670cdb403468b6be}{date\+::\+Monday}} \{1\}
+\item 
+\mbox{\hyperlink{date_8hpp_a1262e7cef5d1d56fb1f1ed2a43bfe4d1}{C\+O\+N\+S\+T\+D\+A\+TA}} \mbox{\hyperlink{classdate_1_1weekday}{date\+::weekday}} \mbox{\hyperlink{namespacedate_a81e7f2f29b6511bc057b490d9ae20352}{date\+::\+Tuesday}} \{2\}
+\item 
+\mbox{\hyperlink{date_8hpp_a1262e7cef5d1d56fb1f1ed2a43bfe4d1}{C\+O\+N\+S\+T\+D\+A\+TA}} \mbox{\hyperlink{classdate_1_1weekday}{date\+::weekday}} \mbox{\hyperlink{namespacedate_a72b0fe4e77c9edab6478b001a4d841e5}{date\+::\+Wednesday}} \{3\}
+\item 
+\mbox{\hyperlink{date_8hpp_a1262e7cef5d1d56fb1f1ed2a43bfe4d1}{C\+O\+N\+S\+T\+D\+A\+TA}} \mbox{\hyperlink{classdate_1_1weekday}{date\+::weekday}} \mbox{\hyperlink{namespacedate_ac8cc345ff2e6c8fecaaab0ed1eae9c6e}{date\+::\+Thursday}} \{4\}
+\item 
+\mbox{\hyperlink{date_8hpp_a1262e7cef5d1d56fb1f1ed2a43bfe4d1}{C\+O\+N\+S\+T\+D\+A\+TA}} \mbox{\hyperlink{classdate_1_1weekday}{date\+::weekday}} \mbox{\hyperlink{namespacedate_a0ae46a313699c96699dc018a957a4548}{date\+::\+Friday}} \{5\}
+\item 
+\mbox{\hyperlink{date_8hpp_a1262e7cef5d1d56fb1f1ed2a43bfe4d1}{C\+O\+N\+S\+T\+D\+A\+TA}} \mbox{\hyperlink{classdate_1_1weekday}{date\+::weekday}} \mbox{\hyperlink{namespacedate_a60e2c356d8a6ec8bbcea40c53bf14c73}{date\+::\+Saturday}} \{6\}
+\item 
+\mbox{\hyperlink{date_8hpp_a1262e7cef5d1d56fb1f1ed2a43bfe4d1}{C\+O\+N\+S\+T\+D\+A\+TA}} \mbox{\hyperlink{classdate_1_1weekday}{date\+::weekday}} \mbox{\hyperlink{namespacedate_a93d6aa56abbe2a233db935d3d8cf6ac1}{date\+::\+Sunday}} \{7\}
+\item 
+\mbox{\hyperlink{date_8hpp_a1262e7cef5d1d56fb1f1ed2a43bfe4d1}{C\+O\+N\+S\+T\+D\+A\+TA}} year \mbox{\hyperlink{namespacedate_a162709b3c23232891d6932c93749f936}{date\+::nanyear}} \{-\/32768\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{date_8hpp_a98c025909efef28d356780da89fc44b6}\label{date_8hpp_a98c025909efef28d356780da89fc44b6}} 
+\index{date.hpp@{date.hpp}!CONSTCD11@{CONSTCD11}}
+\index{CONSTCD11@{CONSTCD11}!date.hpp@{date.hpp}}
+\doxysubsubsection{\texorpdfstring{CONSTCD11}{CONSTCD11}}
+{\footnotesize\ttfamily \#define C\+O\+N\+S\+T\+C\+D11~constexpr}
+
+
+
+Definition at line 133 of file date.\+hpp.
+
+\mbox{\Hypertarget{date_8hpp_a3893ed763f820a91f169a2e9777aa325}\label{date_8hpp_a3893ed763f820a91f169a2e9777aa325}} 
+\index{date.hpp@{date.hpp}!CONSTCD14@{CONSTCD14}}
+\index{CONSTCD14@{CONSTCD14}!date.hpp@{date.hpp}}
+\doxysubsubsection{\texorpdfstring{CONSTCD14}{CONSTCD14}}
+{\footnotesize\ttfamily \#define C\+O\+N\+S\+T\+C\+D14}
+
+
+
+Definition at line 134 of file date.\+hpp.
+
+\mbox{\Hypertarget{date_8hpp_a1262e7cef5d1d56fb1f1ed2a43bfe4d1}\label{date_8hpp_a1262e7cef5d1d56fb1f1ed2a43bfe4d1}} 
+\index{date.hpp@{date.hpp}!CONSTDATA@{CONSTDATA}}
+\index{CONSTDATA@{CONSTDATA}!date.hpp@{date.hpp}}
+\doxysubsubsection{\texorpdfstring{CONSTDATA}{CONSTDATA}}
+{\footnotesize\ttfamily \#define C\+O\+N\+S\+T\+D\+A\+TA~constexpr const}
+
+
+
+Definition at line 132 of file date.\+hpp.
+
+\mbox{\Hypertarget{date_8hpp_a3669f0d0de342066134da35844c2e1ad}\label{date_8hpp_a3669f0d0de342066134da35844c2e1ad}} 
+\index{date.hpp@{date.hpp}!HAS\_CHRONO\_ROUNDING@{HAS\_CHRONO\_ROUNDING}}
+\index{HAS\_CHRONO\_ROUNDING@{HAS\_CHRONO\_ROUNDING}!date.hpp@{date.hpp}}
+\doxysubsubsection{\texorpdfstring{HAS\_CHRONO\_ROUNDING}{HAS\_CHRONO\_ROUNDING}}
+{\footnotesize\ttfamily \#define H\+A\+S\+\_\+\+C\+H\+R\+O\+N\+O\+\_\+\+R\+O\+U\+N\+D\+I\+NG~0}
+
+
+
+Definition at line 1236 of file date.\+hpp.
+
+\mbox{\Hypertarget{date_8hpp_a355f08725825926dae76d6204e55188d}\label{date_8hpp_a355f08725825926dae76d6204e55188d}} 
+\index{date.hpp@{date.hpp}!HAS\_STRING\_VIEW@{HAS\_STRING\_VIEW}}
+\index{HAS\_STRING\_VIEW@{HAS\_STRING\_VIEW}!date.hpp@{date.hpp}}
+\doxysubsubsection{\texorpdfstring{HAS\_STRING\_VIEW}{HAS\_STRING\_VIEW}}
+{\footnotesize\ttfamily \#define H\+A\+S\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+V\+I\+EW~0}
+
+
+
+Definition at line 39 of file date.\+hpp.
+
+\mbox{\Hypertarget{date_8hpp_acd38f2d3d105d45b40a5604b25fbc2a5}\label{date_8hpp_acd38f2d3d105d45b40a5604b25fbc2a5}} 
+\index{date.hpp@{date.hpp}!HAS\_UNCAUGHT\_EXCEPTIONS@{HAS\_UNCAUGHT\_EXCEPTIONS}}
+\index{HAS\_UNCAUGHT\_EXCEPTIONS@{HAS\_UNCAUGHT\_EXCEPTIONS}!date.hpp@{date.hpp}}
+\doxysubsubsection{\texorpdfstring{HAS\_UNCAUGHT\_EXCEPTIONS}{HAS\_UNCAUGHT\_EXCEPTIONS}}
+{\footnotesize\ttfamily \#define H\+A\+S\+\_\+\+U\+N\+C\+A\+U\+G\+H\+T\+\_\+\+E\+X\+C\+E\+P\+T\+I\+O\+NS~0}
+
+
+
+Definition at line 142 of file date.\+hpp.
+
+\mbox{\Hypertarget{date_8hpp_a96e8c4474dd55b7f211853922d8b9a2b}\label{date_8hpp_a96e8c4474dd55b7f211853922d8b9a2b}} 
+\index{date.hpp@{date.hpp}!HAS\_VOID\_T@{HAS\_VOID\_T}}
+\index{HAS\_VOID\_T@{HAS\_VOID\_T}!date.hpp@{date.hpp}}
+\doxysubsubsection{\texorpdfstring{HAS\_VOID\_T}{HAS\_VOID\_T}}
+{\footnotesize\ttfamily \#define H\+A\+S\+\_\+\+V\+O\+I\+D\+\_\+T~0}
+
+
+
+Definition at line 150 of file date.\+hpp.
+
+\mbox{\Hypertarget{date_8hpp_a10a59554805ac7ce3905fd3540f98137}\label{date_8hpp_a10a59554805ac7ce3905fd3540f98137}} 
+\index{date.hpp@{date.hpp}!NOEXCEPT@{NOEXCEPT}}
+\index{NOEXCEPT@{NOEXCEPT}!date.hpp@{date.hpp}}
+\doxysubsubsection{\texorpdfstring{NOEXCEPT}{NOEXCEPT}}
+{\footnotesize\ttfamily \#define N\+O\+E\+X\+C\+E\+PT~noexcept}
+
+
+
+Definition at line 135 of file date.\+hpp.
+
+\mbox{\Hypertarget{date_8hpp_ae455a92a107098eb0f1870875285faaf}\label{date_8hpp_ae455a92a107098eb0f1870875285faaf}} 
+\index{date.hpp@{date.hpp}!ONLY\_C\_LOCALE@{ONLY\_C\_LOCALE}}
+\index{ONLY\_C\_LOCALE@{ONLY\_C\_LOCALE}!date.hpp@{date.hpp}}
+\doxysubsubsection{\texorpdfstring{ONLY\_C\_LOCALE}{ONLY\_C\_LOCALE}}
+{\footnotesize\ttfamily \#define O\+N\+L\+Y\+\_\+\+C\+\_\+\+L\+O\+C\+A\+LE~0}
+
+
+
+Definition at line 95 of file date.\+hpp.
+

@@ -1,0 +1,13 @@
+<map id="tapl::cve::computeFundamentalMatrix" name="tapl::cve::computeFundamentalMatrix">
+<area shape="rect" id="node1" title="This function retrieves fundamental matrix between two images contained within their data frame struc..." alt="" coords="5,229,233,270"/>
+<area shape="rect" id="node2" href="$namespacetapl_1_1cve.html#aa748fe1b014fc3f0382896ce09b90b6a" title="This function detects keypoints in two image frames and perform keypoints matching." alt="" coords="281,144,503,171"/>
+<area shape="rect" id="node9" href="$structtapl_1_1CameraFrame.html#a69d4dcdf4a3d4a9ce253fd04df7ec427" title=" " alt="" coords="315,195,469,237"/>
+<area shape="rect" id="node10" href="$structtapl_1_1CameraPairs.html#a4c1b0d9dfeb4f2b2016e60451285d28b" title=" " alt="" coords="319,261,465,302"/>
+<area shape="rect" id="node11" href="$structtapl_1_1CameraPairs.html#a1fb74f805ccbafb66882ee06aa9e5632" title=" " alt="" coords="302,326,482,367"/>
+<area shape="rect" id="node3" href="$namespacetapl_1_1cve.html#a475a42aa19f3641375dcdec85a32740e" title="This function detects keypoints in an image." alt="" coords="559,5,749,32"/>
+<area shape="rect" id="node4" href="$namespacetapl_1_1cve.html#a77377946f02e5f619085acd42bda7ea6" title="This function extracts keypoints descriptors in an image." alt="" coords="551,56,757,83"/>
+<area shape="rect" id="node5" href="$structtapl_1_1CameraFrame.html#a4f4240bb780ff362d7f50312935874e7" title=" " alt="" coords="577,107,731,149"/>
+<area shape="rect" id="node6" href="$namespacetapl_1_1cve.html#a2345fb0168a84b275c82c899f35a21ab" title="This function performs keypoint descriptor matching." alt="" coords="553,173,755,200"/>
+<area shape="rect" id="node7" href="$structtapl_1_1CameraFrame.html#a5f02ca05c13ef38701c9311962ac4859" title=" " alt="" coords="577,225,731,266"/>
+<area shape="rect" id="node8" href="$structtapl_1_1CameraPairs.html#a18ed9e90c09755468e02b2e1c80dfd76" title=" " alt="" coords="581,290,727,331"/>
+</map>

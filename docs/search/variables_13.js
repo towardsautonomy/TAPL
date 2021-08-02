@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['y_657',['y',['../structtapl_1_1Point3d.html#ae553fd6ad77372b765ae855035f76771',1,'tapl::Point3d']]],
-  ['y_5fmax_658',['y_max',['../structtapl_1_1BBox3d.html#ade66b3bf2e0dcf01b790d560826b64e1',1,'tapl::BBox3d']]],
-  ['y_5fmin_659',['y_min',['../structtapl_1_1BBox3d.html#a63dd683fccb905aa43e3d363c0829581',1,'tapl::BBox3d']]],
-  ['ymd_660',['ymd',['../structdate_1_1fields.html#a7ad38573327cf02a071d32ac089e51de',1,'date::fields']]]
+  ['x_701',['x',['../structtapl_1_1Point2d.html#a0790014de39538092af9a04e00d717e5',1,'tapl::Point2d::x()'],['../structtapl_1_1Point3d.html#a4e0b40773e595bea19456a6a86eaa2a3',1,'tapl::Point3d::x()'],['../structtapl_1_1Point3dColor.html#a6771bc654cdc3820fb81b98f7c02e4fd',1,'tapl::Point3dColor::x()']]],
+  ['x_5fmax_702',['x_max',['../structtapl_1_1BBox3d.html#ae7fd61bfb33a3c5fbc7b531960d7e543',1,'tapl::BBox3d']]],
+  ['x_5fmin_703',['x_min',['../structtapl_1_1BBox3d.html#a7f28356e5e1f7503770b352c457d4aed',1,'tapl::BBox3d']]]
 ];

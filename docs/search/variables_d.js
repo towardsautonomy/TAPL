@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['r_631',['R',['../structtapl_1_1Pose6dof.html#a0ff2d0d3cb7c4d1cb83ffd8545dbbfa0',1,'tapl::Pose6dof']]],
-  ['right_632',['right',['../structtapl_1_1pte_1_1Node.html#ab68a326fa1516aa082032dfd05065dd9',1,'tapl::pte::Node']]],
-  ['root_633',['root',['../structtapl_1_1pte_1_1KdTree.html#a5dd05133b3a9429ae973eda1806c05e7',1,'tapl::pte::KdTree']]]
+  ['point_675',['point',['../structtapl_1_1pte_1_1Node.html#a8b3448deee1ff9e0c9873b25ee83dd23',1,'tapl::pte::Node']]],
+  ['precision_5f_676',['precision_',['../classdate_1_1detail_1_1save__istream.html#a2ad0bcfdc548f8c88d56828b2b3e30bb',1,'date::detail::save_istream']]]
 ];

@@ -1,13 +1,15 @@
 var searchData=
 [
-  ['cameraangle_12',['CameraAngle',['../namespacetapl_1_1viz.html#a99e496921984514dbc7bcef809f50150',1,'tapl::viz']]],
-  ['cameraframe_13',['CameraFrame',['../structtapl_1_1CameraFrame.html',1,'tapl::CameraFrame'],['../structtapl_1_1DataFrame.html#a6a9523806fd3280ddd54085669572288',1,'tapl::DataFrame::cameraFrame()'],['../structtapl_1_1CameraFrame.html#a9f661d86590e6777e35170477b140c46',1,'tapl::CameraFrame::CameraFrame()']]],
-  ['clearscene_14',['clearScene',['../classtapl_1_1viz_1_1Visualizer.html#a912479d651c5a9bcd5a24b77025f10c0',1,'tapl::viz::Visualizer']]],
-  ['clustering_15',['clustering',['../classtapl_1_1pte_1_1EuclideanCluster.html#a7006b8b1a10af362b0001e4f36d3b4fb',1,'tapl::pte::EuclideanCluster']]],
-  ['computeessentialmatrix_16',['computeEssentialMatrix',['../namespacetapl_1_1cve.html#aab9ffadadfdcdabde2b84c28ed91b98f',1,'tapl::cve']]],
-  ['computefundamentalmatrix_17',['computeFundamentalMatrix',['../namespacetapl_1_1cve.html#a8e1c9ef8d5eae6975b5e7e7c360fc1e8',1,'tapl::cve']]],
-  ['computerelativepose_18',['computeRelativePose',['../namespacetapl_1_1cve.html#a565eba00996d244628d8583e7ce7f618',1,'tapl::cve']]],
-  ['cropcloud_19',['cropCloud',['../namespacetapl_1_1pte.html#adaa36d31de7cd145e875901dfa13a616',1,'tapl::pte']]],
-  ['cvengine_2ehpp_20',['cvEngine.hpp',['../cvEngine_8hpp.html',1,'']]],
-  ['cyan_21',['CYAN',['../taplLog_8hpp.html#ad243f93c16bc4c1d3e0a13b84421d760',1,'taplLog.hpp']]]
+  ['b_7',['b',['../structtapl_1_1Point3dColor.html#ab383241776b60d516a16072f6fa8f50f',1,'tapl::Point3dColor']]],
+  ['bbox3d_8',['BBox3d',['../structtapl_1_1BBox3d.html',1,'tapl']]],
+  ['black_9',['BLACK',['../taplLog_8hpp.html#a7b3b25cba33b07c303f3060fe41887f6',1,'taplLog.hpp']]],
+  ['blue_10',['BLUE',['../taplLog_8hpp.html#a79d10e672abb49ad63eeaa8aaef57c38',1,'taplLog.hpp']]],
+  ['boldblack_11',['BOLDBLACK',['../taplLog_8hpp.html#aef2fe95894117165b29036718221979f',1,'taplLog.hpp']]],
+  ['boldblue_12',['BOLDBLUE',['../taplLog_8hpp.html#a11e77c19555cbd15bcc744ff36a18635',1,'taplLog.hpp']]],
+  ['boldcyan_13',['BOLDCYAN',['../taplLog_8hpp.html#ae87af5e6363eb1913b17f24dcb60a22d',1,'taplLog.hpp']]],
+  ['boldgreen_14',['BOLDGREEN',['../taplLog_8hpp.html#a4a6c893a1703c33ede7d702fe5f97c91',1,'taplLog.hpp']]],
+  ['boldmagenta_15',['BOLDMAGENTA',['../taplLog_8hpp.html#ac4723c5ee12cfca16e2172b57b99cb07',1,'taplLog.hpp']]],
+  ['boldred_16',['BOLDRED',['../taplLog_8hpp.html#ab912d02c7998c3d47d05f87be4e2c920',1,'taplLog.hpp']]],
+  ['boldwhite_17',['BOLDWHITE',['../taplLog_8hpp.html#aa4ef051614aa0bd503b0a18ee158c5d7',1,'taplLog.hpp']]],
+  ['boldyellow_18',['BOLDYELLOW',['../taplLog_8hpp.html#a8cec79108dfc3c61e8e32d390ec28b26',1,'taplLog.hpp']]]
 ];

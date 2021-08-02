@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['ptengine_2ecpp_175',['ptEngine.cpp',['../ptEngine_8cpp.html',1,'']]],
-  ['ptengine_2ehpp_176',['ptEngine.hpp',['../ptEngine_8hpp.html',1,'']]]
+  ['gaussnewton_2ehpp_437',['gaussNewton.hpp',['../gaussNewton_8hpp.html',1,'']]]
 ];

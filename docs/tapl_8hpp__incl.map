@@ -1,49 +1,52 @@
 <map id="tapl/tapl.hpp" name="tapl/tapl.hpp">
-<area shape="rect" id="node1" title="This is the main header file which exposes all the available APIs to users." alt="" coords="2399,5,2503,32"/>
-<area shape="rect" id="node2" href="$taplLog_8hpp.html" title="This file provides logging functions for TAPL." alt="" coords="2217,393,2405,420"/>
-<area shape="rect" id="node4" href="$taplTypes_8hpp.html" title="This file provides type definitions used throughout this library." alt="" coords="2413,319,2616,345"/>
-<area shape="rect" id="node7" href="$ringBuffer_8hpp.html" title="This file provides an implementation of a ring buffer." alt="" coords="1080,80,1285,107"/>
-<area shape="rect" id="node32" href="$cvEngine_8hpp.html" title="This file provides APIs for computer vision related functions." alt="" coords="2308,80,2473,107"/>
-<area shape="rect" id="node35" href="$ptEngine_8hpp.html" title="This file provides APIs for all point related functions. This includes point&#45;cloud processing,..." alt="" coords="3234,80,3395,107"/>
-<area shape="rect" id="node46" href="$visualization_8hpp.html" title="This file provides APIs for visualization." alt="" coords="3894,80,4079,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="2279,468,2342,495"/>
-<area shape="rect" id="node5" title=" " alt="" coords="2598,393,2661,420"/>
-<area shape="rect" id="node6" title=" " alt="" coords="2437,393,2574,420"/>
-<area shape="rect" id="node8" title=" " alt="" coords="1964,162,2044,189"/>
-<area shape="rect" id="node9" title=" " alt="" coords="2068,162,2153,189"/>
-<area shape="rect" id="node10" title=" " alt="" coords="43,162,112,189"/>
-<area shape="rect" id="node11" title=" " alt="" coords="137,162,202,189"/>
-<area shape="rect" id="node12" title=" " alt="" coords="2228,162,2295,189"/>
-<area shape="rect" id="node13" title=" " alt="" coords="227,162,293,189"/>
-<area shape="rect" id="node14" title=" " alt="" coords="318,162,381,189"/>
-<area shape="rect" id="node15" title=" " alt="" coords="405,162,475,189"/>
-<area shape="rect" id="node16" title=" " alt="" coords="500,162,567,189"/>
-<area shape="rect" id="node17" title=" " alt="" coords="591,162,657,189"/>
-<area shape="rect" id="node18" title=" " alt="" coords="681,162,740,189"/>
-<area shape="rect" id="node19" title=" " alt="" coords="765,162,806,189"/>
-<area shape="rect" id="node20" title=" " alt="" coords="831,162,903,189"/>
-<area shape="rect" id="node21" title=" " alt="" coords="927,162,998,189"/>
-<area shape="rect" id="node22" title=" " alt="" coords="1023,162,1081,189"/>
-<area shape="rect" id="node23" title=" " alt="" coords="1105,162,1167,189"/>
-<area shape="rect" id="node24" title=" " alt="" coords="1191,162,1268,189"/>
-<area shape="rect" id="node25" title=" " alt="" coords="1293,162,1369,189"/>
-<area shape="rect" id="node26" title=" " alt="" coords="1393,162,1445,189"/>
-<area shape="rect" id="node27" title=" " alt="" coords="1469,162,1544,189"/>
-<area shape="rect" id="node28" title=" " alt="" coords="1569,162,1655,189"/>
-<area shape="rect" id="node29" title=" " alt="" coords="1680,162,1739,189"/>
-<area shape="rect" id="node30" title=" " alt="" coords="1763,162,1823,189"/>
-<area shape="rect" id="node31" title=" " alt="" coords="1847,162,1939,189"/>
-<area shape="rect" id="node33" href="$imgProc_8hpp.html" title="This file provides APIs for computer vision related functions." alt="" coords="2370,162,2473,189"/>
-<area shape="rect" id="node34" href="$sfm_8hpp.html" title="This provides the implementation of structure&#45;from&#45;motion algorithm." alt="" coords="2273,244,2348,271"/>
-<area shape="rect" id="node36" title=" " alt="" coords="4248,162,4363,189"/>
-<area shape="rect" id="node37" title=" " alt="" coords="2548,162,2663,189"/>
-<area shape="rect" id="node38" title=" " alt="" coords="2687,162,2862,189"/>
-<area shape="rect" id="node39" title=" " alt="" coords="2887,155,3020,196"/>
-<area shape="rect" id="node40" title=" " alt="" coords="3045,162,3211,189"/>
-<area shape="rect" id="node41" title=" " alt="" coords="3235,162,3394,189"/>
-<area shape="rect" id="node42" title=" " alt="" coords="3418,162,3563,189"/>
-<area shape="rect" id="node43" title=" " alt="" coords="3639,155,3801,196"/>
-<area shape="rect" id="node44" title=" " alt="" coords="3825,155,4010,196"/>
-<area shape="rect" id="node45" title=" " alt="" coords="4035,162,4224,189"/>
-<area shape="rect" id="node47" title=" " alt="" coords="4387,155,4538,196"/>
+<area shape="rect" id="node1" title="This is the main header file which exposes all the available APIs to users." alt="" coords="1483,5,1587,32"/>
+<area shape="rect" id="node2" href="$taplLog_8hpp.html" title="This file provides logging functions for TAPL." alt="" coords="925,408,1113,435"/>
+<area shape="rect" id="node27" href="$taplTypes_8hpp.html" title="This file provides type definitions used throughout this library." alt="" coords="769,326,971,353"/>
+<area shape="rect" id="node30" href="$ringBuffer_8hpp.html" title="This file provides an implementation of a ring buffer." alt="" coords="1389,326,1594,353"/>
+<area shape="rect" id="node32" href="$cvEngine_8hpp.html" title="This file provides APIs for computer vision related functions." alt="" coords="1385,80,1550,107"/>
+<area shape="rect" id="node38" href="$visualization_8hpp.html" title="This file provides APIs for visualization." alt="" coords="1633,237,1819,263"/>
+<area shape="rect" id="node40" href="$ptEngine_8hpp.html" title="This file provides APIs for all point related functions. This includes point&#45;cloud processing,..." alt="" coords="2392,155,2553,181"/>
+<area shape="rect" id="node3" href="$date_8hpp.html" title=" " alt="" coords="980,483,1059,509"/>
+<area shape="rect" id="node4" title=" " alt="" coords="1565,557,1634,584"/>
+<area shape="rect" id="node5" title=" " alt="" coords="1927,557,2013,584"/>
+<area shape="rect" id="node6" title=" " alt="" coords="1659,557,1724,584"/>
+<area shape="rect" id="node7" title=" " alt="" coords="2037,557,2103,584"/>
+<area shape="rect" id="node8" title=" " alt="" coords="1749,557,1815,584"/>
+<area shape="rect" id="node9" title=" " alt="" coords="1840,557,1903,584"/>
+<area shape="rect" id="node10" title=" " alt="" coords="5,557,76,584"/>
+<area shape="rect" id="node11" title=" " alt="" coords="101,557,167,584"/>
+<area shape="rect" id="node12" title=" " alt="" coords="192,557,257,584"/>
+<area shape="rect" id="node13" title=" " alt="" coords="282,557,341,584"/>
+<area shape="rect" id="node14" title=" " alt="" coords="365,557,407,584"/>
+<area shape="rect" id="node15" title=" " alt="" coords="431,557,503,584"/>
+<area shape="rect" id="node16" title=" " alt="" coords="528,557,599,584"/>
+<area shape="rect" id="node17" title=" " alt="" coords="623,557,682,584"/>
+<area shape="rect" id="node18" title=" " alt="" coords="706,557,767,584"/>
+<area shape="rect" id="node19" title=" " alt="" coords="791,557,869,584"/>
+<area shape="rect" id="node20" title=" " alt="" coords="893,557,969,584"/>
+<area shape="rect" id="node21" title=" " alt="" coords="993,557,1045,584"/>
+<area shape="rect" id="node22" title=" " alt="" coords="1070,557,1145,584"/>
+<area shape="rect" id="node23" title=" " alt="" coords="1169,557,1256,584"/>
+<area shape="rect" id="node24" title=" " alt="" coords="1281,557,1339,584"/>
+<area shape="rect" id="node25" title=" " alt="" coords="1364,557,1424,584"/>
+<area shape="rect" id="node26" title=" " alt="" coords="1448,557,1540,584"/>
+<area shape="rect" id="node28" title=" " alt="" coords="839,408,901,435"/>
+<area shape="rect" id="node29" title=" " alt="" coords="677,408,815,435"/>
+<area shape="rect" id="node31" title=" " alt="" coords="1529,408,1609,435"/>
+<area shape="rect" id="node33" href="$imgProc_8hpp.html" title="This file provides APIs for computer vision related functions." alt="" coords="1303,155,1405,181"/>
+<area shape="rect" id="node36" href="$sfm_8hpp.html" title="This provides the implementation of structure&#45;from&#45;motion algorithm." alt="" coords="1430,155,1505,181"/>
+<area shape="rect" id="node34" href="$common_8hpp.html" title="This provides access to all commonly used functions." alt="" coords="1361,237,1558,263"/>
+<area shape="rect" id="node35" title=" " alt="" coords="1046,237,1209,263"/>
+<area shape="rect" id="node37" title=" " alt="" coords="1233,237,1336,263"/>
+<area shape="rect" id="node39" title=" " alt="" coords="1651,319,1801,360"/>
+<area shape="rect" id="node41" title=" " alt="" coords="2107,237,2222,263"/>
+<area shape="rect" id="node42" title=" " alt="" coords="2246,237,2361,263"/>
+<area shape="rect" id="node43" title=" " alt="" coords="2385,237,2560,263"/>
+<area shape="rect" id="node44" title=" " alt="" coords="2585,229,2718,271"/>
+<area shape="rect" id="node45" title=" " alt="" coords="2743,237,2909,263"/>
+<area shape="rect" id="node46" title=" " alt="" coords="2933,237,3092,263"/>
+<area shape="rect" id="node47" title=" " alt="" coords="3116,237,3261,263"/>
+<area shape="rect" id="node48" title=" " alt="" coords="3285,229,3447,271"/>
+<area shape="rect" id="node49" title=" " alt="" coords="3471,229,3656,271"/>
+<area shape="rect" id="node50" title=" " alt="" coords="1843,237,2033,263"/>
 </map>

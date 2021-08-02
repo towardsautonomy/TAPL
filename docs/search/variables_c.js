@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['p_628',['P',['../structtapl_1_1Pose6dof.html#a2cc91e38bb0080f6e1760902613cc093',1,'tapl::Pose6dof']]],
-  ['point_629',['point',['../structtapl_1_1pte_1_1Node.html#a8b3448deee1ff9e0c9873b25ee83dd23',1,'tapl::pte::Node']]],
-  ['precision_5f_630',['precision_',['../classdate_1_1detail_1_1save__istream.html#a2ad0bcfdc548f8c88d56828b2b3e30bb',1,'date::detail::save_istream']]]
+  ['oct_672',['oct',['../namespacedate_1_1literals.html#a7138c6abade6ab5f79eddcf6c750576f',1,'date::oct()'],['../namespacedate_1_1literals.html#a7138c6abade6ab5f79eddcf6c750576f',1,'date::literals::oct()']]],
+  ['october_673',['October',['../namespacedate.html#a6f0f997372d473da0252c853f854b061',1,'date']]],
+  ['offset_5f_674',['offset_',['../structdate_1_1parse__manip.html#a7b585e6309dd7baeacb7f67c90fea76e',1,'date::parse_manip']]]
 ];

@@ -1,0 +1,4 @@
+<map id="tapl::optim::GaussNewtonOptimizer::jacobianL2" name="tapl::optim::GaussNewtonOptimizer::jacobianL2">
+<area shape="rect" id="node1" title="Given a 3D point and its corresponding points in the image planes, compute the associated Jacobian fo..." alt="" coords="5,5,196,47"/>
+<area shape="rect" id="node2" href="$classtapl_1_1optim_1_1GaussNewtonOptimizer.html#ac235cdbda14ea37f5eace597a2d237e6" title="Compute reprojection error of an estimated 3d point in multiple cameras." alt="" coords="244,5,447,47"/>
+</map>

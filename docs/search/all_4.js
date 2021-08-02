@@ -1,8 +1,26 @@
 var searchData=
 [
-  ['error_5flog_5flevel_30',['ERROR_LOG_LEVEL',['../taplLog_8hpp.html#ac2fe55c989a2c0b34cf68f392982fd66a8f42ae2e0fcde2578f0ec74fecd9309b',1,'taplLog.hpp']]],
-  ['euclideancluster_31',['EuclideanCluster',['../classtapl_1_1pte_1_1EuclideanCluster.html',1,'tapl::pte::EuclideanCluster'],['../classtapl_1_1pte_1_1EuclideanCluster.html#ae0cc79c58e5c58512b953c9252acfcb0',1,'tapl::pte::EuclideanCluster::EuclideanCluster()']]],
-  ['euclideanclustering_32',['euclideanClustering',['../namespacetapl_1_1pte.html#a69e06eaa64248177550033adb709fb3d',1,'tapl::pte']]],
-  ['euler_33',['euler',['../structtapl_1_1Pose6dof.html#afa5dd6803d0f682139676e27ff20b9d2',1,'tapl::Pose6dof']]],
-  ['extractdescriptors_34',['extractDescriptors',['../namespacetapl_1_1cve.html#a77377946f02e5f619085acd42bda7ea6',1,'tapl::cve']]]
+  ['date_39',['date',['../namespacedate.html',1,'']]],
+  ['date_2ehpp_40',['date.hpp',['../date_8hpp.html',1,'']]],
+  ['day_41',['day',['../classdate_1_1day.html',1,'date::day'],['../classdate_1_1day.html#a13d80b9efb88b988a21e5982151942f0',1,'date::day::day()=default'],['../classdate_1_1day.html#a63d245d16920af4b432769292649d613',1,'date::day::day(unsigned d) NOEXCEPT'],['../classdate_1_1month__day.html#a432794a534c22f58e87a80063a35a2a8',1,'date::month_day::day()'],['../classdate_1_1year__month__day.html#a9f06a363a27cf6aab75b0df5ee57eeff',1,'date::year_month_day::day()'],['../classdate_1_1year__month__day__last.html#a7c23ab47271432745b4014e4b32c74b6',1,'date::year_month_day_last::day()']]],
+  ['days_42',['days',['../namespacedate.html#ad6eee1483b10d62a53de0f5015f819f5',1,'date']]],
+  ['debug_5flog_5flevel_43',['DEBUG_LOG_LEVEL',['../taplLog_8hpp.html#ac2fe55c989a2c0b34cf68f392982fd66ae1c7f84e4b5ae425db5dfa58b8f6b56a',1,'taplLog.hpp']]],
+  ['dec_44',['dec',['../namespacedate_1_1literals.html#a966275491d1bc7eebda3f0446e51ee0a',1,'date::dec()'],['../namespacedate_1_1literals.html#a966275491d1bc7eebda3f0446e51ee0a',1,'date::literals::dec()']]],
+  ['december_45',['December',['../namespacedate.html#a8bc259b9460788f549558c8e9c90ebd7',1,'date']]],
+  ['decimal_5fformat_5fseconds_46',['decimal_format_seconds',['../classdate_1_1detail_1_1decimal__format__seconds.html',1,'date::detail::decimal_format_seconds&lt; Duration &gt;'],['../classdate_1_1detail_1_1decimal__format__seconds.html#ae98da83751ca99d9e48c553917ba1c9b',1,'date::detail::decimal_format_seconds::decimal_format_seconds()'],['../classdate_1_1detail_1_1decimal__format__seconds.html#ab2ffe7aac7b24132e4c3a966db7a1b33',1,'date::detail::decimal_format_seconds::decimal_format_seconds(const Duration &amp;d) NOEXCEPT']]],
+  ['decimal_5fformat_5fseconds_3c_20typename_20std_3a_3acommon_5ftype_3c_20duration_2c_20std_3a_3achrono_3a_3aseconds_20_3e_3a_3atype_20_3e_47',['decimal_format_seconds&lt; typename std::common_type&lt; Duration, std::chrono::seconds &gt;::type &gt;',['../classdate_1_1detail_1_1decimal__format__seconds.html',1,'date::detail']]],
+  ['deg2rad_48',['deg2rad',['../sfm_8cpp.html#a8012f8bd66798ffbdd27462c9f593a54',1,'sfm.cpp']]],
+  ['degreestoradians_49',['degreesToRadians',['../ptEngine_8hpp.html#af587759c004d4f86b1c5821066cca76a',1,'ptEngine.hpp']]],
+  ['detail_50',['detail',['../namespacedate_1_1detail.html',1,'date']]],
+  ['detectandmatchkpts_51',['detectAndMatchKpts',['../namespacetapl_1_1cve.html#aa748fe1b014fc3f0382896ce09b90b6a',1,'tapl::cve']]],
+  ['detectkeypoints_52',['detectKeypoints',['../namespacetapl_1_1cve.html#a475a42aa19f3641375dcdec85a32740e',1,'tapl::cve']]],
+  ['digits_53',['digits',['../structdate_1_1detail_1_1choose__trunc__type.html#a9f9a710c13a24da255120b935031171b',1,'date::detail::choose_trunc_type']]],
+  ['dist_54',['dist',['../structtapl_1_1pte_1_1KdTree.html#a58fd56f5fcbc48ec95e975cc02471d1b',1,'tapl::pte::KdTree']]],
+  ['disttopoint_55',['distToPoint',['../classtapl_1_1pte_1_1Line.html#a97f6d7505cead12ac6f82d84ca0bf92a',1,'tapl::pte::Line::distToPoint()'],['../classtapl_1_1pte_1_1Plane.html#af3adadd3b24d6c6a5750186e1828b26f',1,'tapl::pte::Plane::distToPoint()']]],
+  ['downsamplecloud_56',['downsampleCloud',['../namespacetapl_1_1pte.html#a48c0b0806659501276e0b33042e2fa5b',1,'tapl::pte']]],
+  ['drawkeypoints_57',['drawKeypoints',['../namespacetapl_1_1cve.html#a58bc944d8c44e0b94f88d2ee2cbe7290',1,'tapl::cve']]],
+  ['drawkeypoints3d_58',['drawKeypoints3D',['../namespacetapl_1_1cve.html#ade2a6e848150a5a5036d62c1624c7209',1,'tapl::cve::drawKeypoints3D(const cv::Mat &amp;image, const std::vector&lt; tapl::Point3d &gt; &amp;kpts3d, const cv::Mat &amp;K, cv::Scalar color=CV_RGB(255, 0, 0))'],['../namespacetapl_1_1cve.html#aa83393345e40ca0c8ccb4c1b7d5d7c62',1,'tapl::cve::drawKeypoints3D(const cv::Mat &amp;image, const std::vector&lt; tapl::Point3dColor &gt; &amp;kpts3d, const cv::Mat &amp;K, cv::Scalar color=CV_RGB(255, 0, 0))']]],
+  ['from_5fstream_59',['from_stream',['../classdate_1_1hh__mm__ss.html#a8f4da00e6aad4c49286b3b9e63bc75e6',1,'date::hh_mm_ss']]],
+  ['literals_60',['literals',['../namespacedate_1_1literals.html',1,'date']]],
+  ['to_5fstream_61',['to_stream',['../classdate_1_1hh__mm__ss.html#a6596281e160cddc98e383715f92fe705',1,'date::hh_mm_ss']]]
 ];

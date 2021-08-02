@@ -1,4 +1,5 @@
-Goal of this library is to provide an easy and quick way of implementing perception pipelines.
+The goal of this library is to provide an open-\/source platform for perception algorithm pipelines. It provides methods for several computer vision algorithms such as Structure from Motion (SfM), Camera Calibration from a single image, Visual Odometry, Bundle Adjustment, Feature Detection and Tracking, Panoramic Image Stitching, etc. T\+A\+PL also provides methods for point-\/based processing such as KD tree implementation, Euclidian Clustering, Plane Fitting, and so on. ~\newline
+
 
  
 \begin{DoxyImageNoCaption}
@@ -6,40 +7,21 @@ Goal of this library is to provide an easy and quick way of implementing percept
 \end{DoxyImageNoCaption}
   
 
-\doxysection*{\href{https://github.com/towardsautonomy/TAPL}{\texttt{ {\bfseries{Find on Git\+Hub}}}}}
+\doxysection*{\href{https://github.com/towardsautonomy/TAPL}{\texttt{ {\bfseries{Library Home (Git\+Hub)}}}}}
 
-\doxysection*{Examples of Perception Task}
+\doxysubsection*{Structure-\/from-\/\+Motion}
 
-\doxysubsubsection*{Visual Odometry for a sequence of Monocular camera images}
+Structure from Motion (SfM) is inspired by our ability to learn about the 3D structure in the surrounding environment by moving through it. Given a sequence of images, we are able to simultaneously estimate both the 3D structure and the path the camera took.
 
-This example is provided at {\ttfamily examples/src/mono\+V\+O.\+cpp}. It uses a sequence of monocular images to perform visual odometry and build sparse point-\/cloud. This functionality is provided as an A\+PI and can be accessed using the function\+: {\ttfamily \mbox{\hyperlink{namespacetapl_1_1cve_a565eba00996d244628d8583e7ce7f618}{tapl\+::cve\+::compute\+Relative\+Pose()}}}. ~\newline
+SfM can be solved using either Factorization Method or Algebraic Method. Some of the drawbacks of the Factorization Method are\+: (1) It assumes that the 3D points are visible in all cameras. (2) It assumes Affine Cameras and therefore, there exists affine ambiguity in the solution in addition to similarity ambiguity.
 
+In Algebraic Method, we assume a projective camera and then solve for camera poses and 3D points using non-\/linear optimization for bundle adjustment. We first compute Essential Matrix and then use it to find out 4 possible pairs of R,T for each pair of cameras. For each pair of R,T, we then compute the linear estimate of 3D points which is further refined using bundle adjustment for minimizing reprojection errors between pairwise cameras with non-\/linear optimization method (Gauss-\/\+Newton). These 3D points can further be used to filter the best R,T, by enforcing the criteria that all the points should be ahead of camera planes.
 
-{\bfseries{Pipeline}} ~\newline
-
-
-
-\begin{DoxyItemize}
-\item Read images and push into a ring buffer. ~\newline
-
-\item If more than one image is available in the buffer then\+: ~\newline
-
-\begin{DoxyItemize}
-\item Perform keypoint detection and matching. ~\newline
-
-\item Compute essential matrix.
-\item Compute relative pose (R, t) ~\newline
-
-\item Triangulate good keypoints for which a match is found. ~\newline
-
-\end{DoxyItemize}
-\item Compute global pose from this relative pose. ~\newline
-
-\end{DoxyItemize}
+We also provide an implementation of Gauss-\/\+Newton Optimization for reprojection loss minimization during bundle adjustment, which is used in the S\+FM pipeline for 3D point estimation.
 
  
 \begin{DoxyImageNoCaption}
-  \mbox{\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{mono_vo.gif}}
+  \mbox{\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{sfm.png}}
 \end{DoxyImageNoCaption}
   
 
@@ -120,7 +102,7 @@ This example is provided at {\ttfamily examples/src/panoramic\+Stitching.\+cpp} 
 
 \doxysubsubsection*{Image Feature Detection and Tracking}
 
-This example is provided at {\ttfamily examples/src/kpts\+Detection\+And\+Tracking.\+cpp} and this functionality is implemented as {\ttfamily \mbox{\hyperlink{namespacetapl_1_1cve_a34cb000d47a121549e81900da9913299}{tapl\+::cve\+::detect\+And\+Match\+Kpts()}}}.
+This example is provided at {\ttfamily examples/src/kpts\+Detection\+And\+Tracking.\+cpp} and this functionality is implemented as {\ttfamily \mbox{\hyperlink{namespacetapl_1_1cve_aa748fe1b014fc3f0382896ce09b90b6a}{tapl\+::cve\+::detect\+And\+Match\+Kpts()}}}.
 
  
 \begin{DoxyImageNoCaption}

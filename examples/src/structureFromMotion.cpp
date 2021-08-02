@@ -168,11 +168,12 @@ int main(int argc, const char *argv[])
         imgViz = tapl::cve::drawKeypoints(imgViz, trackedKpts, cv::Scalar(255,0,0));
         imgViz = tapl::cve::drawKeypoints3D(imgViz, triangulatedPts, camera_matrix, cv::Scalar(0,0,255));
         cv::imshow("frame_"+std::to_string(frameIdx), imgViz);
-        cv::imwrite("frame_"+std::to_string(frameIdx)+".png", imgViz);
         cv::waitKey(1); 
         frameIdx ++;
 
     }
+    // // write to file
+    // pcl::io::savePLYFileBinary("sfm.ply", *cloud);
     cv::waitKey(0); 
     visualizer->renderSceneAndHold();
 

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['yellow_320',['YELLOW',['../taplLog_8hpp.html#abf681265909adf3d3e8116c93c0ba179',1,'taplLog.hpp']]]
+  ['red_771',['RED',['../taplLog_8hpp.html#a8d23feea868a983c8c2b661e1e16972f',1,'taplLog.hpp']]],
+  ['reset_772',['RESET',['../taplLog_8hpp.html#ab702106cf3b3e96750b6845ded4e0299',1,'taplLog.hpp']]]
 ];

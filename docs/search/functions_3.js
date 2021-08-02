@@ -1,5 +1,9 @@
 var searchData=
 [
-  ['fitls_202',['fitLS',['../classtapl_1_1pte_1_1Line.html#a705b09b731117dae2d47d91a423ff828',1,'tapl::pte::Line::fitLS()'],['../classtapl_1_1pte_1_1Plane.html#a1f943f3b0304c91e86a75a11579dee95',1,'tapl::pte::Plane::fitLS()']]],
-  ['fitsvd_203',['fitSVD',['../classtapl_1_1pte_1_1Line.html#aa1de142cfa7dd5b26093a99df05d9f8c',1,'tapl::pte::Line::fitSVD()'],['../classtapl_1_1pte_1_1Plane.html#a3e0c52b8169fd9edf4c5bbb816432348',1,'tapl::pte::Plane::fitSVD()']]]
+  ['euclideancluster_474',['EuclideanCluster',['../classtapl_1_1pte_1_1EuclideanCluster.html#ae0cc79c58e5c58512b953c9252acfcb0',1,'tapl::pte::EuclideanCluster']]],
+  ['euclideanclustering_475',['euclideanClustering',['../namespacetapl_1_1pte.html#a69e06eaa64248177550033adb709fb3d',1,'tapl::pte']]],
+  ['exceptions_476',['exceptions',['../namespacedate.html#a9c6060496d3b5e21fe23e701d10b3935',1,'date']]],
+  ['extract_5fmonth_477',['extract_month',['../namespacedate_1_1detail.html#a7a6875dc60538c876852d3dc44ec914f',1,'date::detail']]],
+  ['extract_5fweekday_478',['extract_weekday',['../namespacedate_1_1detail.html#a7c3664e1fc8b97a029356a3ee3e40b32',1,'date::detail']]],
+  ['extractdescriptors_479',['extractDescriptors',['../namespacetapl_1_1cve.html#a77377946f02e5f619085acd42bda7ea6',1,'tapl::cve']]]
 ];

@@ -1,0 +1,89 @@
+\hypertarget{classtapl_1_1cve_1_1StructureFromMotion}{}\doxysection{tapl\+::cve\+::Structure\+From\+Motion Class Reference}
+\label{classtapl_1_1cve_1_1StructureFromMotion}\index{tapl::cve::StructureFromMotion@{tapl::cve::StructureFromMotion}}
+
+
+{\ttfamily \#include $<$sfm.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtapl_1_1cve_1_1StructureFromMotion_a4888f6a1a771e709da7037d92caec956}{Structure\+From\+Motion}} (const std\+::vector$<$ cv\+::\+Mat $>$ \&images, const cv\+::\+Mat \&K, const std\+::vector$<$ float $>$ \&min\+X\+YZ=\{0.\+0, 0.\+0, 0.\+0\}, const std\+::vector$<$ float $>$ \&max\+X\+YZ=\{30.\+0, 30.\+0, 30.\+0\}, const bool verbose=true)
+\begin{DoxyCompactList}\small\item\em This function initializes the structure-\/from-\/motion module. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{tapl\+::\+Result\+Code}} \mbox{\hyperlink{classtapl_1_1cve_1_1StructureFromMotion_ab5c8f1e17878c923cfe5d8a5b8e13d2a}{process}} (std\+::vector$<$ \mbox{\hyperlink{structtapl_1_1Point3dColor}{tapl\+::\+Point3d\+Color}} $>$ \&points, std\+::vector$<$ \mbox{\hyperlink{structtapl_1_1Pose6dof}{tapl\+::\+Pose6dof}} $>$ \&poses, std\+::vector$<$ \mbox{\hyperlink{structtapl_1_1CameraPairs}{tapl\+::\+Camera\+Pairs}} $>$ \&frame\+Pairs)
+\begin{DoxyCompactList}\small\item\em This function performs structure-\/from-\/motion given a set of camera frames. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+$<$ Structure-\/from-\/\+Motion Pipeline 
+
+Definition at line 19 of file sfm.\+hpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtapl_1_1cve_1_1StructureFromMotion_a4888f6a1a771e709da7037d92caec956}\label{classtapl_1_1cve_1_1StructureFromMotion_a4888f6a1a771e709da7037d92caec956}} 
+\index{tapl::cve::StructureFromMotion@{tapl::cve::StructureFromMotion}!StructureFromMotion@{StructureFromMotion}}
+\index{StructureFromMotion@{StructureFromMotion}!tapl::cve::StructureFromMotion@{tapl::cve::StructureFromMotion}}
+\doxysubsubsection{\texorpdfstring{StructureFromMotion()}{StructureFromMotion()}}
+{\footnotesize\ttfamily tapl\+::cve\+::\+Structure\+From\+Motion\+::\+Structure\+From\+Motion (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ cv\+::\+Mat $>$ \&}]{images,  }\item[{const cv\+::\+Mat \&}]{K,  }\item[{const std\+::vector$<$ float $>$ \&}]{min\+X\+YZ = {\ttfamily \{0.0,~0.0,~0.0\}},  }\item[{const std\+::vector$<$ float $>$ \&}]{max\+X\+YZ = {\ttfamily \{30.0,~30.0,~30.0\}},  }\item[{const bool}]{verbose = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+This function initializes the structure-\/from-\/motion module. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em imgs} & images from which structure-\/from-\/motion is to be computed \\
+\hline
+\mbox{\texttt{ in}}  & {\em K} & camera intrinsic matrix\\
+\hline
+\end{DoxyParams}
+Structure-\/from-\/\+Motion constructor 
+
+Definition at line 273 of file sfm.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtapl_1_1cve_1_1StructureFromMotion_ab5c8f1e17878c923cfe5d8a5b8e13d2a}\label{classtapl_1_1cve_1_1StructureFromMotion_ab5c8f1e17878c923cfe5d8a5b8e13d2a}} 
+\index{tapl::cve::StructureFromMotion@{tapl::cve::StructureFromMotion}!process@{process}}
+\index{process@{process}!tapl::cve::StructureFromMotion@{tapl::cve::StructureFromMotion}}
+\doxysubsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ff}{tapl\+::\+Result\+Code}} tapl\+::cve\+::\+Structure\+From\+Motion\+::process (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{structtapl_1_1Point3dColor}{tapl\+::\+Point3d\+Color}} $>$ \&}]{points,  }\item[{std\+::vector$<$ \mbox{\hyperlink{structtapl_1_1Pose6dof}{tapl\+::\+Pose6dof}} $>$ \&}]{poses,  }\item[{std\+::vector$<$ \mbox{\hyperlink{structtapl_1_1CameraPairs}{tapl\+::\+Camera\+Pairs}} $>$ \&}]{frame\+Pairs }\end{DoxyParamCaption})}
+
+
+
+This function performs structure-\/from-\/motion given a set of camera frames. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em points} & point-\/cloud corresponding to keypoints in the first camera\textquotesingle{}s coordinate frame \\
+\hline
+\mbox{\texttt{ out}}  & {\em poses} & poses of each camera frame \\
+\hline
+\mbox{\texttt{ out}}  & {\em frame\+Pairs} & camera pairs with associated info such as triangulated points\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ffafbdd78b1e8654e11461f37fea68c6195}{tapl\+::\+S\+U\+C\+C\+E\+SS}} if success 
+
+\mbox{\hyperlink{namespacetapl_a196ce1d5bf399fc26f03797e6a8d03ffaa6e243674a964518a62bdda7f20f6453}{tapl\+::\+F\+A\+I\+L\+U\+RE}} if failure
+\end{DoxyReturn}
+Structure-\/from-\/\+Motion implementation 
+
+Definition at line 291 of file sfm.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classtapl_1_1cve_1_1StructureFromMotion_ab5c8f1e17878c923cfe5d8a5b8e13d2a_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+tapl/cve/\mbox{\hyperlink{sfm_8hpp}{sfm.\+hpp}}\item 
+tapl/cve/\mbox{\hyperlink{sfm_8cpp}{sfm.\+cpp}}\end{DoxyCompactItemize}

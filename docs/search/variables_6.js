@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['r_269',['R',['../structtapl_1_1Pose6dof.html#a0ff2d0d3cb7c4d1cb83ffd8545dbbfa0',1,'tapl::Pose6dof']]],
-  ['right_270',['right',['../structtapl_1_1pte_1_1Node.html#ab68a326fa1516aa082032dfd05065dd9',1,'tapl::pte::Node']]],
-  ['root_271',['root',['../structtapl_1_1pte_1_1KdTree.html#a5dd05133b3a9429ae973eda1806c05e7',1,'tapl::pte::KdTree']]]
+  ['has_5ftod_650',['has_tod',['../structdate_1_1fields.html#ac9c72d59e176e72c9ea5c225efd8ab23',1,'date::fields']]]
 ];

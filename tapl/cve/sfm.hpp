@@ -24,6 +24,11 @@ namespace tapl {
             cv::Mat K = cv::Mat::eye(3, 3, CV_32FC1);
             // camera distortion matrix
             cv::Mat dist_coeff = cv::Mat::zeros(4, 1, CV_32FC1);
+            // min and max XYZ
+            std::vector<float> minXYZ;
+            std::vector<float> maxXYZ;
+            // verbose
+            bool verbose;
             // triangulated 3D points in each image local coordinate systems
             std::vector<std::vector<tapl::Point3d>> points3d_local;
             // triangulated 3D points in the origin's (first image) coordinate systems
@@ -77,8 +82,7 @@ namespace tapl {
                                         const Eigen::MatrixXd &E, 
                                         const std::vector<std::vector<tapl::Point2d>> &points2d, 
                                         const Eigen::MatrixXd &projectionMat1,
-                                        const std::vector<float> &maxXYZ={30.0, 30.0, 30.0},
-                                        const float &maxReprojectionErr=20.0 ) ;
+                                        const float &maxReprojectionErr=50.0 ) ;
 
         public:
             /** 
@@ -88,7 +92,10 @@ namespace tapl {
             * @param[in] K camera intrinsic matrix
             */
             StructureFromMotion( const std::vector<cv::Mat> &images, 
-                                 const cv::Mat &K );
+                                 const cv::Mat &K,
+                                 const std::vector<float> &minXYZ={0.0, 0.0, 0.0},
+                                 const std::vector<float> &maxXYZ={30.0, 30.0, 30.0},
+                                 const bool verbose=true );
 
             /** 
             * @brief This function performs structure-from-motion given a set of camera frames

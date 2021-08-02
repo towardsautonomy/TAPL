@@ -1,0 +1,4 @@
+<map id="tapl::optim::GaussNewtonOptimizer::jacobianL2" name="tapl::optim::GaussNewtonOptimizer::jacobianL2">
+<area shape="rect" id="node1" title="Given a 3D point and its corresponding points in the image planes, compute the associated Jacobian fo..." alt="" coords="244,5,435,47"/>
+<area shape="rect" id="node2" href="$classtapl_1_1optim_1_1GaussNewtonOptimizer.html#ae57964f87974a08a83da645e2e9d18cb" title="Given a 3D point and its corresponding points in the image planes, compute the associated Jacobian." alt="" coords="5,5,196,47"/>
+</map>

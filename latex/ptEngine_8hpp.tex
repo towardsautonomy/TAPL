@@ -16,19 +16,21 @@ This file provides A\+P\+Is for all point related functions. This includes point
 {\ttfamily \#include $<$pcl/segmentation/sac\+\_\+segmentation.\+h$>$}\newline
 {\ttfamily \#include $<$pcl/segmentation/extract\+\_\+clusters.\+h$>$}\newline
 {\ttfamily \#include $<$pcl/common/transforms.\+h$>$}\newline
-{\ttfamily \#include \char`\"{}tapl/common/tapl\+Types.\+hpp\char`\"{}}\newline
-Include dependency graph for pt\+Engine.\+hpp\+:\nopagebreak
+{\ttfamily \#include \char`\"{}tapl/common/common.\+hpp\char`\"{}}\newline
+Include dependency graph for pt\+Engine.\+hpp\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{ptEngine_8hpp__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:\nopagebreak
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=296pt]{ptEngine_8hpp__dep__incl}
+\includegraphics[width=350pt]{ptEngine_8hpp__dep__incl}
 \end{center}
 \end{figure}
 \doxysubsection*{Data Structures}
@@ -58,10 +60,6 @@ float \mbox{\hyperlink{ptEngine_8hpp_af587759c004d4f86b1c5821066cca76a}{degrees\
 \item 
 float \mbox{\hyperlink{ptEngine_8hpp_a4ac6c9ad7b92e0e724726603b7714c88}{radians\+To\+Degrees}} (float angle\+Radians)
 \item 
-cv\+::\+Mat \mbox{\hyperlink{namespacetapl_1_1pte_a874efe99ea9c6366ae0c0329554ad200}{tapl\+::pte\+::world2\+Cam\+Rotation}} ()
-\begin{DoxyCompactList}\small\item\em returns world to camera rotation matrix \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename PointT $>$ }\\void \mbox{\hyperlink{namespacetapl_1_1pte_a928126360beb48c632ff331ca560a1b0}{tapl\+::pte\+::world2\+Cam\+Coordinate}} (PointT \&point)
-\begin{DoxyCompactList}\small\item\em affine transform on a point \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename PointT $>$ }\\void \mbox{\hyperlink{namespacetapl_1_1pte_a48c0b0806659501276e0b33042e2fa5b}{tapl\+::pte\+::downsample\+Cloud}} (typename pcl\+::\+Point\+Cloud$<$ PointT $>$\+::Ptr cloud, float resolution)
 \begin{DoxyCompactList}\small\item\em Downsample point-\/cloud. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename PointT $>$ }\\void \mbox{\hyperlink{namespacetapl_1_1pte_adaa36d31de7cd145e875901dfa13a616}{tapl\+::pte\+::crop\+Cloud}} (typename pcl\+::\+Point\+Cloud$<$ PointT $>$\+::Ptr cloud, float x\+\_\+min, float x\+\_\+max, float y\+\_\+min, float y\+\_\+max, float z\+\_\+min, float z\+\_\+max)
@@ -71,7 +69,11 @@ cv\+::\+Mat \mbox{\hyperlink{namespacetapl_1_1pte_a874efe99ea9c6366ae0c0329554ad
 {\footnotesize template$<$typename PointT $>$ }\\std\+::vector$<$ typename pcl\+::\+Point\+Cloud$<$ PointT $>$\+::Ptr $>$ \mbox{\hyperlink{namespacetapl_1_1pte_a69e06eaa64248177550033adb709fb3d}{tapl\+::pte\+::euclidean\+Clustering}} (typename pcl\+::\+Point\+Cloud$<$ PointT $>$\+::Ptr cloud, float cluster\+Tolerance, int min\+Num\+Points, int max\+Num\+Points, bool use\+P\+CL=false)
 \begin{DoxyCompactList}\small\item\em Perform euclidean clustering within a point-\/cloud. Returns a vector of cluster clouds. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename PointT $>$ }\\\mbox{\hyperlink{structtapl_1_1BBox3d}{tapl\+::\+B\+Box3d}} \mbox{\hyperlink{namespacetapl_1_1pte_ac4b4a53485d62466140d43448496536b}{tapl\+::pte\+::get\+Bounding\+Box}} (typename pcl\+::\+Point\+Cloud$<$ PointT $>$\+::Ptr cloud\+Cluster)
-\begin{DoxyCompactList}\small\item\em This function is used to obtain bounding-\/box for a cluster of points. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This function is used to obtain bounding-\/box for a cluster of points. \end{DoxyCompactList}\item 
+cv\+::\+Mat \mbox{\hyperlink{namespacetapl_1_1pte_a874efe99ea9c6366ae0c0329554ad200}{tapl\+::pte\+::world2\+Cam\+Rotation}} ()
+\begin{DoxyCompactList}\small\item\em returns world to camera rotation matrix \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename PointT $>$ }\\void \mbox{\hyperlink{namespacetapl_1_1pte_a928126360beb48c632ff331ca560a1b0}{tapl\+::pte\+::world2\+Cam\+Coordinate}} (PointT \&point)
+\begin{DoxyCompactList}\small\item\em affine transform on a point \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}

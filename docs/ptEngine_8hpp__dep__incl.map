@@ -1,5 +1,6 @@
 <map id="tapl/pte/ptEngine.hpp" name="tapl/pte/ptEngine.hpp">
-<area shape="rect" id="node1" title="This file provides APIs for all point related functions. This includes point&#45;cloud processing,..." alt="" coords="82,5,243,32"/>
-<area shape="rect" id="node2" href="$ptEngine_8cpp.html" title=" " alt="" coords="5,80,165,107"/>
-<area shape="rect" id="node3" href="$tapl_8hpp.html" title="This is the main header file which exposes all the available APIs to users." alt="" coords="189,80,293,107"/>
+<area shape="rect" id="node1" title="This file provides APIs for all point related functions. This includes point&#45;cloud processing,..." alt="" coords="159,5,321,32"/>
+<area shape="rect" id="node2" href="$sfm_8cpp.html" title=" " alt="" coords="5,80,136,107"/>
+<area shape="rect" id="node3" href="$ptEngine_8cpp.html" title=" " alt="" coords="160,80,320,107"/>
+<area shape="rect" id="node4" href="$tapl_8hpp.html" title="This is the main header file which exposes all the available APIs to users." alt="" coords="344,80,448,107"/>
 </map>

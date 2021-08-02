@@ -1,0 +1,202 @@
+\hypertarget{classtapl_1_1optim_1_1GaussNewtonOptimizer}{}\doxysection{tapl\+::optim\+::Gauss\+Newton\+Optimizer Class Reference}
+\label{classtapl_1_1optim_1_1GaussNewtonOptimizer}\index{tapl::optim::GaussNewtonOptimizer@{tapl::optim::GaussNewtonOptimizer}}
+
+
+{\ttfamily \#include $<$gauss\+Newton.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classtapl_1_1optim_1_1GaussNewtonOptimizer_ac235cdbda14ea37f5eace597a2d237e6}{reprojection\+Error}} (const Eigen\+::\+Matrix\+Xd \&point3d, const std\+::vector$<$ \mbox{\hyperlink{structtapl_1_1Point2d}{tapl\+::\+Point2d}} $>$ \&points2d, const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&projection\+Matrices)
+\begin{DoxyCompactList}\small\item\em Compute reprojection error of an estimated 3d point in multiple cameras. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classtapl_1_1optim_1_1GaussNewtonOptimizer_a893484f63a294dbe0c2396d4db05aff7}{jacobian}} (const Eigen\+::\+Matrix\+Xd \&point3d, const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&projection\+Matrices)
+\begin{DoxyCompactList}\small\item\em Given a 3D point and its corresponding points in the image planes, compute the associated Jacobian. \end{DoxyCompactList}\item 
+Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classtapl_1_1optim_1_1GaussNewtonOptimizer_a3e8dcd05bcf34250546cff3073445b9c}{reprojection\+Error\+L2}} (const Eigen\+::\+Matrix\+Xd \&point3d, const std\+::vector$<$ \mbox{\hyperlink{structtapl_1_1Point2d}{tapl\+::\+Point2d}} $>$ \&points2d, const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&projection\+Matrices)
+\begin{DoxyCompactList}\small\item\em Compute L2 reprojection error of an estimated 3d point in multiple cameras. \end{DoxyCompactList}\item 
+const Eigen\+::\+Matrix\+Xd \mbox{\hyperlink{classtapl_1_1optim_1_1GaussNewtonOptimizer_af026f53389dab546b26948dd4921b711}{jacobian\+L2}} (const Eigen\+::\+Matrix\+Xd \&point3d, const std\+::vector$<$ \mbox{\hyperlink{structtapl_1_1Point2d}{tapl\+::\+Point2d}} $>$ \&points2d, const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&projection\+Matrices)
+\begin{DoxyCompactList}\small\item\em Given a 3D point and its corresponding points in the image planes, compute the associated Jacobian for L2 reprojection errors. \end{DoxyCompactList}\item 
+std\+::pair$<$ std\+::vector$<$ float $>$, std\+::vector$<$ float $>$ $>$ \mbox{\hyperlink{classtapl_1_1optim_1_1GaussNewtonOptimizer_ae57964f87974a08a83da645e2e9d18cb}{optimize}} (const \mbox{\hyperlink{structtapl_1_1Point3d}{tapl\+::\+Point3d}} \&point3d, const std\+::vector$<$ \mbox{\hyperlink{structtapl_1_1Point2d}{tapl\+::\+Point2d}} $>$ \&points2d, const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&projection\+Matrices, const uint16\+\_\+t n\+Iterations, const float repr\+Error\+Thresh, \mbox{\hyperlink{structtapl_1_1Point3d}{tapl\+::\+Point3d}} \&optim\+Point3d)
+\begin{DoxyCompactList}\small\item\em Given a 3D point and its corresponding points in the image planes, compute the associated Jacobian. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+$<$ Gauss-\/\+Newton Optimizer 
+
+Definition at line 17 of file gauss\+Newton.\+hpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtapl_1_1optim_1_1GaussNewtonOptimizer_a893484f63a294dbe0c2396d4db05aff7}\label{classtapl_1_1optim_1_1GaussNewtonOptimizer_a893484f63a294dbe0c2396d4db05aff7}} 
+\index{tapl::optim::GaussNewtonOptimizer@{tapl::optim::GaussNewtonOptimizer}!jacobian@{jacobian}}
+\index{jacobian@{jacobian}!tapl::optim::GaussNewtonOptimizer@{tapl::optim::GaussNewtonOptimizer}}
+\doxysubsubsection{\texorpdfstring{jacobian()}{jacobian()}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd tapl\+::optim\+::\+Gauss\+Newton\+Optimizer\+::jacobian (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{point3d,  }\item[{const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&}]{projection\+Matrices }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Given a 3D point and its corresponding points in the image planes, compute the associated Jacobian. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em point3d} & estimated 3d point \\
+\hline
+\mbox{\texttt{ in}}  & {\em projection\+Matrices} & projection matrices of \textquotesingle{}n\textquotesingle{} cameras (n x 3 x 4)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+J Jacobian Matrix 
+\end{DoxyReturn}
+
+
+Definition at line 70 of file gauss\+Newton.\+hpp.
+
+\mbox{\Hypertarget{classtapl_1_1optim_1_1GaussNewtonOptimizer_af026f53389dab546b26948dd4921b711}\label{classtapl_1_1optim_1_1GaussNewtonOptimizer_af026f53389dab546b26948dd4921b711}} 
+\index{tapl::optim::GaussNewtonOptimizer@{tapl::optim::GaussNewtonOptimizer}!jacobianL2@{jacobianL2}}
+\index{jacobianL2@{jacobianL2}!tapl::optim::GaussNewtonOptimizer@{tapl::optim::GaussNewtonOptimizer}}
+\doxysubsubsection{\texorpdfstring{jacobianL2()}{jacobianL2()}}
+{\footnotesize\ttfamily const Eigen\+::\+Matrix\+Xd tapl\+::optim\+::\+Gauss\+Newton\+Optimizer\+::jacobian\+L2 (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{point3d,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{structtapl_1_1Point2d}{tapl\+::\+Point2d}} $>$ \&}]{points2d,  }\item[{const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&}]{projection\+Matrices }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Given a 3D point and its corresponding points in the image planes, compute the associated Jacobian for L2 reprojection errors. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em point3d} & estimated 3d point \\
+\hline
+\mbox{\texttt{ in}}  & {\em projection\+Matrices} & projection matrices of \textquotesingle{}n\textquotesingle{} cameras (n x 3 x 4)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+J Jacobian Matrix 
+\end{DoxyReturn}
+
+
+Definition at line 154 of file gauss\+Newton.\+hpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classtapl_1_1optim_1_1GaussNewtonOptimizer_af026f53389dab546b26948dd4921b711_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classtapl_1_1optim_1_1GaussNewtonOptimizer_af026f53389dab546b26948dd4921b711_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtapl_1_1optim_1_1GaussNewtonOptimizer_ae57964f87974a08a83da645e2e9d18cb}\label{classtapl_1_1optim_1_1GaussNewtonOptimizer_ae57964f87974a08a83da645e2e9d18cb}} 
+\index{tapl::optim::GaussNewtonOptimizer@{tapl::optim::GaussNewtonOptimizer}!optimize@{optimize}}
+\index{optimize@{optimize}!tapl::optim::GaussNewtonOptimizer@{tapl::optim::GaussNewtonOptimizer}}
+\doxysubsubsection{\texorpdfstring{optimize()}{optimize()}}
+{\footnotesize\ttfamily std\+::pair$<$std\+::vector$<$float$>$,std\+::vector$<$float$>$ $>$ tapl\+::optim\+::\+Gauss\+Newton\+Optimizer\+::optimize (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structtapl_1_1Point3d}{tapl\+::\+Point3d}} \&}]{point3d,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{structtapl_1_1Point2d}{tapl\+::\+Point2d}} $>$ \&}]{points2d,  }\item[{const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&}]{projection\+Matrices,  }\item[{const uint16\+\_\+t}]{n\+Iterations,  }\item[{const float}]{repr\+Error\+Thresh,  }\item[{\mbox{\hyperlink{structtapl_1_1Point3d}{tapl\+::\+Point3d}} \&}]{optim\+Point3d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Given a 3D point and its corresponding points in the image planes, compute the associated Jacobian. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em point3d} & initial estimate of the 3d point \\
+\hline
+\mbox{\texttt{ in}}  & {\em points2d} & projection of the same 3d point in \textquotesingle{}n\textquotesingle{} cameras \\
+\hline
+\mbox{\texttt{ in}}  & {\em projection\+Matrices} & projection matrices of \textquotesingle{}n\textquotesingle{} cameras (n x 3 x 4) \\
+\hline
+\mbox{\texttt{ in}}  & {\em n\+Iterations} & projection matrices of \textquotesingle{}n\textquotesingle{} cameras (n x 3 x 4) \\
+\hline
+\mbox{\texttt{ out}}  & {\em optim\+Point3d} & optimized point 3d\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pair of pre-\/optimization and post-\/optimization reprojection error norms 
+\end{DoxyReturn}
+
+
+Definition at line 202 of file gauss\+Newton.\+hpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classtapl_1_1optim_1_1GaussNewtonOptimizer_ae57964f87974a08a83da645e2e9d18cb_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtapl_1_1optim_1_1GaussNewtonOptimizer_ac235cdbda14ea37f5eace597a2d237e6}\label{classtapl_1_1optim_1_1GaussNewtonOptimizer_ac235cdbda14ea37f5eace597a2d237e6}} 
+\index{tapl::optim::GaussNewtonOptimizer@{tapl::optim::GaussNewtonOptimizer}!reprojectionError@{reprojectionError}}
+\index{reprojectionError@{reprojectionError}!tapl::optim::GaussNewtonOptimizer@{tapl::optim::GaussNewtonOptimizer}}
+\doxysubsubsection{\texorpdfstring{reprojectionError()}{reprojectionError()}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd tapl\+::optim\+::\+Gauss\+Newton\+Optimizer\+::reprojection\+Error (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{point3d,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{structtapl_1_1Point2d}{tapl\+::\+Point2d}} $>$ \&}]{points2d,  }\item[{const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&}]{projection\+Matrices }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Compute reprojection error of an estimated 3d point in multiple cameras. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em point3d} & estimated 3d point \\
+\hline
+\mbox{\texttt{ in}}  & {\em points2d} & projection of the same 3d point in \textquotesingle{}n\textquotesingle{} cameras \\
+\hline
+\mbox{\texttt{ in}}  & {\em projection\+Matrices} & projection matrices of \textquotesingle{}n\textquotesingle{} cameras (n x 3 x 4) \\
+\hline
+\mbox{\texttt{ out}}  & {\em errors} & reprojection error in \textquotesingle{}n\textquotesingle{} cameras (n x 2) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 27 of file gauss\+Newton.\+hpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classtapl_1_1optim_1_1GaussNewtonOptimizer_ac235cdbda14ea37f5eace597a2d237e6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classtapl_1_1optim_1_1GaussNewtonOptimizer_a3e8dcd05bcf34250546cff3073445b9c}\label{classtapl_1_1optim_1_1GaussNewtonOptimizer_a3e8dcd05bcf34250546cff3073445b9c}} 
+\index{tapl::optim::GaussNewtonOptimizer@{tapl::optim::GaussNewtonOptimizer}!reprojectionErrorL2@{reprojectionErrorL2}}
+\index{reprojectionErrorL2@{reprojectionErrorL2}!tapl::optim::GaussNewtonOptimizer@{tapl::optim::GaussNewtonOptimizer}}
+\doxysubsubsection{\texorpdfstring{reprojectionErrorL2()}{reprojectionErrorL2()}}
+{\footnotesize\ttfamily Eigen\+::\+Matrix\+Xd tapl\+::optim\+::\+Gauss\+Newton\+Optimizer\+::reprojection\+Error\+L2 (\begin{DoxyParamCaption}\item[{const Eigen\+::\+Matrix\+Xd \&}]{point3d,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{structtapl_1_1Point2d}{tapl\+::\+Point2d}} $>$ \&}]{points2d,  }\item[{const std\+::vector$<$ Eigen\+::\+Matrix\+Xd $>$ \&}]{projection\+Matrices }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Compute L2 reprojection error of an estimated 3d point in multiple cameras. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em point3d} & estimated 3d point \\
+\hline
+\mbox{\texttt{ in}}  & {\em points2d} & projection of the same 3d point in \textquotesingle{}n\textquotesingle{} cameras \\
+\hline
+\mbox{\texttt{ in}}  & {\em projection\+Matrices} & projection matrices of \textquotesingle{}n\textquotesingle{} cameras (n x 3 x 4) \\
+\hline
+\mbox{\texttt{ out}}  & {\em errors} & reprojection error in \textquotesingle{}n\textquotesingle{} cameras (n x 2) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 111 of file gauss\+Newton.\+hpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classtapl_1_1optim_1_1GaussNewtonOptimizer_a3e8dcd05bcf34250546cff3073445b9c_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+tapl/optim/\mbox{\hyperlink{gaussNewton_8hpp}{gauss\+Newton.\+hpp}}\end{DoxyCompactItemize}

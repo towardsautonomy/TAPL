@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['ringbuffer_373',['RingBuffer',['../classtapl_1_1RingBuffer.html',1,'tapl']]],
-  ['rld_374',['rld',['../structdate_1_1detail_1_1rld.html',1,'date::detail']]],
-  ['rs_375',['rs',['../structdate_1_1detail_1_1rs.html',1,'date::detail']]],
-  ['ru_376',['ru',['../structdate_1_1detail_1_1ru.html',1,'date::detail']]]
+  ['parse_5fmanip_392',['parse_manip',['../structdate_1_1parse__manip.html',1,'date']]],
+  ['plane_393',['Plane',['../classtapl_1_1pte_1_1Plane.html',1,'tapl::pte']]],
+  ['point2d_394',['Point2d',['../structtapl_1_1Point2d.html',1,'tapl']]],
+  ['point3d_395',['Point3d',['../structtapl_1_1Point3d.html',1,'tapl']]],
+  ['point3dcolor_396',['Point3dColor',['../structtapl_1_1Point3dColor.html',1,'tapl']]],
+  ['pose6dof_397',['Pose6dof',['../structtapl_1_1Pose6dof.html',1,'tapl']]]
 ];

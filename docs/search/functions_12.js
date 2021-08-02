@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['visualizer_566',['Visualizer',['../classtapl_1_1viz_1_1Visualizer.html#a56215eefb4712acf78a922485d844f50',1,'tapl::viz::Visualizer']]]
+  ['undocumented_610',['undocumented',['../structdate_1_1detail_1_1undocumented.html#ac8435ba183f37a6ede05606695e6febd',1,'date::detail::undocumented']]]
 ];

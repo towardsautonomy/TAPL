@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['p_267',['P',['../structtapl_1_1Pose6dof.html#a2cc91e38bb0080f6e1760902613cc093',1,'tapl::Pose6dof']]],
-  ['point_268',['point',['../structtapl_1_1pte_1_1Node.html#a8b3448deee1ff9e0c9873b25ee83dd23',1,'tapl::pte::Node']]]
+  ['g_649',['g',['../structtapl_1_1Point3dColor.html#aeca5c603a3b3eab6e3aa609781555f28',1,'tapl::Point3dColor']]]
 ];

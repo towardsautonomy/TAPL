@@ -129,7 +129,6 @@ std::pair<Eigen::MatrixXd, std::vector<tapl::Point3d>>
                     const Eigen::MatrixXd &E, 
                     const std::vector<std::vector<tapl::Point2d>> &points2d, 
                     const Eigen::MatrixXd &projectionMat1,
-                    const std::vector<float> &maxXYZ,
                     const float &maxReprojectionErr ) {
     // compute four possible RT
     std::vector<Eigen::MatrixXd> RT = computeInitialRTfromE(E);
@@ -204,9 +203,9 @@ std::pair<Eigen::MatrixXd, std::vector<tapl::Point3d>>
     for (auto i=0; i<points2d.size(); ++i) {
         // filter out the points outside of region-of-interest and the points with high reprojection error
         if ((correctTriangulatedPts[i].z > 0.0) && (correctTriangulatedPtsRef[i].z > 0.0) &&
-            (correctTriangulatedPts[i].z < maxXYZ.at(2)) && (correctTriangulatedPtsRef[i].z < maxXYZ.at(2)) &&
-            (fabs(correctTriangulatedPts[i].x) < maxXYZ.at(0)) && (fabs(correctTriangulatedPtsRef[i].x) < maxXYZ.at(0)) &&
-            (fabs(correctTriangulatedPts[i].y) < maxXYZ.at(1)) && (fabs(correctTriangulatedPtsRef[i].y) < maxXYZ.at(1)) &&
+            (correctTriangulatedPtsRef[i].z > this->minXYZ.at(2)) && (correctTriangulatedPtsRef[i].z < this->maxXYZ.at(2)) &&
+            (fabs(correctTriangulatedPtsRef[i].x) > this->minXYZ.at(0)) && (fabs(correctTriangulatedPtsRef[i].x) < this->maxXYZ.at(0)) &&
+            (fabs(correctTriangulatedPtsRef[i].y) > this->minXYZ.at(1)) && (fabs(correctTriangulatedPtsRef[i].y) < this->maxXYZ.at(1)) &&
             reprojectionErrors[correctIdx][i].second.at(0) < maxReprojectionErr ) { // post-optimization reprojection error in the first camera frame
             
             // compute epipolar lines
@@ -273,10 +272,16 @@ std::pair<Eigen::MatrixXd, std::vector<tapl::Point3d>>
  */
 tapl::cve::StructureFromMotion::StructureFromMotion( 
                                      const std::vector<cv::Mat> &images, 
-                                     const cv::Mat &K) {
+                                     const cv::Mat &K,
+                                     const std::vector<float> &minXYZ,
+                                     const std::vector<float> &maxXYZ,
+                                     const bool verbose) {
     // copy inputs to private variable
     this->images = images;
     this->K = K;
+    this->minXYZ = minXYZ;
+    this->maxXYZ = maxXYZ;
+    this->verbose = verbose;
     // make bundles of 'm' images
 }
 
@@ -292,6 +297,11 @@ tapl::ResultCode tapl::cve::StructureFromMotion::process(
     Eigen::Matrix4f globalPose = Eigen::Matrix4f::Identity();
     // Go through each camera frame
     for (auto it=this->images.begin()+1; it!=this->images.end(); ++it) {
+        if (this->verbose) TLOG_INFO << "processing frames [" << 
+                                        std::distance(images.begin(), it) <<
+                                        "] and [" << 
+                                        std::distance(images.begin(), it+1) << "]";
+
         tapl::CameraPairs camPairs(*(it-1), *it, this->K);
 
         // compute fundamental matrix

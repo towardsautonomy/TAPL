@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['node_223',['Node',['../structtapl_1_1pte_1_1Node.html#afec8c3ce63e2269d7602de2f22dc11c6',1,'tapl::pte::Node']]]
+  ['kdtree_514',['KdTree',['../structtapl_1_1pte_1_1KdTree.html#a2b25b4997076cce12e0c3b38ed8217fe',1,'tapl::pte::KdTree']]]
 ];
