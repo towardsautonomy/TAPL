@@ -160,7 +160,7 @@ namespace tapl {
                     viewer->setPointCloudRenderingProperties (pcl::visualization::PCL_VISUALIZER_POINT_SIZE,
                                                                 ptsize,
                                                                 id);
-                    if ((r != -1.0) && (g == -1.0) && (g == -1.0)) {
+                    if ((r != -1.0) && (g != -1.0) && (g != -1.0)) {
                         viewer->setPointCloudRenderingProperties (pcl::visualization::PCL_VISUALIZER_COLOR,
                                                                     r, g, b,
                                                                     id);

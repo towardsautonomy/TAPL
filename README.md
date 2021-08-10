@@ -40,7 +40,7 @@ This example is provided at ```examples/src/lidarObjectDetection.cpp```. It read
     - Perform euclidean clustering on the KdTree. Implemented as ```class tapl::pte::EuclideanCluster()```.  
   - Filter and Extract the bounding-boxes.  
   
-![](media/lidar_object_detection.gif)  
+![](media/lidarObjectDetection.gif)  
 
 ![](media/clustering.gif)  
 
