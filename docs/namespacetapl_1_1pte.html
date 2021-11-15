@@ -131,6 +131,10 @@ Functions</h2></td></tr>
 <tr class="memitem:ac4b4a53485d62466140d43448496536b"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structtapl_1_1BBox3d.html">tapl::BBox3d</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetapl_1_1pte.html#ac4b4a53485d62466140d43448496536b">getBoundingBox</a> (typename pcl::PointCloud&lt; PointT &gt;::Ptr cloudCluster)</td></tr>
 <tr class="memdesc:ac4b4a53485d62466140d43448496536b"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is used to obtain bounding-box for a cluster of points.  <a href="namespacetapl_1_1pte.html#ac4b4a53485d62466140d43448496536b">More...</a><br /></td></tr>
 <tr class="separator:ac4b4a53485d62466140d43448496536b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a401e02a4396f1cd95d565211768af563"><td class="memTemplParams" colspan="2">template&lt;typename PointT &gt; </td></tr>
+<tr class="memitem:a401e02a4396f1cd95d565211768af563"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structtapl_1_1BBox3d.html">tapl::BBox3d</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetapl_1_1pte.html#a401e02a4396f1cd95d565211768af563">getOrientedBoundingBox</a> (typename pcl::PointCloud&lt; PointT &gt;::Ptr cloudCluster)</td></tr>
+<tr class="memdesc:a401e02a4396f1cd95d565211768af563"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is used to obtain bounding-box for a cluster of points.  <a href="namespacetapl_1_1pte.html#a401e02a4396f1cd95d565211768af563">More...</a><br /></td></tr>
+<tr class="separator:a401e02a4396f1cd95d565211768af563"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="adaa36d31de7cd145e875901dfa13a616"></a>
@@ -352,6 +356,38 @@ template&lt;typename PointT &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>3D Bounding-Box </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="ptEngine_8hpp_source.html#l00374">374</a> of file <a class="el" href="ptEngine_8hpp_source.html">ptEngine.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a401e02a4396f1cd95d565211768af563"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a401e02a4396f1cd95d565211768af563">&#9670;&nbsp;</a></span>getOrientedBoundingBox()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename PointT &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structtapl_1_1BBox3d.html">tapl::BBox3d</a> tapl::pte::getOrientedBoundingBox </td>
+          <td>(</td>
+          <td class="paramtype">typename pcl::PointCloud&lt; PointT &gt;::Ptr&#160;</td>
+          <td class="paramname"><em>cloudCluster</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This function is used to obtain bounding-box for a cluster of points. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">cloudCluster</td><td>a cluster of point-cloud</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Oriented3D Bounding-Box </dd></dl>
+<p>This line is necessary for proper orientation in some cases. The numbers come out the same without it, but the signs are different and the box doesn't get correctly oriented in some cases.</p>
+
+<p class="definition">Definition at line <a class="el" href="ptEngine_8hpp_source.html#l00402">402</a> of file <a class="el" href="ptEngine_8hpp_source.html">ptEngine.hpp</a>.</p>
 
 </div>
 </div>

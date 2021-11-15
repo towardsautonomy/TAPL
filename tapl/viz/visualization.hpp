@@ -167,8 +167,47 @@ namespace tapl {
                     }
                 }
 
+                // /** 
+                //  * @brief Render a 3d bounding-box
+                //  * @param[in] box 3D Bounding-Box
+                //  * @param[in] r specifies red in rgb colorspace for the 
+                //  *              color of sphere in range of [0.0, 1.0]
+                //  * @param[in] g specifies green in rgb colorspace for the 
+                //  *              color of sphere in range of [0.0, 1.0]
+                //  * @param[in] b specifies blue in rgb colorspace for the 
+                //  *              color of sphere in range of [0.0, 1.0]
+                //  * @param[in] opacity opacity of the bounding box in range of [0.0, 1.0]
+                //  * @param[in] id the bounding-box object id (default: bbox)
+                //  */
+                // void renderBbox3d(const BBox3d& box, 
+                //                   float r=1.0, float g=0.0, float b=0.0, 
+                //                   float opacity=0.5, const std::string &id = "bbox")
+                // {
+                //     if(opacity > 1.0)
+                //         opacity = 1.0;
+                //     if(opacity < 0.0)
+                //         opacity = 0.0;
+
+                //     double x_min = box.x_center - (box.length/2.0);
+                //     double x_max = box.x_center + (box.length/2.0);
+                //     double y_min = box.y_center - (box.width/2.0);
+                //     double y_max = box.y_center + (box.width/2.0);
+                //     double z_min = box.z_center - (box.height/2.0);
+                //     double z_max = box.z_center + (box.height/2.0);
+                //     viewer->addCube(x_min, x_max, y_min, y_max, z_min, z_max, r, g, b, id);
+                //     viewer->setShapeRenderingProperties(pcl::visualization::PCL_VISUALIZER_REPRESENTATION, pcl::visualization::PCL_VISUALIZER_REPRESENTATION_WIREFRAME, id);
+                //     viewer->setShapeRenderingProperties(pcl::visualization::PCL_VISUALIZER_COLOR, r, g, b, id);
+                //     viewer->setShapeRenderingProperties(pcl::visualization::PCL_VISUALIZER_OPACITY, opacity, id);
+
+                //     std::string cubeFill = "fill_"+id;
+                //     viewer->addCube(x_min, x_max, y_min, y_max, z_min, z_max, r, g, b, cubeFill);
+                //     viewer->setShapeRenderingProperties(pcl::visualization::PCL_VISUALIZER_REPRESENTATION, pcl::visualization::PCL_VISUALIZER_REPRESENTATION_SURFACE, cubeFill);
+                //     viewer->setShapeRenderingProperties(pcl::visualization::PCL_VISUALIZER_COLOR, r, g, b, cubeFill);
+                //     viewer->setShapeRenderingProperties(pcl::visualization::PCL_VISUALIZER_OPACITY, opacity*0.3, cubeFill);
+                // }
+
                 /** 
-                 * @brief Render a 3d bounding-box
+                 * @brief Render an oriented 3d bounding-box
                  * @param[in] box 3D Bounding-Box
                  * @param[in] r specifies red in rgb colorspace for the 
                  *              color of sphere in range of [0.0, 1.0]
@@ -179,20 +218,27 @@ namespace tapl {
                  * @param[in] opacity opacity of the bounding box in range of [0.0, 1.0]
                  * @param[in] id the bounding-box object id (default: bbox)
                  */
-                void renderBbox3d(const BBox3d& box, float r=1.0, float g=0.0, float b=0.0, float opacity=0.5, const std::string &id = "bbox")
+                void renderBbox3d(const BBox3d& box, 
+                                  float r=1.0, float g=0.0, float b=0.0, 
+                                  float opacity=0.5, const std::string &id = "bbox")
                 {
                     if(opacity > 1.0)
                         opacity = 1.0;
                     if(opacity < 0.0)
                         opacity = 0.0;
 
-                    viewer->addCube(box.x_min, box.x_max, box.y_min, box.y_max, box.z_min, box.z_max, r, g, b, id);
+                    auto rot = Eigen::Quaternionf::Identity();
+                    viewer->addCube(Eigen::Vector3f(box.x, box.y, box.z), 
+                                    Eigen::Quaternionf(box.rotation.x, box.rotation.y, box.rotation.z, box.rotation.w),
+                                    box.length, box.width, box.height, id);
                     viewer->setShapeRenderingProperties(pcl::visualization::PCL_VISUALIZER_REPRESENTATION, pcl::visualization::PCL_VISUALIZER_REPRESENTATION_WIREFRAME, id);
                     viewer->setShapeRenderingProperties(pcl::visualization::PCL_VISUALIZER_COLOR, r, g, b, id);
                     viewer->setShapeRenderingProperties(pcl::visualization::PCL_VISUALIZER_OPACITY, opacity, id);
 
                     std::string cubeFill = "fill_"+id;
-                    viewer->addCube(box.x_min, box.x_max, box.y_min, box.y_max, box.z_min, box.z_max, r, g, b, cubeFill);
+                    viewer->addCube(Eigen::Vector3f(box.x, box.y, box.z), 
+                                    Eigen::Quaternionf(box.rotation.x, box.rotation.y, box.rotation.z, box.rotation.w),
+                                    box.length, box.width, box.height, cubeFill);
                     viewer->setShapeRenderingProperties(pcl::visualization::PCL_VISUALIZER_REPRESENTATION, pcl::visualization::PCL_VISUALIZER_REPRESENTATION_SURFACE, cubeFill);
                     viewer->setShapeRenderingProperties(pcl::visualization::PCL_VISUALIZER_COLOR, r, g, b, cubeFill);
                     viewer->setShapeRenderingProperties(pcl::visualization::PCL_VISUALIZER_OPACITY, opacity*0.3, cubeFill);

@@ -132,8 +132,8 @@ int main (int argc, char** argv) {
         for (pcl::PointCloud<pcl::PointXYZ>::Ptr cluster : cloudClusters)
         {
             ++clusterId;
-
             tapl::BBox3d bbox = tapl::pte::getBoundingBox<pcl::PointXYZ> (cluster);
+            tapl::BBox3d oriented_bbox = tapl::pte::getOrientedBoundingBox<pcl::PointXYZ> (cluster);
 
             //////////////////////////////////////////
             // Point-Cloud Visualization
@@ -144,12 +144,12 @@ int main (int argc, char** argv) {
             const float obj_width_thres[] = {0.3, 5};   // {min, max}
             const float obj_height_thres[] = {0.3, 5};  // {min, max}
 
-            if( ((bbox.x_max - bbox.x_min) >= obj_len_thres[0]) &&
-                ((bbox.x_max - bbox.x_min) <= obj_len_thres[1]) &&
-                ((bbox.y_max - bbox.y_min) >= obj_width_thres[0]) &&
-                ((bbox.y_max - bbox.y_min) <= obj_width_thres[1]) &&
-                ((bbox.z_max - bbox.z_min) >= obj_height_thres[0]) &&
-                ((bbox.z_max - bbox.z_min) <= obj_height_thres[1]))
+            if( (bbox.length >= obj_len_thres[0]) &&
+                (bbox.length <= obj_len_thres[1]) &&
+                (bbox.width >= obj_width_thres[0]) &&
+                (bbox.width <= obj_width_thres[1]) &&
+                (bbox.height >= obj_height_thres[0]) &&
+                (bbox.height <= obj_height_thres[1]))
             {
                 // cars
                 visualizer->renderPointCloud<pcl::PointXYZ> 
@@ -216,7 +216,7 @@ int main (int argc, char** argv) {
             idx++;
         }
         const cv::Point* ppt[1] = { pts };
-        int npt[] = { rangeMap_filtered.size() };
+        int npt[] = { static_cast<int>(rangeMap_filtered.size()) };
         int rectw=25, recth=60;
         cv::Rect rect((bevSize/2-rectw/2), (bevSize/2-recth/2), rectw, recth);
         // drivable area
@@ -227,10 +227,10 @@ int main (int argc, char** argv) {
         cv::rectangle( bev, rect, cv::Scalar(0, 0, 0), 2);
         // object bboxes
         for (auto &bbox : bboxFiltered) {
-            int16_t bbox_xmin_px = static_cast<int16_t>(((-bbox.y_max + rMax) * double(bevSize)) / (2 * rMax));
-            int16_t bbox_xmax_px = static_cast<int16_t>(((-bbox.y_min + rMax) * double(bevSize)) / (2 * rMax));
-            int16_t bbox_ymin_px = static_cast<int16_t>(((-bbox.x_max + rMax) * double(bevSize)) / (2 * rMax));
-            int16_t bbox_ymax_px = static_cast<int16_t>(((-bbox.x_min + rMax) * double(bevSize)) / (2 * rMax));
+            int16_t bbox_xmin_px = static_cast<int16_t>(((-(bbox.y + (bbox.width/2.0)) + rMax) * double(bevSize)) / (2 * rMax));
+            int16_t bbox_xmax_px = static_cast<int16_t>(((-(bbox.y - (bbox.width/2.0)) + rMax) * double(bevSize)) / (2 * rMax));
+            int16_t bbox_ymin_px = static_cast<int16_t>(((-(bbox.x + (bbox.length/2.0)) + rMax) * double(bevSize)) / (2 * rMax));
+            int16_t bbox_ymax_px = static_cast<int16_t>(((-(bbox.x - (bbox.length/2.0)) + rMax) * double(bevSize)) / (2 * rMax));
             cv::rectangle(  bev, 
                             cv::Point(bbox_xmin_px, bbox_ymin_px), 
                             cv::Point(bbox_xmax_px, bbox_ymax_px), 

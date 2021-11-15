@@ -3,6 +3,7 @@ var taplTypes_8hpp =
     [ "Point2d", "structtapl_1_1Point2d.html", "structtapl_1_1Point2d" ],
     [ "Point3d", "structtapl_1_1Point3d.html", "structtapl_1_1Point3d" ],
     [ "Point3dColor", "structtapl_1_1Point3dColor.html", "structtapl_1_1Point3dColor" ],
+    [ "Quaternion", "structtapl_1_1Quaternion.html", "structtapl_1_1Quaternion" ],
     [ "BBox3d", "structtapl_1_1BBox3d.html", "structtapl_1_1BBox3d" ],
     [ "Pose6dof", "structtapl_1_1Pose6dof.html", "structtapl_1_1Pose6dof" ],
     [ "CameraFrame", "structtapl_1_1CameraFrame.html", "structtapl_1_1CameraFrame" ],

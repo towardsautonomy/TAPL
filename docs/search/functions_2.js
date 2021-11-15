@@ -1,14 +1,15 @@
 var searchData=
 [
-  ['day_463',['day',['../classdate_1_1day.html#a13d80b9efb88b988a21e5982151942f0',1,'date::day::day()=default'],['../classdate_1_1day.html#a63d245d16920af4b432769292649d613',1,'date::day::day(unsigned d) NOEXCEPT'],['../classdate_1_1month__day.html#a432794a534c22f58e87a80063a35a2a8',1,'date::month_day::day()'],['../classdate_1_1year__month__day.html#a9f06a363a27cf6aab75b0df5ee57eeff',1,'date::year_month_day::day()'],['../classdate_1_1year__month__day__last.html#a7c23ab47271432745b4014e4b32c74b6',1,'date::year_month_day_last::day()']]],
-  ['decimal_5fformat_5fseconds_464',['decimal_format_seconds',['../classdate_1_1detail_1_1decimal__format__seconds.html#ae98da83751ca99d9e48c553917ba1c9b',1,'date::detail::decimal_format_seconds::decimal_format_seconds()'],['../classdate_1_1detail_1_1decimal__format__seconds.html#ab2ffe7aac7b24132e4c3a966db7a1b33',1,'date::detail::decimal_format_seconds::decimal_format_seconds(const Duration &amp;d) NOEXCEPT']]],
-  ['deg2rad_465',['deg2rad',['../sfm_8cpp.html#a8012f8bd66798ffbdd27462c9f593a54',1,'sfm.cpp']]],
-  ['degreestoradians_466',['degreesToRadians',['../ptEngine_8hpp.html#af587759c004d4f86b1c5821066cca76a',1,'ptEngine.hpp']]],
-  ['detectandmatchkpts_467',['detectAndMatchKpts',['../namespacetapl_1_1cve.html#aa748fe1b014fc3f0382896ce09b90b6a',1,'tapl::cve']]],
-  ['detectkeypoints_468',['detectKeypoints',['../namespacetapl_1_1cve.html#a475a42aa19f3641375dcdec85a32740e',1,'tapl::cve']]],
-  ['dist_469',['dist',['../structtapl_1_1pte_1_1KdTree.html#a58fd56f5fcbc48ec95e975cc02471d1b',1,'tapl::pte::KdTree']]],
-  ['disttopoint_470',['distToPoint',['../classtapl_1_1pte_1_1Line.html#a97f6d7505cead12ac6f82d84ca0bf92a',1,'tapl::pte::Line::distToPoint()'],['../classtapl_1_1pte_1_1Plane.html#af3adadd3b24d6c6a5750186e1828b26f',1,'tapl::pte::Plane::distToPoint()']]],
-  ['downsamplecloud_471',['downsampleCloud',['../namespacetapl_1_1pte.html#a48c0b0806659501276e0b33042e2fa5b',1,'tapl::pte']]],
-  ['drawkeypoints_472',['drawKeypoints',['../namespacetapl_1_1cve.html#a58bc944d8c44e0b94f88d2ee2cbe7290',1,'tapl::cve']]],
-  ['drawkeypoints3d_473',['drawKeypoints3D',['../namespacetapl_1_1cve.html#ade2a6e848150a5a5036d62c1624c7209',1,'tapl::cve::drawKeypoints3D(const cv::Mat &amp;image, const std::vector&lt; tapl::Point3d &gt; &amp;kpts3d, const cv::Mat &amp;K, cv::Scalar color=CV_RGB(255, 0, 0))'],['../namespacetapl_1_1cve.html#aa83393345e40ca0c8ccb4c1b7d5d7c62',1,'tapl::cve::drawKeypoints3D(const cv::Mat &amp;image, const std::vector&lt; tapl::Point3dColor &gt; &amp;kpts3d, const cv::Mat &amp;K, cv::Scalar color=CV_RGB(255, 0, 0))']]]
+  ['c_5fencoding_453',['c_encoding',['../classdate_1_1weekday.html#a5dcb8acb7798424770384c44f6080a22',1,'date::weekday']]],
+  ['cameraframe_454',['CameraFrame',['../structtapl_1_1CameraFrame.html#a9f661d86590e6777e35170477b140c46',1,'tapl::CameraFrame']]],
+  ['camerapairs_455',['CameraPairs',['../structtapl_1_1CameraPairs.html#aa0ae1c637a510259c53eb9e3e58aecd6',1,'tapl::CameraPairs::CameraPairs()'],['../structtapl_1_1CameraPairs.html#acbc5b66c8b59476a4dcb40259398537f',1,'tapl::CameraPairs::CameraPairs(const cv::Mat &amp;img1, const cv::Mat &amp;img2)']]],
+  ['ceil_456',['ceil',['../namespacedate.html#aec0d366f4018e3655c6aea0451560533',1,'date::ceil(const std::chrono::duration&lt; Rep, Period &gt; &amp;d)'],['../namespacedate.html#ae3a533d82ee1093f257ba865d6d190f3',1,'date::ceil(const std::chrono::time_point&lt; Clock, FromDuration &gt; &amp;tp)']]],
+  ['checked_5fset_457',['checked_set',['../namespacedate_1_1detail.html#a20047d6af2ec35dc791bc38e9bfc8ef5',1,'date::detail']]],
+  ['clearscene_458',['clearScene',['../classtapl_1_1viz_1_1Visualizer.html#a912479d651c5a9bcd5a24b77025f10c0',1,'tapl::viz::Visualizer']]],
+  ['clustering_459',['clustering',['../classtapl_1_1pte_1_1EuclideanCluster.html#a7006b8b1a10af362b0001e4f36d3b4fb',1,'tapl::pte::EuclideanCluster']]],
+  ['computeessentialmatrix_460',['computeEssentialMatrix',['../namespacetapl_1_1cve.html#a16d58bca0c27c827b4509e4b90996577',1,'tapl::cve']]],
+  ['computefundamentalmatrix_461',['computeFundamentalMatrix',['../namespacetapl_1_1cve.html#a999103d368283661b24eefdbe4f46c79',1,'tapl::cve']]],
+  ['computeinitialrtfrome_462',['computeInitialRTfromE',['../sfm_8cpp.html#abe4298f5c3d3113adb7254e25de5163e',1,'sfm.cpp']]],
+  ['computerelativepose_463',['computeRelativePose',['../namespacetapl_1_1cve.html#a2e251ccaf93c2d9a030a65092eb03e81',1,'tapl::cve']]],
+  ['cropcloud_464',['cropCloud',['../namespacetapl_1_1pte.html#adaa36d31de7cd145e875901dfa13a616',1,'tapl::pte']]]
 ];

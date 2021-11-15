@@ -377,13 +377,78 @@ namespace tapl {
 			PointT minPoint, maxPoint;
 			pcl::getMinMax3D(*cloudCluster, minPoint, maxPoint);
 
-			tapl::BBox3d bbox;
-			bbox.x_min = minPoint.x;
-			bbox.y_min = minPoint.y;
-			bbox.z_min = minPoint.z;
-			bbox.x_max = maxPoint.x;
-			bbox.y_max = maxPoint.y;
-			bbox.z_max = maxPoint.z;
+            // create bounding box
+            double length     = maxPoint.x - minPoint.x;
+            double width      = maxPoint.y - minPoint.y;
+            double height     = maxPoint.z - minPoint.z;
+			double x_center   = minPoint.x + (length / 2.0);
+            double y_center   = minPoint.y + (width  / 2.0);
+            double z_center   = minPoint.z + (height / 2.0);
+
+			tapl::BBox3d bbox(x_center, y_center, z_center, length, width, height);
+
+			// return bounding-box
+			return bbox;
+        }
+
+        /**
+         * @brief This function is used to obtain bounding-box for a cluster of points.
+         * 
+         * @param[in] cloudCluster a cluster of point-cloud
+         * 
+         * @return Oriented3D Bounding-Box
+         */
+        template<typename PointT>
+		tapl::BBox3d getOrientedBoundingBox(typename pcl::PointCloud<PointT>::Ptr cloudCluster) {
+            
+			// Find bounding box for one of a cloud cluster
+			PointT minPoint, maxPoint;
+			pcl::getMinMax3D(*cloudCluster, minPoint, maxPoint);
+
+            // Compute principal directions
+            Eigen::Vector4f pcaCentroid;
+            pcl::compute3DCentroid(*cloudCluster, pcaCentroid);
+            Eigen::Matrix3f covariance;
+            computeCovarianceMatrixNormalized(*cloudCluster, pcaCentroid, covariance);
+            Eigen::SelfAdjointEigenSolver<Eigen::Matrix3f> eigen_solver(covariance, Eigen::ComputeEigenvectors);
+            Eigen::Matrix3f eigenVectorsPCA = eigen_solver.eigenvectors();
+            eigenVectorsPCA.col(2) = eigenVectorsPCA.col(0).cross(eigenVectorsPCA.col(1));  /// This line is necessary for proper orientation in some cases. The numbers come out the same without it, but
+                                                                                            ///    the signs are different and the box doesn't get correctly oriented in some cases.
+            // // Note that getting the eigenvectors can also be obtained via the PCL PCA interface with something like:
+            // pcl::PointCloud<pcl::PointXYZ>::Ptr cloudPCAprojection (new pcl::PointCloud<pcl::PointXYZ>);
+            // pcl::PCA<pcl::PointXYZ> pca;
+            // pca.setInputCloud(cloudSegmented);
+            // pca.project(*cloudSegmented, *cloudPCAprojection);
+            // std::cerr << std::endl << "EigenVectors: " << pca.getEigenVectors() << std::endl;
+            // std::cerr << std::endl << "EigenValues: " << pca.getEigenValues() << std::endl;
+            // // In this case, pca.getEigenVectors() gives similar eigenVectors to eigenVectorsPCA.
+
+            // Transform the original cloud to the origin where the principal components correspond to the axes.
+            Eigen::Matrix4f projectionTransform(Eigen::Matrix4f::Identity());
+            projectionTransform.block<3,3>(0,0) = eigenVectorsPCA.transpose();
+            projectionTransform.block<3,1>(0,3) = -1.f * (projectionTransform.block<3,3>(0,0) * pcaCentroid.head<3>());
+            pcl::PointCloud<pcl::PointXYZ>::Ptr cloudPointsProjected (new pcl::PointCloud<pcl::PointXYZ>);
+            pcl::transformPointCloud(*cloudCluster, *cloudPointsProjected, projectionTransform);
+            // Get the minimum and maximum points of the transformed cloud.
+            pcl::getMinMax3D(*cloudPointsProjected, minPoint, maxPoint);
+            const Eigen::Vector3f meanDiagonal = 0.5f*(maxPoint.getVector3fMap() + minPoint.getVector3fMap());
+
+            // Final transform
+            const Eigen::Quaternionf bboxQuaternion(eigenVectorsPCA); // Quarternions ref: https://www.youtube.com/watch?v=mHVwd8gYLnI
+            const Eigen::Vector3f bboxTransform = eigenVectorsPCA * meanDiagonal + pcaCentroid.head<3>();
+
+            // Return Oriented3D Bounding-Box
+            tapl::BBox3d bbox(  bboxTransform.x(),
+                                bboxTransform.y(),
+                                bboxTransform.z(),
+                                maxPoint.x - minPoint.x,
+                                maxPoint.y - minPoint.y,
+                                maxPoint.z - minPoint.z,
+                                bboxQuaternion.x(),
+                                bboxQuaternion.y(),
+                                bboxQuaternion.z(),
+                                bboxQuaternion.w()
+                              );
 
 			// return bounding-box
 			return bbox;

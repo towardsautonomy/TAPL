@@ -13,9 +13,10 @@ var searchData=
   ['getintrinsicmatrix_98',['getIntrinsicMatrix',['../structtapl_1_1CameraFrame.html#aec81b86de858aa878a598af592cbe1c1',1,'tapl::CameraFrame']]],
   ['getkeypoints_99',['getKeypoints',['../structtapl_1_1CameraFrame.html#a69d4dcdf4a3d4a9ce253fd04df7ec427',1,'tapl::CameraFrame']]],
   ['getkptsmatches_100',['getKptsMatches',['../structtapl_1_1CameraPairs.html#a4c1b0d9dfeb4f2b2016e60451285d28b',1,'tapl::CameraPairs']]],
-  ['getpose_101',['getPose',['../structtapl_1_1CameraPairs.html#af5dd871227e8a3765b56471484440648',1,'tapl::CameraPairs']]],
-  ['getsize_102',['getSize',['../classtapl_1_1RingBuffer.html#a5dfe06176646eeacfb89c464b15815ff',1,'tapl::RingBuffer']]],
-  ['gettrackedkpts_103',['getTrackedKpts',['../structtapl_1_1CameraPairs.html#a896f84774bbd5006fcb0247b31761ce0',1,'tapl::CameraPairs']]],
-  ['gettriangulatedpoints_104',['getTriangulatedPoints',['../structtapl_1_1CameraPairs.html#a17622e35e5deb59e590908b1f2c7704b',1,'tapl::CameraPairs']]],
-  ['green_105',['GREEN',['../taplLog_8hpp.html#acfbc006ea433ad708fdee3e82996e721',1,'taplLog.hpp']]]
+  ['getorientedboundingbox_101',['getOrientedBoundingBox',['../namespacetapl_1_1pte.html#a401e02a4396f1cd95d565211768af563',1,'tapl::pte']]],
+  ['getpose_102',['getPose',['../structtapl_1_1CameraPairs.html#af5dd871227e8a3765b56471484440648',1,'tapl::CameraPairs']]],
+  ['getsize_103',['getSize',['../classtapl_1_1RingBuffer.html#a5dfe06176646eeacfb89c464b15815ff',1,'tapl::RingBuffer']]],
+  ['gettrackedkpts_104',['getTrackedKpts',['../structtapl_1_1CameraPairs.html#a896f84774bbd5006fcb0247b31761ce0',1,'tapl::CameraPairs']]],
+  ['gettriangulatedpoints_105',['getTriangulatedPoints',['../structtapl_1_1CameraPairs.html#a17622e35e5deb59e590908b1f2c7704b',1,'tapl::CameraPairs']]],
+  ['green_106',['GREEN',['../taplLog_8hpp.html#acfbc006ea433ad708fdee3e82996e721',1,'taplLog.hpp']]]
 ];

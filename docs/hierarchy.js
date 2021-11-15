@@ -29,6 +29,7 @@ var hierarchy =
     [ "tapl::Point3d", "structtapl_1_1Point3d.html", null ],
     [ "tapl::Point3dColor", "structtapl_1_1Point3dColor.html", null ],
     [ "tapl::Pose6dof", "structtapl_1_1Pose6dof.html", null ],
+    [ "tapl::Quaternion", "structtapl_1_1Quaternion.html", null ],
     [ "tapl::RingBuffer< T >", "classtapl_1_1RingBuffer.html", null ],
     [ "date::detail::rld", "structdate_1_1detail_1_1rld.html", null ],
     [ "date::detail::rs", "structdate_1_1detail_1_1rs.html", null ],

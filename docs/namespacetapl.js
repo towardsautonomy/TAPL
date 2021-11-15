@@ -11,5 +11,6 @@ var namespacetapl =
     [ "Point3d", "structtapl_1_1Point3d.html", "structtapl_1_1Point3d" ],
     [ "Point3dColor", "structtapl_1_1Point3dColor.html", "structtapl_1_1Point3dColor" ],
     [ "Pose6dof", "structtapl_1_1Pose6dof.html", "structtapl_1_1Pose6dof" ],
+    [ "Quaternion", "structtapl_1_1Quaternion.html", "structtapl_1_1Quaternion" ],
     [ "RingBuffer", "classtapl_1_1RingBuffer.html", "classtapl_1_1RingBuffer" ]
 ];

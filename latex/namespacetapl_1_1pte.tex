@@ -29,6 +29,8 @@ cv\+::\+Mat \mbox{\hyperlink{namespacetapl_1_1pte_a874efe99ea9c6366ae0c0329554ad
 {\footnotesize template$<$typename PointT $>$ }\\std\+::vector$<$ typename pcl\+::\+Point\+Cloud$<$ PointT $>$\+::Ptr $>$ \mbox{\hyperlink{namespacetapl_1_1pte_a69e06eaa64248177550033adb709fb3d}{euclidean\+Clustering}} (typename pcl\+::\+Point\+Cloud$<$ PointT $>$\+::Ptr cloud, float cluster\+Tolerance, int min\+Num\+Points, int max\+Num\+Points, bool use\+P\+CL=false)
 \begin{DoxyCompactList}\small\item\em Perform euclidean clustering within a point-\/cloud. Returns a vector of cluster clouds. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename PointT $>$ }\\\mbox{\hyperlink{structtapl_1_1BBox3d}{tapl\+::\+B\+Box3d}} \mbox{\hyperlink{namespacetapl_1_1pte_ac4b4a53485d62466140d43448496536b}{get\+Bounding\+Box}} (typename pcl\+::\+Point\+Cloud$<$ PointT $>$\+::Ptr cloud\+Cluster)
+\begin{DoxyCompactList}\small\item\em This function is used to obtain bounding-\/box for a cluster of points. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename PointT $>$ }\\\mbox{\hyperlink{structtapl_1_1BBox3d}{tapl\+::\+B\+Box3d}} \mbox{\hyperlink{namespacetapl_1_1pte_a401e02a4396f1cd95d565211768af563}{get\+Oriented\+Bounding\+Box}} (typename pcl\+::\+Point\+Cloud$<$ PointT $>$\+::Ptr cloud\+Cluster)
 \begin{DoxyCompactList}\small\item\em This function is used to obtain bounding-\/box for a cluster of points. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -147,6 +149,29 @@ This function is used to obtain bounding-\/box for a cluster of points.
 
 
 Definition at line 374 of file pt\+Engine.\+hpp.
+
+\mbox{\Hypertarget{namespacetapl_1_1pte_a401e02a4396f1cd95d565211768af563}\label{namespacetapl_1_1pte_a401e02a4396f1cd95d565211768af563}} 
+\index{tapl::pte@{tapl::pte}!getOrientedBoundingBox@{getOrientedBoundingBox}}
+\index{getOrientedBoundingBox@{getOrientedBoundingBox}!tapl::pte@{tapl::pte}}
+\doxysubsubsection{\texorpdfstring{getOrientedBoundingBox()}{getOrientedBoundingBox()}}
+{\footnotesize\ttfamily template$<$typename PointT $>$ \\
+\mbox{\hyperlink{structtapl_1_1BBox3d}{tapl\+::\+B\+Box3d}} tapl\+::pte\+::get\+Oriented\+Bounding\+Box (\begin{DoxyParamCaption}\item[{typename pcl\+::\+Point\+Cloud$<$ PointT $>$\+::Ptr}]{cloud\+Cluster }\end{DoxyParamCaption})}
+
+
+
+This function is used to obtain bounding-\/box for a cluster of points. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em cloud\+Cluster} & a cluster of point-\/cloud\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Oriented3D Bounding-\/\+Box 
+\end{DoxyReturn}
+This line is necessary for proper orientation in some cases. The numbers come out the same without it, but the signs are different and the box doesn\textquotesingle{}t get correctly oriented in some cases.
+
+Definition at line 402 of file pt\+Engine.\+hpp.
 
 \mbox{\Hypertarget{namespacetapl_1_1pte_aa4fc09affe62218081e85ed5818bf2ef}\label{namespacetapl_1_1pte_aa4fc09affe62218081e85ed5818bf2ef}} 
 \index{tapl::pte@{tapl::pte}!segmentPlane@{segmentPlane}}

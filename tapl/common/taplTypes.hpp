@@ -86,15 +86,57 @@ namespace tapl
     };
 
     /**
-     * @brief 3D Bounding-Box
+     * @brief Quaternions
+     */
+    struct Quaternion {
+        double x;                          /**< x */
+        double y;                          /**< y */
+        double z;                          /**< z */
+        double w;                          /**< w */
+
+        /**< constructors */
+        Quaternion() {}
+        Quaternion(const double x, const double y, const double z, const double w) :
+            x(x), y(y), z(z), w(w) {}
+
+        /**< print operator */
+        friend std::ostream& operator<<(std::ostream& os, const Quaternion &q) {
+            os << "[" << q.x << ", " << q.y << ", " << q.z << ", " << q.w << "]" << std::endl;
+            return os;
+        }
+    };
+
+    /**
+     * @brief Oriented 3D Bounding-Box
      */
     struct BBox3d {
-        double x_min;                       /**< min x-coordinate */
-        double x_max;                       /**< max x-coordinate */
-        double y_min;                       /**< min y-coordinate */
-        double y_max;                       /**< max y-coordinate */
-        double z_min;                       /**< min z-coordinate */
-        double z_max;                       /**< max z-coordinate */
+        Quaternion rotation;                /**< quaternion */
+        double x;                           /**< object center x-coordinate */
+        double y;                           /**< object center y-coordinate */
+        double z;                           /**< object center z-coordinate */
+        double length;                      /**< box length */
+        double width;                       /**< box width */
+        double height;                      /**< box height */
+        
+        /**< constructors */
+        BBox3d() {}
+        BBox3d(const double x, const double y, const double z,
+               const double length, const double width, const double height) :
+            rotation(0.0, 0.0, 0.0, 0.0),
+            x(x), y(y), z(z), length(length), width(width), height(height) {}
+        BBox3d(const double x, const double y, const double z,
+               const double length, const double width, const double height,
+               const double qx, const double qy, const double qz, const double qw) :
+            rotation(qx, qy, qz, qw),
+            x(x), y(y), z(z), length(length), width(width), height(height)  {}
+
+        /**< print operator */
+        friend std::ostream& operator<<(std::ostream& os, const BBox3d &b) {
+            os << "rotation: " << b.rotation << ", center: [" << b.x << ", " <<
+                  b.x << ", " << b.z << "], dim: [" << b.length << ", " << b.width << 
+                  ", " << b.height << "]" << std::endl;
+            return os;
+        }
     };
 
     /**
